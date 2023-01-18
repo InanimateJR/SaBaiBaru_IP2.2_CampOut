@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "565066208871",
+    "firebase_url": "https://sabaibaru-ip-campout-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "sabaibaru-ip-campout",
+    "storage_bucket": "sabaibaru-ip-campout.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:565066208871:android:0559e058f7e1c3bf2ce6c2",
+        "android_client_info": {
+          "package_name": "com.SaBaiBaru.CampOutVR"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "565066208871-2hsp9t6ehv2q6oh809qeegi373dkqb8r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAqEopGPnTgULZoUxvjgsu57-JU1PCVpLk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "565066208871-2hsp9t6ehv2q6oh809qeegi373dkqb8r.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "565066208871-7qttpimnj0bk3k6i5hnhbnhl9cqcl2k9.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.SaBaiBaru.CampOutVR"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
