@@ -1,14 +1,9 @@
 fileFormatVersion: 2
-guid: 340feebcc09b1d44487c3c4e0e956c85
+guid: c25585f3074edd64bb531a2c51f0f4f7
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: TextAtlas
-    second: {fileID: 2100000, guid: 77a3bb3d928a8e245a0d0aefbf8b1667, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
