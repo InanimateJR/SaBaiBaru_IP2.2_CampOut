@@ -1,6 +1,9 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
+// Demo a bit of Fishing. Includes lw demo of
+// creating guiText, LineRenderer, Coroutine, PingPong, Mini-game
 
 // Setup 1: Make a depression in your terrain and add Unity (Free/Pro) Water.
 // Add to Water MeshCollider marked IsTrigger=Yes/Check.
@@ -19,10 +22,11 @@ using UnityEngine;
 // Play, move to Water, press F to fish...a green circle appears, move mouse into it
 // and press G before fish reaches jump apex
 
-public class FishingScript : MonoBehaviour
+public class FishingScript2: MonoBehaviour
 {
+
     // Set public variables in Inspector
-    public GameObject pole;                    // Assign a fishing pole prefab in Inspector; tilt & angle to your liking
+    public GameObject pole;                    // Assign a fis$$anonymous$$ng pole prefab in Inspector; tilt & angle to your liking
     public Transform lineStart;                // Create/assign empty GameObject at the tip of the pole
 
     public int minFishingDistance;            // Min distance (7ish)
@@ -33,6 +37,7 @@ public class FishingScript : MonoBehaviour
     private RaycastHit hit;
     public GameObject scriptTarget;        // Create primitive sphere for scriptTarget, replace with fish if hit
     public GameObject fish;                // Create primitive "fish" (replace with model if you have one)
+    public GameObject newFish;
     private GameObject setHook;                // Sphere appears to click
     private float fishJumpHeight;            // Height of fish jump
     private Vector3 startPos;                // Hold player starting position on cast
@@ -59,18 +64,18 @@ public class FishingScript : MonoBehaviour
             fishJumpingSpeed = 3f;
         }
     }
-         
+ 
  
     void Update()
     {
 
-        if (lineStart == null)
+        if (pole == null || lineStart == null)
         {
             return;
         }
 
         // Start Fishing via 'F'; modify for your game and don't do this at all
-        // instead have your game's action dispatcher do GetComponent<QM_Fishing>().ActionDispatcher();
+        // instead have your game's action dispatcher do GetComponent<FishingScript>().ActionDispatcher();
         // on hotkey press, icon click, whatever
         if (Input.GetKeyUp(KeyCode.F))
         {
@@ -87,7 +92,9 @@ public class FishingScript : MonoBehaviour
             return;
         */
 
-        /* If the fishing pole isn't already in your player's hand, swap it in if(playerDoesNotHavePole)...*/
+        /* If the fishing pole isn't already in your player's hand, swap it in
+        if(playerDoesNotHavePole)...
+        */
 
         ActionInit();
 
@@ -98,13 +105,11 @@ public class FishingScript : MonoBehaviour
         // player can interact with layer Water is on (Water, by default)
         if (Physics.Raycast(_ray, out hit, Mathf.Infinity))
         {
-            Debug.Log("Raycast water");
             ActionChecks();
         }
 
         else
         {
-            wasInterrupted = true;
             return;
         }
     }
@@ -116,22 +121,24 @@ public class FishingScript : MonoBehaviour
         wasInterrupted = false;
         fishOn = false;
         fishjump = false;
+
         StopAllCoroutines();
+
         if (scriptTarget.gameObject != null)
         {
-            Debug.Log("scriptTarget off");
-            //scriptTarget.SetActive(false);
-            scriptTarget.GetComponent<Renderer>().enabled = false;
+            scriptTarget.SetActive(false);
         }
 
-        /*if (pole.gameObject.GetComponent<LineRenderer>() != null)
-            DestroyImmediate(pole.gameObject.GetComponent<LineRenderer>());*/
-        Debug.Log(setHook);
+        if (pole.gameObject.GetComponent<LineRenderer>() != null)
+        {
+            DestroyImmediate(pole.gameObject.GetComponent<LineRenderer>());
+        }
 
-        if (setHook != null)
+        /*if (setHook.gameObject != null)
         {
             setHook.SetActive(false);
-        }
+        }*/
+
     }
 
     private void ActionChecks()
@@ -146,18 +153,18 @@ public class FishingScript : MonoBehaviour
         }
 
         // Inventory check? Up to you if you want to check inventory now/return if it's full
-        // or check at the very end; either way actual Inventory is out of scope for all of t$$anonymous$$s
+        // or check at the very end; either way actual Inventory is out of scope for all of this
 
         // Check Distance
         float _dist = Vector3.Distance(transform.position, hit.point);
 
-        if (_dist < minFishingDistance) 
+        if (_dist < minFishingDistance)
         {
             Debug.Log("You scare away the fish; try casting further away.");
             return;
         }
 
-        if (_dist > maxFishingDistance) 
+        if (_dist > maxFishingDistance)
         {
             Debug.Log("Out of range.");
             return;
@@ -167,22 +174,24 @@ public class FishingScript : MonoBehaviour
         //scriptTarget = GameObject.CreatePrimitive(PrimitiveType.Sphere) as GameObject;
 
         // Set "bobber" properties
-        Debug.Log("Instantiate Bobber");
-        //Instantiate(scriptTarget).transform.position = hit.point;
+        //scriptTarget.transform.position = hit.point;
         scriptTarget.transform.position = hit.point;
-        scriptTarget.GetComponent<Renderer>().enabled = true;
+        scriptTarget.SetActive(true);
         //scriptTarget.GetComponent<Renderer>().material.color = Color.red;
         //scriptTarget.transform.localScale = new Vector3(.25f, .5f, .25f);
 
 
         // Demo creating guiText
-        /*GameObject fishingGUIText = new GameObject();
+        GameObject fishingUIText = new GameObject();
 
-        fishingGUIText.AddComponent(typeof(GUIText));
-        fishingGUIText.transform.position = new Vector3(.43f, .8f);
-        fishingGUIText.guiText.fontSize = 18;
-        fishingGUIText.guiText.text = "You cast your line...";
-        Destroy(fishingGUIText, 2.5f);*/
+        fishingUIText.AddComponent(typeof(Text));
+
+        fishingUIText.transform.position = new Vector3(.43f, .8f);
+
+        fishingUIText.GetComponent<Text>().fontSize = 18;
+        fishingUIText.GetComponent<Text>().text = "You cast your line...";
+
+        Destroy(fishingUIText, 2.5f);
 
         StartCoroutine(ActionMain());
     }
@@ -190,7 +199,7 @@ public class FishingScript : MonoBehaviour
  
     private IEnumerator ActionMain()
     {
-        scriptTarget.SetActive(true);
+
         // Scale according to your taste and WaitForSeconds value
         int fishingTimer = 1000;
         int thisRun = fishingTimer;
@@ -208,7 +217,6 @@ public class FishingScript : MonoBehaviour
         {
             noNibble = true;
         }
-
         else
         {
             noNibble = false;
@@ -220,25 +228,33 @@ public class FishingScript : MonoBehaviour
 
         // If LineRenderer components are somehow still around, get rid of them
         // to avoid errors, duplicate lines
-        /*if (pole.gameObject.GetComponent<LineRenderer>() != null)
+        if (pole.gameObject.GetComponent<LineRenderer>() != null)
         {
             DestroyImmediate(pole.gameObject.GetComponent<LineRenderer>());
-        }*/
+        }
 
         // Demo create LineRenderer via runtime script
-        LineRenderer fishLine = pole.gameObject.GetComponent<LineRenderer>();
+        LineRenderer fishLine = pole.gameObject.AddComponent<LineRenderer>();
         Vector3 v1 = lineStart.position;
         Vector3 v2 = scriptTarget.transform.position;
-        //fishLine.SetColors(Color.green, Color.green);
         fishLine.startColor = Color.green;
         fishLine.endColor = Color.green;
-        //fishLine.SetWidth(0.005f, 0.007f);
-        fishLine.startWidth = 0.005f;
-        fishLine.endWidth = 0.007f;
-        //fishLine.SetVertexCount(2);
-        fishLine.positionCount = 2;
+
+        fishLine.startWidth = (0.005f);
+        fishLine.endWidth = (0.007f);
+
+        fishLine.positionCount = (2);
         fishLine.SetPosition(0, v1);
-        fishLine.SetPosition(1, v2);
+        if (scriptTarget.activeSelf == true)
+        {
+            fishLine.SetPosition(1, v2);
+        }
+        else if (scriptTarget.activeSelf == false)
+        {
+            Vector3 v3 = newFish.transform.position;
+            Debug.Log("SetPosition1");
+            fishLine.SetPosition(1, v3);
+        }
         fishLine.material = new Material(Shader.Find("Diffuse"));
 
         // Player movement cancels action
@@ -246,24 +262,39 @@ public class FishingScript : MonoBehaviour
 
         // ------------- MAIN ----------------
 
-        while(!wasInterrupted && thisRun > 0) {
+        while(!wasInterrupted && thisRun > 0)
+        {
 
             // Adjust LineRenderer component for animation sway, player rotate, fish jump, etc
             v1 = lineStart.position;
             fishLine.SetPosition(0, v1);
+
             v2 = scriptTarget.transform.position;
+
+            if (scriptTarget.activeSelf == false)
+            {
+                Debug.Log("SetPosition2");
+                v2 = newFish.transform.position;
+            }
+            else if (scriptTarget.activeSelf == true)
+            {
+                v2 = scriptTarget.transform.position;
+            }
             fishLine.SetPosition(1, v2);
 
-            if (!fishOn)
+
+            if (!fishOn && scriptTarget.activeSelf == true)
             {
                 // Demo using Mathf.PingPong to achieve a little bounce to "bobber"
-                float scrTgtY = Mathf.PingPong(Time.time, .1f) - .05f;
-                scriptTarget.transform.position = new Vector3(scriptTarget.transform.position.x, scriptTarget.transform.position.y + scrTgtY, scriptTarget.transform.position.z);
+                //float scrTgtY = Mathf.PingPong(Time.time, .1f) - .05f;
+                //scriptTarget.transform.position = new Vector3(scriptTarget.transform.position.x, scriptTarget.transform.position.y + scrTgtY, scriptTarget.transform.position.z);
+                scriptTarget.GetComponent<Animator>().SetBool("BobbingOn", true);
             }
 
             // When thisRun equals Random biteAt, "Fish On!" (unless it's a dead cycle)
             if (!noNibble && thisRun == biteAt)
             {
+                scriptTarget.GetComponent<Animator>().SetBool("BobbingOn", false);
                 FishOn();
             }
 
@@ -272,7 +303,7 @@ public class FishingScript : MonoBehaviour
 
             if (fishjump)
             {
-                scriptTarget.transform.Translate(Vector3.up * Time.deltaTime * fishJumpingSpeed);
+                newFish.transform.Translate(Vector3.up * Time.deltaTime * fishJumpingSpeed);
 
                 // Demo mini-game
                 if (!runningMiniGame)
@@ -282,18 +313,18 @@ public class FishingScript : MonoBehaviour
                 }
 
                 // Has fish reached apex?
-                if (scriptTarget.transform.position.y > fishJumpTarget.y)
+                if (newFish.transform.position.y > fishJumpTarget.y)
                 {
                     fishjump = false;
                     StopCoroutine("MiniGame()");
-                    scriptTarget.AddComponent<Rigidbody>();
-                    //scriptTarget.GetComponent<Renderer>().material.color = Color.red;
+                    newFish.AddComponent<Rigidbody>();
+                    //fish.GetComponent<Renderer>().material.color = Color.red;
                 }
             }
 
             // If the fish falls back to water, cycle is over/fail; dual-purposing wasInterrupted
             // to end Coroutine
-            if (fishOn && scriptTarget.transform.position.y < hit.point.y)
+            if (fishOn && newFish.transform.position.y < hit.point.y)
             {
                 wasInterrupted = true;
             }
@@ -312,114 +343,136 @@ public class FishingScript : MonoBehaviour
             yield return new WaitForSeconds(0.01f);
         }
  
-                     // ------------- end WHILE ----------------
+         // ------------- end WHILE ----------------
  
         if (noNibble)
         {
 
-            /*GameObject fishingGUIText = new GameObject ();
+            GameObject fishingUIText = new GameObject();
+
+            fishingUIText.AddComponent(typeof(Text));
+            fishingUIText.transform.position = new Vector3(.43f, .85f);
+            fishingUIText.GetComponent<Text>().fontSize = 18;
+            fishingUIText.GetComponent<Text>().text = "The fish aren't biting";
  
-            fishingGUIText.AddComponent (typeof(GUIText));
-            fishingGUIText.transform.position = new Vector3 (.43f, .85f);
-            fishingGUIText.guiText.fontSize = 18;
-            fishingGUIText.guiText.text = "The fish aren't biting";
- 
-            Destroy (fishingGUIText, 2.5f);*/
+            Destroy(fishingUIText, 2.5f);
         }
  
-        // Reset states for next run
-        ActionInit ();
+            // Reset states for next run
+            ActionInit();
  
-        // The End.
+            // The End.
  
     }
  
  
-    private IEnumerator MiniGame() 
+    private IEnumerator MiniGame()
     {
-        /*GameObject fishingGUIText = new GameObject ();
-        fishingGUIText.AddComponent (typeof(GUIText));
-        fishingGUIText.transform.position = new Vector3 (.35f, .8f);
-        fishingGUIText.guiText.fontSize = 18;
-        fishingGUIText.guiText.color = Color.green;
-        fishingGUIText.guiText.text = "Set the hook! [Press G with Mouse in Circle]";
-        Destroy (fishingGUIText, 2);*/
-
+ 
+        GameObject fishingUIText = new GameObject();
+ 
+        fishingUIText.AddComponent(typeof(Text));
+ 
+        fishingUIText.transform.position = new Vector3(.35f, .8f);
+ 
+        fishingUIText.GetComponent<Text>().fontSize = 18;
+        fishingUIText.GetComponent<Text>().color = Color.green;
+        fishingUIText.GetComponent<Text>().text = "Set the hook! [Press G with Mouse in Circle]";
+ 
+        Destroy(fishingUIText, 2);
+ 
         setHook = GameObject.CreatePrimitive(PrimitiveType.Sphere) as GameObject;
-
+ 
         // Set "setHook" properties
-        float setHookX = Random.Range (-3,3);
-        float setHookY = Random.Range (-1,1);
-        Vector3 setHookTarget = new Vector3 (hit.point.x+setHookX, hit.point.y+fishJumpHeight+setHookY, hit.point.z);
+        float setHookX = Random.Range(-3, 3);
+        float setHookY = Random.Range(-1, 1);
+ 
+        Vector3 setHookTarget = new Vector3(hit.point.x + setHookX, hit.point.y + fishJumpHeight + setHookY, hit.point.z);
+ 
         setHook.transform.position = setHookTarget;
+ 
         setHook.GetComponent<Renderer>().material.color = Color.green;
-        setHook.transform.localScale = new Vector3 (.7f,.7f,.7f);
+ 
+        setHook.transform.localScale = new Vector3(.7f, .7f, .7f);
         setHook.name = "setHook";
  
         bool miniGameDone = false;
  
-        while (fishjump && !miniGameDone) 
+        while (fishjump && !miniGameDone)
         {
+ 
             // Press G to set hook
-            if(Input.GetKeyUp(KeyCode.G)) 
+            if (Input.GetKeyUp(KeyCode.E))
             {
  
-                Ray _ray = Camera.main.ScreenPointToRay (Input.mousePosition);
+                Ray _ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                 RaycastHit hitInfo = new RaycastHit();
  
-                if (Physics.Raycast (_ray, out hitInfo, Mathf.Infinity)) 
+                if (Physics.Raycast(_ray, out hitInfo, Mathf.Infinity))
                 {
-                    if(hitInfo.transform.name == setHook.name) 
+                    if (hitInfo.transform.name == setHook.name)
                     {
-                        setHook.SetActive(false);
-                        //DestroyImmediate(fishingGUIText);
+                        DestroyImmediate(setHook);
+                        DestroyImmediate(fishingUIText);
                         miniGameDone = ActionSuccess();
                     }
                 }
             }
-         
+ 
             yield return null;
         }
-
-        setHook.SetActive(false);
-        //DestroyImmediate(fishingGUIText);
+ 
+        DestroyImmediate(setHook);
+        DestroyImmediate(fishingUIText);
     }
  
-    private void FishOn() 
+    private void FishOn()
     {
+ 
         // This bit uses a Primitive Sphere. If you have a fish model you could
         // use that instead, swapping out this code for that
  
         // Get rid of "bobber"
         scriptTarget.SetActive(false);
+
+        // Create "fish"
+        //scriptTarget = GameObject.CreatePrimitive(PrimitiveType.Sphere) as GameObject;
+        newFish = Instantiate(fish);
+        newFish.transform.position = hit.point;
  
         // Set fish properties
-        scriptTarget.transform.position = hit.point;
+        //scriptTarget.transform.position = hit.point;
         //scriptTarget.GetComponent<Renderer>().material.color = Color.yellow;
-        //scriptTarget.transform.localScale = new Vector3 (.7f, 1.2f, .2f);
+        //scriptTarget.transform.localScale = new Vector3(.7f, 1.2f, .2f);
  
         fishOn = true;
         fishjump = true;
     }
  
  
-    private bool ActionSuccess() {
+    private bool ActionSuccess()
+    {
         // This is success code; there's too many things that you could be doing in your game
         // for me to guess at: add fish to inventory, bump fishing skill, determine how fast they clicked vs
         // how far away the hit.point was and give treasure map for great click, spawn mermaid/man, 
         // bump Fishing GUI score, etc.
- 
+
         // To close, we'll clean-up and put success message up
+
+        Debug.Log("Fish Caught");
+        GameObject successUIText = new GameObject();
  
-        /*GameObject successGUIText = new GameObject ();
-        successGUIText.AddComponent (typeof(GUIText));
-        successGUIText.transform.position = new Vector3 (.35f, .85f);
-        successGUIText.guiText.fontSize = 18;
-        successGUIText.guiText.color = Color.white;
-        successGUIText.guiText.text = "You caught a nice fish";
-        Destroy (successGUIText, 2.5f);*/
-     
+        successUIText.AddComponent(typeof(Text));
+ 
+        successUIText.transform.position = new Vector3(.35f, .85f);
+ 
+        successUIText.GetComponent<Text>().fontSize = 18;
+        successUIText.GetComponent<Text>().color = Color.white;
+        successUIText.GetComponent<Text>().text = "You caught a nice fish";
+ 
+        Destroy(successUIText, 2.5f);
+ 
         return true;
-     }
+    }
  
  }
