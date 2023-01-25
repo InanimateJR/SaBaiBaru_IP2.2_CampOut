@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 51740e0e5c43a244fbccdb319719f1f3
+guid: a50460a7cfff89f41b5fcdd7c7088ca5
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
@@ -8,12 +8,12 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Rental
-    second: {fileID: 2100000, guid: e6eb1784457b3194f8d60eec563fe9f1, type: 2}
+    second: {fileID: 2100000, guid: 0a5e0edd5c9df9e4a8dbe993ae57ba4d, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Wood_mat
-    second: {fileID: 2100000, guid: 7beb53dd4a0005840a936208cd87770a, type: 2}
+    second: {fileID: 2100000, guid: 009be0a2a8ee1a347a8e4003b06db0a2, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
