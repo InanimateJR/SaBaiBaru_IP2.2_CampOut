@@ -36,6 +36,7 @@ public class FishingScript2: MonoBehaviour
 
     private RaycastHit hit;
     public GameObject scriptTarget;        // Create primitive sphere for scriptTarget, replace with fish if hit
+    public GameObject newBobber;
     public GameObject fish;                // Create primitive "fish" (replace with model if you have one)
     public GameObject newFish;
     private GameObject setHook;                // Sphere appears to click
@@ -124,9 +125,14 @@ public class FishingScript2: MonoBehaviour
 
         StopAllCoroutines();
 
-        if (scriptTarget.gameObject != null)
+        /*if (scriptTarget.gameObject != null)
         {
             scriptTarget.SetActive(false);
+        }*/
+
+        if (newBobber != null)
+        {
+            Destroy(newBobber);
         }
 
         if (pole.gameObject.GetComponent<LineRenderer>() != null)
@@ -175,8 +181,9 @@ public class FishingScript2: MonoBehaviour
 
         // Set "bobber" properties
         //scriptTarget.transform.position = hit.point;
-        scriptTarget.transform.position = hit.point;
-        scriptTarget.SetActive(true);
+        newBobber = Instantiate(scriptTarget);
+        newBobber.transform.position = hit.point;
+        //scriptTarget.SetActive(true);
         //scriptTarget.GetComponent<Renderer>().material.color = Color.red;
         //scriptTarget.transform.localScale = new Vector3(.25f, .5f, .25f);
 
@@ -236,7 +243,8 @@ public class FishingScript2: MonoBehaviour
         // Demo create LineRenderer via runtime script
         LineRenderer fishLine = pole.gameObject.AddComponent<LineRenderer>();
         Vector3 v1 = lineStart.position;
-        Vector3 v2 = scriptTarget.transform.position;
+        //Vector3 v2 = scriptTarget.transform.position;
+        Vector3 v2 = newBobber.transform.position;
         fishLine.startColor = Color.green;
         fishLine.endColor = Color.green;
 
@@ -245,7 +253,8 @@ public class FishingScript2: MonoBehaviour
 
         fishLine.positionCount = (2);
         fishLine.SetPosition(0, v1);
-        if (scriptTarget.activeSelf == true)
+
+        /*if (scriptTarget.activeSelf == true)
         {
             fishLine.SetPosition(1, v2);
         }
@@ -254,7 +263,19 @@ public class FishingScript2: MonoBehaviour
             Vector3 v3 = newFish.transform.position;
             Debug.Log("SetPosition1");
             fishLine.SetPosition(1, v3);
+        }*/
+
+        if (newBobber != null)
+        {
+            fishLine.SetPosition(1, v2);
         }
+        else if (newBobber == null)
+        {
+            Vector3 v3 = newFish.transform.position;
+            Debug.Log("SetPosition1");
+            fishLine.SetPosition(1, v3);
+        }
+
         fishLine.material = new Material(Shader.Find("Universal Render Pipeline/Lit"));
 
         // Player movement cancels action
@@ -269,9 +290,9 @@ public class FishingScript2: MonoBehaviour
             v1 = lineStart.position;
             fishLine.SetPosition(0, v1);
 
-            v2 = scriptTarget.transform.position;
+            //v2 = scriptTarget.transform.position;
 
-            if (scriptTarget.activeSelf == false)
+            /*if (scriptTarget.activeSelf == false)
             {
                 Debug.Log("SetPosition2");
                 v2 = newFish.transform.position;
@@ -279,22 +300,38 @@ public class FishingScript2: MonoBehaviour
             else if (scriptTarget.activeSelf == true)
             {
                 v2 = scriptTarget.transform.position;
+            }*/
+
+            if (newBobber == null)
+            {
+                Debug.Log("SetPosition2");
+                v2 = newFish.transform.position;
             }
+            else if (newBobber != null)
+            {
+                Debug.Log("Bobber position");
+                v2 = newBobber.transform.position;
+            }
+
             fishLine.SetPosition(1, v2);
 
 
-            if (!fishOn && scriptTarget.activeSelf == true)
+            if (!fishOn && newBobber != null)
             {
                 // Demo using Mathf.PingPong to achieve a little bounce to "bobber"
                 //float scrTgtY = Mathf.PingPong(Time.time, .1f) - .05f;
                 //scriptTarget.transform.position = new Vector3(scriptTarget.transform.position.x, scriptTarget.transform.position.y + scrTgtY, scriptTarget.transform.position.z);
-                scriptTarget.GetComponent<Animator>().SetBool("BobbingOn", true);
+
+                //scriptTarget.GetComponent<Animator>().SetBool("BobbingOn", true);
+                newBobber.transform.Find("FishingBobber").GetComponent<Animator>().SetBool("BobbingOn", true);
             }
 
             // When thisRun equals Random biteAt, "Fish On!" (unless it's a dead cycle)
             if (!noNibble && thisRun == biteAt)
             {
-                scriptTarget.GetComponent<Animator>().SetBool("BobbingOn", false);
+                //scriptTarget.GetComponent<Animator>().SetBool("BobbingOn", false);
+                newBobber.transform.Find("FishingBobber").GetComponent<Animator>().SetBool("BobbingOn", false);
+
                 FishOn();
             }
 
@@ -428,12 +465,13 @@ public class FishingScript2: MonoBehaviour
  
     private void FishOn()
     {
- 
+
         // This bit uses a Primitive Sphere. If you have a fish model you could
         // use that instead, swapping out this code for that
- 
+
         // Get rid of "bobber"
-        scriptTarget.SetActive(false);
+        //scriptTarget.SetActive(false);
+        Destroy(newBobber);
 
         // Create "fish"
         //scriptTarget = GameObject.CreatePrimitive(PrimitiveType.Sphere) as GameObject;
