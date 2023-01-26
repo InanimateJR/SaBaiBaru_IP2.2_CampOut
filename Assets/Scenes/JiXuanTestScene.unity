@@ -1538,6 +1538,7 @@ MonoBehaviour:
   fishJumpingSpeed: 1
   scriptTarget: {fileID: 959478594}
   fish: {fileID: 553312655}
+  newFish: {fileID: 0}
 --- !u!1 &1638249872 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6113360041211535762, guid: f004d4317c0084e47a6296409faa3d27,

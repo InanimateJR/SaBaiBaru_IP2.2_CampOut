@@ -255,7 +255,7 @@ public class FishingScript2: MonoBehaviour
             Debug.Log("SetPosition1");
             fishLine.SetPosition(1, v3);
         }
-        fishLine.material = new Material(Shader.Find("Diffuse"));
+        fishLine.material = new Material(Shader.Find("Universal Render Pipeline/Lit"));
 
         // Player movement cancels action
         Vector3 startPos = transform.position;
