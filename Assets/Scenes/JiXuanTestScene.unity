@@ -1441,6 +1441,8 @@ MonoBehaviour:
   newBobber: {fileID: 0}
   fish: {fileID: 553312655}
   newFish: {fileID: 0}
+  fishDistance: 1
+  fishRetrieveSpeed: 0.005
 --- !u!1 &1638249872 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6113360041211535762, guid: f004d4317c0084e47a6296409faa3d27,

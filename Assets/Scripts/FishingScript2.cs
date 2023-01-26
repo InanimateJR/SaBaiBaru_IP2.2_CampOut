@@ -44,6 +44,9 @@ public class FishingScript2: MonoBehaviour
     private Vector3 startPos;                // Hold player starting position on cast
     private bool fishjump, fishOn, noNibble;     // Simple states
 
+    public float fishDistance = 1f;         // Define distance between fish and fishing rod on catching fish in inspector
+    public float fishRetrieveSpeed = 2f;  // Define speed of fish retrieval
+
 
     private void Awake()
     {
@@ -288,19 +291,11 @@ public class FishingScript2: MonoBehaviour
 
             // Adjust LineRenderer component for animation sway, player rotate, fish jump, etc
             v1 = lineStart.position;
-            fishLine.SetPosition(0, v1);
 
-            //v2 = scriptTarget.transform.position;
-
-            /*if (scriptTarget.activeSelf == false)
+            if (fishLine != null)
             {
-                Debug.Log("SetPosition2");
-                v2 = newFish.transform.position;
+                fishLine.SetPosition(0, v1);
             }
-            else if (scriptTarget.activeSelf == true)
-            {
-                v2 = scriptTarget.transform.position;
-            }*/
 
             if (newBobber == null)
             {
@@ -313,8 +308,10 @@ public class FishingScript2: MonoBehaviour
                 v2 = newBobber.transform.position;
             }
 
-            fishLine.SetPosition(1, v2);
-
+            if (fishLine != null)
+            {
+                fishLine.SetPosition(1, v2);
+            }
 
             if (!fishOn && newBobber != null)
             {
@@ -341,6 +338,7 @@ public class FishingScript2: MonoBehaviour
             if (fishjump)
             {
                 newFish.transform.Translate(Vector3.up * Time.deltaTime * fishJumpingSpeed);
+                newFish.transform.LookAt(lineStart);
 
                 // Demo mini-game
                 if (!runningMiniGame)
@@ -451,6 +449,7 @@ public class FishingScript2: MonoBehaviour
                     {
                         DestroyImmediate(setHook);
                         DestroyImmediate(fishingUIText);
+                        DestroyImmediate(pole.gameObject.GetComponent<LineRenderer>());
                         miniGameDone = ActionSuccess();
                     }
                 }
@@ -509,7 +508,20 @@ public class FishingScript2: MonoBehaviour
         successUIText.GetComponent<Text>().text = "You caught a nice fish";
  
         Destroy(successUIText, 2.5f);
- 
+
+        // Check if distance between fish and fishing rod is less than fishDistance float
+        if (newFish != null)
+        {
+            while (Vector3.Distance(newFish.transform.position, lineStart.transform.position) >= fishDistance)
+            {
+                // Try Update
+                newFish.transform.position = Vector3.MoveTowards(newFish.transform.position, lineStart.position, fishRetrieveSpeed * Time.deltaTime);
+                newFish.transform.LookAt(lineStart.transform);
+            }
+        }
+        newFish.AddComponent<Rigidbody>();
+        newFish.GetComponent<Rigidbody>().collisionDetectionMode = CollisionDetectionMode.Continuous;
+
         return true;
     }
  
