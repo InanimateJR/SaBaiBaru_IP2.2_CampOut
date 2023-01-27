@@ -244,6 +244,7 @@ GameObject:
   - component: {fileID: 448902928}
   - component: {fileID: 448902927}
   - component: {fileID: 448902926}
+  - component: {fileID: 448902930}
   m_Layer: 0
   m_Name: Plane (2)
   m_TagString: Water
@@ -329,6 +330,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &448902930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 448902925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d93095f82d16d4245a9002458a206746, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fishingScript: {fileID: 1549136296}
 --- !u!1001 &553312654
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1442,7 +1456,8 @@ MonoBehaviour:
   fish: {fileID: 553312655}
   newFish: {fileID: 0}
   fishDistance: 1
-  fishRetrieveSpeed: 0.005
+  fishRetrieveSpeed: 10
+  destroyFish: 0
 --- !u!1 &1638249872 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6113360041211535762, guid: f004d4317c0084e47a6296409faa3d27,
