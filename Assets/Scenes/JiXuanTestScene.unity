@@ -1458,6 +1458,8 @@ MonoBehaviour:
   fishDistance: 1
   fishRetrieveSpeed: 10
   destroyFish: 0
+  interruptDistance: 2
+  raycastOrigin: {fileID: 1549136291}
 --- !u!1 &1638249872 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6113360041211535762, guid: f004d4317c0084e47a6296409faa3d27,

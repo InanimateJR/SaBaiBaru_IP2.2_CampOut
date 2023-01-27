@@ -48,7 +48,8 @@ public class FishingScript2: MonoBehaviour
     public float fishRetrieveSpeed = 10f;  // Define speed of fish retrieval
     public bool destroyFish;
     private bool fishCaughtSuccess;
-
+    public float interruptDistance = 4f;    // Define the distance in which the player can move from the start fishing position before the fishing is interrupted
+    public Transform raycastOrigin;
 
     private void Awake()
     {
@@ -121,11 +122,11 @@ public class FishingScript2: MonoBehaviour
         ActionInit();
 
         // Raycast mouse position looking for Water
-        Ray _ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        //Ray _ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
         // Assumes target Water has MeshCollider isTrigger=Yes and 
         // player can interact with layer Water is on (Water, by default)
-        if (Physics.Raycast(_ray, out hit, Mathf.Infinity))
+        if (Physics.Raycast(raycastOrigin.position, raycastOrigin.TransformDirection(Vector3.forward), out hit, Mathf.Infinity))
         {
             ActionChecks();
         }
@@ -276,17 +277,6 @@ public class FishingScript2: MonoBehaviour
         fishLine.positionCount = (2);
         fishLine.SetPosition(0, v1);
 
-        /*if (scriptTarget.activeSelf == true)
-        {
-            fishLine.SetPosition(1, v2);
-        }
-        else if (scriptTarget.activeSelf == false)
-        {
-            Vector3 v3 = newFish.transform.position;
-            Debug.Log("SetPosition1");
-            fishLine.SetPosition(1, v3);
-        }*/
-
         if (newBobber != null)
         {
             fishLine.SetPosition(1, v2);
@@ -384,12 +374,24 @@ public class FishingScript2: MonoBehaviour
                 wasInterrupted = true;
             }
 
-            // Movement cancels action
-            if (startPos != transform.position)
+            if (Vector3.Distance(startPos, transform.position) > interruptDistance)
             {
                 Debug.Log("You stop fishing.");
                 wasInterrupted = true;
+                if (newFish != null)
+                {
+                    newFish.AddComponent<Rigidbody>();
+                    newFish.GetComponent<Rigidbody>().collisionDetectionMode = CollisionDetectionMode.Continuous;
+                    destroyFish = true;
+                }
             }
+
+            // Movement cancels action
+            /*if (startPos != transform.position)
+            {
+                Debug.Log("You stop fishing.");
+                wasInterrupted = true;
+            }*/
 
             // Decrement counter
             if (!fishjump)
@@ -462,11 +464,9 @@ public class FishingScript2: MonoBehaviour
             // Press G to set hook
             if (Input.GetKeyUp(KeyCode.E))
             {
- 
-                Ray _ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                 RaycastHit hitInfo = new RaycastHit();
  
-                if (Physics.Raycast(_ray, out hitInfo, Mathf.Infinity))
+                if (Physics.Raycast(raycastOrigin.position, raycastOrigin.TransformDirection(Vector3.forward), out hitInfo, Mathf.Infinity))
                 {
                     if (hitInfo.transform.name == setHook.name)
                     {
