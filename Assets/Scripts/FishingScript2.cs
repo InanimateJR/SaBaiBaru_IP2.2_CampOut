@@ -47,6 +47,7 @@ public class FishingScript2: MonoBehaviour
     public float fishDistance = 1f;         // Define distance between fish and fishing rod on catching fish in inspector
     public float fishRetrieveSpeed = 10f;  // Define speed of fish retrieval
     public bool destroyFish;
+    private bool fishCaughtSuccess;
 
 
     private void Awake()
@@ -85,6 +86,22 @@ public class FishingScript2: MonoBehaviour
         if (Input.GetKeyUp(KeyCode.F))
         {
             ActionListener();
+        }
+
+        if (newFish != null && fishCaughtSuccess)
+        {
+            if (Vector3.Distance(newFish.transform.position, lineStart.transform.position) >= fishDistance)
+            {
+                newFish.transform.position = Vector3.MoveTowards(newFish.transform.position, lineStart.position, fishRetrieveSpeed * Time.deltaTime);
+                newFish.transform.LookAt(lineStart.transform);
+            }
+            
+            else
+            {
+                fishCaughtSuccess = false;
+                newFish.AddComponent<Rigidbody>();
+                newFish.GetComponent<Rigidbody>().collisionDetectionMode = CollisionDetectionMode.Continuous;
+            }
         }
     }
 
@@ -515,8 +532,10 @@ public class FishingScript2: MonoBehaviour
  
         Destroy(successUIText, 2.5f);
 
+        fishCaughtSuccess = true;
+
         // Check if distance between fish and fishing rod is less than fishDistance float
-        if (newFish != null)
+        /*if (newFish != null)
         {
             while (Vector3.Distance(newFish.transform.position, lineStart.transform.position) >= fishDistance)
             {
@@ -524,9 +543,9 @@ public class FishingScript2: MonoBehaviour
                 newFish.transform.position = Vector3.MoveTowards(newFish.transform.position, lineStart.position, fishRetrieveSpeed * Time.deltaTime);
                 newFish.transform.LookAt(lineStart.transform);
             }
-        }
-        newFish.AddComponent<Rigidbody>();
-        newFish.GetComponent<Rigidbody>().collisionDetectionMode = CollisionDetectionMode.Continuous;
+        }*/
+        //newFish.AddComponent<Rigidbody>();
+        //newFish.GetComponent<Rigidbody>().collisionDetectionMode = CollisionDetectionMode.Continuous;
 
         return true;
     }
