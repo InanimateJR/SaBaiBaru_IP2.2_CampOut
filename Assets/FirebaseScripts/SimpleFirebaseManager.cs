@@ -39,7 +39,7 @@ public class SimpleFirebaseManager : MonoBehaviour
             userID = currentUser.UserId;
             username = currentUser.DisplayName;
             Debug.Log(username + " + " + userID);
-            totalScore = tentPoints + foodCooked + fishCollected + mushroomsCollected + sticksCollected;
+            totalScore = tentPoints + foodCooked + fishCollected + mushroomsCollected + sticksCollected + 1;
             var epochStart = new System.DateTime(1970, 1, 1, 8, 0, 0, System.DateTimeKind.Utc);
             var timestamp = (System.DateTime.UtcNow - epochStart).TotalSeconds;
             leaderboardLastUpdated = (int)timestamp;
@@ -64,13 +64,13 @@ public class SimpleFirebaseManager : MonoBehaviour
         mDatabaseRef.Child("playerStats").Child(userId).SetRawJsonValueAsync(json);
     }
 
-    public void GetLeaderboard(int limit = 5)
+    public async Task<List<SimpleLeaderBoard>> GetLeaderboard(int limit = 5)
     {
         Query q = dbPlayerStatsReference.OrderByChild("totalScore").LimitToLast(limit);
 
         List<SimpleLeaderBoard> leaderBoardList = new List<SimpleLeaderBoard>();
 
-        dbPlayerStatsReference.GetValueAsync().ContinueWithOnMainThread(task =>
+        await dbPlayerStatsReference.GetValueAsync().ContinueWithOnMainThread(task =>
         {
             if (task.IsCanceled || task.IsFaulted)
             {
@@ -87,10 +87,21 @@ public class SimpleFirebaseManager : MonoBehaviour
                     foreach (DataSnapshot d in ds.Children)
                     {
                         SimpleLeaderBoard lb = JsonUtility.FromJson<SimpleLeaderBoard>(d.GetRawJsonValue());
+
+                        leaderBoardList.Add(lb);
+                        //Debug.LogFormat("Leaderboard: Rank {0} Playername {1} High Score {2}", rankCounter, lb.username, lb.totalScore);
+                    }
+                    //leaderBoardList.Reverse();
+
+                    foreach (SimpleLeaderBoard lb in leaderBoardList)
+                    {
                         Debug.LogFormat("Leaderboard: Rank {0} Playername {1} High Score {2}", rankCounter, lb.username, lb.totalScore);
+                        rankCounter++;
                     }
                 }
             }
         });
+
+        return leaderBoardList;
     }
 }
