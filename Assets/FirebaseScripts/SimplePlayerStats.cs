@@ -1,4 +1,4 @@
-public class Scores
+public class SimplePlayerStats
 {
     public string username;
     public int totalScore;
@@ -7,11 +7,11 @@ public class Scores
     public int foodCooked;
     public int fishCollected;
     public int mushroomsCollected;
-    public Scores()
+    public SimplePlayerStats()
     {
     }
 
-    public Scores(string username, int totalScore, int leaderboardLastUpdated, int foodCooked, int fishCollected, int mushroomsCollected, int sticksCollected)
+    public SimplePlayerStats(string username, int totalScore, int leaderboardLastUpdated, int foodCooked, int fishCollected, int mushroomsCollected, int sticksCollected)
     {
         this.username = username;
         this.totalScore = totalScore;
