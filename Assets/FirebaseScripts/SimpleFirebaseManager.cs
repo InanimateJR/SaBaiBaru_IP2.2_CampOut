@@ -64,6 +64,8 @@ public class SimpleFirebaseManager : MonoBehaviour
         mDatabaseRef.Child("playerStats").Child(userId).SetRawJsonValueAsync(json);
     }
 
+
+
     public async Task<List<SimpleLeaderBoard>> GetLeaderboard(int limit = 5)
     {
         Query q = dbPlayerStatsReference.OrderByChild("totalScore").LimitToLast(limit);
