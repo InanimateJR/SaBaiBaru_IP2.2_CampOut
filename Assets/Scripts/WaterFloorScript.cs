@@ -18,7 +18,7 @@ public class WaterFloorScript : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         Debug.Log("Destroy bool: " + fishingScript.destroyFish);
-        if (confirmDestroy && collision.gameObject.tag == "Fish")
+        if (collision.gameObject.tag == "Fish")
         {
             Destroy(collision.gameObject);
             confirmDestroy = false;

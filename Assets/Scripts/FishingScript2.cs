@@ -1,6 +1,8 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.XR.Interaction.Toolkit;
 
 // Demo a bit of Fishing. Includes lw demo of
 // creating guiText, LineRenderer, Coroutine, PingPong, Mini-game
@@ -51,6 +53,10 @@ public class FishingScript2: MonoBehaviour
     public float interruptDistance = 4f;    // Define the distance in which the player can move from the start fishing position before the fishing is interrupted
     public Transform raycastOrigin;
 
+    public ActionBasedController controller;
+    public bool activateButtonPressed;
+    public bool rodInHand;
+
     private void Awake()
     {
         wasInterrupted = false;
@@ -71,8 +77,36 @@ public class FishingScript2: MonoBehaviour
             fishJumpingSpeed = 3f;
         }
     }
- 
- 
+
+    private void Start()
+    {
+        controller.activateAction.action.performed += Action_performed;
+    }
+
+    private void Action_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
+    {
+        activateButtonPressed = true;
+        Debug.Log("fishjump" + fishjump);
+        Debug.Log("rodInHand" + rodInHand);
+    }
+
+    public void CheckIfInHand()
+    {
+        if (rodInHand)
+        {
+            rodInHand = false;
+            if (setHook != null)
+            {
+                DestroyImmediate(setHook);
+            }
+        }
+
+        else if (!rodInHand)
+        {
+            rodInHand = true;
+        }
+    }
+
     void Update()
     {
 
@@ -89,6 +123,17 @@ public class FishingScript2: MonoBehaviour
             ActionListener();
         }
 
+        if (!rodInHand)
+        {
+            ActionInit();
+        }
+
+        if (activateButtonPressed && !fishjump && rodInHand)
+        {
+            ActionListener();
+            activateButtonPressed = false;
+        }
+
         if (newFish != null && fishCaughtSuccess)
         {
             if (Vector3.Distance(newFish.transform.position, lineStart.transform.position) >= fishDistance)
@@ -102,6 +147,10 @@ public class FishingScript2: MonoBehaviour
                 fishCaughtSuccess = false;
                 newFish.AddComponent<Rigidbody>();
                 newFish.GetComponent<Rigidbody>().collisionDetectionMode = CollisionDetectionMode.Continuous;
+                DestroyImmediate(pole.gameObject.GetComponent<LineRenderer>());
+
+                // Make newFish null to ensure that it does not get deleted if player drops fishing rod
+                newFish = null;
             }
         }
     }
@@ -144,7 +193,18 @@ public class FishingScript2: MonoBehaviour
         wasInterrupted = false;
         fishOn = false;
         fishjump = false;
-        destroyFish = false;
+
+        if (newFish == null)
+        {
+            destroyFish = false;
+        }
+
+        if (newFish != null)
+        {
+            destroyFish = true;
+            newFish.AddComponent<Rigidbody>();
+            newFish.GetComponent<Rigidbody>().collisionDetectionMode = CollisionDetectionMode.Continuous;
+        }
 
         StopAllCoroutines();
 
@@ -162,12 +222,6 @@ public class FishingScript2: MonoBehaviour
         {
             DestroyImmediate(pole.gameObject.GetComponent<LineRenderer>());
         }
-
-        /*if (setHook.gameObject != null)
-        {
-            setHook.SetActive(false);
-        }*/
-
     }
 
     private void ActionChecks()
@@ -206,10 +260,6 @@ public class FishingScript2: MonoBehaviour
         //scriptTarget.transform.position = hit.point;
         newBobber = Instantiate(scriptTarget);
         newBobber.transform.position = hit.point;
-        //scriptTarget.SetActive(true);
-        //scriptTarget.GetComponent<Renderer>().material.color = Color.red;
-        //scriptTarget.transform.localScale = new Vector3(.25f, .5f, .25f);
-
 
         // Demo creating guiText
         GameObject fishingUIText = new GameObject();
@@ -305,7 +355,7 @@ public class FishingScript2: MonoBehaviour
                 fishLine.SetPosition(0, v1);
             }
 
-            if (newBobber == null)
+            if (newBobber == null && newFish != null)
             {
                 Debug.Log("SetPosition2");
                 v2 = newFish.transform.position;
@@ -323,10 +373,6 @@ public class FishingScript2: MonoBehaviour
 
             if (!fishOn && newBobber != null)
             {
-                // Demo using Mathf.PingPong to achieve a little bounce to "bobber"
-                //float scrTgtY = Mathf.PingPong(Time.time, .1f) - .05f;
-                //scriptTarget.transform.position = new Vector3(scriptTarget.transform.position.x, scriptTarget.transform.position.y + scrTgtY, scriptTarget.transform.position.z);
-
                 //scriptTarget.GetComponent<Animator>().SetBool("BobbingOn", true);
                 newBobber.transform.Find("FishingBobber").GetComponent<Animator>().SetBool("BobbingOn", true);
             }
@@ -343,7 +389,7 @@ public class FishingScript2: MonoBehaviour
             // Breach/jump fish; adjust "7" to your speed taste. Player has the interval between 
             // fish breach to apex of jump to react, otherwise fail
 
-            if (fishjump)
+            if (fishjump && newFish != null)
             {
                 newFish.transform.Translate(Vector3.up * Time.deltaTime * fishJumpingSpeed);
                 newFish.transform.LookAt(lineStart);
@@ -363,17 +409,20 @@ public class FishingScript2: MonoBehaviour
                     StopCoroutine("MiniGame()");
                     Debug.Log("Fish reach apex");
                     newFish.AddComponent<Rigidbody>();
-                    //fish.GetComponent<Renderer>().material.color = Color.red;
                 }
             }
 
             // If the fish falls back to water, cycle is over/fail; dual-purposing wasInterrupted
             // to end Coroutine
-            if (fishOn && newFish.transform.position.y < hit.point.y)
+            if (newFish != null)
             {
-                wasInterrupted = true;
+                if (fishOn && newFish.transform.position.y < hit.point.y)
+                {
+                    wasInterrupted = true;
+                }
             }
 
+            // Movement cancels action
             if (Vector3.Distance(startPos, transform.position) > interruptDistance)
             {
                 Debug.Log("You stop fishing.");
@@ -385,13 +434,6 @@ public class FishingScript2: MonoBehaviour
                     destroyFish = true;
                 }
             }
-
-            // Movement cancels action
-            /*if (startPos != transform.position)
-            {
-                Debug.Log("You stop fishing.");
-                wasInterrupted = true;
-            }*/
 
             // Decrement counter
             if (!fishjump)
@@ -461,8 +503,10 @@ public class FishingScript2: MonoBehaviour
         while (fishjump && !miniGameDone)
         {
  
+            // CODE FOR PC CONTROLS
+
             // Press G to set hook
-            if (Input.GetKeyUp(KeyCode.E))
+            /*if (Input.GetKeyUp(KeyCode.E))
             {
                 RaycastHit hitInfo = new RaycastHit();
  
@@ -476,8 +520,26 @@ public class FishingScript2: MonoBehaviour
                         miniGameDone = ActionSuccess();
                     }
                 }
+            }*/
+
+
+            if (activateButtonPressed && rodInHand)
+            {
+                activateButtonPressed = false;
+                RaycastHit hitInfo = new RaycastHit();
+
+                if (Physics.Raycast(raycastOrigin.position, raycastOrigin.TransformDirection(Vector3.forward), out hitInfo, Mathf.Infinity))
+                {
+                    if (hitInfo.transform.name == setHook.name)
+                    {
+                        DestroyImmediate(setHook);
+                        DestroyImmediate(fishingUIText);
+                        //DestroyImmediate(pole.gameObject.GetComponent<LineRenderer>());
+                        miniGameDone = ActionSuccess();
+                    }
+                }
             }
- 
+
             yield return null;
         }
  
@@ -499,11 +561,6 @@ public class FishingScript2: MonoBehaviour
         //scriptTarget = GameObject.CreatePrimitive(PrimitiveType.Sphere) as GameObject;
         newFish = Instantiate(fish);
         newFish.transform.position = hit.point;
- 
-        // Set fish properties
-        //scriptTarget.transform.position = hit.point;
-        //scriptTarget.GetComponent<Renderer>().material.color = Color.yellow;
-        //scriptTarget.transform.localScale = new Vector3(.7f, 1.2f, .2f);
  
         fishOn = true;
         fishjump = true;
@@ -533,19 +590,7 @@ public class FishingScript2: MonoBehaviour
         Destroy(successUIText, 2.5f);
 
         fishCaughtSuccess = true;
-
-        // Check if distance between fish and fishing rod is less than fishDistance float
-        /*if (newFish != null)
-        {
-            while (Vector3.Distance(newFish.transform.position, lineStart.transform.position) >= fishDistance)
-            {
-                // Try Update
-                newFish.transform.position = Vector3.MoveTowards(newFish.transform.position, lineStart.position, fishRetrieveSpeed * Time.deltaTime);
-                newFish.transform.LookAt(lineStart.transform);
-            }
-        }*/
-        //newFish.AddComponent<Rigidbody>();
-        //newFish.GetComponent<Rigidbody>().collisionDetectionMode = CollisionDetectionMode.Continuous;
+        fishjump = false;
 
         return true;
     }
