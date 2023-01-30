@@ -53,9 +53,22 @@ public class FishingScript: MonoBehaviour
     public float interruptDistance = 4f;    // Define the distance in which the player can move from the start fishing position before the fishing is interrupted
     public Transform raycastOrigin;
 
+    // Reference Right Hand Controller
     public ActionBasedController controller;
+    // Check if Trigger/Activate button is pressed
     public bool activateButtonPressed;
+    // Check if rod is in right hand controller
     public bool rodInHand;
+    // Fishing Success Panel
+    public GameObject fishingSuccessPanel;
+    // Fishing Fail Panel
+    public GameObject fishingFailPanel;
+    // Fish On Panel
+    public GameObject fishOnPanel;
+    // Line Casted Panel
+    public GameObject lineCastedPanel;
+    // Wait Time for Message UI to disappear
+    public float waitTime = 4f;
 
     private void Awake()
     {
@@ -132,8 +145,10 @@ public class FishingScript: MonoBehaviour
         {
             ActionListener();
             activateButtonPressed = false;
+            StartCoroutine("DisplayLineCast");
         }
 
+        // Check if conditions for successful fishing are met
         if (newFish != null && fishCaughtSuccess)
         {
             if (Vector3.Distance(newFish.transform.position, lineStart.transform.position) >= fishDistance)
@@ -145,9 +160,11 @@ public class FishingScript: MonoBehaviour
             else
             {
                 fishCaughtSuccess = false;
+                newFish.AddComponent<XRGrabInteractable>();
                 newFish.AddComponent<Rigidbody>();
                 newFish.GetComponent<Rigidbody>().collisionDetectionMode = CollisionDetectionMode.Continuous;
                 DestroyImmediate(pole.gameObject.GetComponent<LineRenderer>());
+                StartCoroutine("DisplaySuccess");
 
                 // Make newFish null to ensure that it does not get deleted if player drops fishing rod
                 newFish = null;
@@ -202,16 +219,13 @@ public class FishingScript: MonoBehaviour
         if (newFish != null)
         {
             destroyFish = true;
+            newFish.AddComponent<XRGrabInteractable>();
             newFish.AddComponent<Rigidbody>();
             newFish.GetComponent<Rigidbody>().collisionDetectionMode = CollisionDetectionMode.Continuous;
+            StartCoroutine("DisplayFailure");
         }
 
         StopAllCoroutines();
-
-        /*if (scriptTarget.gameObject != null)
-        {
-            scriptTarget.SetActive(false);
-        }*/
 
         if (newBobber != null)
         {
@@ -409,6 +423,7 @@ public class FishingScript: MonoBehaviour
                     StopCoroutine("MiniGame()");
                     Debug.Log("Fish reach apex");
                     newFish.AddComponent<Rigidbody>();
+                    newFish.GetComponent<Rigidbody>().collisionDetectionMode = CollisionDetectionMode.Continuous;
                 }
             }
 
@@ -429,6 +444,7 @@ public class FishingScript: MonoBehaviour
                 wasInterrupted = true;
                 if (newFish != null)
                 {
+                    newFish.AddComponent<XRGrabInteractable>();
                     newFish.AddComponent<Rigidbody>();
                     newFish.GetComponent<Rigidbody>().collisionDetectionMode = CollisionDetectionMode.Continuous;
                     destroyFish = true;
@@ -564,6 +580,9 @@ public class FishingScript: MonoBehaviour
  
         fishOn = true;
         fishjump = true;
+
+        // Start Coroutine to display FishOn panel
+        StartCoroutine("DisplayFishOn");
     }
  
  
@@ -577,22 +596,46 @@ public class FishingScript: MonoBehaviour
         // To close, we'll clean-up and put success message up
 
         Debug.Log("Fish Caught");
-        GameObject successUIText = new GameObject();
- 
-        successUIText.AddComponent(typeof(Text));
- 
-        successUIText.transform.position = new Vector3(.35f, .85f);
- 
-        successUIText.GetComponent<Text>().fontSize = 18;
-        successUIText.GetComponent<Text>().color = Color.white;
-        successUIText.GetComponent<Text>().text = "You caught a nice fish";
- 
-        Destroy(successUIText, 2.5f);
 
         fishCaughtSuccess = true;
         fishjump = false;
 
         return true;
     }
- 
+
+    // Display and turn off success panel
+    IEnumerator DisplaySuccess()
+    {
+        fishingSuccessPanel.SetActive(true);
+        yield return new WaitForSeconds(waitTime);
+        fishingSuccessPanel.SetActive(false);
+        yield return null;
+    }
+
+    // Display and turn off Failure panel
+    IEnumerator DisplayFailure()
+    {
+        fishingFailPanel.SetActive(true);
+        yield return new WaitForSeconds(waitTime);
+        fishingFailPanel.SetActive(false);
+        yield return null;
+    }
+
+    // Display and turn off LineCast panel
+    IEnumerator DisplayLineCast()
+    {
+        lineCastedPanel.SetActive(true);
+        yield return new WaitForSeconds(waitTime);
+        lineCastedPanel.SetActive(false);
+        yield return null;
+    }
+
+    // Display and turn off FishOn panel
+    IEnumerator DisplayFishOn()
+    {
+        fishOnPanel.SetActive(true);
+        yield return new WaitForSeconds(waitTime);
+        fishOnPanel.SetActive(false);
+        yield return null;
+    }
  }
