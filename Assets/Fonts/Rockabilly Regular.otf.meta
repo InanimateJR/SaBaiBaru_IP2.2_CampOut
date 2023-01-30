@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: a1b2e9686b0e17e46a4d74a8ee14ba65
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - ROCKABILLY
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 4cba6adfe5944cb4ba504dff6da02bf7, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

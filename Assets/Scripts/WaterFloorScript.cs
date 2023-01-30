@@ -4,16 +4,7 @@ using UnityEngine;
 
 public class WaterFloorScript : MonoBehaviour
 {
-    public FishingScript2 fishingScript;
-    private bool confirmDestroy;
-
-    private void Update()
-    {
-        if (fishingScript.destroyFish)
-        {
-            confirmDestroy = true;
-        }
-    }
+    public FishingScript fishingScript;
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -21,7 +12,6 @@ public class WaterFloorScript : MonoBehaviour
         if (collision.gameObject.tag == "Fish")
         {
             Destroy(collision.gameObject);
-            confirmDestroy = false;
         }
     }
 }
