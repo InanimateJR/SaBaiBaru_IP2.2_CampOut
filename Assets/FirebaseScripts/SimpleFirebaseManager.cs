@@ -50,13 +50,13 @@ public class SimpleFirebaseManager : MonoBehaviour
 
     public void InitializeFirebase()
     {
-        dbLeaderboardsReference = FirebaseDatabase.DefaultInstance.GetReference("leaderboards");
+        dbLeaderboardsReference = FirebaseDatabase.DefaultInstance.GetReference("leaderBoard");
         dbPlayerStatsReference = FirebaseDatabase.DefaultInstance.GetReference("playerStats");
         mDatabaseRef = FirebaseDatabase.DefaultInstance.RootReference;
         auth = FirebaseAuth.DefaultInstance;
     }
 
-    private void WriteNewScore(string userId, string username, int totalScore, int leaderboardLastUpdated, int foodCooked, int fishCollected, int mushroomsCollected, int sticksCollected)
+    public void WriteNewScore(string userId, string username, int totalScore, int leaderboardLastUpdated, int foodCooked, int fishCollected, int mushroomsCollected, int sticksCollected)
     {
         SimplePlayerStats sp = new SimplePlayerStats(username, totalScore, leaderboardLastUpdated, foodCooked, fishCollected, mushroomsCollected, sticksCollected);
         string json = JsonUtility.ToJson(sp);
@@ -64,17 +64,136 @@ public class SimpleFirebaseManager : MonoBehaviour
         mDatabaseRef.Child("playerStats").Child(userId).SetRawJsonValueAsync(json);
     }
 
+    public void WriteNewLeaderBoard(string userId, string username, int totalScore, int leaderboardLastUpdated)
+    {
+        SimpleLeaderBoard leaderboard = new SimpleLeaderBoard(username, totalScore, leaderboardLastUpdated);
+        string json = JsonUtility.ToJson(leaderboard);
 
+        mDatabaseRef.Child("leaderBoard").Child(userId).SetRawJsonValueAsync(json);
+    }
 
+    public void UpdateMushrooms(int mushroomScore)
+    {
+        Query playerQuery = dbPlayerStatsReference.Child(userID);
+        Debug.Log("MushroomUpdate");
+        playerQuery.GetValueAsync().ContinueWithOnMainThread(task =>
+        {
+            if (task.IsCanceled || task.IsFaulted)
+            {
+                Debug.LogError("Sorry, there was an error creating your entries, ERROR: " + task.Exception);
+            }
+            else if (task.IsCompleted)
+            {
+                DataSnapshot playerStats = task.Result;
+                if (playerStats.Exists)
+                {
+                    SimplePlayerStats sp = JsonUtility.FromJson<SimplePlayerStats>(playerStats.GetRawJsonValue());
+                    sp.mushroomsCollected += mushroomScore;
+                    var epochStart = new System.DateTime(1970, 1, 1, 8, 0, 0, System.DateTimeKind.Utc);
+                    var timestamp = (System.DateTime.UtcNow - epochStart).TotalSeconds;
+                    sp.leaderboardLastUpdated = (int)timestamp;
+                    sp.totalScore = sp.foodCooked + sp.fishCollected + sp.mushroomsCollected + sp.sticksCollected;
+                    dbPlayerStatsReference.Child(userID).SetRawJsonValueAsync(sp.SimplePlayerStatsToJson());
+                    WriteNewLeaderBoard(userID, username, sp.totalScore, sp.leaderboardLastUpdated);
+
+                }
+            }
+        });
+
+    }
+    public void UpdateFish(int fishScore)
+    {
+        Query playerQuery = dbPlayerStatsReference.Child(userID);
+        Debug.Log("FishUpdate");
+        playerQuery.GetValueAsync().ContinueWithOnMainThread(task =>
+        {
+            if (task.IsCanceled || task.IsFaulted)
+            {
+                Debug.LogError("Sorry, there was an error creating your entries, ERROR: " + task.Exception);
+            }
+            else if (task.IsCompleted)
+            {
+                DataSnapshot playerStats = task.Result;
+                if (playerStats.Exists)
+                {
+                    SimplePlayerStats sp = JsonUtility.FromJson<SimplePlayerStats>(playerStats.GetRawJsonValue());
+                    sp.fishCollected += fishScore;
+                    var epochStart = new System.DateTime(1970, 1, 1, 8, 0, 0, System.DateTimeKind.Utc);
+                    var timestamp = (System.DateTime.UtcNow - epochStart).TotalSeconds;
+                    sp.leaderboardLastUpdated = (int)timestamp;
+                    sp.totalScore = sp.foodCooked + sp.fishCollected + sp.mushroomsCollected + sp.sticksCollected;
+                    dbPlayerStatsReference.Child(userID).SetRawJsonValueAsync(sp.SimplePlayerStatsToJson());
+                    WriteNewLeaderBoard(userID, username, sp.totalScore, sp.leaderboardLastUpdated);
+                }
+            }
+        });
+
+    }
+    public void UpdateFood(int foodScore)
+    {
+        Query playerQuery = dbPlayerStatsReference.Child(userID);
+        Debug.Log("FoodUpdate");
+        playerQuery.GetValueAsync().ContinueWithOnMainThread(task =>
+        {
+            if (task.IsCanceled || task.IsFaulted)
+            {
+                Debug.LogError("Sorry, there was an error creating your entries, ERROR: " + task.Exception);
+            }
+            else if (task.IsCompleted)
+            {
+                DataSnapshot playerStats = task.Result;
+                if (playerStats.Exists)
+                {
+                    SimplePlayerStats sp = JsonUtility.FromJson<SimplePlayerStats>(playerStats.GetRawJsonValue());
+                    sp.foodCooked += foodScore;
+                    var epochStart = new System.DateTime(1970, 1, 1, 8, 0, 0, System.DateTimeKind.Utc);
+                    var timestamp = (System.DateTime.UtcNow - epochStart).TotalSeconds;
+                    sp.leaderboardLastUpdated = (int)timestamp;
+                    sp.totalScore = sp.foodCooked + sp.fishCollected + sp.mushroomsCollected + sp.sticksCollected;
+                    dbPlayerStatsReference.Child(userID).SetRawJsonValueAsync(sp.SimplePlayerStatsToJson());
+                    WriteNewLeaderBoard(userID, username, sp.totalScore, sp.leaderboardLastUpdated);
+                }
+            }
+        });
+
+    }
+    public void UpdateSticks(int sticksScore)
+    {
+        Query playerQuery = dbPlayerStatsReference.Child(userID);
+        Debug.Log("FoodUpdate");
+        playerQuery.GetValueAsync().ContinueWithOnMainThread(task =>
+        {
+            if (task.IsCanceled || task.IsFaulted)
+            {
+                Debug.LogError("Sorry, there was an error creating your entries, ERROR: " + task.Exception);
+            }
+            else if (task.IsCompleted)
+            {
+                DataSnapshot playerStats = task.Result;
+                if (playerStats.Exists)
+                {
+                    SimplePlayerStats sp = JsonUtility.FromJson<SimplePlayerStats>(playerStats.GetRawJsonValue());
+                    sp.sticksCollected += sticksScore;
+                    var epochStart = new System.DateTime(1970, 1, 1, 8, 0, 0, System.DateTimeKind.Utc);
+                    var timestamp = (System.DateTime.UtcNow - epochStart).TotalSeconds;
+                    sp.leaderboardLastUpdated = (int)timestamp;
+                    sp.totalScore = sp.foodCooked + sp.fishCollected + sp.mushroomsCollected + sp.sticksCollected;
+                    dbPlayerStatsReference.Child(userID).SetRawJsonValueAsync(sp.SimplePlayerStatsToJson());
+                    WriteNewLeaderBoard(userID, username, sp.totalScore, sp.leaderboardLastUpdated);
+                }
+            }
+        });
+
+    }
 
 
     public async Task<List<SimpleLeaderBoard>> GetLeaderboard(int limit = 5)
     {
-        Query q = dbPlayerStatsReference.OrderByChild("totalScore").LimitToLast(limit);
+        Query q = dbLeaderboardsReference.OrderByChild("totalScore").LimitToLast(limit);
 
         List<SimpleLeaderBoard> leaderBoardList = new List<SimpleLeaderBoard>();
 
-        await dbPlayerStatsReference.GetValueAsync().ContinueWithOnMainThread(task =>
+        await dbLeaderboardsReference.GetValueAsync().ContinueWithOnMainThread(task =>
         {
             if (task.IsCanceled || task.IsFaulted)
             {
@@ -95,7 +214,7 @@ public class SimpleFirebaseManager : MonoBehaviour
                         leaderBoardList.Add(lb);
                         //Debug.LogFormat("Leaderboard: Rank {0} Playername {1} High Score {2}", rankCounter, lb.username, lb.totalScore);
                     }
-                    //leaderBoardList.Reverse();
+                    leaderBoardList.Reverse();
 
                     foreach (SimpleLeaderBoard lb in leaderBoardList)
                     {

@@ -1,3 +1,8 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using System;
+
 public class SimplePlayerStats
 {
     public string username;
@@ -20,5 +25,14 @@ public class SimplePlayerStats
         this.fishCollected = fishCollected; 
         this.mushroomsCollected = mushroomsCollected;
         this.sticksCollected = sticksCollected;
+    }
+
+    public long GetTimeUnix()
+    {
+        return new DateTimeOffset(DateTime.UtcNow).ToUnixTimeSeconds();
+    }
+    public string SimplePlayerStatsToJson()
+    {
+        return JsonUtility.ToJson(this);
     }
 }

@@ -9,6 +9,7 @@ using Firebase;
 using Firebase.Database;
 using Firebase.Auth;
 using Firebase.Extensions;
+using System;
 
 public class SimpleLeaderBoard
 {
@@ -25,7 +26,10 @@ public class SimpleLeaderBoard
         this.totalScore = totalScore;
         this.leaderboardLastUpdated = leaderboardLastUpdated;
     }
-
+    public long GetTimeUnix()
+    {
+        return new DateTimeOffset(DateTime.UtcNow).ToUnixTimeSeconds();
+    }
     public string SimpleLeaderboardToJson()
     {
         return JsonUtility.ToJson(this);

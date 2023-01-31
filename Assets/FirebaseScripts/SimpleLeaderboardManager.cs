@@ -15,9 +15,22 @@ public class SimpleLeaderboardManager : MonoBehaviour
     public SimpleFirebaseManager fbManager;
     public GameObject rowPrefab;
     public Transform tableContent;
-    private void Start()
+    void Awake()
     {
+        FirebaseDatabase.DefaultInstance.GetReference("leaderBoard").OrderByChild("totalScore").ValueChanged += HandlePlayerValueChanged;
         GetLeaderboard();
+    }
+    void HandlePlayerValueChanged(object send, ValueChangedEventArgs args)
+    {
+        if (args.DatabaseError != null)
+        {
+            Debug.LogError(args.DatabaseError.Message);
+            return;
+        }
+        else
+        {
+            GetLeaderboard();
+        }
     }
     public void GetLeaderboard()
     {
