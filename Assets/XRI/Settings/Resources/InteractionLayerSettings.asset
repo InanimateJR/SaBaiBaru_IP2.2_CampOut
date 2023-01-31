@@ -15,11 +15,11 @@ MonoBehaviour:
   m_LayerNames:
   - Default
   - Stick
-  - 
-  - 
-  - 
-  - 
-  - 
+  - LeafPiles
+  - Log
+  - CampfireStick1
+  - CampfireStick2
+  - CampfireStick3
   - 
   - 
   - 
