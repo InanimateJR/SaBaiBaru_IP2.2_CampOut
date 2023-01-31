@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1298186700003007231}
   - component: {fileID: 2714490222592120154}
   - component: {fileID: 166414591131066768}
+  - component: {fileID: 5422764848052108413}
   m_Layer: 0
   m_Name: Leaf_2
   m_TagString: Untagged
@@ -83,3 +84,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &5422764848052108413
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1823893254578405445}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 2272001217198551621, guid: 66abedcf79585d146ad2109c9da4e97c, type: 3}
