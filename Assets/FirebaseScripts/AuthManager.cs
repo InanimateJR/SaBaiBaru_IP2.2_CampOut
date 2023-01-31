@@ -65,6 +65,7 @@ public class AuthManager : MonoBehaviour
                 int creationTime = (int)timestamp;
                 int lastLogin = (int)timestamp;
                 WriteNewUser(uid, emailRegister.text, usernameRegister.text, creationTime, lastLogin);
+                WriteNewScore(uid, usernameRegister.text, 0, lastLogin, 0, 0, 0, 0);
             }
         });
         Firebase.Auth.FirebaseUser currentUser = auth.CurrentUser;
@@ -145,7 +146,13 @@ public class AuthManager : MonoBehaviour
 
         mDatabaseRef.Child("User").Child(userId).SetRawJsonValueAsync(json);
     }
+    private void WriteNewScore(string userId, string username, int totalScore, int leaderboardLastUpdated, int foodCooked, int fishCollected, int mushroomsCollected, int sticksCollected)
+    {
+        SimplePlayerStats sp = new SimplePlayerStats(username, totalScore, leaderboardLastUpdated, foodCooked, fishCollected, mushroomsCollected, sticksCollected);
+        string json = JsonUtility.ToJson(sp);
 
+        mDatabaseRef.Child("playerStats").Child(userId).SetRawJsonValueAsync(json);
+    }
     public void ResetPassword()
     {
         Firebase.Auth.FirebaseUser currentUser = auth.CurrentUser;

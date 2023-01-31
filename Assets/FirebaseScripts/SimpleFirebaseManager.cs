@@ -39,11 +39,11 @@ public class SimpleFirebaseManager : MonoBehaviour
             userID = currentUser.UserId;
             username = currentUser.DisplayName;
             Debug.Log(username + " + " + userID);
-            totalScore = tentPoints + foodCooked + fishCollected + mushroomsCollected + sticksCollected + 1;
+            //totalScore = tentPoints + foodCooked + fishCollected + mushroomsCollected + sticksCollected + 1;
             var epochStart = new System.DateTime(1970, 1, 1, 8, 0, 0, System.DateTimeKind.Utc);
             var timestamp = (System.DateTime.UtcNow - epochStart).TotalSeconds;
             leaderboardLastUpdated = (int)timestamp;
-            WriteNewScore(userID, username, totalScore, leaderboardLastUpdated, foodCooked, fishCollected, mushroomsCollected, sticksCollected);
+            //WriteNewScore(userID, username, totalScore, leaderboardLastUpdated, foodCooked, fishCollected, mushroomsCollected, sticksCollected);
         }
     }
 
@@ -63,6 +63,8 @@ public class SimpleFirebaseManager : MonoBehaviour
 
         mDatabaseRef.Child("playerStats").Child(userId).SetRawJsonValueAsync(json);
     }
+
+
 
 
 
