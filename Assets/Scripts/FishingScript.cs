@@ -48,8 +48,8 @@ public class FishingScript: MonoBehaviour
 
     public float fishDistance = 1f;         // Define distance between fish and fishing rod on catching fish in inspector
     public float fishRetrieveSpeed = 10f;  // Define speed of fish retrieval
-    public bool destroyFish;
-    private bool fishCaughtSuccess;
+    public bool destroyFish;                // Determine if newFish should be destroyed
+    private bool fishCaughtSuccess;         // Determine if fish is caught
     public float interruptDistance = 4f;    // Define the distance in which the player can move from the start fishing position before the fishing is interrupted
     public Transform raycastOrigin;
 
@@ -67,6 +67,8 @@ public class FishingScript: MonoBehaviour
     public GameObject fishOnPanel;
     // Line Casted Panel
     public GameObject lineCastedPanel;
+    // Stop Fishing Panel
+    public GameObject stopFishingPanel;
     // Wait Time for Message UI to disappear
     public float waitTime = 4f;
 
@@ -93,9 +95,11 @@ public class FishingScript: MonoBehaviour
 
     private void Start()
     {
+        // Initialise Checking of Trigger button press
         controller.activateAction.action.performed += Action_performed;
     }
 
+    // Check if Trigger button is pressed
     private void Action_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
     {
         activateButtonPressed = true;
@@ -105,65 +109,83 @@ public class FishingScript: MonoBehaviour
 
     public void CheckIfInHand()
     {
+        // If Rod is in hand
         if (rodInHand)
         {
+            // Set rodInHand Bool to false
             rodInHand = false;
+            // Reset states
+            ActionInit();
             if (setHook != null)
             {
+                // Destroy Green Sphere if it exists
                 DestroyImmediate(setHook);
             }
         }
 
+        // If Rod is not in hand
         else if (!rodInHand)
         {
+            // Set rodInHand bool to true
             rodInHand = true;
+            // Turn off stopFishingPanel
+            stopFishingPanel.SetActive(false);
         }
     }
 
     void Update()
     {
-
         if (pole == null || lineStart == null)
         {
             return;
         }
 
-        // Start Fishing via 'F'; modify for your game and don't do this at all
-        // instead have your game's action dispatcher do GetComponent<FishingScript>().ActionDispatcher();
-        // on hotkey press, icon click, whatever
+        // PC Controls to Cast Line to fish
         if (Input.GetKeyUp(KeyCode.F))
         {
             ActionListener();
         }
 
-        if (!rodInHand)
-        {
-            ActionInit();
-        }
-
+        // VR Controls to start fishing 
         if (activateButtonPressed && !fishjump && rodInHand)
         {
             ActionListener();
             activateButtonPressed = false;
-            StartCoroutine("DisplayLineCast");
         }
 
         // Check if conditions for successful fishing are met
         if (newFish != null && fishCaughtSuccess)
         {
+            // If newFish is not within fishDistance(float) of the fishing rod
             if (Vector3.Distance(newFish.transform.position, lineStart.transform.position) >= fishDistance)
             {
+                // Move newFish towards the fishing rod tip
                 newFish.transform.position = Vector3.MoveTowards(newFish.transform.position, lineStart.position, fishRetrieveSpeed * Time.deltaTime);
+                // Make newFish rotate towards the Fishing Rod tip
                 newFish.transform.LookAt(lineStart.transform);
             }
             
+            // If newFish is within fishDistance(float) of the fishing rod
             else
             {
+                // Set fishCaughtSuccess to false
                 fishCaughtSuccess = false;
-                newFish.AddComponent<XRGrabInteractable>();
-                newFish.AddComponent<Rigidbody>();
-                newFish.GetComponent<Rigidbody>().collisionDetectionMode = CollisionDetectionMode.Continuous;
-                DestroyImmediate(pole.gameObject.GetComponent<LineRenderer>());
+                newFish.AddComponent<XRGrabInteractable>();         // Add XR Grab interactable to newFish
+                newFish.AddComponent<Rigidbody>();                  // Add rigidBody to newFish
+                newFish.GetComponent<Rigidbody>().collisionDetectionMode = CollisionDetectionMode.Continuous;   // Set RigidBody component to continuous collision mode
+                DestroyImmediate(pole.gameObject.GetComponent<LineRenderer>());     // Destroy fishingRod linerenderer
+                
+                // Stop Coroutines
+                StopCoroutine("DisplayLineCast");
+                StopCoroutine("DisplayFailure");
+                StopCoroutine("DisplayFishOn");
+
+                // Turn off UI Panels
+                lineCastedPanel.SetActive(false);
+                fishingFailPanel.SetActive(false);
+                fishOnPanel.SetActive(false);
+
+                // Start to display Success UI
                 StartCoroutine("DisplaySuccess");
 
                 // Make newFish null to ensure that it does not get deleted if player drops fishing rod
@@ -175,18 +197,9 @@ public class FishingScript: MonoBehaviour
 
     public void ActionListener()
     {
+        ActionInit();       // Call reset of states
 
-        /* Check your game's action dispatcher, make sure player isn't in combat, incapacitated, etc
-        if(!playerHasControl)
-            return;
-        */
-
-        /* If the fishing pole isn't already in your player's hand, swap it in
-        if(playerDoesNotHavePole)...
-        */
-
-        ActionInit();
-
+        // Code for detecting Raycast On PC
         // Raycast mouse position looking for Water
         //Ray _ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
@@ -194,7 +207,7 @@ public class FishingScript: MonoBehaviour
         // player can interact with layer Water is on (Water, by default)
         if (Physics.Raycast(raycastOrigin.position, raycastOrigin.TransformDirection(Vector3.forward), out hit, Mathf.Infinity))
         {
-            ActionChecks();
+            ActionChecks();     // Call code to initiate instantiating of newBobber at raycast hit location
         }
 
         else
@@ -207,60 +220,86 @@ public class FishingScript: MonoBehaviour
     private void ActionInit()
     {
         // [Re]set states
-        wasInterrupted = false;
-        fishOn = false;
-        fishjump = false;
 
+        // If newFish does not exist
         if (newFish == null)
         {
+            // Disallow deleting of fish
             destroyFish = false;
         }
 
+        // If newFish exists
         if (newFish != null)
         {
-            destroyFish = true;
-            newFish.AddComponent<XRGrabInteractable>();
-            newFish.AddComponent<Rigidbody>();
-            newFish.GetComponent<Rigidbody>().collisionDetectionMode = CollisionDetectionMode.Continuous;
-            StartCoroutine("DisplayFailure");
+            destroyFish = true;     // Allow fish to be destroyed
+            newFish.AddComponent<XRGrabInteractable>();     // Add XR Grab Interactable component to newFish
+            newFish.AddComponent<Rigidbody>();              // Add RigidBody to newFish
+            newFish.GetComponent<Rigidbody>().collisionDetectionMode = CollisionDetectionMode.Continuous;       // Set RigidBody Collision mode to continuous
+
+            // Turn off UI Panels
+            lineCastedPanel.SetActive(false);
+            fishOnPanel.SetActive(false);
+            fishingSuccessPanel.SetActive(false);
         }
 
         StopAllCoroutines();
 
+        // If a fish is on the line and the player drops the fishing rod
+        if (newFish != null && destroyFish && !rodInHand)
+        {
+            Debug.Log("Display Failure");
+            // Display fishing failure UI 
+            StartCoroutine("DisplayFailure");
+        }
+
+        // If a fish has not spawned and the player drops the fishing rod
+        if (lineCastedPanel.activeSelf && !fishOn && !rodInHand)
+        {
+            // Turn off lineCasted UI
+            lineCastedPanel.SetActive(false);
+            // Display Stop Fishing UI 
+            StartCoroutine("DisplayStopFishing");
+        }
+
+        // If newBobber exists
         if (newBobber != null)
         {
+            // Destroy newBobber
             Destroy(newBobber);
         }
 
+        // If fishing rod's linerenderer exists
         if (pole.gameObject.GetComponent<LineRenderer>() != null)
         {
+            // Destroy linerenderer
             DestroyImmediate(pole.gameObject.GetComponent<LineRenderer>());
         }
+
+        // Reset bool values
+        wasInterrupted = false;
+        fishOn = false;
+        fishjump = false;
     }
 
     private void ActionChecks()
     {
-        // Did we hit fishable Water with Raycast? This is determined by simple bool on supplemental 
-        // script QM_WaterProps; you could do something different of course. The idea is that our player should not
-        // be able to fish everywhere there's water (i.e perhaps an indoor scene, sacred aqueduct, etc)
-
+        // Check if raycast hit gameobject with tag, "Water"
         if (hit.transform.gameObject.tag != "Water")
         {
             return;
         }
 
-        // Inventory check? Up to you if you want to check inventory now/return if it's full
-        // or check at the very end; either way actual Inventory is out of scope for all of this
-
-        // Check Distance
+        // Check Distance between raycast hit location and raycast origin
         float _dist = Vector3.Distance(transform.position, hit.point);
 
+        // Check if raycast spot is far enough from player
         if (_dist < minFishingDistance)
         {
             Debug.Log("You scare away the fish; try casting further away.");
             return;
         }
 
+        // Check if raycast spot is within allowed distance
         if (_dist > maxFishingDistance)
         {
             Debug.Log("Out of range.");
@@ -270,31 +309,24 @@ public class FishingScript: MonoBehaviour
         // Demo create Primitive object instead of using a prefab
         //scriptTarget = GameObject.CreatePrimitive(PrimitiveType.Sphere) as GameObject;
 
-        // Set "bobber" properties
-        //scriptTarget.transform.position = hit.point;
+        // Create newBobber
         newBobber = Instantiate(scriptTarget);
+        // Set newBobber location to raycast hit location
         newBobber.transform.position = hit.point;
 
-        // Demo creating guiText
-        GameObject fishingUIText = new GameObject();
+        // Turn off Stop Fishing UI
+        stopFishingPanel.SetActive(false);
+        // Display Line Cast UI
+        StartCoroutine("DisplayLineCast");
 
-        fishingUIText.AddComponent(typeof(Text));
-
-        fishingUIText.transform.position = new Vector3(.43f, .8f);
-
-        fishingUIText.GetComponent<Text>().fontSize = 18;
-        fishingUIText.GetComponent<Text>().text = "You cast your line...";
-
-        Destroy(fishingUIText, 2.5f);
-
+        // Start Coroutine handling newFish and linerenderer behaviour
         StartCoroutine(ActionMain());
     }
  
  
     private IEnumerator ActionMain()
     {
-
-        // Scale according to your taste and WaitForSeconds value
+        // Set values for fishing minigame
         int fishingTimer = 1000;
         int thisRun = fishingTimer;
         bool runningMiniGame = false;
@@ -582,6 +614,8 @@ public class FishingScript: MonoBehaviour
         fishjump = true;
 
         // Start Coroutine to display FishOn panel
+        StopCoroutine("DisplayLineCast");
+        lineCastedPanel.SetActive(false);
         StartCoroutine("DisplayFishOn");
     }
  
@@ -638,4 +672,13 @@ public class FishingScript: MonoBehaviour
         fishOnPanel.SetActive(false);
         yield return null;
     }
- }
+
+    // Display and turn off StopFishing panel
+    IEnumerator DisplayStopFishing()
+    {
+        stopFishingPanel.SetActive(true);
+        yield return new WaitForSeconds(waitTime);
+        stopFishingPanel.SetActive(false);
+        yield return null;
+    }
+}
