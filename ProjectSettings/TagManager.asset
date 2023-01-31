@@ -8,6 +8,7 @@ TagManager:
   - Water
   - Fish
   - Log
+  - Mushroom
   layers:
   - Default
   - TransparentFX
@@ -15,8 +16,8 @@ TagManager:
   - Fish
   - Water
   - UI
-  - Grab
-  - 
+  - Stick
+  - Mushroom
   - 
   - 
   - 

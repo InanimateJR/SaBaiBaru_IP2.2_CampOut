@@ -36,15 +36,21 @@ public class SocketWithTagCheck : XRSocketInteractor
     {
         if (doFilterByTag && interactable is MonoBehaviour gameObject)
         {
+            
             foreach (string filterTag in filterTags)
             {
+                Debug.Log("Filtering each tag 1...");
                 if (!gameObject.CompareTag(filterTag))
                 {
+                    Debug.Log("Could not find tag needed 1");
                     return false;
+                    
                 }
             }
         }
+        Debug.Log("1");
         return base.CanHover(interactable);
+        
     }
 
     public override bool CanSelect(IXRSelectInteractable interactable)
@@ -53,12 +59,17 @@ public class SocketWithTagCheck : XRSocketInteractor
         {
             foreach (string filterTag in filterTags)
             {
+                Debug.Log("Filtering each tag 2...");
                 if (!gameObject.CompareTag(filterTag))
                 {
+                    Debug.Log("Could not find tag needed 2");
                     return false;
                 }
             }
         }
+        Debug.Log("2");
         return base.CanSelect(interactable);
+        
     }
+
 }
