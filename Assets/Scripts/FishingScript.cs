@@ -361,54 +361,59 @@ public class FishingScript: MonoBehaviour
 
         // Demo create LineRenderer via runtime script
         LineRenderer fishLine = pole.gameObject.AddComponent<LineRenderer>();
-        Vector3 v1 = lineStart.position;
-        //Vector3 v2 = scriptTarget.transform.position;
-        Vector3 v2 = newBobber.transform.position;
-        fishLine.startColor = Color.green;
-        fishLine.endColor = Color.green;
+        Vector3 v1 = lineStart.position;        // Create new Vector3 for lineStart
+        Vector3 v2 = newBobber.transform.position;      // Create new Vector3 for newBobber
 
-        fishLine.startWidth = (0.005f);
-        fishLine.endWidth = (0.007f);
+        fishLine.startWidth = (0.005f);     // Set Start width of fishLine linerenderer
+        fishLine.endWidth = (0.007f);       // Set end width of fishLine linerenderer
 
         fishLine.positionCount = (2);
-        fishLine.SetPosition(0, v1);
+        fishLine.SetPosition(0, v1);        
 
+        // If newBobber exists
         if (newBobber != null)
         {
             fishLine.SetPosition(1, v2);
         }
+
+        // If newBobber does not exist
         else if (newBobber == null)
         {
-            Vector3 v3 = newFish.transform.position;
+            Vector3 v3 = newFish.transform.position;        // Set new Vector3 for lineStart
             Debug.Log("SetPosition1");
-            fishLine.SetPosition(1, v3);
+            fishLine.SetPosition(1, v3);            // Set fishLine position to fish
         }
 
+        // Set material for fishLine
         fishLine.material = new Material(Shader.Find("Universal Render Pipeline/Lit"));
 
         // Player movement cancels action
         Vector3 startPos = transform.position;
 
         // ------------- MAIN ----------------
-
+        // If game is not interrupted and this run has not run for more than specified time
         while(!wasInterrupted && thisRun > 0)
         {
             // Adjust LineRenderer component for animation sway, player rotate, fish jump, etc
             v1 = lineStart.position;
 
+            // If fishLine line renderer exists
             if (fishLine != null)
             {
                 fishLine.SetPosition(0, v1);
             }
 
+            // If newBobber does not exist and newFish exists
             if (newBobber == null && newFish != null)
             {
                 Debug.Log("SetPosition2");
+                // Set newFish position to newBobber position
                 v2 = newFish.transform.position;
             }
+
+            // If newBobber exists
             else if (newBobber != null)
             {
-                //Debug.Log("Bobber position");
                 v2 = newBobber.transform.position;
             }
 
@@ -419,14 +424,14 @@ public class FishingScript: MonoBehaviour
 
             if (!fishOn && newBobber != null)
             {
-                //scriptTarget.GetComponent<Animator>().SetBool("BobbingOn", true);
+                // Start playing bobbing animation
                 newBobber.transform.Find("FishingBobber").GetComponent<Animator>().SetBool("BobbingOn", true);
             }
 
             // When thisRun equals Random biteAt, "Fish On!" (unless it's a dead cycle)
             if (!noNibble && thisRun == biteAt && newBobber != null)
             {
-                //scriptTarget.GetComponent<Animator>().SetBool("BobbingOn", false);
+                // Stop playing bobbing animation
                 newBobber.transform.Find("FishingBobber").GetComponent<Animator>().SetBool("BobbingOn", false);
 
                 FishOn();
@@ -454,17 +459,20 @@ public class FishingScript: MonoBehaviour
                     destroyFish = true;
                     StopCoroutine("MiniGame()");
                     Debug.Log("Fish reach apex");
-                    newFish.AddComponent<Rigidbody>();
-                    newFish.GetComponent<Rigidbody>().collisionDetectionMode = CollisionDetectionMode.Continuous;
+                    newFish.AddComponent<Rigidbody>();      // Add RigidBody Component to newFish
+                    newFish.GetComponent<Rigidbody>().collisionDetectionMode = CollisionDetectionMode.Continuous;   // Set RigidBody collider mode to continuous
                 }
             }
 
             // If the fish falls back to water, cycle is over/fail; dual-purposing wasInterrupted
             // to end Coroutine
+            // If newFish exists
             if (newFish != null)
             {
+                // If fish has spawned and fish's y coordinate is less than raycast hit position
                 if (fishOn && newFish.transform.position.y < hit.point.y)
                 {
+                    // Game is interrupted
                     wasInterrupted = true;
                 }
             }
@@ -476,10 +484,11 @@ public class FishingScript: MonoBehaviour
                 wasInterrupted = true;
                 if (newFish != null)
                 {
+                    // Add XR Grab Interactable component to newFish
                     newFish.AddComponent<XRGrabInteractable>();
-                    newFish.AddComponent<Rigidbody>();
-                    newFish.GetComponent<Rigidbody>().collisionDetectionMode = CollisionDetectionMode.Continuous;
-                    destroyFish = true;
+                    newFish.AddComponent<Rigidbody>();      // Add RigidBody Component to newFish
+                    newFish.GetComponent<Rigidbody>().collisionDetectionMode = CollisionDetectionMode.Continuous;   // Set RigidBody collider mode to continuous
+                    destroyFish = true;     // Allow fish to be destroyed
                 }
             }
 
@@ -515,22 +524,8 @@ public class FishingScript: MonoBehaviour
  
     }
  
- 
     private IEnumerator MiniGame()
     {
- 
-        GameObject fishingUIText = new GameObject();
- 
-        fishingUIText.AddComponent(typeof(Text));
- 
-        fishingUIText.transform.position = new Vector3(.35f, .8f);
- 
-        fishingUIText.GetComponent<Text>().fontSize = 18;
-        fishingUIText.GetComponent<Text>().color = Color.green;
-        fishingUIText.GetComponent<Text>().text = "Set the hook! [Press G with Mouse in Circle]";
- 
-        Destroy(fishingUIText, 2);
- 
         setHook = GameObject.CreatePrimitive(PrimitiveType.Sphere) as GameObject;
  
         // Set "setHook" properties
@@ -570,10 +565,10 @@ public class FishingScript: MonoBehaviour
                 }
             }*/
 
-
+            // If Trigger button is pressed and rod is in hand
             if (activateButtonPressed && rodInHand)
             {
-                activateButtonPressed = false;
+                activateButtonPressed = false;      // Reset activeButtonPressed bool
                 RaycastHit hitInfo = new RaycastHit();
 
                 if (Physics.Raycast(raycastOrigin.position, raycastOrigin.TransformDirection(Vector3.forward), out hitInfo, Mathf.Infinity))
@@ -581,9 +576,7 @@ public class FishingScript: MonoBehaviour
                     if (hitInfo.transform.name == setHook.name)
                     {
                         DestroyImmediate(setHook);
-                        DestroyImmediate(fishingUIText);
-                        //DestroyImmediate(pole.gameObject.GetComponent<LineRenderer>());
-                        miniGameDone = ActionSuccess();
+                        miniGameDone = ActionSuccess();     // Set ActionSuccess bool to true
                     }
                 }
             }
@@ -592,43 +585,28 @@ public class FishingScript: MonoBehaviour
         }
  
         DestroyImmediate(setHook);
-        DestroyImmediate(fishingUIText);
     }
  
     private void FishOn()
     {
-
-        // This bit uses a Primitive Sphere. If you have a fish model you could
-        // use that instead, swapping out this code for that
-
         // Get rid of "bobber"
-        //scriptTarget.SetActive(false);
         Destroy(newBobber);
 
         // Create "fish"
-        //scriptTarget = GameObject.CreatePrimitive(PrimitiveType.Sphere) as GameObject;
         newFish = Instantiate(fish);
         newFish.transform.position = hit.point;
  
         fishOn = true;
         fishjump = true;
 
-        // Start Coroutine to display FishOn panel
-        StopCoroutine("DisplayLineCast");
-        lineCastedPanel.SetActive(false);
-        StartCoroutine("DisplayFishOn");
+        StopCoroutine("DisplayLineCast");       
+        lineCastedPanel.SetActive(false);       // Turn off lineCasted UI
+        StartCoroutine("DisplayFishOn");        // Start Coroutine to display FishOn panel
     }
  
- 
+    // ActionSuccess bool
     private bool ActionSuccess()
     {
-        // This is success code; there's too many things that you could be doing in your game
-        // for me to guess at: add fish to inventory, bump fishing skill, determine how fast they clicked vs
-        // how far away the hit.point was and give treasure map for great click, spawn mermaid/man, 
-        // bump Fishing GUI score, etc.
-
-        // To close, we'll clean-up and put success message up
-
         Debug.Log("Fish Caught");
 
         fishCaughtSuccess = true;
