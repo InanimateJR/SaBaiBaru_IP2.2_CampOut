@@ -192,8 +192,9 @@ public class SimpleFirebaseManager : MonoBehaviour
         Query q = dbLeaderboardsReference.OrderByChild("totalScore").LimitToLast(limit);
 
         List<SimpleLeaderBoard> leaderBoardList = new List<SimpleLeaderBoard>();
+        q.KeepSynced(true);
 
-        await dbLeaderboardsReference.GetValueAsync().ContinueWithOnMainThread(task =>
+        await q.GetValueAsync().ContinueWithOnMainThread(task =>
         {
             if (task.IsCanceled || task.IsFaulted)
             {
@@ -207,9 +208,9 @@ public class SimpleFirebaseManager : MonoBehaviour
                 if (ds.Exists)
                 {
                     int rankCounter = 1;
-                    foreach (DataSnapshot d in ds.Children)
+                    foreach (var record in task.Result.Children)
                     {
-                        SimpleLeaderBoard lb = JsonUtility.FromJson<SimpleLeaderBoard>(d.GetRawJsonValue());
+                        SimpleLeaderBoard lb = JsonUtility.FromJson<SimpleLeaderBoard>(record.GetRawJsonValue());
 
                         leaderBoardList.Add(lb);
                         //Debug.LogFormat("Leaderboard: Rank {0} Playername {1} High Score {2}", rankCounter, lb.username, lb.totalScore);
