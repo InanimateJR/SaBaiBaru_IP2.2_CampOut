@@ -1,0 +1,177 @@
+fileFormatVersion: 2
+guid: 6fd2350a99eccfd4cb1a21f65be5d0a1
+ModelImporter:
+  serializedVersion: 21300
+  internalIDToNameTable: []
+  externalObjects: {}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 1
+    motionNodeName: 
+    rigImportErrors: "Invalid Avatar Rig Configuration. Missing or invalid transform:\n\tRequired
+      human bone 'Hips' not found\n"
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 1
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton:
+    - name: 3D charactercoll(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Belt.001
+      parentName: 3D charactercoll(Clone)
+      position: {x: -3.7399013, y: 3.2494812, z: 0.32529852}
+      rotation: {x: -0.66446304, y: 0.24184476, z: 0.24184474, w: 0.66446304}
+      scale: {x: 40.138065, y: 40.138065, z: 40.13806}
+    - name: Buttons.001
+      parentName: 3D charactercoll(Clone)
+      position: {x: -3.4980752, y: 3.9810567, z: 0.6920426}
+      rotation: {x: 0.3120069, y: 0.14010528, z: 0.85723186, w: 0.38493606}
+      scale: {x: 3.7599351, y: 3.7599351, z: 3.7599351}
+    - name: Cape.002
+      parentName: 3D charactercoll(Clone)
+      position: {x: -3.9756067, y: 4.630496, z: 0.038212776}
+      rotation: {x: -0.29883623, y: 0.6408564, z: 0.6408564, w: 0.29883623}
+      scale: {x: 27.0499, y: 16.075745, z: 27.0499}
+    - name: emptyHolster.001
+      parentName: 3D charactercoll(Clone)
+      position: {x: -3.306604, y: 2.7260675, z: -0.109261274}
+      rotation: {x: -0.58913755, y: -0.3211471, z: -0.27471948, w: 0.68870217}
+      scale: {x: 1.7163754, y: 1.7163755, z: 13.006291}
+    - name: Gun.001
+      parentName: 3D charactercoll(Clone)
+      position: {x: -2.7318141, y: 2.5992928, z: -0.16055107}
+      rotation: {x: -0.6190304, y: -0.38000926, z: -0.2024652, w: 0.65681213}
+      scale: {x: 100, y: 100, z: 100}
+    - name: Hat.002
+      parentName: 3D charactercoll(Clone)
+      position: {x: -3.7870605, y: 5.0942507, z: 0.24401164}
+      rotation: {x: -0.66446304, y: 0.24184474, z: 0.24184473, w: 0.66446304}
+      scale: {x: 100, y: 100, z: 100}
+    - name: Head.001
+      parentName: 3D charactercoll(Clone)
+      position: {x: -3.7953887, y: 4.9915104, z: 0.24316931}
+      rotation: {x: -0.66446304, y: 0.24184476, z: 0.24184474, w: 0.66446304}
+      scale: {x: 23.087633, y: 23.087633, z: 23.087633}
+    - name: holstered weapon.002
+      parentName: 3D charactercoll(Clone)
+      position: {x: -4.1666903, y: 2.861859, z: 0.00012779236}
+      rotation: {x: -0.66446304, y: 0.24184474, z: 0.24184473, w: 0.66446304}
+      scale: {x: 100, y: 100, z: 100}
+    - name: Mask.001
+      parentName: 3D charactercoll(Clone)
+      position: {x: -3.7616937, y: 4.8026247, z: 0.28332615}
+      rotation: {x: -0.66446304, y: 0.24184476, z: 0.24184474, w: 0.66446304}
+      scale: {x: 23.087633, y: 23.087633, z: 23.087633}
+    - name: pants.001
+      parentName: 3D charactercoll(Clone)
+      position: {x: -3.868257, y: 1.901618, z: 0.21974611}
+      rotation: {x: -0.66446304, y: 0.24184476, z: 0.24184474, w: 0.66446304}
+      scale: {x: 40.138065, y: 40.138065, z: 40.13806}
+    - name: Rifle.001
+      parentName: 3D charactercoll(Clone)
+      position: {x: -4.026569, y: 3.7658517, z: -0.066378355}
+      rotation: {x: -0.5229096, y: -0.34518093, z: -0.24383678, w: 0.7402428}
+      scale: {x: 60.624104, y: 60.624107, z: 60.624107}
+    - name: Shoes.002
+      parentName: 3D charactercoll(Clone)
+      position: {x: -3.8910587, y: 0.20083189, z: 0.21118712}
+      rotation: {x: -0.66446304, y: 0.24184476, z: 0.24184474, w: 0.66446304}
+      scale: {x: 40.138065, y: 40.138065, z: 40.13806}
+    - name: Torso.001
+      parentName: 3D charactercoll(Clone)
+      position: {x: -3.7458713, y: 3.5425591, z: 0.2973261}
+      rotation: {x: -0.66446304, y: 0.24184476, z: 0.24184474, w: 0.66446304}
+      scale: {x: 40.138065, y: 40.138065, z: 40.13806}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 3
+  humanoidOversampling: 1
+  avatarSetup: 1
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
