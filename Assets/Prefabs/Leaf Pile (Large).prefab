@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3250101975587506074}
   m_Layer: 0
-  m_Name: Leaf Prile (Large)
+  m_Name: Leaf Pile (Large)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -510,17 +510,17 @@ PrefabInstance:
     - target: {fileID: 2695886024824787439, guid: a4dadebec28ba78488e495c63a83f36e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.16314697
+      value: -0.208
       objectReference: {fileID: 0}
     - target: {fileID: 2695886024824787439, guid: a4dadebec28ba78488e495c63a83f36e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.1285307
+      value: -0.136
       objectReference: {fileID: 0}
     - target: {fileID: 2695886024824787439, guid: a4dadebec28ba78488e495c63a83f36e,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.111450195
+      value: 0.102
       objectReference: {fileID: 0}
     - target: {fileID: 2695886024824787439, guid: a4dadebec28ba78488e495c63a83f36e,
         type: 3}
