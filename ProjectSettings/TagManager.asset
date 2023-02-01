@@ -12,6 +12,7 @@ TagManager:
   - Cooked Fish
   - Cooked Mushroom
   - Poisonous Cooked Mushroom
+  - Poison Mushroom
   layers:
   - Default
   - TransparentFX
