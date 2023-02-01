@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7196712110789097869}
   - component: {fileID: 6084363224157451816}
   - component: {fileID: 8328553552646111970}
+  - component: {fileID: 1587873671686340548}
   m_Layer: 0
   m_Name: billboard
   m_TagString: Untagged
@@ -83,3 +84,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &1587873671686340548
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7535660327504290615}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 8342159127421523248, guid: c25585f3074edd64bb531a2c51f0f4f7, type: 3}
