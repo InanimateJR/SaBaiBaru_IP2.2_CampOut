@@ -1867,6 +1867,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce24f377f63dc4a41992b2128289d15b, type: 3}
+--- !u!1 &742637978 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1999493015768116033, guid: 5d84c86474e575d4cb8a9d3d6b5fe39b,
+    type: 3}
+  m_PrefabInstance: {fileID: 977140329}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &742637979
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 742637978}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5312180500461485918, guid: 0d78f0bb7bf540147bb2ec0d5d63cefc, type: 3}
 --- !u!1 &777078781
 GameObject:
   m_ObjectHideFlags: 0
@@ -2144,10 +2164,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cooked Fish
       objectReference: {fileID: 0}
+    - target: {fileID: 1999493015768116033, guid: 5d84c86474e575d4cb8a9d3d6b5fe39b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4291604100749458360, guid: 5d84c86474e575d4cb8a9d3d6b5fe39b,
+        type: 3}
+      propertyPath: m_InteractionLayers.m_Bits
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8646281489277300091, guid: 5d84c86474e575d4cb8a9d3d6b5fe39b,
         type: 3}
       propertyPath: m_Constraints
-      value: 112
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d84c86474e575d4cb8a9d3d6b5fe39b, type: 3}

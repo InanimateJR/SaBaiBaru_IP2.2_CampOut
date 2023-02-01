@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 53863141390682772}
   - component: {fileID: 8646281489277300091}
   - component: {fileID: 4291604100749458360}
-  m_Layer: 0
+  - component: {fileID: 61390743698673748}
+  m_Layer: 3
   m_Name: Cooked Fish
-  m_TagString: Untagged
+  m_TagString: Cooked Fish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -120,7 +121,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 3
   m_SelectMode: 0
   m_CustomReticle: {fileID: 0}
   m_FirstHoverEntered:
@@ -217,3 +218,17 @@ MonoBehaviour:
   m_ForceGravityOnDetach: 0
   m_RetainTransformParent: 1
   m_AttachPointCompatibilityMode: 0
+--- !u!64 &61390743698673748
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1999493015768116033}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5312180500461485918, guid: 0d78f0bb7bf540147bb2ec0d5d63cefc, type: 3}
