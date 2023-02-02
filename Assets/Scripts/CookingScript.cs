@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class CookingScript : MonoBehaviour
 {
-    public bool foodSnapped = true;
+    public bool foodSnapped;
     void SnappingGround()
     {
         var fire = GameObject.FindWithTag("fire");
@@ -19,7 +19,7 @@ public class CookingScript : MonoBehaviour
 
     void SnapFood()
     {
-        
+        foodSnapped = true;
     }
 
 }
