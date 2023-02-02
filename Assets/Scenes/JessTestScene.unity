@@ -2172,7 +2172,7 @@ PrefabInstance:
     - target: {fileID: 4291604100749458360, guid: 5d84c86474e575d4cb8a9d3d6b5fe39b,
         type: 3}
       propertyPath: m_InteractionLayers.m_Bits
-      value: 3
+      value: 113
       objectReference: {fileID: 0}
     - target: {fileID: 8646281489277300091, guid: 5d84c86474e575d4cb8a9d3d6b5fe39b,
         type: 3}
