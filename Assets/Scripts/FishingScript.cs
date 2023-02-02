@@ -144,6 +144,7 @@ public class FishingScript: MonoBehaviour
         if (Input.GetKeyUp(KeyCode.F))
         {
             ActionListener();
+            activateButtonPressed = false;
         }
 
         // VR Controls to start fishing 
@@ -549,8 +550,9 @@ public class FishingScript: MonoBehaviour
             // CODE FOR PC CONTROLS
 
             // Press G to set hook
-            /*if (Input.GetKeyUp(KeyCode.E))
+            if (Input.GetKeyUp(KeyCode.E))
             {
+                activateButtonPressed = false;
                 RaycastHit hitInfo = new RaycastHit();
  
                 if (Physics.Raycast(raycastOrigin.position, raycastOrigin.TransformDirection(Vector3.forward), out hitInfo, Mathf.Infinity))
@@ -558,12 +560,11 @@ public class FishingScript: MonoBehaviour
                     if (hitInfo.transform.name == setHook.name)
                     {
                         DestroyImmediate(setHook);
-                        DestroyImmediate(fishingUIText);
-                        DestroyImmediate(pole.gameObject.GetComponent<LineRenderer>());
+                        //DestroyImmediate(pole.gameObject.GetComponent<LineRenderer>());
                         miniGameDone = ActionSuccess();
                     }
                 }
-            }*/
+            }
 
             // If Trigger button is pressed and rod is in hand
             if (activateButtonPressed && rodInHand)
