@@ -49,7 +49,7 @@ public class FishingScript: MonoBehaviour
     public float fishDistance = 1f;         // Define distance between fish and fishing rod on catching fish in inspector
     public float fishRetrieveSpeed = 5f;  // Define speed of fish retrieval
     public bool destroyFish;                // Determine if newFish should be destroyed
-    private bool fishCaughtSuccess;         // Determine if fish is caught
+    public bool fishCaughtSuccess;         // Determine if fish is caught
     public float interruptDistance = 4f;    // Define the distance in which the player can move from the start fishing position before the fishing is interrupted
     public Transform raycastOrigin;
 
@@ -71,6 +71,9 @@ public class FishingScript: MonoBehaviour
     public GameObject stopFishingPanel;
     // Wait Time for Message UI to disappear
     public float waitTime = 4f;
+
+    // TEMPORARY VARIABLES
+    public int fishCaught;
 
     private void Awake()
     {
@@ -191,6 +194,9 @@ public class FishingScript: MonoBehaviour
 
                 // Make newFish null to ensure that it does not get deleted if player drops fishing rod
                 newFish = null;
+
+                // ADD FISHES CAUGHT HERE  ------------------------------------- DDA
+                fishCaught++;
             }
         }
     }
@@ -268,9 +274,15 @@ public class FishingScript: MonoBehaviour
         // If Success panel is still active, turn it off
         if (fishingSuccessPanel.activeSelf)
         {
-            StopCoroutine("DisplayStopFishing");
-            stopFishingPanel.SetActive(false);
-            StartCoroutine("DisplaySuccess");
+            StopCoroutine("DisplaySuccess");
+            fishingSuccessPanel.SetActive(false);
+        }
+
+        // If Failure Panel is still active, turn it off
+        if (fishingFailPanel.activeSelf && rodInHand)
+        {
+            StopCoroutine("DisplayFailure");
+            fishingFailPanel.SetActive(false);
         }
 
         // If newBobber exists
@@ -291,6 +303,7 @@ public class FishingScript: MonoBehaviour
         wasInterrupted = false;
         fishOn = false;
         fishjump = false;
+        fishCaughtSuccess = false;
     }
 
     private void ActionChecks()
