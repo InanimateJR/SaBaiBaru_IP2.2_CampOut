@@ -47,7 +47,7 @@ public class FishingScript: MonoBehaviour
     private bool fishjump, fishOn, noNibble;     // Simple states
 
     public float fishDistance = 1f;         // Define distance between fish and fishing rod on catching fish in inspector
-    public float fishRetrieveSpeed = 10f;  // Define speed of fish retrieval
+    public float fishRetrieveSpeed = 5f;  // Define speed of fish retrieval
     public bool destroyFish;                // Determine if newFish should be destroyed
     private bool fishCaughtSuccess;         // Determine if fish is caught
     public float interruptDistance = 4f;    // Define the distance in which the player can move from the start fishing position before the fishing is interrupted
@@ -236,6 +236,9 @@ public class FishingScript: MonoBehaviour
             newFish.AddComponent<XRGrabInteractable>();     // Add XR Grab Interactable component to newFish
             newFish.AddComponent<Rigidbody>();              // Add RigidBody to newFish
             newFish.GetComponent<Rigidbody>().collisionDetectionMode = CollisionDetectionMode.Continuous;       // Set RigidBody Collision mode to continuous
+            newFish.GetComponent<Rigidbody>().velocity = Vector3.zero;
+            newFish.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+            Debug.Log(newFish.GetComponent<Rigidbody>().velocity);
 
             // Turn off UI Panels
             lineCastedPanel.SetActive(false);
@@ -260,6 +263,14 @@ public class FishingScript: MonoBehaviour
             lineCastedPanel.SetActive(false);
             // Display Stop Fishing UI 
             StartCoroutine("DisplayStopFishing");
+        }
+
+        // If Success panel is still active, turn it off
+        if (fishingSuccessPanel.activeSelf)
+        {
+            StopCoroutine("DisplayStopFishing");
+            stopFishingPanel.SetActive(false);
+            StartCoroutine("DisplaySuccess");
         }
 
         // If newBobber exists
