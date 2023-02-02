@@ -2,14 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
 public class CookingScript : MonoBehaviour
 {
+    public bool foodSnapped = true;
     void SnappingGround()
     {
-        if (gameObject.tag == "Stick")
+        var fire = GameObject.FindWithTag("fire");
+
+        if (fire != null)
         {
-            Debug.Log("can stick");
+            Debug.Log("Fire is present");
         }
+    }
+
+    void SnapFood()
+    {
+        
     }
 
 }
