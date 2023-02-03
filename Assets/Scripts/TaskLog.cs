@@ -31,7 +31,7 @@ public class TaskLog : MonoBehaviour
     public TMP_Text fourthPegUI;
 
     //  Assign Inventory UI
-    public TMP_Text listUI;
+    public GameObject listUI;
 
     // Whether firstPeg is collected or not
     public bool firstPegCollected = false;
@@ -63,11 +63,13 @@ public class TaskLog : MonoBehaviour
             //check if all 4 pegs are hammered in to be completed
             if (firstPegCollected && secondPegCollected && thirdPegCollected && fourthPegCollected)
             {
-                // Show list UI
-                //listUI.SetActive(false);
+                
 
                 //set hammering of pegs as complete
                 completedPegs = true;
+                
+                // Hide list UI
+                listUI.SetActive(true);
             }
         }
     }
