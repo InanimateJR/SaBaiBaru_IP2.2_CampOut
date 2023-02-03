@@ -72,8 +72,8 @@ public class FishingScript: MonoBehaviour
     // Wait Time for Message UI to disappear
     public float waitTime = 4f;
 
-    // TEMPORARY VARIABLES
-    public int fishCaught;
+    /// SCRIPT REFERENCE
+    public BucketManager bucketManager;
 
     private void Awake()
     {
@@ -198,11 +198,11 @@ public class FishingScript: MonoBehaviour
                 // Start to display Success UI
                 StartCoroutine("DisplaySuccess");
 
+                // Set fishArray[i] in BucketManager script to newFish
+                bucketManager.AddFishArray();
+
                 // Make newFish null to ensure that it does not get deleted if player drops fishing rod
                 newFish = null;
-
-                // ADD FISHES CAUGHT HERE  ------------------------------------- DDA
-                fishCaught++;
             }
         }
     }
