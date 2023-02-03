@@ -3,39 +3,22 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - CinemachineTarget
-  - Water
-  - Fish
-  - Log
-  - Mushroom
-  - Cooked Fish
-  - Cooked Mushroom
-  - Poisonous Cooked Mushroom
-  - Poison Mushroom
-  - Fire
+  tags: []
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Fish
+  - 
   - Water
   - UI
-  - Stick
-  - Mushroom
-  - tent
-  - socket
-<<<<<<< Updated upstream
-  - Bucket
-  - Uninteractable UI
   - 
   - 
-=======
-  - first peg
-  - second peg
-  - third peg
-  - 'fourth peg '
->>>>>>> Stashed changes
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   - 
   - 
   - 
