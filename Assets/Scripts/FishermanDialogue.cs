@@ -22,6 +22,7 @@ public class FishermanDialogue : MonoBehaviour
     {
         fishermanCanvas.SetActive(true);
     }
+
     private void OnTriggerExit(Collider other)
     {
         fishermanCanvas.SetActive(false);
