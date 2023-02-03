@@ -131,6 +131,12 @@ public class FishingScript: MonoBehaviour
         {
             // Set rodInHand bool to true
             rodInHand = true;
+
+            if (fishingFailPanel.activeSelf)
+            {
+                StartCoroutine("DisplayFailure");
+            }
+
             // Turn off stopFishingPanel
             stopFishingPanel.SetActive(false);
         }
@@ -249,7 +255,7 @@ public class FishingScript: MonoBehaviour
             // Turn off UI Panels
             lineCastedPanel.SetActive(false);
             fishOnPanel.SetActive(false);
-            fishingSuccessPanel.SetActive(false);
+            //fishingSuccessPanel.SetActive(false);
         }
 
         StopAllCoroutines();
@@ -268,14 +274,16 @@ public class FishingScript: MonoBehaviour
             // Turn off lineCasted UI
             lineCastedPanel.SetActive(false);
             // Display Stop Fishing UI 
-            StartCoroutine("DisplayStopFishing");
+            if (!fishingSuccessPanel.activeSelf)
+            {
+                StartCoroutine("DisplayStopFishing");
+            }
         }
 
         // If Success panel is still active, turn it off
-        if (fishingSuccessPanel.activeSelf)
+        if (fishingSuccessPanel.activeSelf && !rodInHand)
         {
-            StopCoroutine("DisplaySuccess");
-            fishingSuccessPanel.SetActive(false);
+            StartCoroutine("DisplaySuccess");
         }
 
         // If Failure Panel is still active, turn it off
@@ -341,6 +349,8 @@ public class FishingScript: MonoBehaviour
 
         // Turn off Stop Fishing UI
         stopFishingPanel.SetActive(false);
+        // Turn off Success UI
+        fishingSuccessPanel.SetActive(false);
         // Display Line Cast UI
         StartCoroutine("DisplayLineCast");
 
