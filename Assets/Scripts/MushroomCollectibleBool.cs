@@ -15,8 +15,8 @@ using Firebase.Extensions;
 
 public class MushroomCollectibleBool : MonoBehaviour
 {
-    public GameObject FirebaseManager;
-    public bool Collected = false;
+    public GameObject firebaseManager;
+    public bool collected = false;
     public int score;
     public bool poisonous;
     // Start is called before the first frame update
@@ -38,12 +38,12 @@ public class MushroomCollectibleBool : MonoBehaviour
         
     }
 
-    public void collectedMushroom()
+    public void CollectedMushroom()
     {
-        if (!Collected)
+        if (!collected)
         {
-            FirebaseManager.GetComponent<SimpleFirebaseManager>().UpdateMushrooms(score);
-            Collected = true;
+            firebaseManager.GetComponent<SimpleFirebaseManager>().UpdateMushrooms(score);
+            collected = true;
         }
     }
 }

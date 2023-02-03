@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class SticksCollectible : MonoBehaviour
 {
-    public GameObject FirebaseManager;
-    public bool Collected = false;
+    public GameObject firebaseManager;
+    public bool collected = false;
     public int score;
     // Start is called before the first frame update
     void Start()
@@ -20,12 +20,12 @@ public class SticksCollectible : MonoBehaviour
 
     }
 
-    public void collectedSticks()
+    public void CollectedSticks()
     {
-        if (!Collected)
+        if (!collected)
         {
-            FirebaseManager.GetComponent<SimpleFirebaseManager>().UpdateSticks(score);
-            Collected = true;
+            firebaseManager.GetComponent<SimpleFirebaseManager>().UpdateSticks(score);
+            collected = true;
         }
     }
 }

@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class FoodCollectible : MonoBehaviour
 {
-    public GameObject FirebaseManager;
-    public bool Collected = false;
+    public GameObject firebaseManager;
+    public bool collected = false;
     public int score;
     // Start is called before the first frame update
     void Start()
@@ -20,12 +20,12 @@ public class FoodCollectible : MonoBehaviour
 
     }
 
-    public void collectedFood()
+    public void CollectedFood()
     {
-        if (!Collected)
+        if (!collected)
         {
-            FirebaseManager.GetComponent<SimpleFirebaseManager>().UpdateFood(score);
-            Collected = true;
+            firebaseManager.GetComponent<SimpleFirebaseManager>().UpdateFood(score);
+            collected = true;
         }
     }
 }
