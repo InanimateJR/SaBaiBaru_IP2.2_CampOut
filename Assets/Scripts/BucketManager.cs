@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class BucketManager : MonoBehaviour
 {
@@ -8,11 +9,12 @@ public class BucketManager : MonoBehaviour
 
     public GameObject[] fishArray;          // Array storing fish objects
     public GameObject[] fishSocketArray;    // Array storing fish socket interactors;
+
     int i;
     int j;
 
     /// TEMPORARY VARIABLES
-    public int fishesCaught; 
+    public int fishesCaught;
 
     public void AddFishArray()
     {
@@ -34,7 +36,7 @@ public class BucketManager : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "fish")
+        if (other.gameObject.tag == "Fish")
         {
             for (int j = 0; j <= 5; j++)
             {
@@ -43,14 +45,12 @@ public class BucketManager : MonoBehaviour
                     fishSocketArray[j].SetActive(true);
                 }
             }
-
-            fishSocketArray[i].SetActive(true);
         }
     }
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.tag == "fish")
+        if (other.gameObject.tag == "Fish")
         {
             for (int j = 0; j <= 5; j++)
             {
@@ -59,20 +59,18 @@ public class BucketManager : MonoBehaviour
                     fishSocketArray[j].SetActive(true);
                 }
             }
-
-            fishSocketArray[i].SetActive(true);
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject == fishArray[i])
+        if (other.gameObject.tag == "Fish")
         {
             fishSocketArray[i].SetActive(false);
         }
     }
 
-    public void CheckFishSnap()
+    public void FishSnapped()
     {
         // ADD FISHCAUGHT COUNT HERE ------------------------- DDA
         fishesCaught++;

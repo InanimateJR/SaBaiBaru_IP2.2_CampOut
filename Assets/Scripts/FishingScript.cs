@@ -286,6 +286,12 @@ public class FishingScript: MonoBehaviour
             StartCoroutine("DisplaySuccess");
         }
 
+        // If Stop Fishing panel is still active, turn it off
+        if (stopFishingPanel.activeSelf && !rodInHand)
+        {
+            StartCoroutine("DisplayStopFishing");
+        }
+
         // If Failure Panel is still active, turn it off
         if (fishingFailPanel.activeSelf && rodInHand)
         {

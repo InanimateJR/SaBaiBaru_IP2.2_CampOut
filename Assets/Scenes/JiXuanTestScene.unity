@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 27091509}
   - component: {fileID: 27091511}
   - component: {fileID: 27091510}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Cast Line Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -176,7 +176,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -211,7 +211,7 @@ GameObject:
   - component: {fileID: 229719083}
   - component: {fileID: 229719085}
   - component: {fileID: 229719084}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Fishes Caught (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -336,53 +336,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 229719082}
   m_CullTransparentMesh: 1
---- !u!1 &234042368 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 115552768500176144, guid: bb6fcff557df72141bcfd161505e08f7,
+--- !u!4 &234042382 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 779498828338581418, guid: bb6fcff557df72141bcfd161505e08f7,
     type: 3}
   m_PrefabInstance: {fileID: 6146712209625081642}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &234042375
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 234042368}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d83a1092516242f4f84184fa7e279338, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fishingScript: {fileID: 1549136296}
-  fishArray:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  fishSocketArray:
-  - {fileID: 1854113205}
-  - {fileID: 1156671834}
-  - {fileID: 460297698}
-  - {fileID: 262730531}
-  - {fileID: 1484670173}
-  - {fileID: 1752626939}
-  fishesCaught: 0
---- !u!65 &234042376
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 234042368}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.7, y: 0.8, z: 0.7}
-  m_Center: {x: -0.000000037252903, y: 0.34557137, z: -0.000000007450581}
 --- !u!1 &262730531 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6146712209375985144, guid: bb6fcff557df72141bcfd161505e08f7,
@@ -400,7 +359,7 @@ GameObject:
   - component: {fileID: 371373317}
   - component: {fileID: 371373319}
   - component: {fileID: 371373318}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -980,7 +939,7 @@ GameObject:
   - component: {fileID: 649023322}
   - component: {fileID: 649023324}
   - component: {fileID: 649023323}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Instructions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1116,7 +1075,7 @@ GameObject:
   - component: {fileID: 693698434}
   - component: {fileID: 693698436}
   - component: {fileID: 693698435}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1252,7 +1211,7 @@ GameObject:
   - component: {fileID: 797247539}
   - component: {fileID: 797247541}
   - component: {fileID: 797247540}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Sad Face Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1328,7 +1287,7 @@ GameObject:
   - component: {fileID: 1033435636}
   - component: {fileID: 1033435638}
   - component: {fileID: 1033435637}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Decrease Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1464,7 +1423,7 @@ GameObject:
   - component: {fileID: 1046307488}
   - component: {fileID: 1046307490}
   - component: {fileID: 1046307489}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Fishing Success Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1753,7 +1712,7 @@ GameObject:
   - component: {fileID: 1136514289}
   - component: {fileID: 1136514291}
   - component: {fileID: 1136514290}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1889,7 +1848,7 @@ GameObject:
   - component: {fileID: 1137351142}
   - component: {fileID: 1137351144}
   - component: {fileID: 1137351143}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Increase Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2031,7 +1990,7 @@ GameObject:
   - component: {fileID: 1157529646}
   - component: {fileID: 1157529648}
   - component: {fileID: 1157529647}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Fishing Fail Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2078,7 +2037,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -2102,6 +2061,80 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1157529645}
   m_CullTransparentMesh: 1
+--- !u!1 &1186991557
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1186991558}
+  - component: {fileID: 1186991559}
+  - component: {fileID: 1186991560}
+  m_Layer: 0
+  m_Name: Trigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1186991558
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1186991557}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.413, z: 0}
+  m_LocalScale: {x: 0.7, y: 0.8, z: 0.7}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 234042382}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1186991559
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1186991557}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1186991560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1186991557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d83a1092516242f4f84184fa7e279338, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fishingScript: {fileID: 1549136296}
+  fishArray:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  fishSocketArray:
+  - {fileID: 1854113205}
+  - {fileID: 1156671834}
+  - {fileID: 460297698}
+  - {fileID: 262730531}
+  - {fileID: 1484670173}
+  - {fileID: 1752626939}
+  fishesCaught: 0
 --- !u!1 &1333428067
 GameObject:
   m_ObjectHideFlags: 0
@@ -2113,7 +2146,7 @@ GameObject:
   - component: {fileID: 1333428068}
   - component: {fileID: 1333428070}
   - component: {fileID: 1333428069}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Fish On Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2157,7 +2190,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -2913,7 +2946,7 @@ MonoBehaviour:
   lineCastedPanel: {fileID: 27091508}
   stopFishingPanel: {fileID: 1737219881}
   waitTime: 4
-  bucketManager: {fileID: 234042375}
+  bucketManager: {fileID: 1186991560}
 --- !u!1 &1630274939
 GameObject:
   m_ObjectHideFlags: 0
@@ -3191,7 +3224,7 @@ GameObject:
   - component: {fileID: 1653194715}
   - component: {fileID: 1653194717}
   - component: {fileID: 1653194716}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Decrease Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3316,6 +3349,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1653194714}
   m_CullTransparentMesh: 1
+--- !u!1 &1668046275
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1668046276}
+  m_Layer: 10
+  m_Name: Attach Transform
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1668046276
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1668046275}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.676, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 234042382}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1677489755
 GameObject:
   m_ObjectHideFlags: 0
@@ -3327,7 +3391,7 @@ GameObject:
   - component: {fileID: 1677489756}
   - component: {fileID: 1677489758}
   - component: {fileID: 1677489757}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Fishes Caught
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3463,7 +3527,7 @@ GameObject:
   - component: {fileID: 1681335569}
   - component: {fileID: 1681335571}
   - component: {fileID: 1681335570}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Fish On Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3731,7 +3795,7 @@ GameObject:
   - component: {fileID: 1737219882}
   - component: {fileID: 1737219884}
   - component: {fileID: 1737219883}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Stop Fishing Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3773,7 +3837,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -3814,7 +3878,7 @@ GameObject:
   - component: {fileID: 1826996698}
   - component: {fileID: 1826996700}
   - component: {fileID: 1826996699}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Remaining Chances
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3950,7 +4014,7 @@ GameObject:
   - component: {fileID: 1828196980}
   - component: {fileID: 1828196982}
   - component: {fileID: 1828196981}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4166,7 +4230,7 @@ GameObject:
   - component: {fileID: 1882289079}
   - component: {fileID: 1882289081}
   - component: {fileID: 1882289080}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4302,7 +4366,7 @@ GameObject:
   - component: {fileID: 1956517218}
   - component: {fileID: 1956517220}
   - component: {fileID: 1956517219}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Fishing Success Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4349,7 +4413,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -4386,7 +4450,7 @@ GameObject:
   - component: {fileID: 1959848715}
   - component: {fileID: 1959848714}
   - component: {fileID: 1959848713}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Fishing Game Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4435,7 +4499,7 @@ MonoBehaviour:
   m_CheckFor3DOcclusion: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 2147483647
   m_RaycastTriggerInteraction: 1
 --- !u!114 &1959848714
 MonoBehaviour:
@@ -4453,7 +4517,7 @@ MonoBehaviour:
   m_BlockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 2147483647
 --- !u!114 &1959848715
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5040,7 +5104,7 @@ GameObject:
   - component: {fileID: 2069520413}
   - component: {fileID: 2069520415}
   - component: {fileID: 2069520414}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Remaining Chances
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5176,7 +5240,7 @@ GameObject:
   - component: {fileID: 2071423716}
   - component: {fileID: 2071423718}
   - component: {fileID: 2071423717}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Fishes Caught
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5572,6 +5636,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bucket with Socket
       objectReference: {fileID: 0}
+    - target: {fileID: 115552768500176144, guid: bb6fcff557df72141bcfd161505e08f7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 256240929702961079, guid: bb6fcff557df72141bcfd161505e08f7,
         type: 3}
       propertyPath: m_IsActive
@@ -5610,7 +5679,7 @@ PrefabInstance:
     - target: {fileID: 779498828338581418, guid: bb6fcff557df72141bcfd161505e08f7,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 779498828338581418, guid: bb6fcff557df72141bcfd161505e08f7,
         type: 3}
@@ -5657,6 +5726,46 @@ PrefabInstance:
       propertyPath: m_ShowInteractableHoverMeshes
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6146712209375985150, guid: bb6fcff557df72141bcfd161505e08f7,
+        type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6146712209375985150, guid: bb6fcff557df72141bcfd161505e08f7,
+        type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6146712209375985150, guid: bb6fcff557df72141bcfd161505e08f7,
+        type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6146712209375985150, guid: bb6fcff557df72141bcfd161505e08f7,
+        type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6146712209375985150, guid: bb6fcff557df72141bcfd161505e08f7,
+        type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: FishSnapped
+      objectReference: {fileID: 0}
+    - target: {fileID: 6146712209375985150, guid: bb6fcff557df72141bcfd161505e08f7,
+        type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: BucketManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6146712209375985150, guid: bb6fcff557df72141bcfd161505e08f7,
+        type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6146712210161742976, guid: bb6fcff557df72141bcfd161505e08f7,
+        type: 3}
+      propertyPath: m_AttachTransform
+      value: 
+      objectReference: {fileID: 1668046276}
     - target: {fileID: 6146712210161742976, guid: bb6fcff557df72141bcfd161505e08f7,
         type: 3}
       propertyPath: m_InteractionManager
@@ -5672,6 +5781,41 @@ PrefabInstance:
       propertyPath: m_ShowInteractableHoverMeshes
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6146712210304215861, guid: bb6fcff557df72141bcfd161505e08f7,
+        type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6146712210304215861, guid: bb6fcff557df72141bcfd161505e08f7,
+        type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6146712210304215861, guid: bb6fcff557df72141bcfd161505e08f7,
+        type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6146712210304215861, guid: bb6fcff557df72141bcfd161505e08f7,
+        type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6146712210304215861, guid: bb6fcff557df72141bcfd161505e08f7,
+        type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: FishSnapped
+      objectReference: {fileID: 0}
+    - target: {fileID: 6146712210304215861, guid: bb6fcff557df72141bcfd161505e08f7,
+        type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: BucketManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6146712210304215861, guid: bb6fcff557df72141bcfd161505e08f7,
+        type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 6146712210304215863, guid: bb6fcff557df72141bcfd161505e08f7,
         type: 3}
       propertyPath: m_IsActive
@@ -5691,6 +5835,41 @@ PrefabInstance:
         type: 3}
       propertyPath: m_ShowInteractableHoverMeshes
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6146712210548798115, guid: bb6fcff557df72141bcfd161505e08f7,
+        type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6146712210548798115, guid: bb6fcff557df72141bcfd161505e08f7,
+        type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6146712210548798115, guid: bb6fcff557df72141bcfd161505e08f7,
+        type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6146712210548798115, guid: bb6fcff557df72141bcfd161505e08f7,
+        type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6146712210548798115, guid: bb6fcff557df72141bcfd161505e08f7,
+        type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: FishSnapped
+      objectReference: {fileID: 0}
+    - target: {fileID: 6146712210548798115, guid: bb6fcff557df72141bcfd161505e08f7,
+        type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: BucketManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6146712210548798115, guid: bb6fcff557df72141bcfd161505e08f7,
+        type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 6146712210991755540, guid: bb6fcff557df72141bcfd161505e08f7,
         type: 3}
@@ -5712,6 +5891,41 @@ PrefabInstance:
       propertyPath: m_ShowInteractableHoverMeshes
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6146712210991755626, guid: bb6fcff557df72141bcfd161505e08f7,
+        type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6146712210991755626, guid: bb6fcff557df72141bcfd161505e08f7,
+        type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6146712210991755626, guid: bb6fcff557df72141bcfd161505e08f7,
+        type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6146712210991755626, guid: bb6fcff557df72141bcfd161505e08f7,
+        type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6146712210991755626, guid: bb6fcff557df72141bcfd161505e08f7,
+        type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: FishSnapped
+      objectReference: {fileID: 0}
+    - target: {fileID: 6146712210991755626, guid: bb6fcff557df72141bcfd161505e08f7,
+        type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: BucketManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6146712210991755626, guid: bb6fcff557df72141bcfd161505e08f7,
+        type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 6146712211109385373, guid: bb6fcff557df72141bcfd161505e08f7,
         type: 3}
       propertyPath: m_InteractionManager
@@ -5721,6 +5935,41 @@ PrefabInstance:
         type: 3}
       propertyPath: m_ShowInteractableHoverMeshes
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6146712211109385373, guid: bb6fcff557df72141bcfd161505e08f7,
+        type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6146712211109385373, guid: bb6fcff557df72141bcfd161505e08f7,
+        type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6146712211109385373, guid: bb6fcff557df72141bcfd161505e08f7,
+        type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6146712211109385373, guid: bb6fcff557df72141bcfd161505e08f7,
+        type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6146712211109385373, guid: bb6fcff557df72141bcfd161505e08f7,
+        type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: FishSnapped
+      objectReference: {fileID: 0}
+    - target: {fileID: 6146712211109385373, guid: bb6fcff557df72141bcfd161505e08f7,
+        type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: BucketManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6146712211109385373, guid: bb6fcff557df72141bcfd161505e08f7,
+        type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 6146712211109385375, guid: bb6fcff557df72141bcfd161505e08f7,
         type: 3}
@@ -5751,6 +6000,41 @@ PrefabInstance:
         type: 3}
       propertyPath: m_ShowInteractableHoverMeshes
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6146712211152428470, guid: bb6fcff557df72141bcfd161505e08f7,
+        type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6146712211152428470, guid: bb6fcff557df72141bcfd161505e08f7,
+        type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6146712211152428470, guid: bb6fcff557df72141bcfd161505e08f7,
+        type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6146712211152428470, guid: bb6fcff557df72141bcfd161505e08f7,
+        type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6146712211152428470, guid: bb6fcff557df72141bcfd161505e08f7,
+        type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: FishSnapped
+      objectReference: {fileID: 0}
+    - target: {fileID: 6146712211152428470, guid: bb6fcff557df72141bcfd161505e08f7,
+        type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: BucketManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6146712211152428470, guid: bb6fcff557df72141bcfd161505e08f7,
+        type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bb6fcff557df72141bcfd161505e08f7, type: 3}
