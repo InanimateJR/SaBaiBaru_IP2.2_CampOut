@@ -7,7 +7,18 @@ using UnityEngine;
 public class CookingScript : MonoBehaviour
 {
     public bool foodSnapped;
-    void SnappingGround()
+
+    public GameObject fishToSpawn;
+
+    public GameObject rawFish;
+
+    private void Start()
+    {
+        rawFish = GameObject.FindWithTag("Fish");
+    }
+
+    
+    public void SnappingGround()
     {
         var fire = GameObject.FindWithTag("fire");
 
@@ -20,6 +31,13 @@ public class CookingScript : MonoBehaviour
     void SnapFood()
     {
         foodSnapped = true;
+    }
+
+    public void SpawnCookedFish()
+    {
+        GameObject cookedFish = Instantiate(fishToSpawn, rawFish.transform.position, rawFish.transform.rotation);
+        rawFish.SetActive(false);
+        
     }
 
 }
