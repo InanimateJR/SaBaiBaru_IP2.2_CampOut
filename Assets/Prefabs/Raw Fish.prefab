@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7649312071488780292}
   - component: {fileID: 5603365813414448334}
   - component: {fileID: 7708003013152607158}
+  - component: {fileID: 3798412264595881763}
   m_Layer: 3
   m_Name: Raw Fish
   m_TagString: Fish
@@ -99,3 +100,17 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -5312180500461485918, guid: 5c69a0b696aac3b4c9f91af082077912, type: 3}
+--- !u!114 &3798412264595881763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6252082551986154779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afbe29d4e503eac41aca0f2655cbb4a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collected: 0
+  score: 0

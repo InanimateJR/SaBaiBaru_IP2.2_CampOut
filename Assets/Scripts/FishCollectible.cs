@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class FishCollectible : MonoBehaviour
 {
-    public GameObject FirebaseManager;
-    public bool Collected = false;
+    //public GameObject FirebaseManager;
+    public bool collected = false;
     public int score;
+
+    FishingScript fishingScriptStatic;     // Reference FishingScript
+    private GameObject fishingScriptObject;
+
     // Start is called before the first frame update
     void Start()
     {
+        fishingScriptObject = GameObject.FindGameObjectWithTag("RightHand");
+        // Reference script in runtime
+        fishingScriptStatic = FishingScript.fishingScriptStatic;
         score = 1;
     }
-
 
     // Update is called once per frame
     void Update()
@@ -20,12 +26,16 @@ public class FishCollectible : MonoBehaviour
 
     }
 
-    public void collectedFish()
+    public void CollectedFish()
     {
-        if (!Collected)
+        if (!collected)
         {
-            FirebaseManager.GetComponent<SimpleFirebaseManager>().UpdateFish(score);
-            Collected = true;
+            //FirebaseManager.GetComponent<SimpleFirebaseManager>().UpdateFish(score);
+            collected = true;
+            Debug.Log("Collected");
+            Debug.Log("Fishing Obj " + fishingScriptObject);
+            //fishingScript.StartCoroutine("DisplaySucess");
+            fishingScriptStatic.StartDisplaySuccess();
         }
     }
 }

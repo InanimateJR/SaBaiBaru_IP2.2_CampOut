@@ -26,6 +26,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class FishingScript: MonoBehaviour
 {
+    public static FishingScript fishingScriptStatic;
 
     // Set public variables in Inspector
     public GameObject pole;                    // Assign a fis$$anonymous$$ng pole prefab in Inspector; tilt & angle to your liking
@@ -73,7 +74,7 @@ public class FishingScript: MonoBehaviour
     public float waitTime = 4f;
 
     /// SCRIPT REFERENCE
-    public BucketManager bucketManager;
+    public FishCollectible fishCollectible;
 
     private void Awake()
     {
@@ -196,10 +197,7 @@ public class FishingScript: MonoBehaviour
                 fishOnPanel.SetActive(false);
 
                 // Start to display Success UI
-                StartCoroutine("DisplaySuccess");
-
-                // Set fishArray[i] in BucketManager script to newFish
-                bucketManager.AddFishArray();
+                //StartCoroutine("DisplaySuccess");
 
                 // Make newFish null to ensure that it does not get deleted if player drops fishing rod
                 newFish = null;
@@ -656,8 +654,15 @@ public class FishingScript: MonoBehaviour
         return true;
     }
 
+    // Display and turn off success panel from other script
+    public void StartDisplaySuccess()
+    {
+        StartCoroutine("DisplaySuccess");
+        Debug.Log("DisplaySuccess");
+    }
+
     // Display and turn off success panel
-    IEnumerator DisplaySuccess()
+    public IEnumerator DisplaySuccess()
     {
         fishingSuccessPanel.SetActive(true);
         yield return new WaitForSeconds(waitTime);

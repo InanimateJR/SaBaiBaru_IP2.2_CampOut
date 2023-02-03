@@ -74,5 +74,7 @@ public class BucketManager : MonoBehaviour
     {
         // ADD FISHCAUGHT COUNT HERE ------------------------- DDA
         fishesCaught++;
+
+        fishingScript.DisplaySuccess();
     }
 }
