@@ -26,8 +26,6 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class FishingScript: MonoBehaviour
 {
-    public static FishingScript fishingScriptStatic;
-
     // Set public variables in Inspector
     public GameObject pole;                    // Assign a fis$$anonymous$$ng pole prefab in Inspector; tilt & angle to your liking
     public Transform lineStart;                // Create/assign empty GameObject at the tip of the pole

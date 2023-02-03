@@ -8,7 +8,7 @@ public class FishCollectible : MonoBehaviour
     public bool collected = false;
     public int score;
 
-    FishingScript fishingScriptStatic;     // Reference FishingScript
+    private FishingScript fishingScript;     // Reference FishingScript
     private GameObject fishingScriptObject;
 
     // Start is called before the first frame update
@@ -16,7 +16,7 @@ public class FishCollectible : MonoBehaviour
     {
         fishingScriptObject = GameObject.FindGameObjectWithTag("RightHand");
         // Reference script in runtime
-        fishingScriptStatic = FishingScript.fishingScriptStatic;
+        fishingScript = fishingScriptObject.GetComponent<FishingScript>();
         score = 1;
     }
 
@@ -35,7 +35,7 @@ public class FishCollectible : MonoBehaviour
             Debug.Log("Collected");
             Debug.Log("Fishing Obj " + fishingScriptObject);
             //fishingScript.StartCoroutine("DisplaySucess");
-            fishingScriptStatic.StartDisplaySuccess();
+            fishingScript.StartDisplaySuccess();
         }
     }
 }
