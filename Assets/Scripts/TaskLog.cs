@@ -64,7 +64,7 @@ public class TaskLog : MonoBehaviour
             if (firstPegCollected && secondPegCollected && thirdPegCollected && fourthPegCollected)
             {
                 // Show list UI
-                listUI.SetActive(false);
+                //listUI.SetActive(false);
 
                 //set hammering of pegs as complete
                 completedPegs = true;
@@ -78,54 +78,38 @@ public class TaskLog : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    private void SpawnPlayerOnSceneLoad()
-    {
-        // if there is no player, spawn a new player at the position
-        if(activePlayer == null)
-        {
-            GameObject newPlayer = Instantiate(playerPrefab, Vector3.zero, Quaternion.identity);
-            activePlayer = newPlayer.GetComponent<Player>();
-        }
-
-        //Terminate execution
-        else
-        {
-            return;
-        }
-    }
-
-    public void firstPegCollected()
+    public void firstPegCollect()
     {
         // Set that firstPeg is collected
-        firstPegCollect = true;
+        firstPegCollected = true;
 
         // Strikethrough firstPeg UI
         firstPegUI.fontStyle = FontStyles.Strikethrough;
     }
 
-    public void secondPegCollected()
+    public void secondPegCollect()
     {
         // Set that secondPeg is collected
-        secondPegCollect = true;
+        secondPegCollected = true;
 
         // Strikethrough secondPegUI
         secondPegUI.fontStyle = FontStyles.Strikethrough;
 
     }
 
-    public void thirdPegCollected()
+    public void thirdPegCollect()
     {
         // Set that thirdPeg is collected
-        thirdPegCollect = true;
+        thirdPegCollected = true;
 
         //Strikethrough thirdPeg UI
         thirdPegUI.fontStyle = FontStyles.Strikethrough;
     }
 
-    public void fourthPegCollected()
+    public void fourthPegCollect()
     {
         // Set that egg is collected
-        fourthPegCollect = true;
+        fourthPegCollected = true;
 
         // Strikethrough fourthPeg UI
         fourthPegUI.fontStyle = FontStyles.Strikethrough;
