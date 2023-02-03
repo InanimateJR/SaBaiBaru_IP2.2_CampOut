@@ -1578,8 +1578,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 3.3461716, y: 1.8369982, z: 2.650831}
+  m_Center: {x: -0.08511031, y: 0.41849822, z: 0.012085432}
 --- !u!23 &635673528
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3668,7 +3668,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1265900000}
-  - component: {fileID: 1265899999}
+  - component: {fileID: 1265900001}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -3676,22 +3676,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1265899999
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1265899998}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ca1f02d7515d0a48b76b3b606ff1ff1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  foodSnapped: 0
-  fishToSpawn: {fileID: 1999493015768116033, guid: 5d84c86474e575d4cb8a9d3d6b5fe39b,
-    type: 3}
-  rawFish: {fileID: 0}
 --- !u!4 &1265900000
 Transform:
   m_ObjectHideFlags: 0
@@ -3707,6 +3691,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1265900001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1265899998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ca1f02d7515d0a48b76b3b606ff1ff1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fishToSpawn: {fileID: 0}
+  rawFish: {fileID: 0}
 --- !u!1001 &1306730151
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4052,7 +4050,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1265899999}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: CookingScript, Assembly-CSharp
         m_MethodName: SpawnCookedFish
         m_Mode: 1
@@ -7379,7 +7377,7 @@ PrefabInstance:
     - target: {fileID: 8374518057308950058, guid: 7ab83933d515bbe4da85c1bc944d18cc,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 141.27
+      value: 140.762
       objectReference: {fileID: 0}
     - target: {fileID: 8374518057308950058, guid: 7ab83933d515bbe4da85c1bc944d18cc,
         type: 3}
