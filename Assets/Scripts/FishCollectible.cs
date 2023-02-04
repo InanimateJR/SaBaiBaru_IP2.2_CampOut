@@ -1,22 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class FishCollectible : MonoBehaviour
 {
     //public GameObject FirebaseManager;
-    public bool collected = false;
+    public bool collected;
     public int score;
-
-    private FishingScript fishingScript;     // Reference FishingScript
-    private GameObject fishingScriptObject;
 
     // Start is called before the first frame update
     void Start()
     {
-        fishingScriptObject = GameObject.FindGameObjectWithTag("RightHand");
-        // Reference script in runtime
-        fishingScript = fishingScriptObject.GetComponent<FishingScript>();
         score = 1;
     }
 
@@ -33,9 +28,7 @@ public class FishCollectible : MonoBehaviour
             //FirebaseManager.GetComponent<SimpleFirebaseManager>().UpdateFish(score);
             collected = true;
             Debug.Log("Collected");
-            Debug.Log("Fishing Obj " + fishingScriptObject);
             //fishingScript.StartCoroutine("DisplaySucess");
-            fishingScript.StartDisplaySuccess();
         }
     }
 }

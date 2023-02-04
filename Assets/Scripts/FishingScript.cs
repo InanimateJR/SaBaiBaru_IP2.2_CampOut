@@ -177,8 +177,6 @@ public class FishingScript: MonoBehaviour
             // If newFish is within fishDistance(float) of the fishing rod
             else
             {
-                // Set fishCaughtSuccess to false
-                fishCaughtSuccess = false;
                 newFish.AddComponent<XRGrabInteractable>();         // Add XR Grab interactable to newFish
                 newFish.AddComponent<Rigidbody>();                  // Add rigidBody to newFish
                 newFish.GetComponent<Rigidbody>().collisionDetectionMode = CollisionDetectionMode.Continuous;   // Set RigidBody component to continuous collision mode
@@ -195,10 +193,17 @@ public class FishingScript: MonoBehaviour
                 fishOnPanel.SetActive(false);
 
                 // Start to display Success UI
-                //StartCoroutine("DisplaySuccess");
-
-                // Make newFish null to ensure that it does not get deleted if player drops fishing rod
-                newFish = null;
+                
+                if (fishCollectible.collected)
+                {
+                    Debug.Log("StartSuccess");
+                    //StartCoroutine("DisplaySuccess");
+                    StartCoroutine("DisplaySuccess");
+                    // Set fishCaughtSuccess to false
+                    fishCaughtSuccess = false;
+                    // Make newFish null to ensure that it does not get deleted if player drops fishing rod
+                    newFish = null;
+                }
             }
         }
     }
@@ -313,7 +318,7 @@ public class FishingScript: MonoBehaviour
         wasInterrupted = false;
         fishOn = false;
         fishjump = false;
-        fishCaughtSuccess = false;
+        //fishCaughtSuccess = false;
     }
 
     private void ActionChecks()
@@ -632,7 +637,8 @@ public class FishingScript: MonoBehaviour
         // Create "fish"
         newFish = Instantiate(fish);
         newFish.transform.position = hit.point;
- 
+        fishCollectible = newFish.GetComponent<FishCollectible>();
+
         fishOn = true;
         fishjump = true;
 
@@ -702,5 +708,11 @@ public class FishingScript: MonoBehaviour
         yield return new WaitForSeconds(waitTime);
         stopFishingPanel.SetActive(false);
         yield return null;
+    }
+
+    public void StartCollectedFish()
+    {
+        Debug.Log("StartCollectedFish");
+        fishCollectible.CollectedFish();
     }
 }
