@@ -5,10 +5,11 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class CookingScript : MonoBehaviour
 {
-
+    /*
     public GameObject fishToSpawn;
 
     public GameObject rawFish;
+
 
     public void SpawnCookedFish()
     {
@@ -35,4 +36,20 @@ public class CookingScript : MonoBehaviour
         SpawnCookedFish();
         
     }
+    */
+
+
+    public void OnTriggerEnter(Collider objectNearFire)
+    {
+        if (objectNearFire.tag == "Fish")
+        {
+            Debug.Log("Fish is near fire");
+            
+           
+
+        }
+
+    }
+
+
 }

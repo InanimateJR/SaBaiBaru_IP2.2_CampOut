@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8646281489277300091}
   - component: {fileID: 4291604100749458360}
   - component: {fileID: 61390743698673748}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Cooked Fish
   m_TagString: Cooked Fish
   m_Icon: {fileID: 0}
