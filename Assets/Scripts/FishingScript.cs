@@ -71,6 +71,9 @@ public class FishingScript: MonoBehaviour
     // Wait Time for Message UI to disappear
     public float waitTime = 4f;
 
+    public bool reachedTarget;      // Check if fish has reached the fishing rod
+    public bool canFish;       // Check if player can fish again
+
     /// SCRIPT REFERENCE
     public FishCollectible fishCollectible;
 
@@ -116,6 +119,9 @@ public class FishingScript: MonoBehaviour
         {
             // Set rodInHand Bool to false
             rodInHand = false;
+
+            canFish = false;
+
             // Reset states
             ActionInit();
             if (setHook != null)
@@ -130,6 +136,8 @@ public class FishingScript: MonoBehaviour
         {
             // Set rodInHand bool to true
             rodInHand = true;
+
+            canFish = true;
 
             if (fishingFailPanel.activeSelf)
             {
@@ -148,6 +156,11 @@ public class FishingScript: MonoBehaviour
             return;
         }
 
+        if (newFish != null && fishCollectible.collected)
+        {
+            canFish = true;
+        }
+
         // PC Controls to Cast Line to fish
         if (Input.GetKeyUp(KeyCode.F))
         {
@@ -156,7 +169,7 @@ public class FishingScript: MonoBehaviour
         }
 
         // VR Controls to start fishing 
-        if (activateButtonPressed && !fishjump && rodInHand)
+        if (activateButtonPressed && !fishjump && rodInHand && canFish)
         {
             ActionListener();
             activateButtonPressed = false;
@@ -166,7 +179,7 @@ public class FishingScript: MonoBehaviour
         if (newFish != null && fishCaughtSuccess)
         {
             // If newFish is not within fishDistance(float) of the fishing rod
-            if (Vector3.Distance(newFish.transform.position, lineStart.transform.position) >= fishDistance)
+            if (Vector3.Distance(newFish.transform.position, lineStart.transform.position) >= fishDistance && !reachedTarget && rodInHand)
             {
                 // Move newFish towards the fishing rod tip
                 newFish.transform.position = Vector3.MoveTowards(newFish.transform.position, lineStart.position, fishRetrieveSpeed * Time.deltaTime);
@@ -177,9 +190,9 @@ public class FishingScript: MonoBehaviour
             // If newFish is within fishDistance(float) of the fishing rod
             else
             {
-                newFish.AddComponent<XRGrabInteractable>();         // Add XR Grab interactable to newFish
-                newFish.AddComponent<Rigidbody>();                  // Add rigidBody to newFish
-                newFish.GetComponent<Rigidbody>().collisionDetectionMode = CollisionDetectionMode.Continuous;   // Set RigidBody component to continuous collision mode
+                reachedTarget = true;
+                newFish.GetComponent<XRGrabInteractable>().enabled = true;         // Enable XRGrabInteractable component
+                newFish.GetComponent<Rigidbody>().useGravity = true;                  // Set RigidBody to use gravity
                 DestroyImmediate(pole.gameObject.GetComponent<LineRenderer>());     // Destroy fishingRod linerenderer
                 
                 // Stop Coroutines
@@ -193,7 +206,7 @@ public class FishingScript: MonoBehaviour
                 fishOnPanel.SetActive(false);
 
                 // Start to display Success UI
-                
+
                 if (fishCollectible.collected)
                 {
                     Debug.Log("StartSuccess");
@@ -203,6 +216,9 @@ public class FishingScript: MonoBehaviour
                     fishCaughtSuccess = false;
                     // Make newFish null to ensure that it does not get deleted if player drops fishing rod
                     newFish = null;
+                    fishCollectible = null;
+                    reachedTarget = false;
+                    canFish = true;
                 }
             }
         }
@@ -246,9 +262,8 @@ public class FishingScript: MonoBehaviour
         if (newFish != null)
         {
             destroyFish = true;     // Allow fish to be destroyed
-            newFish.AddComponent<XRGrabInteractable>();     // Add XR Grab Interactable component to newFish
-            newFish.AddComponent<Rigidbody>();              // Add RigidBody to newFish
-            newFish.GetComponent<Rigidbody>().collisionDetectionMode = CollisionDetectionMode.Continuous;       // Set RigidBody Collision mode to continuous
+            newFish.GetComponent<XRGrabInteractable>().enabled = true;         // Enable XRGrabInteractable component
+            newFish.GetComponent<Rigidbody>().useGravity = true;                  // Set RigidBody to use gravity
             newFish.GetComponent<Rigidbody>().velocity = Vector3.zero;
             newFish.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
             Debug.Log(newFish.GetComponent<Rigidbody>().velocity);
@@ -318,6 +333,7 @@ public class FishingScript: MonoBehaviour
         wasInterrupted = false;
         fishOn = false;
         fishjump = false;
+        reachedTarget = false;
         //fishCaughtSuccess = false;
     }
 
@@ -501,8 +517,7 @@ public class FishingScript: MonoBehaviour
                     destroyFish = true;
                     StopCoroutine("MiniGame()");
                     Debug.Log("Fish reach apex");
-                    newFish.AddComponent<Rigidbody>();      // Add RigidBody Component to newFish
-                    newFish.GetComponent<Rigidbody>().collisionDetectionMode = CollisionDetectionMode.Continuous;   // Set RigidBody collider mode to continuous
+                    newFish.GetComponent<Rigidbody>().useGravity = true;                  // Set RigidBody to use gravity
                 }
             }
 
@@ -526,10 +541,8 @@ public class FishingScript: MonoBehaviour
                 wasInterrupted = true;
                 if (newFish != null)
                 {
-                    // Add XR Grab Interactable component to newFish
-                    newFish.AddComponent<XRGrabInteractable>();
-                    newFish.AddComponent<Rigidbody>();      // Add RigidBody Component to newFish
-                    newFish.GetComponent<Rigidbody>().collisionDetectionMode = CollisionDetectionMode.Continuous;   // Set RigidBody collider mode to continuous
+                    newFish.GetComponent<XRGrabInteractable>().enabled = true;         // Enable XRGrabInteractable component
+                    newFish.GetComponent<Rigidbody>().useGravity = true;                  // Set RigidBody to use gravity
                     destroyFish = true;     // Allow fish to be destroyed
                 }
             }
@@ -617,6 +630,7 @@ public class FishingScript: MonoBehaviour
                 {
                     if (hitInfo.transform.name == setHook.name)
                     {
+                        canFish = false;
                         DestroyImmediate(setHook);
                         miniGameDone = ActionSuccess();     // Set ActionSuccess bool to true
                     }
@@ -713,6 +727,9 @@ public class FishingScript: MonoBehaviour
     public void StartCollectedFish()
     {
         Debug.Log("StartCollectedFish");
-        fishCollectible.CollectedFish();
+        if (fishCollectible != null)
+        {
+            fishCollectible.CollectedFish();
+        }
     }
 }
