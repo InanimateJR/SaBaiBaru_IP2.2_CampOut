@@ -1,8 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class CookingScript : MonoBehaviour
 {
@@ -11,8 +10,12 @@ public class CookingScript : MonoBehaviour
 
     public GameObject rawFish;
 
+    bool fishToCook;
 
+    private void Start()
+    {
 
+    }
     public void SpawnCookedFish()
     {
         GameObject cookedFish = Instantiate(fishToSpawn, rawFish.transform.position, rawFish.transform.rotation);
@@ -29,7 +32,7 @@ public class CookingScript : MonoBehaviour
             rawFish = objectNearFire.gameObject;
             StartCoroutine(CookingFish());
         }
-        
+
     }
 
     IEnumerator CookingFish()
