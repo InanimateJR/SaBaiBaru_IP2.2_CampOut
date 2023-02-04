@@ -10,12 +10,6 @@ public class CookingScript : MonoBehaviour
 
     public GameObject rawFish;
 
-    bool fishToCook;
-
-    private void Start()
-    {
-
-    }
     public void SpawnCookedFish()
     {
         GameObject cookedFish = Instantiate(fishToSpawn, rawFish.transform.position, rawFish.transform.rotation);
