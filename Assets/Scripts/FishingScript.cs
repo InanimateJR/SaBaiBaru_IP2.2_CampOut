@@ -68,11 +68,13 @@ public class FishingScript: MonoBehaviour
     public GameObject lineCastedPanel;
     // Stop Fishing Panel
     public GameObject stopFishingPanel;
+    // Fish Bucket Panel
+    public GameObject fishBucketPanel;
     // Wait Time for Message UI to disappear
     public float waitTime = 4f;
 
     public bool reachedTarget;      // Check if fish has reached the fishing rod
-    public bool canFish;       // Check if player can fish again
+    public bool canFish = true;       // Check if player can fish again
 
     /// SCRIPT REFERENCE
     public FishCollectible fishCollectible;
@@ -120,8 +122,6 @@ public class FishingScript: MonoBehaviour
             // Set rodInHand Bool to false
             rodInHand = false;
 
-            canFish = false;
-
             // Reset states
             ActionInit();
             if (setHook != null)
@@ -136,8 +136,6 @@ public class FishingScript: MonoBehaviour
         {
             // Set rodInHand bool to true
             rodInHand = true;
-
-            canFish = true;
 
             if (fishingFailPanel.activeSelf)
             {
@@ -173,6 +171,12 @@ public class FishingScript: MonoBehaviour
         {
             ActionListener();
             activateButtonPressed = false;
+        }
+
+        if (activateButtonPressed && rodInHand && !canFish)
+        {
+            activateButtonPressed = false;
+            StartCoroutine("DisplayFishBucket");
         }
 
         // Check if conditions for successful fishing are met
@@ -212,6 +216,11 @@ public class FishingScript: MonoBehaviour
                     Debug.Log("StartSuccess");
                     //StartCoroutine("DisplaySuccess");
                     StartCoroutine("DisplaySuccess");
+                    if (fishBucketPanel.activeSelf)
+                    {
+                        StopCoroutine("DisplayFishBucket");
+                        fishBucketPanel.SetActive(false);
+                    }
                     // Set fishCaughtSuccess to false
                     fishCaughtSuccess = false;
                     // Make newFish null to ensure that it does not get deleted if player drops fishing rod
@@ -254,8 +263,12 @@ public class FishingScript: MonoBehaviour
         // If newFish does not exist
         if (newFish == null)
         {
+            fishCollectible = null;
+            reachedTarget = false;
+            canFish = true;
             // Disallow deleting of fish
             destroyFish = false;
+            fishCaughtSuccess = false;
         }
 
         // If newFish exists
@@ -309,10 +322,16 @@ public class FishingScript: MonoBehaviour
         }
 
         // If Failure Panel is still active, turn it off
-        if (fishingFailPanel.activeSelf && rodInHand)
+        if (fishingFailPanel.activeSelf && !rodInHand)
         {
             StopCoroutine("DisplayFailure");
             fishingFailPanel.SetActive(false);
+        }
+
+        // If Fish Bucket Panel is still active, turn it off
+        if (fishBucketPanel.activeSelf && !rodInHand)
+        {
+            StartCoroutine("DisplayFishBucket");
         }
 
         // If newBobber exists
@@ -721,6 +740,14 @@ public class FishingScript: MonoBehaviour
         stopFishingPanel.SetActive(true);
         yield return new WaitForSeconds(waitTime);
         stopFishingPanel.SetActive(false);
+        yield return null;
+    }
+
+    IEnumerator DisplayFishBucket()
+    {
+        fishBucketPanel.SetActive(true);
+        yield return new WaitForSeconds(waitTime);
+        fishBucketPanel.SetActive(false);
         yield return null;
     }
 
