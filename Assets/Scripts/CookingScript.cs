@@ -38,14 +38,21 @@ public class CookingScript : MonoBehaviour
     }
     */
 
-
+    public GameObject rawFish;
+    
     public void OnTriggerEnter(Collider objectNearFire)
     {
         if (objectNearFire.tag == "Fish")
         {
             Debug.Log("Fish is near fire");
-            
-           
+
+            rawFish = objectNearFire.gameObject;
+
+            FoodTrigger foodTrigger = rawFish.GetComponent<FoodTrigger>();
+            if (foodTrigger.canCook == false)
+            {
+                foodTrigger.canCook = true;
+            }
 
         }
 

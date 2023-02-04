@@ -10,10 +10,12 @@ public class FoodTrigger : MonoBehaviour
 
     public bool canCook = false;
 
-    private void Update()
+    void Update()
     {
         if (canCook == true)
         {
+            canCook = false;
+            
             StartCoroutine(CookingFish());
         }
     }
@@ -26,6 +28,7 @@ public class FoodTrigger : MonoBehaviour
     }
     public IEnumerator CookingFish()
     {
+        Debug.Log("cooking...");
         yield return new WaitForSeconds(5);
         SpawnCookedFish();
 
