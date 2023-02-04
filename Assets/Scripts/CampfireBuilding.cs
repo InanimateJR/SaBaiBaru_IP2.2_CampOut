@@ -23,16 +23,8 @@ public class CampfireBuilding : MonoBehaviour
     bool log2 = false;
     bool log3 = false;
 
-    bool stick5 = false;
-    bool stick6 = false;
-    bool stick7 = false;
-    bool log4 = false;
-    bool log5 = false;
-    bool log6 = false;
-
     int bottomLayer;
     int middleLayer;
-    int topLayer;
 
     public GameObject middleLayerGroup;
     public GameObject topLayerGroup;
@@ -112,11 +104,84 @@ public class CampfireBuilding : MonoBehaviour
         }
     }
 
+    public void Sticks1Placed()
+    {
+        if (!stick1)
+        {
+            stick1 = true;
+            middleLayer++;
+            CheckMiddleLayer();
+        }
+    }
+    public void Sticks2Placed()
+    {
+        if (!stick2)
+        {
+            stick2 = true;
+            middleLayer++;
+            CheckMiddleLayer();
+        }
+    }
+    public void Sticks3Placed()
+    {
+        if (!stick3)
+        {
+            stick3 = true;
+            middleLayer++;
+            CheckMiddleLayer();
+        }
+    }
+    public void Sticks4Placed()
+    {
+        if (!stick4)
+        {
+            stick4 = true;
+            middleLayer++;
+            CheckMiddleLayer();
+        }
+    }
+
+    public void Log1Placed()
+    {
+        if (!log1)
+        {
+            log1 = true;
+            middleLayer++;
+            CheckMiddleLayer();
+        }
+    }
+    public void Log2Placed()
+    {
+        if (!log2)
+        {
+            log2 = true;
+            middleLayer++;
+            CheckMiddleLayer();
+        }
+
+    }
+    public void Log3Placed()
+    {
+        if (!log3)
+        {
+            log3 = true;
+            middleLayer++;
+            CheckMiddleLayer();
+        }
+    }
     public void CheckBottomLayer()
     {
         if (bottomLayer == 8)
         {
             middleLayerGroup.SetActive(true);
+        }
+    }
+
+    public void CheckMiddleLayer()
+    {
+        if (middleLayer == 7)
+        {
+            topLayerGroup.SetActive(true);
         }
     }
 }
