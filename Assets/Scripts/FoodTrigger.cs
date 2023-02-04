@@ -21,8 +21,9 @@ public class FoodTrigger : MonoBehaviour
     }
     public void SpawnCookedFish()
     {
+        Debug.Log("cooking...2");
         GameObject cookedFish = Instantiate(fishToSpawn, gameObject.transform.position, gameObject.transform.rotation);
-        gameObject.SetActive(false);
+        Destroy(gameObject);
         Debug.Log("Fish has been cooked!");
 
     }
