@@ -8,6 +8,10 @@ TagManager:
   - CinemachineTarget
   - Mushroom
   - Poison Mushroom
+  - Water
+  - RightHand
+  - Cooked Fish
+  - Rod
   layers:
   - Default
   - TransparentFX
@@ -15,25 +19,25 @@ TagManager:
   - Outlined Objects
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Raw Fish
+  - Bucket
+  - Stick1
+  - Stick2
+  - Stick3
+  - Firewood
+  - Rod
+  - Leaves1
+  - Leaves2
+  - Tent
+  - Matchbox
+  - Matchstick
+  - Mushrooms
+  - Mallet
+  - Peg
+  - Trees
+  - Bag
+  - Journal
+  - Cooked Fish
   - 
   - 
   - 
