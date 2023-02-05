@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8486131402413792619}
   - component: {fileID: 4785936731929465550}
   - component: {fileID: 7318322250857752068}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Matchbox_Open
   m_TagString: Untagged
   m_Icon: {fileID: 0}
