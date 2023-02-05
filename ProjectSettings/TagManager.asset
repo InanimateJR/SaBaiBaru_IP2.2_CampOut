@@ -14,6 +14,9 @@ TagManager:
   - Rod
   - Cooked Edible Mushroom
   - Cooked Poison Mushroom
+  - Matchstick
+  - MatchstickTip
+  - Matchbox
   layers:
   - Default
   - TransparentFX
