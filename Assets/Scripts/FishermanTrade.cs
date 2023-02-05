@@ -10,6 +10,7 @@ public class FishermanTrade : MonoBehaviour
     public Button rentRod;
     private int numberOfMushrooms;
     public GameObject fishRod;
+    public GameObject arrow;
 
     // Start is called before the first frame update
     void Start()
@@ -40,6 +41,7 @@ public class FishermanTrade : MonoBehaviour
             fishRod.AddComponent<XRGrabInteractable>();
             fishRod.AddComponent<Rigidbody>();
             fishRod.GetComponent<Rigidbody>().collisionDetectionMode = CollisionDetectionMode.Continuous;
+            arrow.SetActive(true);
             rentRod.interactable = false;
         }
     }
