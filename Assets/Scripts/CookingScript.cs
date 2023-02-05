@@ -40,7 +40,7 @@ public class CookingScript : MonoBehaviour
 
     public GameObject rawFish;
     
-    public void OnTriggerEnter(Collider objectNearFire)
+    public void OnTriggerEnter(Collider objectNearFire, Collision collision)
     {
         if (objectNearFire.tag == "Fish")
         {
@@ -48,7 +48,7 @@ public class CookingScript : MonoBehaviour
 
             rawFish = objectNearFire.gameObject;
 
-            FoodTrigger foodTrigger = rawFish.GetComponent<FoodTrigger>();
+            FoodTrigger foodTrigger = collision.gameObject.GetComponent<FoodTrigger>();
             if (foodTrigger.canCook == false)
             {
                 foodTrigger.canCook = true;

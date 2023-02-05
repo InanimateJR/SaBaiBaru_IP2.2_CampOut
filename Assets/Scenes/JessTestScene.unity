@@ -7892,5 +7892,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stick 1 with Socket
       objectReference: {fileID: 0}
+    - target: {fileID: 9183846110099068048, guid: 7ab83933d515bbe4da85c1bc944d18cc,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7ab83933d515bbe4da85c1bc944d18cc, type: 3}
