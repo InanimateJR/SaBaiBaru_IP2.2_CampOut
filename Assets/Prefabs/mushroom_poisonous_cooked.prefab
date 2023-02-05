@@ -11,12 +11,12 @@ GameObject:
   - component: {fileID: 7034768984649137969}
   - component: {fileID: 6201279166780633236}
   - component: {fileID: 8208841396684948574}
-  - component: {fileID: -8975924997803124421}
   - component: {fileID: 769170061125674443}
   - component: {fileID: 5283314764531005753}
-  m_Layer: 7
+  - component: {fileID: -8975924997803124421}
+  m_Layer: 0
   m_Name: mushroom_poisonous_cooked
-  m_TagString: Poisonous Cooked Mushroom
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7704345811550872971}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 2.295, y: -0.154, z: 44.971832}
+  m_LocalPosition: {x: 585.67175, y: -67.57809, z: 365.47473}
   m_LocalScale: {x: 15.1255665, y: 15.1255665, z: 15.1255665}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -86,20 +86,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &-8975924997803124421
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7704345811550872971}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -2837682660325928517, guid: f505d3a87ab466a408a4db79ee7327d6, type: 3}
 --- !u!54 &769170061125674443
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -231,3 +217,17 @@ MonoBehaviour:
   m_ForceGravityOnDetach: 0
   m_RetainTransformParent: 1
   m_AttachPointCompatibilityMode: 0
+--- !u!64 &-8975924997803124421
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7704345811550872971}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -2837682660325928517, guid: f505d3a87ab466a408a4db79ee7327d6, type: 3}

@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: -2489263697806325362}
   - component: {fileID: -8074806232241641967}
   - component: {fileID: 6785105724301905347}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: mushroom_poisonous
-  m_TagString: Poison Mushroom
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28,8 +28,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2324152661012269470}
-  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 8.770002, y: 0.40980053, z: 4.1099987}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 586.0806, y: -67.57809, z: 365.32214}
   m_LocalScale: {x: 15.1255665, y: 15.1255665, z: 15.1255665}
   m_ConstrainProportionsScale: 0
   m_Children: []

@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 2970527833159406029}
   - component: {fileID: 7658745963767224031}
   - component: {fileID: 2516730528160989907}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: mushroom_edible_cooked
-  m_TagString: Cooked Mushroom
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7295659841374176714}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 3.08, y: 0.495, z: 44.651104}
+  m_LocalPosition: {x: 586.5512, y: -67.57809, z: 365.16226}
   m_LocalScale: {x: 15.883605, y: 15.883605, z: 15.883605}
   m_ConstrainProportionsScale: 0
   m_Children: []

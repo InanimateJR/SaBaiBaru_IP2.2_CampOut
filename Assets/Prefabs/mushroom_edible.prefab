@@ -14,10 +14,9 @@ GameObject:
   - component: {fileID: 7722417565096706461}
   - component: {fileID: 1244515348229378258}
   - component: {fileID: 5579052182174556340}
-  - component: {fileID: -1525559783347129678}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: mushroom_edible
-  m_TagString: Mushroom
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29,8 +28,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 180898166625779997}
-  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -7.08, y: 2.17, z: -14.912516}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 586.9114, y: -67.57809, z: 365.0113}
   m_LocalScale: {x: 15.883605, y: 15.883605, z: 15.883605}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -244,19 +243,3 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 8911429290685839654, guid: 8fec64608b74aa74f846c21c61b7d2a0, type: 3}
---- !u!114 &-1525559783347129678
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 180898166625779997}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 607b934be2e8d24459c250e4f050b8d8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  FirebaseManager: {fileID: 0}
-  Collected: 0
-  score: 0
-  poisonous: 0
