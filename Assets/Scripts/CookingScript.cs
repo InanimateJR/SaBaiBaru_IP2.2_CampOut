@@ -37,21 +37,41 @@ public class CookingScript : MonoBehaviour
         
     }
     */
-
-    public GameObject rawFish;
     
-    public void OnTriggerEnter(Collider objectNearFire, Collision collision)
+    public void OnTriggerEnter(Collider objectNearFire)
     {
-        if (objectNearFire.tag == "Fish")
+        if (objectNearFire.gameObject.tag == "Fish")
         {
             Debug.Log("Fish is near fire");
 
-            rawFish = objectNearFire.gameObject;
-
-            FoodTrigger foodTrigger = collision.gameObject.GetComponent<FoodTrigger>();
-            if (foodTrigger.canCook == false)
+            FoodTrigger foodTrigger = objectNearFire.gameObject.GetComponent<FoodTrigger>();
+            if (foodTrigger.canCookFish == false)
             {
-                foodTrigger.canCook = true;
+                foodTrigger.canCookFish = true;
+            }
+
+        }
+
+        else if (objectNearFire.gameObject.tag == "Mushroom")
+        {
+            Debug.Log("Mushroom is near fire");
+
+            FoodTrigger foodTrigger = objectNearFire.gameObject.GetComponent<FoodTrigger>();
+            if (foodTrigger.canCookMushroom == false)
+            {
+                foodTrigger.canCookMushroom = true;
+            }
+
+        }
+
+        else if (objectNearFire.gameObject.tag == " Poison Mushroom")
+        {
+            Debug.Log("Poison Mushroom is near fire");
+
+            FoodTrigger foodTrigger = objectNearFire.gameObject.GetComponent<FoodTrigger>();
+            if (foodTrigger.canCookPoisonMushroom == false)
+            {
+                foodTrigger.canCookPoisonMushroom = true;
             }
 
         }

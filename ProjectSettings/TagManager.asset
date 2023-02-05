@@ -12,6 +12,8 @@ TagManager:
   - RightHand
   - Cooked Fish
   - Rod
+  - Cooked Edible Mushroom
+  - Cooked Poison Mushroom
   layers:
   - Default
   - TransparentFX
