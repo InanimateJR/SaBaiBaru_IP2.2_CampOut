@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3798412264595881763}
   - component: {fileID: 7665026729628983854}
   - component: {fileID: -6405138443358167949}
+  - component: {fileID: -2643479536603989241}
   m_Layer: 6
   m_Name: Raw Fish
   m_TagString: Fish
@@ -247,3 +248,24 @@ MonoBehaviour:
   m_ForceGravityOnDetach: 0
   m_RetainTransformParent: 1
   m_AttachPointCompatibilityMode: 0
+--- !u!114 &-2643479536603989241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6252082551986154779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42f8165c1632834458bce97b136861eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fishToSpawn: {fileID: 1999493015768116033, guid: 5d84c86474e575d4cb8a9d3d6b5fe39b,
+    type: 3}
+  mushroomToSpawn: {fileID: 7295659841374176714, guid: 1fb0f4216b641a44f834f2cd3569c2f4,
+    type: 3}
+  poisonMushroomToSpawn: {fileID: 7704345811550872971, guid: 613e30d9b72820548bfed43e1be2ac06,
+    type: 3}
+  canCookFish: 0
+  canCookMushroom: 0
+  canCookPoisonMushroom: 0

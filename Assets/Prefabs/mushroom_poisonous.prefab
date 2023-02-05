@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: -2489263697806325362}
   - component: {fileID: -8074806232241641967}
   - component: {fileID: 6785105724301905347}
+  - component: {fileID: 5399050797536832259}
   m_Layer: 0
   m_Name: mushroom_poisonous
   m_TagString: Poison Mushroom
@@ -231,3 +232,24 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -2837682660325928517, guid: decc2e036d64c90419845ff04fcdac68, type: 3}
+--- !u!114 &5399050797536832259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2324152661012269470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42f8165c1632834458bce97b136861eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fishToSpawn: {fileID: 1999493015768116033, guid: 5d84c86474e575d4cb8a9d3d6b5fe39b,
+    type: 3}
+  mushroomToSpawn: {fileID: 7295659841374176714, guid: 1fb0f4216b641a44f834f2cd3569c2f4,
+    type: 3}
+  poisonMushroomToSpawn: {fileID: 7704345811550872971, guid: 613e30d9b72820548bfed43e1be2ac06,
+    type: 3}
+  canCookFish: 0
+  canCookMushroom: 0
+  canCookPoisonMushroom: 0
