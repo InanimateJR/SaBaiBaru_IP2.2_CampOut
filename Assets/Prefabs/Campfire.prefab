@@ -6912,6 +6912,8 @@ GameObject:
   - component: {fileID: 2161650676967038475}
   - component: {fileID: 933090232584715883}
   - component: {fileID: 1209226016447915699}
+  - component: {fileID: 3200981328227365578}
+  - component: {fileID: 7825061016558227378}
   m_Layer: 0
   m_Name: FireVFX
   m_TagString: Untagged
@@ -7012,6 +7014,31 @@ VFXRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!135 &3200981328227365578
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5581962675616493891}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.9548056
+  m_Center: {x: 0.017423391, y: 0.69971275, z: -0.012283325}
+--- !u!114 &7825061016558227378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5581962675616493891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ca1f02d7515d0a48b76b3b606ff1ff1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5623538567471437048
 GameObject:
   m_ObjectHideFlags: 0
