@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2542687768953089315}
   m_LocalRotation: {x: -0, y: -0.70710576, z: -0, w: 0.70710784}
-  m_LocalPosition: {x: 0.233, y: 0.006, z: 0.008}
+  m_LocalPosition: {x: 0.233, y: 0.006, z: -0.037}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -92,7 +92,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_ShowInteractableHoverMeshes: 1
-  m_InteractableHoverMeshMaterial: {fileID: 0}
+  m_InteractableHoverMeshMaterial: {fileID: 2100000, guid: 01885e6e32d8fd24ca12e21879e3c13b,
+    type: 2}
   m_InteractableCantHoverMeshMaterial: {fileID: 0}
   m_SocketActive: 1
   m_InteractableHoverScale: 1
@@ -141,7 +142,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8477284546843733960}
-  m_Mesh: {fileID: 1499750085523079801, guid: baccb237d83fc214bbd7a3a703e610f9, type: 3}
+  m_Mesh: {fileID: -7819359555950345858, guid: f56d76fc42cd9004cac46fcf56a3db2d, type: 3}
 --- !u!23 &7972955810993589789
 MeshRenderer:
   m_ObjectHideFlags: 0

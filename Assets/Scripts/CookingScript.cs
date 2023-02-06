@@ -64,7 +64,7 @@ public class CookingScript : MonoBehaviour
 
         }
 
-        else if (objectNearFire.gameObject.tag == " Poison Mushroom")
+        else if (objectNearFire.gameObject.tag == "Poison Mushroom")
         {
             Debug.Log("Poison Mushroom is near fire");
 
