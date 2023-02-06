@@ -1511,11 +1511,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7722417565096706461, guid: 0c4bcd8e09d25ec4f97b376f4db336b6,
         type: 3}
-      propertyPath: m_UseGravity
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7722417565096706461, guid: 0c4bcd8e09d25ec4f97b376f4db336b6,
-        type: 3}
       propertyPath: m_CollisionDetection
       value: 2
       objectReference: {fileID: 0}
