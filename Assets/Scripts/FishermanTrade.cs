@@ -38,9 +38,8 @@ public class FishermanTrade : MonoBehaviour
             Debug.Log("Mushroom quota fulfilled");
             giveMushroom.interactable = true;
 
-            fishRod.AddComponent<XRGrabInteractable>();
-            fishRod.AddComponent<Rigidbody>();
-            fishRod.GetComponent<Rigidbody>().collisionDetectionMode = CollisionDetectionMode.Continuous;
+            fishRod.GetComponent<XRGrabInteractable>().enabled = true;
+            fishRod.GetComponent<Rigidbody>().isKinematic = false;
             arrow.SetActive(true);
             rentRod.interactable = false;
         }
