@@ -4,27 +4,27 @@ using UnityEngine;
 
 public class MatchboxAnimation : MonoBehaviour
 {
-    public Animator matchboxParent;
+    public Animator matchboxAnimator;
 
     public void ChangeAnimation()
     {
-        if (matchboxParent.GetBool("MatchboxOpen"))
+        if (matchboxAnimator.GetBool("MatchboxOpen"))
         {
             Debug.Log("MatchboxOpen");
-            matchboxParent.SetBool("MatchboxOpen", false);
-            matchboxParent.SetBool("MatchboxClose", true);
+            matchboxAnimator.SetBool("MatchboxOpen", false);
+            matchboxAnimator.SetBool("MatchboxClose", true);
         }
 
-        else if (matchboxParent.GetBool("MatchboxClose"))
+        else if (matchboxAnimator.GetBool("MatchboxClose"))
         {
             Debug.Log("MatchboxClose");
-            matchboxParent.SetBool("MatchboxClose", false);
-            matchboxParent.SetBool("MatchboxOpen", true);
+            matchboxAnimator.SetBool("MatchboxClose", false);
+            matchboxAnimator.SetBool("MatchboxOpen", true);
         }
 
         else
         {
-            matchboxParent.SetBool("MatchboxOpen", true);
+            matchboxAnimator.SetBool("MatchboxOpen", true);
         }
     }
 }
