@@ -12,6 +12,10 @@ public class MatchboxScript : MonoBehaviour
     public float matchstickSpeed;
 
     public bool cycleOver;
+    public bool findMatchstick;
+
+    private GameObject matchstick;
+    private MatchstickScript matchstickScript;
 
     private void Update()
     {
@@ -20,14 +24,26 @@ public class MatchboxScript : MonoBehaviour
             timeTaken += Time.deltaTime;
         }
 
-        if (!startTimer && !cycleOver)
+        if (findMatchstick)
+        {
+            matchstickScript = matchstick.GetComponent<MatchstickScript>();
+            findMatchstick = false;
+        }
+
+        if (!startTimer && !cycleOver && matchstick != null)
         {
             matchstickSpeed = Vector3.Distance(position1, position2) * 100 / timeTaken;
             if (matchstickSpeed >= requiredSpeed)
             {
-                Debug.Log("Fire lit");
+                matchstickScript.IgniteMatch();
+
                 cycleOver = true;
             }
+        }
+
+        if (matchstick == null)
+        {
+            cycleOver = false;
         }
     }
 
@@ -35,6 +51,9 @@ public class MatchboxScript : MonoBehaviour
     {
         if (other.gameObject.tag == "MatchstickTip")
         {
+            matchstick = other.gameObject.transform.parent.gameObject;
+            findMatchstick = true;
+            Debug.Log("Matchstick: " + matchstick);
             Debug.Log("Entered");
             position1 = other.gameObject.transform.position;
             startTimer = true;
