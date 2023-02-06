@@ -1313,11 +1313,22 @@ MonoBehaviour:
   fishDistance: 1
   fishRetrieveSpeed: 10
   destroyFish: 0
+  fishCaughtSuccess: 0
   interruptDistance: 2
   raycastOrigin: {fileID: 9103189794492437189}
   controller: {fileID: 0}
   activateButtonPressed: 0
   rodInHand: 0
+  fishingSuccessPanel: {fileID: 0}
+  fishingFailPanel: {fileID: 0}
+  fishOnPanel: {fileID: 0}
+  lineCastedPanel: {fileID: 0}
+  stopFishingPanel: {fileID: 0}
+  fishBucketPanel: {fileID: 0}
+  waitTime: 4
+  reachedTarget: 0
+  canFish: 1
+  fishCollectible: {fileID: 0}
 --- !u!1 &9103189795657212046
 GameObject:
   m_ObjectHideFlags: 0
