@@ -18,17 +18,19 @@ public class MenuSettings : MonoBehaviour
 
     private void Start()
     {
-        float volume = 20f;
-        mixer1.GetFloat("BGMVolume", out volume);
-        bgmSlider.value = volume;
-        mixer1.GetFloat("SFXVolume", out volume);
-        sfxSlider.value = volume;
+        //float volume = 20f;
+       // mixer1.GetFloat("BGMVolume", out volume);
+        //bgmSlider.value = volume;
+        //mixer1.GetFloat("SFXVolume", out volume);
+        //sfxSlider.value = volume;
     }
     public void TextScale(Slider slider)
     {
         text.fontSize = (int)slider.value;
         Debug.Log((int)slider.value);
-        textSize.text = slider.value.ToString();
+        textSize.text = (slider.value.ToString());
+        textSize.fontSize = (int)slider.value;
+
     }
 
     public void SFXScale(Slider slider)
