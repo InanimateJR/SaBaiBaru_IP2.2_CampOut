@@ -1358,6 +1358,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animationClip: {fileID: 7400000, guid: 17463b224f4115e40970908db8debc07, type: 2}
+  animationClip1: {fileID: 0}
+  animationClip2: {fileID: 0}
 --- !u!1 &1274197655
 GameObject:
   m_ObjectHideFlags: 0
@@ -1961,6 +1963,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animationClip: {fileID: 7400000, guid: 17463b224f4115e40970908db8debc07, type: 2}
+  animationClip1: {fileID: 7400000, guid: ed44ddb1fec799445925ad303a60a546, type: 2}
+  animationClip2: {fileID: 7400000, guid: 5fe974cfb17788943ac910bb0f5e585a, type: 2}
 --- !u!111 &1687026087
 Animation:
   m_ObjectHideFlags: 0
@@ -2540,6 +2544,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animationClip: {fileID: 7400000, guid: 17463b224f4115e40970908db8debc07, type: 2}
+  animationClip1: {fileID: 0}
+  animationClip2: {fileID: 0}
 --- !u!111 &1932106284
 Animation:
   m_ObjectHideFlags: 0
@@ -2726,6 +2732,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animationClip: {fileID: 7400000, guid: 17463b224f4115e40970908db8debc07, type: 2}
+  animationClip1: {fileID: 0}
+  animationClip2: {fileID: 0}
 --- !u!114 &138466962244600276
 MonoBehaviour:
   m_ObjectHideFlags: 0
