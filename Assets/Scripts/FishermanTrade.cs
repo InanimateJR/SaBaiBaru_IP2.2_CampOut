@@ -38,6 +38,11 @@ public class FishermanTrade : MonoBehaviour
             Debug.Log("Mushroom quota fulfilled");
             giveMushroom.interactable = true;
 
+            if(other.gameObject.tag == "Mushroom")
+            {
+                Destroy(other.gameObject);
+            }
+
             fishRod.GetComponent<XRGrabInteractable>().enabled = true;
             fishRod.GetComponent<Rigidbody>().isKinematic = false;
             arrow.SetActive(true);
