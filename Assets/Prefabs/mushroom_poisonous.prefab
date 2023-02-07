@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -8074806232241641967}
   - component: {fileID: 6785105724301905347}
   - component: {fileID: 5399050797536832259}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: mushroom_poisonous
   m_TagString: Poison Mushroom
   m_Icon: {fileID: 0}

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2268733811632061767}
   - component: {fileID: 9065134873462743794}
   - component: {fileID: 9065134873462743795}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Stick 2 with Socket
   m_TagString: Untagged
   m_Icon: {fileID: 0}

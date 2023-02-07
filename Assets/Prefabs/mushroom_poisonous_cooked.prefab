@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 769170061125674443}
   - component: {fileID: 5283314764531005753}
   - component: {fileID: -8975924997803124421}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: mushroom_poisonous_cooked
   m_TagString: Cooked Poison Mushroom
   m_Icon: {fileID: 0}
