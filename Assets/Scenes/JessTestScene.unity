@@ -3553,6 +3553,66 @@ PrefabInstance:
       propertyPath: m_Name
       value: Notepad 2.0
       objectReference: {fileID: 0}
+    - target: {fileID: 3313754785105573235, guid: a870c63aea4a7f04b9843457ad14dba6,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3963299375444049995, guid: a870c63aea4a7f04b9843457ad14dba6,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3963299375444049995, guid: a870c63aea4a7f04b9843457ad14dba6,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4065016680227651406, guid: a870c63aea4a7f04b9843457ad14dba6,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4960192992754457218, guid: a870c63aea4a7f04b9843457ad14dba6,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4960192992754457218, guid: a870c63aea4a7f04b9843457ad14dba6,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5857809948431966365, guid: a870c63aea4a7f04b9843457ad14dba6,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5857809948431966365, guid: a870c63aea4a7f04b9843457ad14dba6,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5857809948431966365, guid: a870c63aea4a7f04b9843457ad14dba6,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8412280377075206533, guid: a870c63aea4a7f04b9843457ad14dba6,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8412280377075206533, guid: a870c63aea4a7f04b9843457ad14dba6,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8412280377075206533, guid: a870c63aea4a7f04b9843457ad14dba6,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a870c63aea4a7f04b9843457ad14dba6, type: 3}
 --- !u!1001 &1306730151
@@ -4076,6 +4136,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1663056971 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3873731123391574844, guid: 75270ff93b2f1764a9a26be4e1cf0e40,
+    type: 3}
+  m_PrefabInstance: {fileID: 3219901911120073034}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1691078556
 GameObject:
   m_ObjectHideFlags: 0
@@ -4760,6 +4826,7 @@ MonoBehaviour:
   poisonEffect1: {fileID: 858017999}
   poisonEffect2: {fileID: 1911652987}
   poisonEffect3: {fileID: 1430912315}
+  poisonEffect4: {fileID: 1663056971}
 --- !u!1 &2100400393
 GameObject:
   m_ObjectHideFlags: 0
@@ -7535,6 +7602,11 @@ PrefabInstance:
     - target: {fileID: 3219901910083746489, guid: 75270ff93b2f1764a9a26be4e1cf0e40,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3873731123391574844, guid: 75270ff93b2f1764a9a26be4e1cf0e40,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

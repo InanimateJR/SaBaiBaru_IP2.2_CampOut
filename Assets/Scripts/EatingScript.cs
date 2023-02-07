@@ -8,6 +8,7 @@ public class EatingScript : MonoBehaviour
     public GameObject poisonEffect1;
     public GameObject poisonEffect2;
     public GameObject poisonEffect3;
+    public GameObject poisonEffect4;
 
 
     private void OnTriggerEnter(Collider other)
@@ -27,7 +28,7 @@ public class EatingScript : MonoBehaviour
         else if (other.gameObject.tag == "Cooked Poison Mushroom")
         {
             Destroy(other.gameObject);
-            int effect = Random.Range(1, 4);
+            int effect = Random.Range(1, 5);
             if (effect == 1)
             {
                 poisonEffect1.SetActive(true);
@@ -40,7 +41,12 @@ public class EatingScript : MonoBehaviour
             }
             else if (effect == 3)
             {
-                poisonEffect1.SetActive(true);
+                poisonEffect3.SetActive(true);
+                StartCoroutine(PoisonEffect());
+            }
+            else if (effect == 4)
+            {
+                poisonEffect4.SetActive(true);
                 StartCoroutine(PoisonEffect());
             }
             Debug.Log("Poison has been eaten");
@@ -63,7 +69,11 @@ public class EatingScript : MonoBehaviour
         }
         else if (poisonEffect3.activeSelf)
         {
-            poisonEffect1.SetActive(false);
+            poisonEffect3.SetActive(false);
+        }
+        else if (poisonEffect4.activeSelf)
+        {
+            poisonEffect4.SetActive(false);
         }
         Debug.Log("Poison Effect is now gone");
     }
