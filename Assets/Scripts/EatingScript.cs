@@ -13,18 +13,21 @@ public class EatingScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "Cooked Edible Mushroom")
+        //If the food is cooked Mushroom
+        if (other.gameObject.tag == "Cooked Edible Mushroom")
         {
             
             Destroy(other.gameObject);
             Debug.Log("Edible Mushroom has been eaten");
         }
+        //If the food is cooked Fish
         else if (other.gameObject.tag == "Cooked Fish")
         {
 
             Destroy(other.gameObject);
             Debug.Log("Fish has been eaten");
         }
+        //If the food is cooked Poison Mushroom, it will disappear and also call function to create poison effect for 20-30s.
         else if (other.gameObject.tag == "Cooked Poison Mushroom")
         {
             Destroy(other.gameObject);
@@ -54,6 +57,7 @@ public class EatingScript : MonoBehaviour
 
         
     }
+    //function to create one of the four poison effect for about 20-30s randomly
     public IEnumerator PoisonEffect()
     {
         int effectTime = Random.Range(20, 31);

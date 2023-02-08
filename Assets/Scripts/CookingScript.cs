@@ -37,7 +37,7 @@ public class CookingScript : MonoBehaviour
         
     }
     */
-    
+    //If the collider sense that a raw food is near the fire, it will make bool to cook food true
     public void OnTriggerEnter(Collider objectNearFire)
     {
         if (objectNearFire.gameObject.tag == "Fish")
