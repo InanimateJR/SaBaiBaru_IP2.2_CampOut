@@ -18,6 +18,7 @@ TagManager:
   - MatchstickTip
   - Matchbox
   - Log
+  - TextUI
   layers:
   - Default
   - TransparentFX

@@ -8,29 +8,22 @@ using UnityEngine.Audio;
 public class MenuSettings : MonoBehaviour
 {
     // Start is called before the first frame update
-    public TMP_Text text;
     public TMP_Text sfxVolume;
     public TMP_Text bgmVolume;
     public TMP_Text textSize;
     public AudioMixer mixer1;
     public Slider bgmSlider;
     public Slider sfxSlider;
-
-    private void Start()
-    {
-        //float volume = 20f;
-       // mixer1.GetFloat("BGMVolume", out volume);
-        //bgmSlider.value = volume;
-        //mixer1.GetFloat("SFXVolume", out volume);
-        //sfxSlider.value = volume;
-    }
+    public GameObject notepad;
+    public GameObject[] textUI; 
     public void TextScale(Slider slider)
     {
-        text.fontSize = (int)slider.value;
-        Debug.Log((int)slider.value);
         textSize.text = (slider.value.ToString());
-        textSize.fontSize = (int)slider.value;
-
+        foreach (GameObject text in textUI)
+        {
+            TMP_Text textToChange = text.GetComponent<TMP_Text>();
+            textToChange.fontSize = (int)slider.value;
+        }
     }
 
     public void SFXScale(Slider slider)
