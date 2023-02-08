@@ -19,6 +19,7 @@ TagManager:
   - Matchbox
   - Log
   - TextUI
+  - Leafpile
   layers:
   - Default
   - TransparentFX

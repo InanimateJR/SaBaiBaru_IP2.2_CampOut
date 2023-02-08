@@ -4,32 +4,35 @@ using UnityEngine;
 
 public class InventorySlotScript : MonoBehaviour
 {
-    public GameObject[] inventoryArray;         // Array storing snapped objects
     public GameObject[] inventorySocketArray;   // Array storing sockets
-    public int i;
+    public int snappedObjects;
+    public bool objectSnapped;
 
-    public InventorySocketScript inventorySocketScript;
+    public GameObject ghostObject;
+
+    private void Update()
+    {
+        if (snappedObjects == 0)
+        {
+            ghostObject.SetActive(true);
+        }
+
+        else
+        {
+            ghostObject.SetActive(false);
+        }
+    }
 
     public void ObjectSnapped()
     {
-        inventorySocketScript = inventorySocketArray[i].GetComponent<InventorySocketScript>();
-        inventorySocketScript.objectSnapped = true;
-        //inventoryArray[i].SetActive(false);
-        if (i > 1)
-        {
-            inventorySocketArray[i - 1].SetActive(false);
-            inventoryArray[i - 1].SetActive(false);
-        }
-        inventorySocketArray[i+1].SetActive(true);
-        i++;
+        snappedObjects++;
+        objectSnapped = true;
     }
 
     public void ObjectRemoved()
     {
-        if (i > 0)
-        {
-            i--;
-        }
-        inventorySocketScript.objectSnapped = false;
+        snappedObjects--;
+        objectSnapped = false;
     }
 }
+
