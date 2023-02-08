@@ -18,6 +18,7 @@ public class FoodTrigger : MonoBehaviour
 
     public bool canCookPoisonMushroom = false;
 
+    // Always check if the food can be cooked or not
     void Update()
     {
         if (canCookFish == true)
@@ -41,6 +42,7 @@ public class FoodTrigger : MonoBehaviour
             StartCoroutine(CookingPoisonMushroom());
         }
     }
+    // Switch the prefab of raw to cooked fishs
     public void SpawnCookedFish()
     {
         Debug.Log("cooking...2");
@@ -49,7 +51,7 @@ public class FoodTrigger : MonoBehaviour
         Debug.Log("Fish has been cooked!");
 
     }
-
+    // Switch the prefab of raw to cooked Mushrooms
     public void SpawnCookedMushroom()
     {
         Debug.Log("cooking...2");
@@ -58,7 +60,7 @@ public class FoodTrigger : MonoBehaviour
         Debug.Log("Mushroom has been cooked!");
 
     }
-
+    // Switch the prefab of raw to cooked Poison Mushrooms
     public void SpawnCookedPoisonMushroom()
     {
         Debug.Log("cooking...2");
@@ -67,7 +69,7 @@ public class FoodTrigger : MonoBehaviour
         Debug.Log("Poison Mushroom has been cooked!");
 
     }
-
+    // Wait for 5 seconds before the Fish prefab is switched
     public IEnumerator CookingFish()
     {
         Debug.Log("cooking...");
@@ -75,7 +77,7 @@ public class FoodTrigger : MonoBehaviour
         SpawnCookedFish();
 
     }
-
+    // Wait for 5 seconds before the Mushroom prefab is switched
     public IEnumerator CookingMushroom()
     {
         Debug.Log("cooking...");
@@ -83,7 +85,7 @@ public class FoodTrigger : MonoBehaviour
         SpawnCookedMushroom();
 
     }
-
+    // Wait for 5 seconds before the Poison Mushroom prefab is switched
     public IEnumerator CookingPoisonMushroom()
     {
         Debug.Log("cooking...");
