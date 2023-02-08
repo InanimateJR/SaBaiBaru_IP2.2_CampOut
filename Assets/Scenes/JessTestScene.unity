@@ -6207,7 +6207,7 @@ GameObject:
   - component: {fileID: 4469958139635121328}
   - component: {fileID: 7574737611899202404}
   m_Layer: 5
-  m_Name: Settings
+  m_Name: Setting  Section
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11199,6 +11199,7 @@ GameObject:
   - component: {fileID: 8305555670814247791}
   - component: {fileID: 8305555670814247790}
   - component: {fileID: 8305555670814247785}
+  - component: {fileID: 8305555670814247792}
   m_Layer: 5
   m_Name: Task Button
   m_TagString: Untagged
@@ -11244,6 +11245,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8305555670814247787}
   m_CullTransparentMesh: 1
+--- !u!95 &8305555670814247792
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8305555670814247787}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a97100a3aa1795a46bfbb7355eeeed87, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!224 &8305555670828975272
 RectTransform:
   m_ObjectHideFlags: 0
