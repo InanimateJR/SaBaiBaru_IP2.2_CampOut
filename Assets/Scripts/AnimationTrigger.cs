@@ -4,24 +4,15 @@ using UnityEngine;
 
 public class AnimationTrigger : MonoBehaviour
 {
-    public AnimationClip animationClip;
-    public AnimationClip animationClip1;
-    public AnimationClip animationClip2;
-    private int hits = 0;
-    private Animation animation;
+    private int collisionCount = 0;
 
-    private void Start()
+    private void OnCollisionEnter(Collision collision)
     {
-        animation = GetComponent<Animation>();
-        animation.clip = animationClip;
-    }
+        collisionCount++;
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (hits < 3)
+        if (collisionCount <= 3)
         {
-            hits++;
-            animation.Play();
+            GetComponent<Animation>().Play();
         }
     }
 }
