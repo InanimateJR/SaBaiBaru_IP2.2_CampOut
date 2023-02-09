@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7838637413138836870}
   - component: {fileID: 3458920809671055503}
   - component: {fileID: 8485123646113576203}
+  - component: {fileID: 582811452564793113}
   m_Layer: 0
   m_Name: Stick 1
   m_TagString: Untagged
@@ -157,7 +158,19 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 582811452564793113}
+        m_TargetAssemblyTypeName: Sockets, Assembly-CSharp
+        m_MethodName: SocketCheck
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
       m_Calls: []
@@ -231,3 +244,15 @@ MonoBehaviour:
   m_ForceGravityOnDetach: 0
   m_RetainTransformParent: 1
   m_AttachPointCompatibilityMode: 0
+--- !u!114 &582811452564793113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2097798513301774578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3218167e40d3f1e47bba772ca09e0014, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

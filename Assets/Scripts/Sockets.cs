@@ -6,18 +6,21 @@ public class Sockets : MonoBehaviour
 {
     public void SocketCheck()
     {
-        Invoke("DisableSocket", 1);
-
-        //IXRSelectInteractable objName = socket.GetOldestInteractableSelected();
-    }
-    void DisableSocket()
-    {
         XRGrabInteractable myGrabbable = GetComponent<XRGrabInteractable>();
         Rigidbody myRigidbody = GetComponent<Rigidbody>();
         if (myGrabbable.firstInteractorSelecting is XRSocketInteractor)
         {
-            Destroy(myGrabbable);
-            Destroy(myRigidbody);
+            Invoke("DisableSocket", 1);
         }
+        
+
+        //IXRSelectInteractable objName = socket.GetOldestInteractableSelected();
+    }
+    public void DisableSocket()
+    {
+        XRGrabInteractable myGrabbable = GetComponent<XRGrabInteractable>();
+        Rigidbody myRigidbody = GetComponent<Rigidbody>();
+        Destroy(myGrabbable);
+        Destroy(myRigidbody);
     }
 }
