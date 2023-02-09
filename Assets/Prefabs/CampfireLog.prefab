@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 940056657592035588}
   - component: {fileID: 7605461743323308267}
   - component: {fileID: 85311086079974699}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: CampfireLog
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -293502825896984990, guid: 06c8740624fe15e4db0029b4c9e384ff, type: 3}
 --- !u!54 &7605461743323308267
