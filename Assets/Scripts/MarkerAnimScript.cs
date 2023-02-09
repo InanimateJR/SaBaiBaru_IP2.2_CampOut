@@ -6,10 +6,14 @@ public class MarkerAnimScript : MonoBehaviour
 {
     private Animator Anim;
 
+    private Animator otherAnim;
+
+    public GameObject settingsBtn;
+    public GameObject taskBtn;
+    public GameObject guideBtn;
+
+    public GameObject settingsSection;
     public GameObject guideSection;
-
-    public GameObject settingSection;
-
     public GameObject taskSection;
 
     // Start is called before the first frame update
@@ -20,15 +24,62 @@ public class MarkerAnimScript : MonoBehaviour
 
     public void GuideOpen()
     {
-        if(taskSection.activeSelf)
-        {
-            Anim.Play("GuideOpen_Animation");
+        Anim.Play("GuideOpen_Animation");
 
+        guideSection.SetActive(true);
+
+        if (settingsSection.activeSelf == true)
+        {
+
+            otherAnim = settingsBtn.GetComponent<Animator>();
+            otherAnim.Play("SettingsClose_Animation");
+            settingsSection.SetActive(false);
         }
-        else if(settingSection.activeSelf)
+        else if (taskSection.activeSelf == true)
         {
-            Anim.Play("GuideOpen_Animation");
+            otherAnim = taskBtn.GetComponent<Animator>();
+            otherAnim.Play("TaskClose_Animation");
+            taskSection.SetActive(false);
+        }
+    }
 
+    public void TaskOpen()
+    {
+        Anim.Play("TaskOpen_Animation");
+
+        taskSection.SetActive(true);
+
+        if (settingsSection.activeSelf == true)
+        {
+            otherAnim = settingsBtn.GetComponent<Animator>();
+            otherAnim.Play("SettingsClose_Animation");
+            settingsSection.SetActive(false);
+        }
+        else if (guideSection.activeSelf == true)
+        {
+            otherAnim = guideBtn.GetComponent<Animator>();
+            otherAnim.Play("GuideClose_Animation");
+            guideSection.SetActive(false);
+        }
+    }
+
+    public void SettingsOpen()
+    {
+        Anim.Play("SettingsOpen_Animation");
+
+        settingsSection.SetActive(true);
+
+        if (taskSection.activeSelf == true)
+        {
+            otherAnim = taskBtn.GetComponent<Animator>();
+            otherAnim.Play("TaskClose_Animation");
+            taskSection.SetActive(false);
+        }
+        else if (guideSection.activeSelf == true)
+        {
+            otherAnim = guideBtn.GetComponent<Animator>();
+            otherAnim.Play("GuideClose_Animation");
+            guideSection.SetActive(false);
         }
     }
 
