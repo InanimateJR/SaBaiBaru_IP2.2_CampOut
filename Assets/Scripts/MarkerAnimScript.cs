@@ -20,6 +20,19 @@ public class MarkerAnimScript : MonoBehaviour
     void Start()
     {
         Anim = GetComponent<Animator>();
+
+        if (settingsSection.activeSelf == true)
+        {
+            Anim.Play("SettingsOpen_Animation");
+        }
+        if (guideSection.activeSelf == true)
+        {
+            Anim.Play("GuideOpen_Animation");
+        }
+        if (taskSection.activeSelf == true)
+        {
+            Anim.Play("TaskOpen_Animation");
+        }
     }
 
     public void GuideOpen()
