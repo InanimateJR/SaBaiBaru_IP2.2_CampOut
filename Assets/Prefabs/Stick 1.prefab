@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 3458920809671055503}
   - component: {fileID: 8485123646113576203}
   - component: {fileID: 582811452564793113}
+  - component: {fileID: -7452188833033371184}
+  - component: {fileID: 6970746683463731610}
   m_Layer: 0
   m_Name: Stick 1
   m_TagString: Untagged
@@ -256,3 +258,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3218167e40d3f1e47bba772ca09e0014, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!135 &-7452188833033371184
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2097798513301774578}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.02
+  m_Center: {x: 0, y: 9.313226e-10, z: 0}
+--- !u!114 &6970746683463731610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2097798513301774578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 791f38a0d0416f84c9127d67a101337a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  snapped: 0
+  collected: 0
+  inventorySlot: {fileID: 0}
+  inventorySlotScript: {fileID: 0}

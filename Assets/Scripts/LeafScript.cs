@@ -10,73 +10,95 @@ public class LeafScript : MonoBehaviour
 
     public MeshRenderer[] leafRenderers;
 
-    public Image hoverImage;
-    public Color hoverColour;
-    public Color defaultColour;
-
+    public GameObject inventorySlot;
     public InventorySlotScript inventorySlotScript;
 
     private void Update()
     {
         if (inventorySlotScript != null)
         {
-            if (inventorySlotScript.objectSnapped)
+            if (inventorySlotScript.objectSnapped && !inventorySlotScript.slotOccupied)
             {
                 snapped = true;
+                inventorySlotScript.slotOccupied = true;
                 Debug.Log("Renderer off");
-                for (int i = 0; i < leafRenderers.Length; i++)
+                TurnOffMeshRenderers();
+                if (!collected)
                 {
-                    leafRenderers[i].enabled = false;
+                    collected = true;
+                    // DDA ADD DATA HERE
                 }
             }
 
-            if (!inventorySlotScript.objectSnapped)
+            if (!inventorySlotScript.objectSnapped && inventorySlotScript.slotOccupied)
             {
                 snapped = false;
-                for (int i = 0; i < leafRenderers.Length; i++)
-                {
-                    leafRenderers[i].enabled = true;
-                }
+                inventorySlotScript.slotOccupied = false;
+                TurnOnMeshRenderers();
+            }
+
+            if (inventorySlotScript.snappedObject == null)
+            {
+                inventorySlot = null;
+                inventorySlotScript = null;
             }
         }
+    }
 
-        if (!collected)
+    public void TurnOffMeshRenderers()
+    {
+        for (int i = 0; i < leafRenderers.Length; i++)
         {
-            collected = true;
-            // DDA ADD DATA HERE
+            leafRenderers[i].enabled = false;
+        }
+    }
+
+    public void TurnOnMeshRenderers()
+    {
+        for (int i = 0; i < leafRenderers.Length; i++)
+        {
+            leafRenderers[i].enabled = true;
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "LeafpileSocket")
+        if (other.gameObject.tag == "InventorySlot")
         {
-            hoverImage.color = hoverColour;
-            inventorySlotScript = other.gameObject.GetComponent<InventorySlotScript>();
+            inventorySlot = other.gameObject;
         }
     }
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.tag == "LeafpileSocket")
+        if (other.gameObject.tag == "InventorySlot")
         {
-            if (!snapped)
+            if (inventorySlotScript == null)
             {
-                hoverImage.color = hoverColour;
+                inventorySlotScript = inventorySlot.GetComponent<InventorySlotScript>();
             }
 
-            else if (snapped)
+            if (inventorySlotScript != null)
             {
-                hoverImage.color = defaultColour;
+                if (inventorySlotScript.snappedObject == null)
+                {
+                    inventorySlotScript.snappedObject = this.gameObject;
+                }
+
+                if (inventorySlotScript.hoverImage.color == inventorySlotScript.defaultColour)
+                {
+                    inventorySlotScript.hoverImage.color = inventorySlotScript.hoverColour;
+                }
             }
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.tag == "LeafpileSocket")
+        if (other.gameObject.tag == "InventorySlot")
         {
-            hoverImage.color = defaultColour;
+            inventorySlotScript.snappedObject = null;
+            inventorySlotScript.hoverImage.color = inventorySlotScript.defaultColour;
         }
     }
 }
