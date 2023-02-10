@@ -19,6 +19,7 @@ public class InventoryObjectScript : MonoBehaviour
     private void Start()
     {
         objectRenderer = this.gameObject.GetComponent<MeshRenderer>();
+        objectRigidbody = this.gameObject.GetComponent<Rigidbody>();
     }
 
     private void Update()
@@ -31,7 +32,6 @@ public class InventoryObjectScript : MonoBehaviour
                 inventorySlotScript.slotOccupied = true;
                 Debug.Log("Renderer off");
                 objectRenderer.enabled = false;
-                objectRigidbody.isKinematic = true;
                 objectRigidbody.useGravity = false;
                 if (this.gameObject.name == "Matchbox Ready")
                 {
@@ -50,7 +50,6 @@ public class InventoryObjectScript : MonoBehaviour
                 snapped = false;
                 inventorySlotScript.slotOccupied = false;
                 objectRenderer.enabled = true;
-                objectRigidbody.isKinematic = false;
                 objectRigidbody.useGravity = true;
                 if (this.gameObject.name == "Matchbox Ready")
                 {
@@ -68,7 +67,6 @@ public class InventoryObjectScript : MonoBehaviour
         if (inventorySlotScript == null)
         {
             objectRenderer.enabled = true;
-            objectRigidbody.isKinematic = false;
             objectRigidbody.useGravity = true;
             if (this.gameObject.name == "Matchbox Ready")
             {
@@ -117,7 +115,6 @@ public class InventoryObjectScript : MonoBehaviour
     {
         if (other.gameObject.tag == "InventorySlot")
         {
-            inventorySlot = null;
             inventorySlot = other.gameObject;
         }
     }

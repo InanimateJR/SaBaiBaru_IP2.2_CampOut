@@ -4,29 +4,141 @@ using UnityEngine;
 
 public class ObjectScaler : MonoBehaviour
 {
+    public InventoryObjectScript inventoryObjectScript;
+    public LeafScript leafScript;
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Leafpile")
         {
+            leafScript = other.gameObject.GetComponent<LeafScript>();
             other.gameObject.transform.localScale = new Vector3(0.16915f, 0.2363533f, 0.16915f);
         }
 
         if (other.gameObject.tag == "Tent")
         {
-            other.gameObject.transform.localScale = new Vector3(0.1163466f, 0.1163466f, 0.1163466f); 
+            inventoryObjectScript = other.gameObject.GetComponent<InventoryObjectScript>();
+            other.gameObject.transform.localScale = new Vector3(0.1163466f, 0.1163466f, 0.1163466f);
+        }
+
+        if (other.gameObject.tag == "Stick")
+        {
+            inventoryObjectScript = other.gameObject.GetComponent<InventoryObjectScript>();
+            other.gameObject.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
+        }
+
+        if (other.gameObject.tag == "Cooked Fish")
+        {
+            inventoryObjectScript = other.gameObject.GetComponent<InventoryObjectScript>();
+            other.gameObject.transform.localScale = new Vector3(0.1292207f, 0.1292207f, 0.1292207f);
+        }
+
+        if (other.gameObject.tag == "Mushroom" || other.gameObject.tag == "Poison Mushroom" || other.gameObject.tag == "Cooked Poison Mushroom" || other.gameObject.tag == "Cooked Edible Mushroom")
+        {
+            inventoryObjectScript = other.gameObject.GetComponent<InventoryObjectScript>();
+            other.gameObject.transform.localScale = new Vector3(2.966417f, 2.966417f, 2.966417f);
+        }
+
+        if (other.gameObject.tag == "Log")
+        {
+            inventoryObjectScript = other.gameObject.GetComponent<InventoryObjectScript>();
+            other.gameObject.transform.localScale = new Vector3(0.5499497f, 3.700222f, 0.5499497f);
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (leafScript != null)
+        {
+            if (leafScript.snapped)
+            {
+                if (other.gameObject.tag == "Leafpile")
+                {
+                    leafScript = other.gameObject.GetComponent<LeafScript>();
+                    other.gameObject.transform.localScale = new Vector3(0.16915f, 0.2363533f, 0.16915f);
+                }
+            }
+        }
+
+        if (inventoryObjectScript != null)
+        {
+            if (inventoryObjectScript.snapped)
+            {
+                if (other.gameObject.tag == "Tent")
+                {
+                    inventoryObjectScript = other.gameObject.GetComponent<InventoryObjectScript>();
+                    other.gameObject.transform.localScale = new Vector3(0.1163466f, 0.1163466f, 0.1163466f);
+                }
+
+                if (other.gameObject.tag == "Stick")
+                {
+                    inventoryObjectScript = other.gameObject.GetComponent<InventoryObjectScript>();
+                    other.gameObject.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
+                }
+
+                if (other.gameObject.tag == "Cooked Fish")
+                {
+                    inventoryObjectScript = other.gameObject.GetComponent<InventoryObjectScript>();
+                    other.gameObject.transform.localScale = new Vector3(0.1292207f, 0.1292207f, 0.1292207f);
+                }
+
+                if (other.gameObject.tag == "Mushroom" || other.gameObject.tag == "Poison Mushroom" || other.gameObject.tag == "Cooked Poison Mushroom" || other.gameObject.tag == "Cooked Edible Mushroom")
+                {
+                    inventoryObjectScript = other.gameObject.GetComponent<InventoryObjectScript>();
+                    other.gameObject.transform.localScale = new Vector3(2.966417f, 2.966417f, 2.966417f);
+                }
+
+                if (other.gameObject.tag == "Log")
+                {
+                    inventoryObjectScript = other.gameObject.GetComponent<InventoryObjectScript>();
+                    other.gameObject.transform.localScale = new Vector3(0.5499497f, 3.700222f, 0.5499497f);
+                }
+            }
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.tag == "Leafpile")
+        if (leafScript != null)
         {
-            other.gameObject.transform.localScale = new Vector3(1, 1.3973f, 1);
+            if (!leafScript.snapped)
+            {
+                if (other.gameObject.tag == "Leafpile")
+                {
+                    other.gameObject.transform.localScale = new Vector3(1, 1.3973f, 1);
+                }
+            }
         }
-
-        if (other.gameObject.tag == "Tent")
+       
+        if (inventoryObjectScript != null)
         {
-            other.gameObject.transform.localScale = new Vector3(0.63265f, 0.63265f, 0.63265f);
+            if (!inventoryObjectScript.snapped)
+            {
+                if (other.gameObject.tag == "Tent")
+                {
+                    other.gameObject.transform.localScale = new Vector3(0.63265f, 0.63265f, 0.63265f);
+                }
+
+                if (other.gameObject.tag == "Stick")
+                {
+                    other.gameObject.transform.localScale = new Vector3(1, 1, 1);
+                }
+
+                if (other.gameObject.tag == "Cooked Fish")
+                {
+                    other.gameObject.transform.localScale = new Vector3(1, 1, 1);
+                }
+
+                if (other.gameObject.tag == "Mushroom" || other.gameObject.tag == "Poison Mushroom" || other.gameObject.tag == "Cooked Poison Mushroom" || other.gameObject.tag == "Cooked Edible Mushroom")
+                {
+                    other.gameObject.transform.localScale = new Vector3(9.061651f, 9.061651f, 9.061651f);
+                }
+
+                if (other.gameObject.tag == "Log")
+                {
+                    other.gameObject.transform.localScale = new Vector3(6.011203f, 40.44512f, 6.011203f);
+                }
+            }
         }
     }
 }
