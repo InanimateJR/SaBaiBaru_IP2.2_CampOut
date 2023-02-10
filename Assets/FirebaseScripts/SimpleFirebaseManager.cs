@@ -19,7 +19,6 @@ public class SimpleFirebaseManager : MonoBehaviour
     int mushroomsCollected = 0;
     int fishCollected = 0;
     int foodCooked = 0;
-    int tentPoints = 0;
     int sticksCollected = 0;
     int leaderboardLastUpdated;
     int totalScore = 0;
@@ -40,9 +39,9 @@ public class SimpleFirebaseManager : MonoBehaviour
             username = currentUser.DisplayName;
             Debug.Log(username + " + " + userID);
             //totalScore = tentPoints + foodCooked + fishCollected + mushroomsCollected + sticksCollected + 1;
-            var epochStart = new System.DateTime(1970, 1, 1, 8, 0, 0, System.DateTimeKind.Utc);
-            var timestamp = (System.DateTime.UtcNow - epochStart).TotalSeconds;
-            leaderboardLastUpdated = (int)timestamp;
+            //var epochStart = new System.DateTime(1970, 1, 1, 8, 0, 0, System.DateTimeKind.Utc);
+            //var timestamp = (System.DateTime.UtcNow - epochStart).TotalSeconds;
+            //leaderboardLastUpdated = (int)timestamp;
             //WriteNewScore(userID, username, totalScore, leaderboardLastUpdated, foodCooked, fishCollected, mushroomsCollected, sticksCollected);
         }
     }
