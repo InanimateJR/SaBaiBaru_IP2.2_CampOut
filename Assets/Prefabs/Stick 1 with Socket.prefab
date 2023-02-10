@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2542687768953089315}
   m_LocalRotation: {x: -0, y: -0.70710576, z: -0, w: 0.70710784}
-  m_LocalPosition: {x: 0.233, y: 0.006, z: -0.037}
+  m_LocalPosition: {x: 0.233, y: 0.006, z: 0.007}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -112,6 +112,7 @@ GameObject:
   - component: {fileID: 7575354985258904686}
   - component: {fileID: 4493783292614912327}
   - component: {fileID: 5278595177000745686}
+  - component: {fileID: 1226182632390757583}
   m_Layer: 8
   m_Name: Stick 1 with Socket
   m_TagString: Untagged
@@ -219,7 +220,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 262160
+    m_Bits: 16
   m_SelectMode: 0
   m_CustomReticle: {fileID: 0}
   m_FirstHoverEntered:
@@ -242,7 +243,19 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1226182632390757583}
+        m_TargetAssemblyTypeName: Sockets, Assembly-CSharp
+        m_MethodName: SocketCheck
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
       m_Calls: []
@@ -329,3 +342,15 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.6875101, y: 0.03632225, z: 0.18278122}
   m_Center: {x: 0, y: 9.313226e-10, z: 0}
+--- !u!114 &1226182632390757583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8477284546843733960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3218167e40d3f1e47bba772ca09e0014, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

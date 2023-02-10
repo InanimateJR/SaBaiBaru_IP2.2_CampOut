@@ -21,6 +21,7 @@ TagManager:
   - TextUI
   - Leafpile
   - LeafpileSocket
+  - CampfireSocket
   layers:
   - Default
   - TransparentFX

@@ -58,7 +58,8 @@ public class CampfireBuilding : MonoBehaviour
     public GameObject sticks7;
 
     bool campfireAssembled = false;
-
+    public GameObject cookingSticks;
+    public GameObject fireLighting;
     private void Update()
     {
         if (campfireAssembled)
@@ -377,6 +378,8 @@ public class CampfireBuilding : MonoBehaviour
             stick7 = true;
             Destroy(sticks7);
             campfireAssembled = true;
+            cookingSticks.SetActive(true);
+            fireLighting.SetActive(true);
         }
     }
 }

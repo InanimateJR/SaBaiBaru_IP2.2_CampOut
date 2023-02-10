@@ -10,11 +10,12 @@ public class Sockets : MonoBehaviour
         Rigidbody myRigidbody = GetComponent<Rigidbody>();
         if (myGrabbable.firstInteractorSelecting is XRSocketInteractor)
         {
-            Invoke("DisableSocket", 1);
-        }
-        
+            if (myGrabbable.firstInteractorSelecting.transform.tag == "CampfireSocket")
+            {
+                Invoke("DisableSocket", 1);
 
-        //IXRSelectInteractable objName = socket.GetOldestInteractableSelected();
+            }
+        }
     }
     public void DisableSocket()
     {
