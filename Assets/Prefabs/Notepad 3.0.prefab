@@ -12183,12 +12183,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Fisherman- You can find him near the lake. He would trade  mushrooms for
-    a fishing rod.
+  m_text: 'Fisherman- You can find him near the lake. He would trade 3 mushrooms
+    for a fishing rod.
 
 
     Ranger- You can find him near the cabin. He would trade
-    fishes for logs.'
+    3 fishes for 6 logs.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5a07bc1d9de833c4f8dd84c93198da8d, type: 2}
   m_sharedMaterial: {fileID: -6237548691277355724, guid: 5a07bc1d9de833c4f8dd84c93198da8d,
@@ -24258,7 +24258,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2518717941034891782
 Transform:
   m_ObjectHideFlags: 0
