@@ -8881,7 +8881,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 4.
+  m_text: "You can eat the cooked food by putting the food near the bottom of your
+    view, around the mouth. \n\n*Eating cooked poison mushrooms may cause some side
+    effects that last 20-30 seconds."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5a07bc1d9de833c4f8dd84c93198da8d, type: 2}
   m_sharedMaterial: {fileID: -6237548691277355724, guid: 5a07bc1d9de833c4f8dd84c93198da8d,
