@@ -12,6 +12,7 @@ public class LeafScript : MonoBehaviour
 
     public GameObject inventorySlot;
     public InventorySlotScript inventorySlotScript;
+    private Rigidbody leafRigidbody;
 
     private void Update()
     {
@@ -21,6 +22,8 @@ public class LeafScript : MonoBehaviour
             {
                 snapped = true;
                 inventorySlotScript.slotOccupied = true;
+                leafRigidbody.isKinematic = false;
+                leafRigidbody.useGravity = true;
                 Debug.Log("Renderer off");
                 TurnOffMeshRenderers();
                 if (!collected)
@@ -34,6 +37,8 @@ public class LeafScript : MonoBehaviour
             {
                 snapped = false;
                 inventorySlotScript.slotOccupied = false;
+                leafRigidbody.isKinematic = true;
+                leafRigidbody.useGravity = false;
                 TurnOnMeshRenderers();
             }
 
@@ -42,6 +47,13 @@ public class LeafScript : MonoBehaviour
                 inventorySlot = null;
                 inventorySlotScript = null;
             }
+        }
+
+        if (inventorySlotScript == null)
+        {
+            leafRigidbody.isKinematic = true;
+            leafRigidbody.useGravity = false;
+            TurnOnMeshRenderers();
         }
     }
 
@@ -65,6 +77,7 @@ public class LeafScript : MonoBehaviour
     {
         if (other.gameObject.tag == "InventorySlot")
         {
+            inventorySlot = null;
             inventorySlot = other.gameObject;
         }
     }

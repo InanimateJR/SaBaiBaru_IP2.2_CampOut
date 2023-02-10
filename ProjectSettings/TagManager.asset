@@ -22,6 +22,8 @@ TagManager:
   - Leafpile
   - LeafpileSocket
   - CampfireSocket
+  - InventorySlot
+  - Tent
   layers:
   - Default
   - TransparentFX
@@ -48,7 +50,7 @@ TagManager:
   - Bag
   - Journal
   - Cooked Fish
-  - 
+  - InventorySlot
   - 
   - 
   - 

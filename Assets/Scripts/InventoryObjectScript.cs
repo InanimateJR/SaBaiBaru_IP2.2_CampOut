@@ -14,6 +14,7 @@ public class InventoryObjectScript : MonoBehaviour
 
     public MeshRenderer[] matchboxArray;
     public GameObject[] otherObjectsArray;
+    private Rigidbody objectRigidbody;
 
     private void Start()
     {
@@ -30,6 +31,8 @@ public class InventoryObjectScript : MonoBehaviour
                 inventorySlotScript.slotOccupied = true;
                 Debug.Log("Renderer off");
                 objectRenderer.enabled = false;
+                objectRigidbody.isKinematic = true;
+                objectRigidbody.useGravity = false;
                 if (this.gameObject.name == "Matchbox Ready")
                 {
                     TurnOffOtherObjects();
@@ -43,9 +46,12 @@ public class InventoryObjectScript : MonoBehaviour
 
             if (!inventorySlotScript.objectSnapped && inventorySlotScript.slotOccupied)
             {
+                Debug.Log("Renderer On");
                 snapped = false;
                 inventorySlotScript.slotOccupied = false;
                 objectRenderer.enabled = true;
+                objectRigidbody.isKinematic = false;
+                objectRigidbody.useGravity = true;
                 if (this.gameObject.name == "Matchbox Ready")
                 {
                     TurnOnOtherObjects();
@@ -56,6 +62,17 @@ public class InventoryObjectScript : MonoBehaviour
             {
                 inventorySlot = null;
                 inventorySlotScript = null;
+            }
+        }
+
+        if (inventorySlotScript == null)
+        {
+            objectRenderer.enabled = true;
+            objectRigidbody.isKinematic = false;
+            objectRigidbody.useGravity = true;
+            if (this.gameObject.name == "Matchbox Ready")
+            {
+                TurnOnOtherObjects();
             }
         }
     }
