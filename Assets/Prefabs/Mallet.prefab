@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: -6858182782617151609}
   - component: {fileID: 6774382712140481876}
   m_Layer: 19
-  m_Name: mallet export to unity
+  m_Name: Mallet
   m_TagString: Mallet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
