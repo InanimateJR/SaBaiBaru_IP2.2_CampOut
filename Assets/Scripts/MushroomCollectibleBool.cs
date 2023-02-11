@@ -19,6 +19,11 @@ public class MushroomCollectibleBool : MonoBehaviour
     public bool collected = false;
     public int score;
     public bool poisonous;
+
+    Vector3 startPosition;
+    Rigidbody mushroomRigidbody;
+    bool objectMoved;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,12 +35,20 @@ public class MushroomCollectibleBool : MonoBehaviour
         {
             score = -1;
         }
+
+        startPosition = transform.position;
+        mushroomRigidbody = this.gameObject.GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (transform.position != startPosition && !objectMoved)
+        {
+            mushroomRigidbody.isKinematic = false;
+            mushroomRigidbody.useGravity = true;
+            objectMoved = true;
+        }
     }
 
     public void CollectedMushroom()
