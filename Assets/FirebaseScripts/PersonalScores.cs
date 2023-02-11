@@ -49,7 +49,6 @@ public class PersonalScores : MonoBehaviour
     public void InitializeFirebase()
     {
         dbPlayerStatsReference = FirebaseDatabase.DefaultInstance.GetReference("playerStats");
-        dbUserStatsReference = FirebaseDatabase.DefaultInstance.GetReference("User");
         auth = FirebaseAuth.DefaultInstance;
     }
 
@@ -64,16 +63,10 @@ public class PersonalScores : MonoBehaviour
                 User user = JsonUtility.FromJson<User>(json);
                 Debug.Log(playerStats.username + " + " + playerStats.fishCollected + " + " + playerStats.mushroomsCollected);
                 playerName.text = ("Player: " + playerStats.username);
-            }
-        });
-        dbUserStatsReference.Child(userID).GetValueAsync().ContinueWithOnMainThread(task =>
-        {
-            if (task.IsCompleted)
-            {
-                string json = task.Result.GetRawJsonValue();
-                User user = JsonUtility.FromJson<User>(json);
-                Debug.Log(user.username + " + " + user.lastLogin);
-
+                fishScore.text = ("Fish Score: " + playerStats.fishCollected);
+                foodScore.text = ("Cooked Food Score: " + playerStats.foodCooked);
+                mushroomsScore.text = ("Mushrooms Score: " + playerStats.mushroomsCollected);
+                sticksScore.text = ("Sticks Score: " + playerStats.sticksCollected);
             }
         });
     }
