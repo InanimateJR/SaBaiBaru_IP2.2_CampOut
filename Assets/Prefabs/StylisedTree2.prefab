@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4903624256447859348}
   - component: {fileID: 664328375681739405}
   - component: {fileID: 2494238219458485119}
+  - component: {fileID: 9059783273440778943}
   m_Layer: 0
   m_Name: StylisedTree2
   m_TagString: Untagged
@@ -36363,3 +36364,17 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
+--- !u!64 &9059783273440778943
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6849359546889005889}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
