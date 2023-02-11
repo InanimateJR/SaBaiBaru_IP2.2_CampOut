@@ -33,7 +33,7 @@ public class InventoryObjectScript : MonoBehaviour
                 Debug.Log("Renderer off");
                 objectRenderer.enabled = false;
                 objectRigidbody.useGravity = false;
-                if (this.gameObject.name == "Matchbox Ready")
+                if (this.gameObject.name == "Matchbox Final")
                 {
                     TurnOffOtherObjects();
                 }
@@ -51,7 +51,7 @@ public class InventoryObjectScript : MonoBehaviour
                 inventorySlotScript.slotOccupied = false;
                 objectRenderer.enabled = true;
                 objectRigidbody.useGravity = true;
-                if (this.gameObject.name == "Matchbox Ready")
+                if (this.gameObject.name == "Matchbox Final")
                 {
                     TurnOnOtherObjects();
                 }
@@ -62,7 +62,7 @@ public class InventoryObjectScript : MonoBehaviour
         {
             objectRenderer.enabled = true;
             objectRigidbody.useGravity = true;
-            if (this.gameObject.name == "Matchbox Ready")
+            if (this.gameObject.name == "Matchbox Final")
             {
                 TurnOnOtherObjects();
             }
