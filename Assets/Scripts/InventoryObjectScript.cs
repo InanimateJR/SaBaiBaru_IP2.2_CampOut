@@ -60,7 +60,6 @@ public class InventoryObjectScript : MonoBehaviour
 
         if (inventorySlotScript == null)
         {
-            Debug.Log("InventorySlotScript null");
             objectRenderer.enabled = true;
             objectRigidbody.useGravity = true;
             if (this.gameObject.name == "Matchbox Ready")
