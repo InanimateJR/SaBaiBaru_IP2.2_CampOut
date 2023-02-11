@@ -56,16 +56,11 @@ public class InventoryObjectScript : MonoBehaviour
                     TurnOnOtherObjects();
                 }
             }
-
-            if (inventorySlotScript.snappedObject == null)
-            {
-                inventorySlot = null;
-                inventorySlotScript = null;
-            }
         }
 
         if (inventorySlotScript == null)
         {
+            Debug.Log("InventorySlotScript null");
             objectRenderer.enabled = true;
             objectRigidbody.useGravity = true;
             if (this.gameObject.name == "Matchbox Ready")
@@ -147,6 +142,7 @@ public class InventoryObjectScript : MonoBehaviour
     {
         if (other.gameObject.tag == "InventorySlot")
         {
+            Debug.Log("Exit");
             inventorySlotScript.snappedObject = null;
             inventorySlotScript.hoverImage.color = inventorySlotScript.defaultColour;
         }

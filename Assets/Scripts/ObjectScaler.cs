@@ -23,7 +23,7 @@ public class ObjectScaler : MonoBehaviour
         if (other.gameObject.tag == "Stick")
         {
             inventoryObjectScript = other.gameObject.GetComponent<InventoryObjectScript>();
-            other.gameObject.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
+            other.gameObject.transform.localScale = new Vector3(0.15f, 0.15f, 0.15f);
         }
 
         if (other.gameObject.tag == "Cooked Fish")
@@ -66,7 +66,7 @@ public class ObjectScaler : MonoBehaviour
                 if (other.gameObject.tag == "Stick")
                 {
                     inventoryObjectScript = other.gameObject.GetComponent<InventoryObjectScript>();
-                    other.gameObject.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
+                    other.gameObject.transform.localScale = new Vector3(0.15f, 0.15f, 0.15f);
                 }
 
                 if (other.gameObject.tag == "Cooked Fish")
