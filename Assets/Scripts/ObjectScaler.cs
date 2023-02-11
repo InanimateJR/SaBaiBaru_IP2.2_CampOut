@@ -5,14 +5,13 @@ using UnityEngine;
 public class ObjectScaler : MonoBehaviour
 {
     public InventoryObjectScript inventoryObjectScript;
-    public LeafScript leafScript;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Leafpile")
         {
-            leafScript = other.gameObject.GetComponent<LeafScript>();
-            other.gameObject.transform.localScale = new Vector3(0.16915f, 0.2363533f, 0.16915f);
+            inventoryObjectScript = other.gameObject.GetComponent<InventoryObjectScript>();
+            other.gameObject.transform.localScale = new Vector3(0.16915f, 0.16915f, 0.16915f);
         }
 
         if (other.gameObject.tag == "Tent")
@@ -48,22 +47,16 @@ public class ObjectScaler : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (leafScript != null)
-        {
-            if (leafScript.snapped)
-            {
-                if (other.gameObject.tag == "Leafpile")
-                {
-                    leafScript = other.gameObject.GetComponent<LeafScript>();
-                    other.gameObject.transform.localScale = new Vector3(0.16915f, 0.2363533f, 0.16915f);
-                }
-            }
-        }
-
         if (inventoryObjectScript != null)
         {
             if (inventoryObjectScript.snapped)
             {
+                if (other.gameObject.tag == "Leafpile")
+                {
+                    inventoryObjectScript = other.gameObject.GetComponent<InventoryObjectScript>();
+                    other.gameObject.transform.localScale = new Vector3(0.16915f, 0.16915f, 0.16915f);
+                }
+
                 if (other.gameObject.tag == "Tent")
                 {
                     inventoryObjectScript = other.gameObject.GetComponent<InventoryObjectScript>();
@@ -98,22 +91,16 @@ public class ObjectScaler : MonoBehaviour
     }
 
     private void OnTriggerExit(Collider other)
-    {
-        if (leafScript != null)
-        {
-            if (!leafScript.snapped)
-            {
-                if (other.gameObject.tag == "Leafpile")
-                {
-                    other.gameObject.transform.localScale = new Vector3(1, 1.3973f, 1);
-                }
-            }
-        }
-       
+    {  
         if (inventoryObjectScript != null)
         {
             if (!inventoryObjectScript.snapped)
             {
+                if (other.gameObject.tag == "Leafpile")
+                {
+                    other.gameObject.transform.localScale = new Vector3(0.92045f, 0.92045f, 0.92045f);
+                }
+
                 if (other.gameObject.tag == "Tent")
                 {
                     other.gameObject.transform.localScale = new Vector3(0.63265f, 0.63265f, 0.63265f);

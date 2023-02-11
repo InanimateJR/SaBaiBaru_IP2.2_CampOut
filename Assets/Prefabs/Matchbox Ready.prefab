@@ -3542,7 +3542,7 @@ GameObject:
   - component: {fileID: 3305208960908274056}
   - component: {fileID: 3305208960908274103}
   - component: {fileID: 3305208960908274102}
-  m_Layer: 0
+  m_Layer: 27
   m_Name: TopTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9542,7 +9542,7 @@ GameObject:
   - component: {fileID: 3305208961278054097}
   - component: {fileID: 3305208961278054096}
   - component: {fileID: 3305208961278054111}
-  m_Layer: 0
+  m_Layer: 27
   m_Name: BottomTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10994,6 +10994,8 @@ MonoBehaviour:
   collected: 0
   inventorySlot: {fileID: 0}
   inventorySlotScript: {fileID: 0}
+  matchboxArray: []
+  otherObjectsArray: []
 --- !u!1 &5372441346227981717
 GameObject:
   m_ObjectHideFlags: 0

@@ -27,21 +27,6 @@ public class InventorySlotScript : MonoBehaviour
     public Color hoverColour;
     public Color defaultColour;
 
-    /*private void OnTriggerEnter(Collider other)
-    {
-        snappedObject = other.gameObject;
-        hoverImage.color = hoverColour;
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (!objectSnapped)
-        {
-            snappedObject = null;
-            hoverImage.color = hoverColour;
-        }
-    }*/
-
     public void ObjectRemoved()
     {
         objectSnapped = false;
