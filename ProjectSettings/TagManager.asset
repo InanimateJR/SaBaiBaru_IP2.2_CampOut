@@ -25,6 +25,7 @@ TagManager:
   - InventorySlot
   - Tent
   - Stick
+  - Mallet
   layers:
   - Default
   - TransparentFX
