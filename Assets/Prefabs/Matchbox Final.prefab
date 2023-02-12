@@ -5128,9 +5128,10 @@ GameObject:
   - component: {fileID: 3027915224169201583}
   - component: {fileID: 3027915224169201581}
   - component: {fileID: 3027915224169201580}
+  - component: {fileID: 2267322073360191100}
   m_Layer: 0
   m_Name: Matchstick FireVFX   (6)
-  m_TagString: Untagged
+  m_TagString: FireVFX
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5202,7 +5203,7 @@ VFXRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3027915224169201582}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -5234,6 +5235,19 @@ VFXRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!135 &2267322073360191100
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3027915224169201582}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3027915224274098118
 GameObject:
   m_ObjectHideFlags: 0
@@ -10115,9 +10129,10 @@ GameObject:
   - component: {fileID: 3027915224609345608}
   - component: {fileID: 3027915224609345610}
   - component: {fileID: 3027915224609345611}
+  - component: {fileID: 1089620627122931998}
   m_Layer: 0
   m_Name: Matchstick FireVFX   (8)
-  m_TagString: Untagged
+  m_TagString: FireVFX
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10189,7 +10204,7 @@ VFXRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3027915224609345609}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -10221,6 +10236,19 @@ VFXRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!135 &1089620627122931998
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3027915224609345609}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3027915224754611661
 GameObject:
   m_ObjectHideFlags: 0
@@ -15102,9 +15130,10 @@ GameObject:
   - component: {fileID: 3027915224918134180}
   - component: {fileID: 3027915224918134182}
   - component: {fileID: 3027915224918134183}
+  - component: {fileID: 2728031623339417412}
   m_Layer: 0
   m_Name: Matchstick FireVFX   (4)
-  m_TagString: Untagged
+  m_TagString: FireVFX
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15176,7 +15205,7 @@ VFXRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3027915224918134181}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -15208,6 +15237,19 @@ VFXRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!135 &2728031623339417412
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3027915224918134181}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3027915224941950836
 GameObject:
   m_ObjectHideFlags: 0
@@ -20089,9 +20131,10 @@ GameObject:
   - component: {fileID: 3027915225067656673}
   - component: {fileID: 3027915225067656675}
   - component: {fileID: 3027915225067656674}
+  - component: {fileID: 1004298211263868025}
   m_Layer: 0
   m_Name: Matchstick FireVFX   (1)
-  m_TagString: Untagged
+  m_TagString: FireVFX
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20163,7 +20206,7 @@ VFXRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3027915225067656672}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -20195,6 +20238,19 @@ VFXRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!135 &1004298211263868025
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3027915225067656672}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3027915225133296888
 GameObject:
   m_ObjectHideFlags: 0
@@ -25076,9 +25132,10 @@ GameObject:
   - component: {fileID: 3027915225152772845}
   - component: {fileID: 3027915225152772847}
   - component: {fileID: 3027915225152772846}
+  - component: {fileID: 6082736017700357246}
   m_Layer: 0
   m_Name: Matchstick FireVFX   (3)
-  m_TagString: Untagged
+  m_TagString: FireVFX
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25150,7 +25207,7 @@ VFXRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3027915225152772844}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -25182,6 +25239,19 @@ VFXRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!135 &6082736017700357246
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3027915225152772844}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3027915225240325587
 GameObject:
   m_ObjectHideFlags: 0
@@ -34933,9 +35003,10 @@ GameObject:
   - component: {fileID: 3027915225590246678}
   - component: {fileID: 3027915225590246676}
   - component: {fileID: 3027915225590246677}
+  - component: {fileID: 6042547817470810070}
   m_Layer: 0
   m_Name: Matchstick FireVFX   (2)
-  m_TagString: Untagged
+  m_TagString: FireVFX
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -35007,7 +35078,7 @@ VFXRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3027915225590246679}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -35039,6 +35110,19 @@ VFXRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!135 &6042547817470810070
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3027915225590246679}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3027915225650069647
 GameObject:
   m_ObjectHideFlags: 0
@@ -39920,9 +40004,10 @@ GameObject:
   - component: {fileID: 3027915225668384410}
   - component: {fileID: 3027915225668384408}
   - component: {fileID: 3027915225668384409}
+  - component: {fileID: 4648669775202101789}
   m_Layer: 0
   m_Name: Matchstick FireVFX   (5)
-  m_TagString: Untagged
+  m_TagString: FireVFX
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -39994,7 +40079,7 @@ VFXRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3027915225668384411}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -40026,6 +40111,19 @@ VFXRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!135 &4648669775202101789
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3027915225668384411}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3027915225732173699
 GameObject:
   m_ObjectHideFlags: 0
@@ -44907,9 +45005,10 @@ GameObject:
   - component: {fileID: 3027915225821506879}
   - component: {fileID: 3027915225821506877}
   - component: {fileID: 3027915225821506876}
+  - component: {fileID: 7887389983741655063}
   m_Layer: 0
   m_Name: Matchstick FireVFX   (7)
-  m_TagString: Untagged
+  m_TagString: FireVFX
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -44981,7 +45080,7 @@ VFXRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3027915225821506878}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -45013,6 +45112,19 @@ VFXRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!135 &7887389983741655063
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3027915225821506878}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3027915225829906352
 GameObject:
   m_ObjectHideFlags: 0
@@ -45024,9 +45136,10 @@ GameObject:
   - component: {fileID: 3027915225829906353}
   - component: {fileID: 3027915225829906355}
   - component: {fileID: 3027915225829906354}
+  - component: {fileID: 3690465254989531497}
   m_Layer: 0
   m_Name: Matchstick FireVFX   (9)
-  m_TagString: Untagged
+  m_TagString: FireVFX
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45098,7 +45211,7 @@ VFXRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3027915225829906352}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -45130,6 +45243,19 @@ VFXRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!135 &3690465254989531497
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3027915225829906352}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7478843922912803645
 GameObject:
   m_ObjectHideFlags: 0
@@ -52805,9 +52931,10 @@ GameObject:
   - component: {fileID: 8079440763135164397}
   - component: {fileID: 8079440763135164399}
   - component: {fileID: 8079440763135164398}
+  - component: {fileID: 8992483489015646766}
   m_Layer: 0
   m_Name: 'Matchstick FireVFX  '
-  m_TagString: Untagged
+  m_TagString: FireVFX
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -52911,6 +53038,19 @@ VFXRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!135 &8992483489015646766
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8079440763135164396}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8079440763155419212
 GameObject:
   m_ObjectHideFlags: 0
