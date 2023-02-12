@@ -1099,9 +1099,18 @@
             "id": "8700b4c2-c7bb-48d5-a813-382bfc4e6ae7",
             "actions": [
                 {
-                    "name": "AllowTeleport",
+                    "name": "LeftButton2",
                     "type": "Button",
                     "id": "929c2f98-f9fb-4e55-8ea9-d248c43c5010",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "RightButton2",
+                    "type": "Button",
+                    "id": "4873d455-c1f1-435e-a4ce-ea37b1671110",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -1116,7 +1125,18 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "AllowTeleport",
+                    "action": "LeftButton2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7ac9932a-3613-4e99-9c9e-48e6ecd6c6d9",
+                    "path": "<XRController>{RightHand}/secondaryButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RightButton2",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
