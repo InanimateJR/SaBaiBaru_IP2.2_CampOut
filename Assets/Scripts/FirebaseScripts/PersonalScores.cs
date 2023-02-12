@@ -20,7 +20,6 @@ public class PersonalScores : MonoBehaviour
     int foodCooked = 0;
     int sticksCollected = 0;
     int leaderboardLastUpdated;
-    int totalScore = 0;
     string username;
     string userID;
 
@@ -29,9 +28,7 @@ public class PersonalScores : MonoBehaviour
     public TMP_Text foodScore;
     public TMP_Text sticksScore;
     public TMP_Text mushroomsScore;
-    public TMP_Text lastLogin;
-    public TMP_Text accountCreated;
-
+    public TMP_Text totalScore;
     public void Awake()
     {
         InitializeFirebase();
@@ -67,6 +64,7 @@ public class PersonalScores : MonoBehaviour
                 foodScore.text = ("Cooked Food Score: " + playerStats.foodCooked);
                 mushroomsScore.text = ("Mushrooms Score: " + playerStats.mushroomsCollected);
                 sticksScore.text = ("Sticks Score: " + playerStats.sticksCollected);
+                totalScore.text = ("Total Score: " + playerStats.totalScore);
             }
         });
     }
