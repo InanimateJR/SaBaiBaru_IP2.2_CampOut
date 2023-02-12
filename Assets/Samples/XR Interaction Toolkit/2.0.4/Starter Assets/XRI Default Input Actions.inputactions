@@ -294,6 +294,17 @@
                 },
                 {
                     "name": "",
+                    "id": "48c7aff2-863e-4e8f-aeaa-f22430842dfe",
+                    "path": "<Keyboard>/g",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Select",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "49a23327-a116-48c0-8af9-0d2c50c15a88",
                     "path": "<XRController>{LeftHand}/grip",
                     "interactions": "",
@@ -1133,6 +1144,17 @@
                     "name": "",
                     "id": "7ac9932a-3613-4e99-9c9e-48e6ecd6c6d9",
                     "path": "<XRController>{RightHand}/secondaryButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RightButton2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "15dafc59-880e-4c23-aa41-f21182f903d3",
+                    "path": "<Keyboard>/b",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
