@@ -88,15 +88,6 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
-                },
-                {
-                    "name": "Allow Teleport",
-                    "type": "Button",
-                    "id": "cd474a67-7626-46b1-8dc6-d41d2a9dc8a7",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -207,17 +198,6 @@
                     "processors": "",
                     "groups": "Generic XR Controller",
                     "action": "Tracking State",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "0ea5626e-7a6c-4787-9990-b812120fe348",
-                    "path": "<XRController>{LeftHand}/secondaryButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Allow Teleport",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
@@ -1109,6 +1089,34 @@
                     "processors": "",
                     "groups": "Generic XR Controller",
                     "action": "Turn",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Additional",
+            "id": "8700b4c2-c7bb-48d5-a813-382bfc4e6ae7",
+            "actions": [
+                {
+                    "name": "AllowTeleport",
+                    "type": "Button",
+                    "id": "929c2f98-f9fb-4e55-8ea9-d248c43c5010",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "2fc1f8ab-9844-4160-bd64-49bb4284e504",
+                    "path": "<XRController>{LeftHand}/secondaryButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "AllowTeleport",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
