@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 134141204986566557}
   - component: {fileID: 134141204986566556}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Handle Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86,7 +86,7 @@ GameObject:
   m_Component:
   - component: {fileID: 134141205815018744}
   - component: {fileID: 134141205815018751}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: TipArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -131,7 +131,7 @@ GameObject:
   m_Component:
   - component: {fileID: 134141205939382071}
   - component: {fileID: 134141205939382070}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: LowerMidArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -207,7 +207,7 @@ GameObject:
   m_Component:
   - component: {fileID: 134141206502145075}
   - component: {fileID: 134141206502145074}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Reel Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -252,7 +252,7 @@ GameObject:
   m_Component:
   - component: {fileID: 134141206684746740}
   - component: {fileID: 134141206684746747}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: UpperMidArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -300,7 +300,7 @@ GameObject:
   - component: {fileID: 709875995468556415}
   - component: {fileID: 380510113987480933}
   - component: {fileID: 1019069694513504315}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: FishingRodInteractable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
