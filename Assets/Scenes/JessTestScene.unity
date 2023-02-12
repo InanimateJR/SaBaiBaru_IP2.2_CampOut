@@ -719,7 +719,7 @@ PrefabInstance:
     - target: {fileID: 1221725511886828027, guid: 5d84c86474e575d4cb8a9d3d6b5fe39b,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1221725511886828027, guid: 5d84c86474e575d4cb8a9d3d6b5fe39b,
         type: 3}
@@ -3190,7 +3190,7 @@ PrefabInstance:
     - target: {fileID: 6739649316475713441, guid: ce24f377f63dc4a41992b2128289d15b,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6739649316475713441, guid: ce24f377f63dc4a41992b2128289d15b,
         type: 3}
@@ -4499,7 +4499,7 @@ PrefabInstance:
     - target: {fileID: 705232530635201447, guid: 0c4bcd8e09d25ec4f97b376f4db336b6,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 705232530635201447, guid: 0c4bcd8e09d25ec4f97b376f4db336b6,
         type: 3}
@@ -4692,6 +4692,80 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1115758550}
   m_CullTransparentMesh: 1
+--- !u!1001 &1136297459
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3683043444653910102, guid: 652f626711fae914c961870525ef51e3,
+        type: 3}
+      propertyPath: m_Name
+      value: Notepad 5.0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4059745282875536108, guid: 652f626711fae914c961870525ef51e3,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4059745282875536108, guid: 652f626711fae914c961870525ef51e3,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 141.15054
+      objectReference: {fileID: 0}
+    - target: {fileID: 4059745282875536108, guid: 652f626711fae914c961870525ef51e3,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.218
+      objectReference: {fileID: 0}
+    - target: {fileID: 4059745282875536108, guid: 652f626711fae914c961870525ef51e3,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 320.47632
+      objectReference: {fileID: 0}
+    - target: {fileID: 4059745282875536108, guid: 652f626711fae914c961870525ef51e3,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4059745282875536108, guid: 652f626711fae914c961870525ef51e3,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.0000014603136
+      objectReference: {fileID: 0}
+    - target: {fileID: 4059745282875536108, guid: 652f626711fae914c961870525ef51e3,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 2.032152e-12
+      objectReference: {fileID: 0}
+    - target: {fileID: 4059745282875536108, guid: 652f626711fae914c961870525ef51e3,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.0000014435295
+      objectReference: {fileID: 0}
+    - target: {fileID: 4059745282875536108, guid: 652f626711fae914c961870525ef51e3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4059745282875536108, guid: 652f626711fae914c961870525ef51e3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4059745282875536108, guid: 652f626711fae914c961870525ef51e3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6868219613865828194, guid: 652f626711fae914c961870525ef51e3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 652f626711fae914c961870525ef51e3, type: 3}
 --- !u!1 &1173247030
 GameObject:
   m_ObjectHideFlags: 0
@@ -6496,7 +6570,7 @@ PrefabInstance:
     - target: {fileID: 7034768984649137969, guid: 613e30d9b72820548bfed43e1be2ac06,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7034768984649137969, guid: 613e30d9b72820548bfed43e1be2ac06,
         type: 3}
@@ -6570,7 +6644,7 @@ PrefabInstance:
     - target: {fileID: 6598815579406187027, guid: 9f5a24a380916d14db9775daab4fe333,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6598815579406187027, guid: 9f5a24a380916d14db9775daab4fe333,
         type: 3}
@@ -16097,201 +16171,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0.09536743, y: 0.442}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1001 &1740845095841537383
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1011045169544787048, guid: 652f626711fae914c961870525ef51e3,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1157737902308780222, guid: 652f626711fae914c961870525ef51e3,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1674481329705968366, guid: 652f626711fae914c961870525ef51e3,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1930781844221765035, guid: 652f626711fae914c961870525ef51e3,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2028980504495510627, guid: 652f626711fae914c961870525ef51e3,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2057861369392621845, guid: 652f626711fae914c961870525ef51e3,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2590350480610196969, guid: 652f626711fae914c961870525ef51e3,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3114761164314170618, guid: 652f626711fae914c961870525ef51e3,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3141988421413015913, guid: 652f626711fae914c961870525ef51e3,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3636822438292877964, guid: 652f626711fae914c961870525ef51e3,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3683043444653910102, guid: 652f626711fae914c961870525ef51e3,
-        type: 3}
-      propertyPath: m_Name
-      value: Notepad 5.0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3775455420304676557, guid: 652f626711fae914c961870525ef51e3,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4059745282875536108, guid: 652f626711fae914c961870525ef51e3,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4059745282875536108, guid: 652f626711fae914c961870525ef51e3,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 141.04912
-      objectReference: {fileID: 0}
-    - target: {fileID: 4059745282875536108, guid: 652f626711fae914c961870525ef51e3,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.195
-      objectReference: {fileID: 0}
-    - target: {fileID: 4059745282875536108, guid: 652f626711fae914c961870525ef51e3,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 320.4517
-      objectReference: {fileID: 0}
-    - target: {fileID: 4059745282875536108, guid: 652f626711fae914c961870525ef51e3,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4059745282875536108, guid: 652f626711fae914c961870525ef51e3,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.0000014603136
-      objectReference: {fileID: 0}
-    - target: {fileID: 4059745282875536108, guid: 652f626711fae914c961870525ef51e3,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 2.032152e-12
-      objectReference: {fileID: 0}
-    - target: {fileID: 4059745282875536108, guid: 652f626711fae914c961870525ef51e3,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.0000014435295
-      objectReference: {fileID: 0}
-    - target: {fileID: 4059745282875536108, guid: 652f626711fae914c961870525ef51e3,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4059745282875536108, guid: 652f626711fae914c961870525ef51e3,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4059745282875536108, guid: 652f626711fae914c961870525ef51e3,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4382006777253981122, guid: 652f626711fae914c961870525ef51e3,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5088366083785514050, guid: 652f626711fae914c961870525ef51e3,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6056315126109739922, guid: 652f626711fae914c961870525ef51e3,
-        type: 3}
-      propertyPath: m_text
-      value: 'Fisherman- You can find him near the pond. He would trade 3 mushrooms
-        for a fishing rod.
-
-
-        Ranger- You can find him near the cabin. He
-        would trade 3 fishes for 6 logs.'
-      objectReference: {fileID: 0}
-    - target: {fileID: 6203211720255722951, guid: 652f626711fae914c961870525ef51e3,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6264943451274956191, guid: 652f626711fae914c961870525ef51e3,
-        type: 3}
-      propertyPath: m_text
-      value: '3. A message will appear as you confirm the location of the camping
-        site. You can confirm by pointing the hand ray at the confirm button and
-        pressing the Trigger/Select button.
-
-'
-      objectReference: {fileID: 0}
-    - target: {fileID: 6676010404105747232, guid: 652f626711fae914c961870525ef51e3,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7278363391692247215, guid: 652f626711fae914c961870525ef51e3,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8059386422728997864, guid: 652f626711fae914c961870525ef51e3,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8066901342010149419, guid: 652f626711fae914c961870525ef51e3,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8886553897102356619, guid: 652f626711fae914c961870525ef51e3,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9172314700253062659, guid: 652f626711fae914c961870525ef51e3,
-        type: 3}
-      propertyPath: m_text
-      value: '1. Grab the folded tent from backpack inventory using Grab/Teleport
-        button.
-
-
-        2.  Place the folded tent at the orange flag found in campsites
-        and release Grab/Teleport button.
-
-'
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 652f626711fae914c961870525ef51e3, type: 3}
 --- !u!1 &1748699015934369245
 GameObject:
   m_ObjectHideFlags: 0
@@ -22160,7 +22039,7 @@ PrefabInstance:
     - target: {fileID: 3219901910083746489, guid: 75270ff93b2f1764a9a26be4e1cf0e40,
         type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3219901910083746489, guid: 75270ff93b2f1764a9a26be4e1cf0e40,
         type: 3}
