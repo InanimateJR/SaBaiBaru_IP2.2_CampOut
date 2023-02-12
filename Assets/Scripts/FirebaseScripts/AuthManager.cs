@@ -19,6 +19,7 @@ public class AuthManager : MonoBehaviour
     public TMP_InputField passwordLogin;
     public TextMeshProUGUI registerFail;
     public TextMeshProUGUI loginFail;
+    public TMP_Text usernameDisplay;
     public string uid;
     public TMP_InputField usernameRegister;
     public TextMeshProUGUI helloText;
@@ -89,6 +90,8 @@ public class AuthManager : MonoBehaviour
 
                 Debug.Log("User profile updated successfully.");
             });
+            username = currentUser.DisplayName;
+            LoadUsername(username);
         }
     }
 
@@ -113,10 +116,12 @@ public class AuthManager : MonoBehaviour
             if (currentPlayer != null)
             {
                 string uid = currentPlayer.UserId;
+                username = currentPlayer.DisplayName;
                 var epochStart = new System.DateTime(1970, 1, 1, 8, 0, 0, System.DateTimeKind.Utc);
                 var timestamp = (System.DateTime.UtcNow - epochStart).TotalSeconds;
                 int lastLogin = (int)timestamp;
                 UpdatePlayerLogin(uid, lastLogin);
+                LoadUsername(username);
             }
         });
     }
@@ -186,5 +191,14 @@ public class AuthManager : MonoBehaviour
     public void ChangeScene(int sceneToLoad)
     {
         SceneManager.LoadScene(sceneToLoad);
+    }
+
+    public void LoadUsername(string username)
+    {
+        Firebase.Auth.FirebaseUser currentUser = auth.CurrentUser;
+        if (currentUser != null)
+        {
+            usernameDisplay.text = ("Current Player: " + username);
+        }
     }
 }
