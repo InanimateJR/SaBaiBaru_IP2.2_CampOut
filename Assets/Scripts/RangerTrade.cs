@@ -11,6 +11,7 @@ public class RangerTrade : MonoBehaviour
     public GameObject arrow;
     public Button rentLog;
     public List<GameObject> fishInBucket;
+    public AudioManager audioManager;
 
     // Start is called before the first frame update
     void Start()
@@ -66,6 +67,7 @@ public class RangerTrade : MonoBehaviour
             log.GetComponent<Rigidbody>().isKinematic = false;
         }
 
+        audioManager.RangerAudioOff();
         arrow.SetActive(true);
         rentLog.interactable = false;
     }

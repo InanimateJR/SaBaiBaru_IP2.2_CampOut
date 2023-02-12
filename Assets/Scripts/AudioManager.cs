@@ -5,6 +5,7 @@ using UnityEngine.Audio;
 public class AudioManager : MonoBehaviour
 {
     public AudioMixer audioMixer;
+    public AudioSource rangerSFX;
     void Start()
     {
         if (PlayerPrefs.HasKey("MasterVolume"))
@@ -25,5 +26,14 @@ public class AudioManager : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void RangerAudioOn()
+    {
+        rangerSFX.Play();
+    }
+    public void RangerAudioOff()
+    {
+        rangerSFX.Stop();
     }
 }

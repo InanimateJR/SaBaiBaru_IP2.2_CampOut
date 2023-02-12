@@ -6,6 +6,9 @@ using UnityEngine.UI;
 public class RangerDialogue : MonoBehaviour
 {
     public GameObject rangerCanvas;
+    public Button talkToRanger;
+    public AudioManager audioManager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,10 +23,18 @@ public class RangerDialogue : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         rangerCanvas.SetActive(true);
+        Button btn = talkToRanger.GetComponent<Button>();
+        btn.onClick.AddListener(TaskOnClick);
     }
 
     private void OnTriggerExit(Collider other)
     {
         rangerCanvas.SetActive(false);
+    }
+
+    void TaskOnClick()
+    {
+        Debug.Log("Talking to Ranger");
+        audioManager.RangerAudioOn();
     }
 }
