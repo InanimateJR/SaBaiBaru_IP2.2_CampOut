@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 6655162808316122195}
   - component: {fileID: 8916867887541657753}
   - component: {fileID: 8639274966161046653}
-  - component: {fileID: 6348767260979326952}
   m_Layer: 0
   m_Name: StylisedTree4
   m_TagString: Untagged
@@ -45633,17 +45632,3 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
---- !u!136 &6348767260979326952
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6971546288356426060}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 50
-  m_Height: 779.38513
-  m_Direction: 1
-  m_Center: {x: -0.842041, y: 380.24713, z: 0.045776367}
