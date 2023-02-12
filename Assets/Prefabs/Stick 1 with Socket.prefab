@@ -113,6 +113,7 @@ GameObject:
   - component: {fileID: 4493783292614912327}
   - component: {fileID: 5278595177000745686}
   - component: {fileID: 1226182632390757583}
+  - component: {fileID: 8022357646433510000}
   m_Layer: 8
   m_Name: Stick 1 with Socket
   m_TagString: Untagged
@@ -256,6 +257,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 8022357646433510000}
+        m_TargetAssemblyTypeName: SticksCollectible, Assembly-CSharp
+        m_MethodName: CollectedSticks
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
       m_Calls: []
@@ -354,3 +367,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3218167e40d3f1e47bba772ca09e0014, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8022357646433510000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8477284546843733960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb1063e957dad794ea5d3a741eda4327, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firebaseManager: {fileID: 0}
+  collected: 0
+  score: 0
