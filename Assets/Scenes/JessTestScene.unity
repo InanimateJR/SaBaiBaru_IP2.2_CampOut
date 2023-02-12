@@ -16104,12 +16104,47 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1011045169544787048, guid: 652f626711fae914c961870525ef51e3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1157737902308780222, guid: 652f626711fae914c961870525ef51e3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1674481329705968366, guid: 652f626711fae914c961870525ef51e3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1930781844221765035, guid: 652f626711fae914c961870525ef51e3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2028980504495510627, guid: 652f626711fae914c961870525ef51e3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2057861369392621845, guid: 652f626711fae914c961870525ef51e3,
         type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2590350480610196969, guid: 652f626711fae914c961870525ef51e3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3114761164314170618, guid: 652f626711fae914c961870525ef51e3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3141988421413015913, guid: 652f626711fae914c961870525ef51e3,
         type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -16123,6 +16158,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Notepad 5.0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3775455420304676557, guid: 652f626711fae914c961870525ef51e3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4059745282875536108, guid: 652f626711fae914c961870525ef51e3,
         type: 3}
@@ -16189,7 +16229,36 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6056315126109739922, guid: 652f626711fae914c961870525ef51e3,
+        type: 3}
+      propertyPath: m_text
+      value: 'Fisherman- You can find him near the pond. He would trade 3 mushrooms
+        for a fishing rod.
+
+
+        Ranger- You can find him near the cabin. He
+        would trade 3 fishes for 6 logs.'
+      objectReference: {fileID: 0}
     - target: {fileID: 6203211720255722951, guid: 652f626711fae914c961870525ef51e3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6264943451274956191, guid: 652f626711fae914c961870525ef51e3,
+        type: 3}
+      propertyPath: m_text
+      value: '3. A message will appear as you confirm the location of the camping
+        site. You can confirm by pointing the hand ray at the confirm button and
+        pressing the Trigger/Select button.
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6676010404105747232, guid: 652f626711fae914c961870525ef51e3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7278363391692247215, guid: 652f626711fae914c961870525ef51e3,
         type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -16203,6 +16272,23 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8886553897102356619, guid: 652f626711fae914c961870525ef51e3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9172314700253062659, guid: 652f626711fae914c961870525ef51e3,
+        type: 3}
+      propertyPath: m_text
+      value: '1. Grab the folded tent from backpack inventory using Grab/Teleport
+        button.
+
+
+        2.  Place the folded tent at the orange flag found in campsites
+        and release Grab/Teleport button.
+
+'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 652f626711fae914c961870525ef51e3, type: 3}
