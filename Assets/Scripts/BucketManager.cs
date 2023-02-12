@@ -14,7 +14,10 @@ public class BucketManager : MonoBehaviour
     int j;
 
     /// TEMPORARY VARIABLES
-    public int fishesCaught;
+    public int fishesScore;
+    public GameObject firebaseManager;
+    public bool collected;
+
 
     public void AddFishArray()
     {
@@ -72,9 +75,10 @@ public class BucketManager : MonoBehaviour
 
     public void FishSnapped()
     {
-        // ADD FISHCAUGHT COUNT HERE ------------------------- DDA
-        fishesCaught++;
-
+        if (!collected)
+        {
+            //firebaseManager.GetComponent<SimpleFirebaseManager>().UpdateFish(fishesScore);
+        }
         fishingScript.StartDisplaySuccess();
     }
 }

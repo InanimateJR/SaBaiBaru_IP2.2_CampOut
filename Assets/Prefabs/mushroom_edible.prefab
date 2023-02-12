@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: -4899668255636616433}
   - component: {fileID: 1629008178632835712}
   - component: {fileID: 2170586345509710354}
+  - component: {fileID: 3937604207740335259}
   m_Layer: 18
   m_Name: mushroom_edible
   m_TagString: Mushroom
@@ -140,25 +141,25 @@ MonoBehaviour:
       m_Calls: []
   m_FirstSelectEntered:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   m_LastSelectExited:
     m_PersistentCalls:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3937604207740335259}
+        m_TargetAssemblyTypeName: MushroomCollectibleBool, Assembly-CSharp
+        m_MethodName: CollectedMushroom
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
       m_Calls: []
@@ -298,3 +299,19 @@ MonoBehaviour:
   inventorySlotScript: {fileID: 0}
   matchboxArray: []
   otherObjectsArray: []
+--- !u!114 &3937604207740335259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 180898166625779997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 607b934be2e8d24459c250e4f050b8d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firebaseManager: {fileID: 0}
+  collected: 0
+  score: 0
+  poisonous: 0

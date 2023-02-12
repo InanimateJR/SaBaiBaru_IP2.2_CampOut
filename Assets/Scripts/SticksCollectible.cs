@@ -11,6 +11,7 @@ public class SticksCollectible : MonoBehaviour
     void Start()
     {
         score = 1;
+        firebaseManager = GameObject.Find("FirebaseManager");
     }
 
 

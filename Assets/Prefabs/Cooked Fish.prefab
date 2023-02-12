@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 4291604100749458360}
   - component: {fileID: 61390743698673748}
   - component: {fileID: 7091404844771944301}
+  - component: {fileID: 5131184385528647409}
   m_Layer: 24
   m_Name: Cooked Fish
   m_TagString: Cooked Fish
@@ -246,3 +247,18 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.02
   m_Center: {x: -0.0013560802, y: 0, z: -0.0025328696}
+--- !u!114 &5131184385528647409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1999493015768116033}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 442b9d2fb84323a458306b321e534e42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firebaseManager: {fileID: 0}
+  collected: 0
+  score: 0

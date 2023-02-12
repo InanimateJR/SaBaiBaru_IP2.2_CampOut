@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 2516730528160989907}
   - component: {fileID: -860220894271929583}
   - component: {fileID: 954334248578393636}
+  - component: {fileID: 9191785968871246538}
   m_Layer: 18
   m_Name: mushroom_edible_cooked
   m_TagString: Cooked Edible Mushroom
@@ -264,3 +265,18 @@ MonoBehaviour:
   inventorySlotScript: {fileID: 0}
   matchboxArray: []
   otherObjectsArray: []
+--- !u!114 &9191785968871246538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7295659841374176714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 442b9d2fb84323a458306b321e534e42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firebaseManager: {fileID: 0}
+  collected: 0
+  score: 0

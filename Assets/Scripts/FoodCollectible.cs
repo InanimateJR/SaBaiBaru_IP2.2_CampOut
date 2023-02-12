@@ -6,11 +6,21 @@ public class FoodCollectible : MonoBehaviour
 {
     public GameObject firebaseManager;
     public bool collected = false;
+    public bool poisonousMushroom = false;
     public int score;
     // Start is called before the first frame update
     void Start()
     {
-        score = 1;
+        firebaseManager = GameObject.Find("FirebaseManager");
+        if (!poisonousMushroom)
+        {
+            score = 1;
+        }
+        else if (poisonousMushroom)
+        {
+            score = -1;
+        }
+        CollectedFood();
     }
 
 

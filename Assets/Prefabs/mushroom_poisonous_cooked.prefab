@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: -8975924997803124421}
   - component: {fileID: -249987156798716703}
   - component: {fileID: 3600769912199592826}
+  - component: {fileID: 7391936143888859682}
   m_Layer: 18
   m_Name: mushroom_poisonous_cooked
   m_TagString: Cooked Poison Mushroom
@@ -264,3 +265,19 @@ MonoBehaviour:
   inventorySlotScript: {fileID: 0}
   matchboxArray: []
   otherObjectsArray: []
+--- !u!114 &7391936143888859682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7704345811550872971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 442b9d2fb84323a458306b321e534e42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firebaseManager: {fileID: 0}
+  collected: 0
+  poisonousMushroom: 1
+  score: 0

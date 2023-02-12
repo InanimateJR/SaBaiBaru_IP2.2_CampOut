@@ -8,27 +8,21 @@ public class FishCollectible : MonoBehaviour
     //public GameObject FirebaseManager;
     public bool collected;
     public int score;
+    public GameObject firebaseManager;
 
     // Start is called before the first frame update
     void Start()
     {
+        firebaseManager = GameObject.Find("FirebaseManager");
         score = 2;
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     public void CollectedFish()
     {
         if (!collected)
         {
-            //FirebaseManager.GetComponent<SimpleFirebaseManager>().UpdateFish(score);
+            firebaseManager.GetComponent<SimpleFirebaseManager>().UpdateFish(score);
             collected = true;
             Debug.Log("Collected");
-            //fishingScript.StartCoroutine("DisplaySucess");
         }
     }
 }

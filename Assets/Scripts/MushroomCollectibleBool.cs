@@ -27,15 +27,15 @@ public class MushroomCollectibleBool : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (!poisonous)
-        {
-            score = 1;
-        }
-        else if (poisonous)
+        if (poisonous)
         {
             score = -1;
         }
-
+        else
+        {
+            score = 1;
+        }
+        firebaseManager = GameObject.Find("FirebaseManager");
         startPosition = transform.position;
         mushroomRigidbody = this.gameObject.GetComponent<Rigidbody>();
     }
