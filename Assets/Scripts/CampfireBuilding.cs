@@ -37,10 +37,6 @@ public class CampfireBuilding : MonoBehaviour
     public GameObject leaf2;
     public GameObject leaf3;
     public GameObject leaf4;
-    public GameObject leaf5;
-    public GameObject leaf6;
-    public GameObject leaf7;
-    public GameObject leaf8;
 
     public GameObject sticks1;
     public GameObject sticks2;
@@ -82,24 +78,6 @@ public class CampfireBuilding : MonoBehaviour
     public void Leaves4Placed()
     {
         StartCoroutine(ChangeLeaves4());
-    }
-    public void Leaves5Placed()
-    {
-        StartCoroutine(ChangeLeaves5());
-    }
-
-    public void Leaves6Placed()
-    {
-        StartCoroutine(ChangeLeaves6());
-    }
-    public void Leaves7Placed()
-    {
-        StartCoroutine(ChangeLeaves7());
-    }
-
-    public void Leaves8Placed()
-    {
-        StartCoroutine(ChangeLeaves8());
     }
 
     public void Sticks1Placed()
@@ -201,47 +179,6 @@ public class CampfireBuilding : MonoBehaviour
         {
             leaves4 = true;
             Destroy(leaf4);
-            leaf5.SetActive(true);
-        }
-    }
-    IEnumerator ChangeLeaves5()
-    {
-        yield return new WaitForSeconds(1);
-        if (!leaves5)
-        {
-            leaves5 = true;
-            Destroy(leaf5);
-            leaf6.SetActive(true);
-        }
-    }
-
-    IEnumerator ChangeLeaves6()
-    {
-        yield return new WaitForSeconds(1);
-        if (!leaves6)
-        {
-            leaves6 = true;
-            Destroy(leaf6);
-            leaf7.SetActive(true);
-        }
-    }
-    IEnumerator ChangeLeaves7()
-    {
-        yield return new WaitForSeconds(1);
-        if (!leaves7)
-        {
-            leaves7 = true;
-            Destroy(leaf7);
-            leaf8.SetActive(true);
-        }
-    }
-    IEnumerator ChangeLeaves8()
-    {
-        yield return new WaitForSeconds(1);
-        if (!leaves8)
-        {
-            leaves8 = true;
-            Destroy(leaf8);
             sticks1.SetActive(true);
         }
     }
