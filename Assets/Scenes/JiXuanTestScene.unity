@@ -45875,6 +45875,7 @@ MonoBehaviour:
   waitTime: 4
   reachedTarget: 0
   canFish: 1
+  fishesCaught: 0
   fishCollectible: {fileID: 0}
 --- !u!4 &955301148 stripped
 Transform:
@@ -75713,6 +75714,7 @@ MonoBehaviour:
   waitTime: 4
   reachedTarget: 0
   canFish: 1
+  fishesCaught: 0
   fishCollectible: {fileID: 0}
 --- !u!1 &1549215168
 GameObject:
@@ -113490,16 +113492,6 @@ PrefabInstance:
       objectReference: {fileID: 412489774}
     - target: {fileID: 6438883346884382177, guid: 6adb5d5a062ef9145bc600c512823c7c,
         type: 3}
-      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6438883346884382177, guid: 6adb5d5a062ef9145bc600c512823c7c,
-        type: 3}
-      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6438883346884382177, guid: 6adb5d5a062ef9145bc600c512823c7c,
-        type: 3}
       propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2145687824}
@@ -113508,26 +113500,6 @@ PrefabInstance:
       propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
       objectReference: {fileID: 2145687824}
-    - target: {fileID: 6438883346884382177, guid: 6adb5d5a062ef9145bc600c512823c7c,
-        type: 3}
-      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6438883346884382177, guid: 6adb5d5a062ef9145bc600c512823c7c,
-        type: 3}
-      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: StartDisplaySuccess
-      objectReference: {fileID: 0}
-    - target: {fileID: 6438883346884382177, guid: 6adb5d5a062ef9145bc600c512823c7c,
-        type: 3}
-      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
-      value: FishingScript, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 6438883346884382177, guid: 6adb5d5a062ef9145bc600c512823c7c,
-        type: 3}
-      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 6438883346968471574, guid: 6adb5d5a062ef9145bc600c512823c7c,
         type: 3}
       propertyPath: m_InteractionManager
@@ -113535,16 +113507,6 @@ PrefabInstance:
       objectReference: {fileID: 412489774}
     - target: {fileID: 6438883346968471574, guid: 6adb5d5a062ef9145bc600c512823c7c,
         type: 3}
-      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6438883346968471574, guid: 6adb5d5a062ef9145bc600c512823c7c,
-        type: 3}
-      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6438883346968471574, guid: 6adb5d5a062ef9145bc600c512823c7c,
-        type: 3}
       propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2145687824}
@@ -113553,26 +113515,6 @@ PrefabInstance:
       propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
       objectReference: {fileID: 2145687824}
-    - target: {fileID: 6438883346968471574, guid: 6adb5d5a062ef9145bc600c512823c7c,
-        type: 3}
-      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6438883346968471574, guid: 6adb5d5a062ef9145bc600c512823c7c,
-        type: 3}
-      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: StartDisplaySuccess
-      objectReference: {fileID: 0}
-    - target: {fileID: 6438883346968471574, guid: 6adb5d5a062ef9145bc600c512823c7c,
-        type: 3}
-      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
-      value: FishingScript, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 6438883346968471574, guid: 6adb5d5a062ef9145bc600c512823c7c,
-        type: 3}
-      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 6438883347061743933, guid: 6adb5d5a062ef9145bc600c512823c7c,
         type: 3}
       propertyPath: m_InteractionManager
@@ -113580,16 +113522,6 @@ PrefabInstance:
       objectReference: {fileID: 412489774}
     - target: {fileID: 6438883347061743933, guid: 6adb5d5a062ef9145bc600c512823c7c,
         type: 3}
-      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6438883347061743933, guid: 6adb5d5a062ef9145bc600c512823c7c,
-        type: 3}
-      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6438883347061743933, guid: 6adb5d5a062ef9145bc600c512823c7c,
-        type: 3}
       propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2145687824}
@@ -113598,26 +113530,6 @@ PrefabInstance:
       propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
       objectReference: {fileID: 2145687824}
-    - target: {fileID: 6438883347061743933, guid: 6adb5d5a062ef9145bc600c512823c7c,
-        type: 3}
-      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6438883347061743933, guid: 6adb5d5a062ef9145bc600c512823c7c,
-        type: 3}
-      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: StartDisplaySuccess
-      objectReference: {fileID: 0}
-    - target: {fileID: 6438883347061743933, guid: 6adb5d5a062ef9145bc600c512823c7c,
-        type: 3}
-      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
-      value: FishingScript, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 6438883347061743933, guid: 6adb5d5a062ef9145bc600c512823c7c,
-        type: 3}
-      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 6438883347237033918, guid: 6adb5d5a062ef9145bc600c512823c7c,
         type: 3}
       propertyPath: m_InteractionManager
@@ -113625,16 +113537,6 @@ PrefabInstance:
       objectReference: {fileID: 412489774}
     - target: {fileID: 6438883347237033918, guid: 6adb5d5a062ef9145bc600c512823c7c,
         type: 3}
-      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6438883347237033918, guid: 6adb5d5a062ef9145bc600c512823c7c,
-        type: 3}
-      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6438883347237033918, guid: 6adb5d5a062ef9145bc600c512823c7c,
-        type: 3}
       propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2145687824}
@@ -113643,26 +113545,6 @@ PrefabInstance:
       propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
       objectReference: {fileID: 2145687824}
-    - target: {fileID: 6438883347237033918, guid: 6adb5d5a062ef9145bc600c512823c7c,
-        type: 3}
-      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6438883347237033918, guid: 6adb5d5a062ef9145bc600c512823c7c,
-        type: 3}
-      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: StartDisplaySuccess
-      objectReference: {fileID: 0}
-    - target: {fileID: 6438883347237033918, guid: 6adb5d5a062ef9145bc600c512823c7c,
-        type: 3}
-      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
-      value: FishingScript, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 6438883347237033918, guid: 6adb5d5a062ef9145bc600c512823c7c,
-        type: 3}
-      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 6438883347531943464, guid: 6adb5d5a062ef9145bc600c512823c7c,
         type: 3}
       propertyPath: m_InteractionManager
@@ -113670,16 +113552,6 @@ PrefabInstance:
       objectReference: {fileID: 412489774}
     - target: {fileID: 6438883347531943464, guid: 6adb5d5a062ef9145bc600c512823c7c,
         type: 3}
-      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6438883347531943464, guid: 6adb5d5a062ef9145bc600c512823c7c,
-        type: 3}
-      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6438883347531943464, guid: 6adb5d5a062ef9145bc600c512823c7c,
-        type: 3}
       propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2145687824}
@@ -113688,26 +113560,6 @@ PrefabInstance:
       propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
       objectReference: {fileID: 2145687824}
-    - target: {fileID: 6438883347531943464, guid: 6adb5d5a062ef9145bc600c512823c7c,
-        type: 3}
-      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6438883347531943464, guid: 6adb5d5a062ef9145bc600c512823c7c,
-        type: 3}
-      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: StartDisplaySuccess
-      objectReference: {fileID: 0}
-    - target: {fileID: 6438883347531943464, guid: 6adb5d5a062ef9145bc600c512823c7c,
-        type: 3}
-      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
-      value: FishingScript, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 6438883347531943464, guid: 6adb5d5a062ef9145bc600c512823c7c,
-        type: 3}
-      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 6438883348185073675, guid: 6adb5d5a062ef9145bc600c512823c7c,
         type: 3}
       propertyPath: m_InteractionManager
@@ -113720,16 +113572,6 @@ PrefabInstance:
       objectReference: {fileID: 412489774}
     - target: {fileID: 6438883348506575221, guid: 6adb5d5a062ef9145bc600c512823c7c,
         type: 3}
-      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6438883348506575221, guid: 6adb5d5a062ef9145bc600c512823c7c,
-        type: 3}
-      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6438883348506575221, guid: 6adb5d5a062ef9145bc600c512823c7c,
-        type: 3}
       propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2145687824}
@@ -113738,26 +113580,6 @@ PrefabInstance:
       propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
       objectReference: {fileID: 2145687824}
-    - target: {fileID: 6438883348506575221, guid: 6adb5d5a062ef9145bc600c512823c7c,
-        type: 3}
-      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6438883348506575221, guid: 6adb5d5a062ef9145bc600c512823c7c,
-        type: 3}
-      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: StartDisplaySuccess
-      objectReference: {fileID: 0}
-    - target: {fileID: 6438883348506575221, guid: 6adb5d5a062ef9145bc600c512823c7c,
-        type: 3}
-      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
-      value: FishingScript, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 6438883348506575221, guid: 6adb5d5a062ef9145bc600c512823c7c,
-        type: 3}
-      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6adb5d5a062ef9145bc600c512823c7c, type: 3}
 --- !u!64 &6450359896116486797
