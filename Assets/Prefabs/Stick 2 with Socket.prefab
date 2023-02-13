@@ -354,7 +354,7 @@ GameObject:
   - component: {fileID: 6960708520852318423}
   - component: {fileID: 8378962845596386436}
   m_Layer: 0
-  m_Name: Audio Source
+  m_Name: Stick_Collecting
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

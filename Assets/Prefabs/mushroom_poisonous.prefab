@@ -340,7 +340,7 @@ GameObject:
   - component: {fileID: 6247273316342037017}
   - component: {fileID: 874568952411971950}
   m_Layer: 0
-  m_Name: Audio Source
+  m_Name: Mushroom_Collecting
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
