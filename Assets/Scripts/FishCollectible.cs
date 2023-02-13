@@ -18,7 +18,7 @@ public class FishCollectible : MonoBehaviour
     }
     public void CollectedFish()
     {
-        if (!collected)
+        if (!collected && firebaseManager != null)
         {
             firebaseManager.GetComponent<SimpleFirebaseManager>().UpdateFish(score);
             collected = true;
