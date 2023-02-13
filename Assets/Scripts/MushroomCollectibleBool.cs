@@ -43,12 +43,14 @@ public class MushroomCollectibleBool : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (transform.position != startPosition && !objectMoved)
+        if (transform.root.position != startPosition && !objectMoved)
         {
-            mushroomRigidbody.isKinematic = false;
+            mushroomRigidbody.constraints = RigidbodyConstraints.None;
             mushroomRigidbody.useGravity = true;
             objectMoved = true;
         }
+
+        Debug.Log(transform.root.position);
     }
 
     public void CollectedMushroom()
