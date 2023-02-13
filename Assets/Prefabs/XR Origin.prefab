@@ -1328,6 +1328,7 @@ MonoBehaviour:
   waitTime: 4
   reachedTarget: 0
   canFish: 1
+  fishesCaught: 0
   fishCollectible: {fileID: 0}
 --- !u!1 &9103189795657212046
 GameObject:

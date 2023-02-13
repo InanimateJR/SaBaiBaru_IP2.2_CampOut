@@ -13,7 +13,8 @@ public class AudioManager : MonoBehaviour
     public AudioSource vanStartEngineSFX;
     public AudioSource vanEngineSFX;
 
-    public int finishedCount;
+    private int finishedCount = 0;
+    private bool vanStarted;
 
     void Start()
     {
@@ -32,9 +33,19 @@ public class AudioManager : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-
+        if (vanStarted == true)
+        {
+            Debug.Log("Van started");
+            if(!vanStartEngineSFX.isPlaying)
+            {
+                Debug.Log("Van start engine finished playing");
+                VanEngineAudio();
+                vanStarted = false;
+            }
+            
+        }
     }
 
     public void RangerAudioOn()
@@ -71,17 +82,11 @@ public class AudioManager : MonoBehaviour
     public void VanStartEngineAudio()
     {
         vanStartEngineSFX.Play();
-        if (!vanStartEngineSFX.isPlaying)
-        {
-            finishedCount++;
-            if (finishedCount > 1)
-            {
-                vanEngineSFX.Play();
-            }
-        }
+        vanStarted = true;
     }
     public void VanEngineAudio()
     {
+        Debug.Log("Van Engine SFX Playing");
         vanEngineSFX.Play();
     }
 
