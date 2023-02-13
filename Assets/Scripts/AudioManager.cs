@@ -6,9 +6,15 @@ public class AudioManager : MonoBehaviour
 {
     public AudioMixer audioMixer;
     public AudioSource rangerSFX;
+    public AudioSource fishermanSFX;
     public AudioSource journalFlippingSFX;
     public AudioSource collectSticksSFX;
     public AudioSource collectLeavesSFX;
+    public AudioSource vanStartEngineSFX;
+    public AudioSource vanEngineSFX;
+
+    public int finishedCount;
+
     void Start()
     {
         if (PlayerPrefs.HasKey("MasterVolume"))
@@ -28,7 +34,7 @@ public class AudioManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void RangerAudioOn()
@@ -38,6 +44,16 @@ public class AudioManager : MonoBehaviour
     public void RangerAudioOff()
     {
         rangerSFX.Stop();
+    }
+
+    public void FishermanAudioOn()
+    {
+        fishermanSFX.Play();
+    }
+
+    public void FishermanAudioOff()
+    {
+        fishermanSFX.Stop();
     }
 
     public void JournalFlippingAudio()
@@ -52,6 +68,21 @@ public class AudioManager : MonoBehaviour
     {
         collectLeavesSFX.Play();
     }
-
+    public void VanStartEngineAudio()
+    {
+        vanStartEngineSFX.Play();
+        if (!vanStartEngineSFX.isPlaying)
+        {
+            finishedCount++;
+            if (finishedCount > 1)
+            {
+                vanEngineSFX.Play();
+            }
+        }
+    }
+    public void VanEngineAudio()
+    {
+        vanEngineSFX.Play();
+    }
 
 }

@@ -14,6 +14,7 @@ public class FishermanTrade : MonoBehaviour
     public List<GameObject> mushroomInBucket;
     public Image start;
     public Image end;
+    public AudioManager audioManager;
 
     // Start is called before the first frame update
     void Start()
@@ -64,6 +65,7 @@ public class FishermanTrade : MonoBehaviour
             fishRod.GetComponent<XRGrabInteractable>().enabled = true;
             fishRod.GetComponent<Rigidbody>().isKinematic = false;
 
+            audioManager.FishermanAudioOff();
             arrow.SetActive(true);
             rentRod.interactable = false;
         }

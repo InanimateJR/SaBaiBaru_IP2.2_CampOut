@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class FishermanDialogue : MonoBehaviour
 {
     public GameObject fishermanCanvas;
+    public Button talkToFisherman;
+    public AudioManager audioManager;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,10 +23,18 @@ public class FishermanDialogue : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         fishermanCanvas.SetActive(true);
+        Button btn = talkToFisherman.GetComponent<Button>();
+        btn.onClick.AddListener(TaskOnClick);
     }
 
     private void OnTriggerExit(Collider other)
     {
         fishermanCanvas.SetActive(false);
+    }
+
+    void TaskOnClick()
+    {
+        Debug.Log("Talking to Ranger");
+        audioManager.FishermanAudioOn();
     }
 }
