@@ -30,9 +30,6 @@ public class CampfireBuilding : MonoBehaviour
     bool log5 = false;
     bool log6 = false;
 
-    int bottomLayer;
-    int middleLayer;
-
     public GameObject leaf1;
     public GameObject leaf2;
     public GameObject leaf3;
