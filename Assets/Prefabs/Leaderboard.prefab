@@ -176,7 +176,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -14.9646, w: 0}
+  m_margin: {x: 0, y: 0, z: -125.568085, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -866,7 +866,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -14.9646, w: 0}
+  m_margin: {x: 0, y: 0, z: -159.68665, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1002,7 +1002,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -14.9646, w: 0}
+  m_margin: {x: 0, y: 0, z: -133.409, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1333,7 +1333,6 @@ GameObject:
   - component: {fileID: 5923402132150555715}
   - component: {fileID: 5923402132150555714}
   - component: {fileID: 5923402132150555713}
-  - component: {fileID: 5923402132150555712}
   - component: {fileID: 3756231859532643116}
   m_Layer: 5
   m_Name: Leaderboard
@@ -1351,7 +1350,7 @@ RectTransform:
   m_GameObject: {fileID: 5923402132150556607}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.52273, y: 0.52273, z: 0.52273}
+  m_LocalScale: {x: 0.0019602643, y: 0.0016058353, z: 0.0010628504}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 678025337417042796}
@@ -1433,36 +1432,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5923402132150556607}
   m_CullTransparentMesh: 1
---- !u!114 &5923402132150555712
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5923402132150556607}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!114 &3756231859532643116
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2552,7 +2521,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -14.9646, w: 0}
+  m_margin: {x: 0, y: 0, z: -128.67584, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
