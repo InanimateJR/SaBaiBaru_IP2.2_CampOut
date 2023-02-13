@@ -1,0 +1,118 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2786549548785539233
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2786549548785539239}
+  - component: {fileID: 2786549548785539238}
+  - component: {fileID: 2786549548785539236}
+  - component: {fileID: 2786549548785539237}
+  - component: {fileID: 2786549548785539291}
+  - component: {fileID: 2786549548785539290}
+  m_Layer: 0
+  m_Name: Input Action Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2786549548785539239
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2786549548785539233}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -16.281115, y: 0.65367115, z: 12.773474}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2786549548785539238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2786549548785539233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b04cbd24f630fe940a7f2a4c2184b1fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  teleportRayScript: {fileID: 2786549548785539236}
+  LeftGrabReference: {fileID: -6131295136447488360, guid: c348712bda248c246b8c49b3db54643f,
+    type: 3}
+--- !u!114 &2786549548785539236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2786549548785539233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c7193534b5264e499ca7c4f00976cdd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rightControllerGrip: 0
+  rightControllerButton2: 0
+  leftControllerGrip: 0
+  leftControllerButton2: 0
+  leftRayInteractor: {fileID: 0}
+  rightRayInteractor: {fileID: 0}
+  leftTeleportReticle: {fileID: 0}
+  rightTeleportReticle: {fileID: 0}
+--- !u!114 &2786549548785539237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2786549548785539233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e41f175661d0af4b98ea0013e2ce019, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  teleportRayScript: {fileID: 2786549548785539236}
+  LeftButton2Reference: {fileID: 3554318960918265049, guid: c348712bda248c246b8c49b3db54643f,
+    type: 3}
+--- !u!114 &2786549548785539291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2786549548785539233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d3a378717bc3ac4e96a4ad4044614c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  teleportRayScript: {fileID: 2786549548785539236}
+  RightButton2Reference: {fileID: 8583300449922951834, guid: c348712bda248c246b8c49b3db54643f,
+    type: 3}
+--- !u!114 &2786549548785539290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2786549548785539233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9861b8c2a83d09f40a73c5913fc8d895, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  teleportRayScript: {fileID: 2786549548785539236}
+  RightGrabReference: {fileID: 187161793506945269, guid: c348712bda248c246b8c49b3db54643f,
+    type: 3}
