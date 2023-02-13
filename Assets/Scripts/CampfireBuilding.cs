@@ -53,6 +53,26 @@ public class CampfireBuilding : MonoBehaviour
     public GameObject sticks6;
     public GameObject sticks7;
 
+    public GameObject leaf1Hologram;
+    public GameObject leaf2Hologram;
+    public GameObject leaf3Hologram;
+    public GameObject leaf4Hologram;
+
+    public GameObject sticks1Hologram;
+    public GameObject sticks2Hologram;
+    public GameObject sticks3Hologram;
+    public GameObject sticks4Hologram;
+    public GameObject logs1Hologram;
+    public GameObject logs2Hologram;
+    public GameObject logs3Hologram;
+
+    public GameObject logs4Hologram;
+    public GameObject logs5Hologram;
+    public GameObject logs6Hologram;
+    public GameObject sticks5Hologram;
+    public GameObject sticks6Hologram;
+    public GameObject sticks7Hologram;
+
     bool campfireAssembled = false;
     public GameObject cookingSticks;
     public GameObject fireLighting;
@@ -141,179 +161,214 @@ public class CampfireBuilding : MonoBehaviour
     }
     IEnumerator ChangeLeaves1()
     {
-        yield return new WaitForSeconds(1);
+        
         if (!leaves1)
         {
+            leaf1Hologram.SetActive(false);
+            yield return new WaitForSeconds(1);
             leaves1 = true;
-            Destroy(leaf1);
+            leaf1.SetActive(false);
             leaf2.SetActive(true);
+            leaf2Hologram.SetActive(true);
         }
     }
 
     IEnumerator ChangeLeaves2()
     {
-        yield return new WaitForSeconds(1);
+
         if (!leaves2)
         {
+            leaf2Hologram.SetActive(false);
+            yield return new WaitForSeconds(1);
             leaves2 = true;
-            Destroy(leaf2);
+            leaf2.SetActive(false);
             leaf3.SetActive(true);
+            leaf3Hologram.SetActive(true);
         }
     }
 
     IEnumerator ChangeLeaves3()
     {
-        yield return new WaitForSeconds(1);
         if (!leaves3)
         {
+            leaf3Hologram.SetActive(false);
+            yield return new WaitForSeconds(1);
             leaves3 = true;
-            Destroy(leaf3);
+            leaf3.SetActive(false);
             leaf4.SetActive(true);
+            leaf4Hologram.SetActive(true);
         }
     }
 
     IEnumerator ChangeLeaves4()
     {
-        yield return new WaitForSeconds(1);
         if (!leaves4)
         {
+            leaf4Hologram.SetActive(false);
+            yield return new WaitForSeconds(1);
             leaves4 = true;
-            Destroy(leaf4);
+            leaf4.SetActive(false);
             sticks1.SetActive(true);
+            sticks1Hologram.SetActive(true);
         }
     }
     IEnumerator ChangeStick1()
     {
-        yield return new WaitForSeconds(1);
         if (!stick1)
         {
+            sticks1Hologram.SetActive(false);
+            yield return new WaitForSeconds(1);
             stick1 = true;
-            Destroy(sticks1);
+            sticks1.SetActive(false);
             sticks2.SetActive(true);
+            sticks2Hologram.SetActive(true);
         }
     }
 
     IEnumerator ChangeStick2()
     {
-        yield return new WaitForSeconds(1);
         if (!stick2)
         {
+            sticks2Hologram.SetActive(false);
+            yield return new WaitForSeconds(1);
             stick2 = true;
-            Destroy(sticks2);
+            sticks2.SetActive(false);
             sticks3.SetActive(true);
+            sticks3Hologram.SetActive(true);
         }
     }
 
     IEnumerator ChangeStick3()
     {
-        yield return new WaitForSeconds(1);
         if (!stick3)
         {
+            sticks3Hologram.SetActive(false);
+            yield return new WaitForSeconds(1);
             stick3 = true;
-            Destroy(sticks3);
+            sticks3.SetActive(false);
             sticks4.SetActive(true);
+            sticks4Hologram.SetActive(true);
         }
     }
 
     IEnumerator ChangeStick4()
     {
-        yield return new WaitForSeconds(1);
         if (!stick4)
         {
+            sticks4Hologram.SetActive(false);
+            yield return new WaitForSeconds(1);
             stick4 = true;
-            Destroy(sticks4);
+            sticks4.SetActive(false);
             logs1.SetActive(true);
+            logs1Hologram.SetActive(true);
         }
     }
 
     IEnumerator ChangeLog1()
     {
-        yield return new WaitForSeconds(1);
         if (!log1)
         {
+            logs1Hologram.SetActive(false);
+            yield return new WaitForSeconds(1);
             log1 = true;
-            Destroy(logs1);
+            logs1.SetActive(false);
             logs2.SetActive(true);
+            logs2Hologram.SetActive(true);
         }
     }
 
     IEnumerator ChangeLog2()
     {
-        yield return new WaitForSeconds(1);
         if (!log2)
         {
+            logs2Hologram.SetActive(false);
+            yield return new WaitForSeconds(1);
             log2 = true;
-            Destroy(logs2);
+            logs2.SetActive(false);
             logs3.SetActive(true);
+            logs3Hologram.SetActive(true);
         }
     }
     IEnumerator ChangeLog3()
     {
-        yield return new WaitForSeconds(1);
         if (!log3)
         {
-            log3 = true;
-            Destroy(logs3);
+            logs3Hologram.SetActive(false);
+            yield return new WaitForSeconds(1);
+            log1 = true;
+            logs3.SetActive(false);
             logs4.SetActive(true);
+            logs4Hologram.SetActive(true);
         }
     }
     IEnumerator ChangeLog4()
     {
-        yield return new WaitForSeconds(1);
         if (!log4)
         {
+            logs4Hologram.SetActive(false);
+            yield return new WaitForSeconds(1);
             log4 = true;
-            Destroy(logs4);
+            logs4.SetActive(false);
             logs5.SetActive(true);
+            logs5Hologram.SetActive(true);
         }
     }
     IEnumerator ChangeLog5()
     {
-        yield return new WaitForSeconds(1);
         if (!log5)
         {
+            logs5Hologram.SetActive(false);
+            yield return new WaitForSeconds(1);
             log5 = true;
-            Destroy(logs5);
+            logs5.SetActive(false);
             logs6.SetActive(true);
+            logs6Hologram.SetActive(true);
         }
     }
     IEnumerator ChangeLog6()
     {
-        yield return new WaitForSeconds(1);
         if (!log6)
         {
+            logs6Hologram.SetActive(false);
+            yield return new WaitForSeconds(1);
             log6 = true;
-            Destroy(logs6);
+            logs6.SetActive(false);
             sticks5.SetActive(true);
+            sticks5Hologram.SetActive(true);
         }
     }
     IEnumerator ChangeStick5()
     {
-        yield return new WaitForSeconds(1);
         if (!stick5)
         {
+            sticks5Hologram.SetActive(false);
+            yield return new WaitForSeconds(1);
             stick5 = true;
-            Destroy(sticks5);
+            sticks5.SetActive(false);
             sticks6.SetActive(true);
+            sticks6Hologram.SetActive(true);
         }
     }
     IEnumerator ChangeStick6()
     {
-        yield return new WaitForSeconds(1);
         if (!stick6)
         {
+            sticks6Hologram.SetActive(false);
+            yield return new WaitForSeconds(1);
             stick6 = true;
-            Destroy(sticks6);
+            sticks6.SetActive(false);
             sticks7.SetActive(true);
+            sticks6Hologram.SetActive(true);
         }
     }
     IEnumerator ChangeStick7()
-    {
-        yield return new WaitForSeconds(1);
+    { 
         if (!stick7)
         {
+            sticks7Hologram.SetActive(false);
+            yield return new WaitForSeconds(1);
             stick7 = true;
-            Destroy(sticks7);
+            sticks7.SetActive(false);
             campfireAssembled = true;
             cookingSticks.SetActive(true);
             fireLighting.SetActive(true);
