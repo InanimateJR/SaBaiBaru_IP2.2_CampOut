@@ -76,6 +76,8 @@ public class FishingScript: MonoBehaviour
     public bool reachedTarget;      // Check if fish has reached the fishing rod
     public bool canFish = true;       // Check if player can fish again
 
+    public int fishesCaught;
+
     /// SCRIPT REFERENCE
     public FishCollectible fishCollectible;
 
@@ -701,6 +703,7 @@ public class FishingScript: MonoBehaviour
     // Display and turn off success panel
     public IEnumerator DisplaySuccess()
     {
+        fishesCaught++;
         fishingSuccessPanel.SetActive(true);
         yield return new WaitForSeconds(waitTime);
         fishingSuccessPanel.SetActive(false);

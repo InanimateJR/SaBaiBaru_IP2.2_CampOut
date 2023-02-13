@@ -32,7 +32,7 @@ public class FoodCollectible : MonoBehaviour
 
     public void CollectedFood()
     {
-        if (!collected)
+        if (!collected && firebaseManager != null)
         {
             firebaseManager.GetComponent<SimpleFirebaseManager>().UpdateFood(score);
             collected = true;
