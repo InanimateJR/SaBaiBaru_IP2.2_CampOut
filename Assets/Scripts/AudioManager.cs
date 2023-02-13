@@ -12,6 +12,8 @@ public class AudioManager : MonoBehaviour
     public AudioSource collectLeavesSFX;
     public AudioSource vanStartEngineSFX;
     public AudioSource vanEngineSFX;
+    public AudioSource collectFoodSFX;
+    public AudioSource fireSFX;
 
     private bool vanStarted;
 
@@ -89,4 +91,12 @@ public class AudioManager : MonoBehaviour
         vanEngineSFX.Play();
     }
 
+    public void CollectFoodAudio()
+    {
+        collectFoodSFX.Play();
+    }
+    public void FireAudio()
+    {
+        fireSFX.Play();
+    }
 }
