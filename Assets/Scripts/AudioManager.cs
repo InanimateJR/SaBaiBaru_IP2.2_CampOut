@@ -13,7 +13,6 @@ public class AudioManager : MonoBehaviour
     public AudioSource vanStartEngineSFX;
     public AudioSource vanEngineSFX;
 
-    private int finishedCount = 0;
     private bool vanStarted;
 
     void Start()
