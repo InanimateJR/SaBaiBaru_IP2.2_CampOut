@@ -95,8 +95,5 @@ public class AudioManager : MonoBehaviour
     {
         collectFoodSFX.Play();
     }
-    public void FireAudio()
-    {
-        fireSFX.Play();
-    }
+  
 }
