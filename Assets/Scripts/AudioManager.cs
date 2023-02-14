@@ -21,6 +21,8 @@ public class AudioManager : MonoBehaviour
     public AudioSource collectCookedFishSFX;
     public AudioSource collectMushroomEdibleCookedSFX;
     public AudioSource fireSFX;
+    public AudioSource castLineSFX;
+    public AudioSource fishingSFX;
 
     private bool vanStarted;
 
@@ -135,4 +137,12 @@ public class AudioManager : MonoBehaviour
         collectCookedFishSFX.Play();
     }
 
+    public void CastLineAudio()
+    {
+        castLineSFX.Play();
+    }
+    public void FishingAudio()
+    {
+        fishingSFX.Play();
+    }
 }
