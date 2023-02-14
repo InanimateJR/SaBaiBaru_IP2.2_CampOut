@@ -8,19 +8,11 @@ public class AudioManager : MonoBehaviour
     public AudioSource rangerSFX;
     public AudioSource fishermanSFX;
     public AudioSource journalFlippingSFX;
-    public AudioSource collectStick1SFX;
-    public AudioSource collectStick2SFX;
-    public AudioSource collectStick3SFX;
+    public AudioSource collectStickSFX;
     public AudioSource collectLeavesSFX;
     public AudioSource vanStartEngineSFX;
     public AudioSource vanEngineSFX;
-    public AudioSource collectMushroomPoisonSFX;
-    public AudioSource collectMushroomPoisonCookedSFX;
-    public AudioSource collectMushroomEdibleSFX;
-    public AudioSource collectRawFishSFX;
-    public AudioSource collectCookedFishSFX;
-    public AudioSource collectMushroomEdibleCookedSFX;
-    public AudioSource fireSFX;
+    public AudioSource collectFoodSFX;
     public AudioSource castLineSFX;
     public AudioSource fishingSFX;
 
@@ -81,17 +73,9 @@ public class AudioManager : MonoBehaviour
     {
         journalFlippingSFX.Play();
     }
-    public void CollectStick1Audio()
+    public void CollectStickAudio()
     {
-        collectStick1SFX.Play();
-    }
-    public void CollectStick2Audio()
-    {
-        collectStick2SFX.Play();
-    }
-    public void CollectStick3Audio()
-    {
-        collectStick3SFX.Play();
+        collectStickSFX.Play();
     }
     public void CollectLeavesAudio()
     {
@@ -108,35 +92,10 @@ public class AudioManager : MonoBehaviour
         vanEngineSFX.Play();
     }
 
-    public void CollectMushroomEdibleAudio()
+    public void CollectFoodAudio()
     {
-        collectMushroomEdibleSFX.Play();
+        collectFoodSFX.Play();
     }
-
-    public void CollectMushroomEdibleCookedAudio()
-    {
-        collectMushroomEdibleCookedSFX.Play();
-    }
-
-    public void CollectMushroomPoisoneCookedAudio()
-    {
-        collectMushroomPoisonCookedSFX.Play();
-    }
-
-    public void CollectMushroomPoisoneAudio()
-    {
-        collectMushroomPoisonSFX.Play();
-    }
-
-    public void CollectRawFishAudio()
-    {
-        collectRawFishSFX.Play();
-    }
-    public void CollectCookedFishAudio()
-    {
-        collectCookedFishSFX.Play();
-    }
-
     public void CastLineAudio()
     {
         castLineSFX.Play();

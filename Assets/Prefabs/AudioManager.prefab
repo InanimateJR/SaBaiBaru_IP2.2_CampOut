@@ -45,3 +45,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioMixer: {fileID: 24100000, guid: 3e7c0306de121674faf6d455b3816322, type: 2}
+  rangerSFX: {fileID: 0}
+  fishermanSFX: {fileID: 0}
+  journalFlippingSFX: {fileID: 330927585855150636, guid: 47057c7f231b5b543aabdab9bb0717df,
+    type: 3}
+  collectStickSFX: {fileID: 4187039809497754126, guid: 3726d9dc15ffeb44ebba6d7fbbbb9224,
+    type: 3}
+  collectLeavesSFX: {fileID: 732926027385585717, guid: 8c62c63fa7db25043ba9c63c199aad03,
+    type: 3}
+  vanStartEngineSFX: {fileID: 0}
+  vanEngineSFX: {fileID: 0}
+  collectFoodSFX: {fileID: 8759166060659554913, guid: d53cc6d765c364a45988e7be8c0850f6,
+    type: 3}
+  castLineSFX: {fileID: 0}
+  fishingSFX: {fileID: 0}
