@@ -49,8 +49,6 @@ public class MushroomCollectibleBool : MonoBehaviour
             mushroomRigidbody.useGravity = true;
             objectMoved = true;
         }
-
-        Debug.Log(transform.root.position);
     }
 
     public void CollectedMushroom()
