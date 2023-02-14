@@ -1,23 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using TMPro;
 
 public class TaskLog : MonoBehaviour
 {
-    // Prefab of object to spawn
-    public TMP_Text playerPrefab;
-
-    // Keep track of which instance is the “active” GameManager.
-    public static TaskLog instance;
-
-    // Link player script
-    //private Player activePlayer;
-
+    /// Defining Values
+    
     // Store number of pegs collected
     public int pegsCollected;
 
+    /// Creating TMP text objects
     // Assign object "firstPeg" in inventory
     public TMP_Text firstPegUI;
 
@@ -33,6 +26,7 @@ public class TaskLog : MonoBehaviour
     //  Assign Inventory UI
     public GameObject listUI;
 
+    /// Boolean values
     // Whether firstPeg is collected or not
     public bool firstPegCollected = false;
 
@@ -63,8 +57,6 @@ public class TaskLog : MonoBehaviour
             //check if all 4 pegs are hammered in to be completed
             if (firstPegCollected && secondPegCollected && thirdPegCollected && fourthPegCollected)
             {
-                
-
                 //set hammering of pegs as complete
                 completedPegs = true;
                 
@@ -72,12 +64,6 @@ public class TaskLog : MonoBehaviour
                 listUI.SetActive(true);
             }
         }
-    }
-
-    private void Awake()
-    {
-        //The GameObject that this GameManager class is attached to will now not be destroyed when scenes are changed.
-        DontDestroyOnLoad(gameObject);
     }
 
     public void firstPegCollect()

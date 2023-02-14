@@ -59486,6 +59486,7 @@ GameObject:
   - component: {fileID: 8818376755000881305}
   - component: {fileID: 8818376755000881304}
   - component: {fileID: 8818376755000881311}
+  - component: {fileID: 2238932089179293312}
   m_Layer: 0
   m_Name: Notepad 7.0
   m_TagString: Untagged
@@ -59706,6 +59707,28 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.14123665, y: 0.0077725137, z: 0.19413216}
   m_Center: {x: -0.0026934494, y: -0.003011174, z: 3.3272076e-17}
+--- !u!114 &2238932089179293312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8818376755000881310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86900a68119cfc349840fe5e43617a37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pegsCollected: 0
+  firstPegUI: {fileID: 0}
+  secondPegUI: {fileID: 0}
+  thirdPegUI: {fileID: 0}
+  fourthPegUI: {fileID: 0}
+  listUI: {fileID: 0}
+  firstPegCollected: 0
+  secondPegCollected: 0
+  thirdPegCollected: 0
+  fourthPegCollected: 0
 --- !u!1 &8945546731383507375
 GameObject:
   m_ObjectHideFlags: 0
