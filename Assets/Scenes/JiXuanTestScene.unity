@@ -48420,6 +48420,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 108797613653070349, guid: 11bf7835c4201c04a905dd7ae39688f8,
+        type: 3}
+      propertyPath: m_RequestedTrackingOriginMode
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 108797613653070351, guid: 11bf7835c4201c04a905dd7ae39688f8,
         type: 3}
       propertyPath: m_Name
@@ -48430,6 +48435,16 @@ PrefabInstance:
       propertyPath: m_InteractionManager
       value: 
       objectReference: {fileID: 412489774}
+    - target: {fileID: 4256785355228107255, guid: 11bf7835c4201c04a905dd7ae39688f8,
+        type: 3}
+      propertyPath: pole
+      value: 
+      objectReference: {fileID: 1370660763841949033}
+    - target: {fileID: 4256785355228107255, guid: 11bf7835c4201c04a905dd7ae39688f8,
+        type: 3}
+      propertyPath: lineStart
+      value: 
+      objectReference: {fileID: 2096317625}
     - target: {fileID: 6200664523102172467, guid: 11bf7835c4201c04a905dd7ae39688f8,
         type: 3}
       propertyPath: m_InteractionManager
@@ -48442,6 +48457,36 @@ PrefabInstance:
       objectReference: {fileID: 412489774}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 11bf7835c4201c04a905dd7ae39688f8, type: 3}
+--- !u!114 &1023368930 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4256785355228107255, guid: 11bf7835c4201c04a905dd7ae39688f8,
+    type: 3}
+  m_PrefabInstance: {fileID: 1023368929}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2d8571f98db2724cb60300c98608efe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1023368931 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 108797613182846925, guid: 11bf7835c4201c04a905dd7ae39688f8,
+    type: 3}
+  m_PrefabInstance: {fileID: 1023368929}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1023368932 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 108797613083739163, guid: 11bf7835c4201c04a905dd7ae39688f8,
+    type: 3}
+  m_PrefabInstance: {fileID: 1023368929}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6803edce0201f574f923fd9d10e5b30a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1023407216
 GameObject:
   m_ObjectHideFlags: 0
@@ -103171,7 +103216,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2145687824}
+      objectReference: {fileID: 1023368930}
     - target: {fileID: 1019069694513504315, guid: cbfb489828fcc7f4fbfbfcda575f98a0,
         type: 3}
       propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[1].m_Target
@@ -103186,22 +103231,22 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2145687824}
+      objectReference: {fileID: 1023368930}
     - target: {fileID: 1019069694513504315, guid: cbfb489828fcc7f4fbfbfcda575f98a0,
         type: 3}
       propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 2145687824}
+      objectReference: {fileID: 1023368930}
     - target: {fileID: 1019069694513504315, guid: cbfb489828fcc7f4fbfbfcda575f98a0,
         type: 3}
       propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 4220336157939781418}
+      objectReference: {fileID: 1023368931}
     - target: {fileID: 1019069694513504315, guid: cbfb489828fcc7f4fbfbfcda575f98a0,
         type: 3}
       propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[3].m_Target
       value: 
-      objectReference: {fileID: 4220336157840641276}
+      objectReference: {fileID: 1023368932}
     - target: {fileID: 1019069694513504315, guid: cbfb489828fcc7f4fbfbfcda575f98a0,
         type: 3}
       propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[4].m_Target
