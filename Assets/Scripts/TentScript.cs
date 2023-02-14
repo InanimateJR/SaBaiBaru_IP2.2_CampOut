@@ -10,6 +10,10 @@ public class TentScript : MonoBehaviour
     public GameObject foldedTent;
     private XRGrabInteractable foldedTentInteractable;
     private Rigidbody foldedTentRigidbody;
+    public GameObject orangeFlag1;
+    public GameObject orangeFlag2;
+    public GameObject orangeFlag3;
+    public XRSocketInteractor foldedTentSocket;
 
     private void Start()
     {
@@ -24,6 +28,11 @@ public class TentScript : MonoBehaviour
 
     IEnumerator PitchTent()
     {
+        foldedTentSocket.allowHover = false;
+        foldedTentSocket.allowSelect = false;
+        Destroy(orangeFlag1);
+        Destroy(orangeFlag2);
+        Destroy(orangeFlag3);
         Destroy(foldedTentRigidbody);
         Destroy(foldedTentInteractable);
         yield return new WaitForSeconds(1.5f);
