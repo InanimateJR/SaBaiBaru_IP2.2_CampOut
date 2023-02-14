@@ -18650,7 +18650,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'To teleport for left controller:
 
-    Hold X + Grab/Teleport buttons to
+    Hold Y + Grab/Teleport buttons to
     see dotted line.
 
 
@@ -59724,6 +59724,8 @@ MonoBehaviour:
   secondPegUI: {fileID: 0}
   thirdPegUI: {fileID: 0}
   fourthPegUI: {fileID: 0}
+  stickFishesUI: {fileID: 0}
+  stickMushroomsUI: {fileID: 0}
   listUI: {fileID: 0}
   firstPegCollected: 0
   secondPegCollected: 0
