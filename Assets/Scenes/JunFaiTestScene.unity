@@ -140,7 +140,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &69802578
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -279,6 +279,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CampfireLog (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 6743653506386903167, guid: e887553223456da4ca8cd01b27baeac0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e887553223456da4ca8cd01b27baeac0, type: 3}
 --- !u!1001 &140066931
@@ -292,6 +297,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Stick 1 with Socket (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8477284546843733960, guid: b3dd81c4759e34a45a9cf17b4265ed2a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9146403808605582706, guid: b3dd81c4759e34a45a9cf17b4265ed2a,
         type: 3}
@@ -417,6 +427,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Leaf Pile (Large)
       objectReference: {fileID: 0}
+    - target: {fileID: 4014303393957298120, guid: 0334a66609093304aa63467857ad74d3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0334a66609093304aa63467857ad74d3, type: 3}
 --- !u!1 &234034469
@@ -437,7 +452,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!64 &234034470
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -584,6 +599,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CampfireLog (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 6743653506386903167, guid: e887553223456da4ca8cd01b27baeac0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e887553223456da4ca8cd01b27baeac0, type: 3}
 --- !u!4 &282244779 stripped
@@ -603,6 +623,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: mushroom_edible
+      objectReference: {fileID: 0}
+    - target: {fileID: 180898166625779997, guid: 0c4bcd8e09d25ec4f97b376f4db336b6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 705232530635201447, guid: 0c4bcd8e09d25ec4f97b376f4db336b6,
         type: 3}
@@ -727,6 +752,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Leaf Pile (Large) (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4014303393957298120, guid: 0334a66609093304aa63467857ad74d3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0334a66609093304aa63467857ad74d3, type: 3}
@@ -938,7 +968,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &367685976
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1093,6 +1123,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stick 1 with Socket (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 8477284546843733960, guid: b3dd81c4759e34a45a9cf17b4265ed2a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9146403808605582706, guid: b3dd81c4759e34a45a9cf17b4265ed2a,
         type: 3}
       propertyPath: m_RootOrder
@@ -1217,6 +1252,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CampfireLog
       objectReference: {fileID: 0}
+    - target: {fileID: 6743653506386903167, guid: e887553223456da4ca8cd01b27baeac0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e887553223456da4ca8cd01b27baeac0, type: 3}
 --- !u!1001 &622741985
@@ -1285,6 +1325,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CampfireLog (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6743653506386903167, guid: e887553223456da4ca8cd01b27baeac0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e887553223456da4ca8cd01b27baeac0, type: 3}
@@ -1442,6 +1487,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 652f626711fae914c961870525ef51e3, type: 3}
+--- !u!224 &670445345 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 5923402132466346424, guid: ccae4bf7016beea44866b21541ff4452,
+    type: 3}
+  m_PrefabInstance: {fileID: 1755980570}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &684677892
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1453,6 +1504,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Stick 1 with Socket (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8477284546843733960, guid: b3dd81c4759e34a45a9cf17b4265ed2a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9146403808605582706, guid: b3dd81c4759e34a45a9cf17b4265ed2a,
         type: 3}
@@ -1522,6 +1578,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Stick 1 with Socket (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8477284546843733960, guid: b3dd81c4759e34a45a9cf17b4265ed2a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9146403808605582706, guid: b3dd81c4759e34a45a9cf17b4265ed2a,
         type: 3}
@@ -1647,6 +1708,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bucket FINAL
       objectReference: {fileID: 0}
+    - target: {fileID: 976303494770518427, guid: 6adb5d5a062ef9145bc600c512823c7c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6adb5d5a062ef9145bc600c512823c7c, type: 3}
 --- !u!1001 &948272793
@@ -1665,6 +1731,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Raw Fish (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6252082551986154779, guid: ce24f377f63dc4a41992b2128289d15b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6739649316475713441, guid: ce24f377f63dc4a41992b2128289d15b,
         type: 3}
@@ -1790,6 +1861,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CampfireLog (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6743653506386903167, guid: e887553223456da4ca8cd01b27baeac0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e887553223456da4ca8cd01b27baeac0, type: 3}
 --- !u!1001 &1109018845
@@ -1808,6 +1884,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Raw Fish (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6252082551986154779, guid: ce24f377f63dc4a41992b2128289d15b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6739649316475713441, guid: ce24f377f63dc4a41992b2128289d15b,
         type: 3}
@@ -1877,6 +1958,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Stick 1 with Socket (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8477284546843733960, guid: b3dd81c4759e34a45a9cf17b4265ed2a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9146403808605582706, guid: b3dd81c4759e34a45a9cf17b4265ed2a,
         type: 3}
@@ -1959,6 +2045,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: mushroom_edible (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 180898166625779997, guid: 0c4bcd8e09d25ec4f97b376f4db336b6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 705232530635201447, guid: 0c4bcd8e09d25ec4f97b376f4db336b6,
         type: 3}
       propertyPath: m_RootOrder
@@ -2027,6 +2118,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Stick 1 with Socket (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8477284546843733960, guid: b3dd81c4759e34a45a9cf17b4265ed2a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9146403808605582706, guid: b3dd81c4759e34a45a9cf17b4265ed2a,
         type: 3}
@@ -2101,7 +2197,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!82 &1391307860
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2224,6 +2320,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Stick 1 with Socket
+      objectReference: {fileID: 0}
+    - target: {fileID: 8477284546843733960, guid: b3dd81c4759e34a45a9cf17b4265ed2a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9146403808605582706, guid: b3dd81c4759e34a45a9cf17b4265ed2a,
         type: 3}
@@ -2368,6 +2469,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: mushroom_edible (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 180898166625779997, guid: 0c4bcd8e09d25ec4f97b376f4db336b6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 705232530635201447, guid: 0c4bcd8e09d25ec4f97b376f4db336b6,
         type: 3}
       propertyPath: m_RootOrder
@@ -2439,6 +2545,11 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 330830448239715508, guid: 6a3d6d725ab823c4f8075486cf8b90b7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 581345068126868985, guid: 6a3d6d725ab823c4f8075486cf8b90b7,
         type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -2603,6 +2714,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3033218912142110525, guid: 6a3d6d725ab823c4f8075486cf8b90b7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3037709857802112393, guid: 6a3d6d725ab823c4f8075486cf8b90b7,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -2638,7 +2754,17 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 01885e6e32d8fd24ca12e21879e3c13b, type: 2}
+    - target: {fileID: 3885218127162423028, guid: 6a3d6d725ab823c4f8075486cf8b90b7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3929031873515250101, guid: 6a3d6d725ab823c4f8075486cf8b90b7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4611447082337436171, guid: 6a3d6d725ab823c4f8075486cf8b90b7,
         type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -2671,7 +2797,7 @@ PrefabInstance:
     - target: {fileID: 5931815102936925182, guid: 6a3d6d725ab823c4f8075486cf8b90b7,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5963031209987839377, guid: 6a3d6d725ab823c4f8075486cf8b90b7,
         type: 3}
@@ -2698,6 +2824,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Campfire (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7077025799064447107, guid: 6a3d6d725ab823c4f8075486cf8b90b7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7672364091686424611, guid: 6a3d6d725ab823c4f8075486cf8b90b7,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -2719,6 +2850,11 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8989382656430977059, guid: 6a3d6d725ab823c4f8075486cf8b90b7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9187331061835527177, guid: 6a3d6d725ab823c4f8075486cf8b90b7,
         type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -2806,6 +2942,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 275435320270198489, guid: ccae4bf7016beea44866b21541ff4452,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 1769702512}
+    - target: {fileID: 275435320270198489, guid: ccae4bf7016beea44866b21541ff4452,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: GetUserLogin
+      objectReference: {fileID: 0}
+    - target: {fileID: 275435320270198489, guid: ccae4bf7016beea44866b21541ff4452,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
+      value: GetUserLogins, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 319138211892839173, guid: ccae4bf7016beea44866b21541ff4452,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3451964603986875633, guid: ccae4bf7016beea44866b21541ff4452,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -3009,6 +3165,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1769702512 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7868956772248949472, guid: ccae4bf7016beea44866b21541ff4452,
+    type: 3}
+  m_PrefabInstance: {fileID: 1755980570}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1769702504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e40f346eb01fff4a911e4e73186d926, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1850042130
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3076,6 +3244,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CampfireLog (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6743653506386903167, guid: e887553223456da4ca8cd01b27baeac0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e887553223456da4ca8cd01b27baeac0, type: 3}
 --- !u!1001 &1869796072
@@ -3089,6 +3262,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Stick 1 with Socket (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8477284546843733960, guid: b3dd81c4759e34a45a9cf17b4265ed2a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9146403808605582706, guid: b3dd81c4759e34a45a9cf17b4265ed2a,
         type: 3}
@@ -3163,6 +3341,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Raw Fish
+      objectReference: {fileID: 0}
+    - target: {fileID: 6252082551986154779, guid: ce24f377f63dc4a41992b2128289d15b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6739649316475713441, guid: ce24f377f63dc4a41992b2128289d15b,
         type: 3}
@@ -3360,7 +3543,7 @@ PrefabInstance:
         type: 3}
       propertyPath: tableContent
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 670445345}
     - target: {fileID: 293934714076642993, guid: 86793dd649f355e43ad3c4c48779f34c,
         type: 3}
       propertyPath: m_RootOrder
@@ -3569,6 +3752,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: leafpile
       objectReference: {fileID: 0}
+    - target: {fileID: 4014303393957298120, guid: 0334a66609093304aa63467857ad74d3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0334a66609093304aa63467857ad74d3, type: 3}
 --- !u!1001 &5994530251350565763
@@ -3637,6 +3825,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: AudioManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 7878519272377431971, guid: 423f07143c7c539438c7070e51681dc8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 423f07143c7c539438c7070e51681dc8, type: 3}
@@ -3780,6 +3973,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Leaf Pile (Large) (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4014303393957298120, guid: 0334a66609093304aa63467857ad74d3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0334a66609093304aa63467857ad74d3, type: 3}
