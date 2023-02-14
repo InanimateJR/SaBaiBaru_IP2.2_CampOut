@@ -31,11 +31,6 @@ public class TentScript : MonoBehaviour
         foldedTentRigidbody = foldedTent.GetComponent<Rigidbody>();
     }
 
-    private void Update()
-    {
-
-    }
-
     public void StartTentPitching()
     {
         StartCoroutine("PitchTent");
