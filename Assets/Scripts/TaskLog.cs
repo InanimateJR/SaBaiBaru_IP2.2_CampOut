@@ -26,8 +26,14 @@ public class TaskLog : MonoBehaviour
     // Assign 3 object "RawFish" in sticks 
     public TMP_Text stickFishesUI;
 
+    // Assign 3 object "RawFish" in sticks to the fireplace socket
+    public TMP_Text fishOnSticksUI;
+
     // Assign 6 object "Mushroom" in sticks 
     public TMP_Text stickMushroomsUI;
+
+    // Assign 6 object "Mushrooms" in sticks to the fireplace socket
+    public TMP_Text mushroomsOnSticksUI;
 
     //  Assign Inventory UI
     public GameObject listUI;
@@ -47,6 +53,12 @@ public class TaskLog : MonoBehaviour
 
     // All 4 pegs are not hammered in 
     private bool completedPegs = false;
+
+    // All 3 fishes are on a stick 
+    public bool allfishOnSticks = false;
+
+    // All 6 mushrooms are on a stick 
+    public bool allMushroomshOnSticks = false;
 
 
 
