@@ -78,8 +78,13 @@ public class FishingScript: MonoBehaviour
 
     public int fishesCaught;
 
+    // Audio Sources
+    public GameObject fishingSFXObject;
+    public GameObject castLineSFXObject;
+
     /// SCRIPT REFERENCE
     public FishCollectible fishCollectible;
+    public AudioManager audioManager;
 
     private void Awake()
     {
@@ -391,6 +396,14 @@ public class FishingScript: MonoBehaviour
         // Set newBobber location to raycast hit location
         newBobber.transform.position = hit.point;
 
+        // Set Castline SFX location to raycast hit location
+        castLineSFXObject.transform.position = hit.point;
+        // Set Fishing SFX location to raycast hit location
+        fishingSFXObject.transform.position = hit.point;
+
+        // Play CastLine SFX
+        audioManager.CastLineAudio();
+
         // Turn off Stop Fishing UI
         stopFishingPanel.SetActive(false);
         // Turn off Success UI
@@ -673,6 +686,9 @@ public class FishingScript: MonoBehaviour
         newFish = Instantiate(fish);
         newFish.transform.position = hit.point;
         fishCollectible = newFish.GetComponent<FishCollectible>();
+
+        // Play fishingSFX
+        audioManager.FishingAudio();
 
         fishOn = true;
         fishjump = true;

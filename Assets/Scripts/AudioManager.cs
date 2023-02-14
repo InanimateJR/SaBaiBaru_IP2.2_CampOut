@@ -13,8 +13,12 @@ public class AudioManager : MonoBehaviour
     public AudioSource vanStartEngineSFX;
     public AudioSource vanEngineSFX;
     public AudioSource collectFoodSFX;
+    public AudioSource collectFishSFX;
     public AudioSource castLineSFX;
     public AudioSource fishingSFX;
+    public AudioSource tentSFX1;
+    public AudioSource tentSFX2;
+    public AudioSource tentSFX3;
 
     private bool vanStarted;
 
@@ -95,6 +99,11 @@ public class AudioManager : MonoBehaviour
     public void CollectFoodAudio()
     {
         collectFoodSFX.Play();
+    }
+
+    public void CollectFishAudio()
+    {
+        collectFishSFX.Play();
     }
     public void CastLineAudio()
     {
