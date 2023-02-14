@@ -23,6 +23,12 @@ public class TaskLog : MonoBehaviour
     // Assign object "fourthPeg" in inventory 
     public TMP_Text fourthPegUI;
 
+    // Assign 3 object "RawFish" in sticks 
+    public TMP_Text stickFishesUI;
+
+    // Assign 6 object "Mushroom" in sticks 
+    public TMP_Text stickMushroomsUI;
+
     //  Assign Inventory UI
     public GameObject listUI;
 
@@ -41,6 +47,7 @@ public class TaskLog : MonoBehaviour
 
     // All 4 pegs are not hammered in 
     private bool completedPegs = false;
+
 
 
     void Start()
