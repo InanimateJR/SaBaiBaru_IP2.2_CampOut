@@ -6,7 +6,11 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class TentScript : MonoBehaviour
 {
     public GameObject smokePoof;
-    public GameObject tentGroup;
+
+    public GameObject tentGroup1;
+    public GameObject tentGroup2;
+    public GameObject tentGroup3;
+
     public GameObject foldedTent;
     private XRGrabInteractable foldedTentInteractable;
     private Rigidbody foldedTentRigidbody;
@@ -15,10 +19,19 @@ public class TentScript : MonoBehaviour
     public GameObject orangeFlag3;
     public XRSocketInteractor foldedTentSocket;
 
+    public bool snappedSocket1;
+    public bool snappedSocket2;
+    public bool snappedSocket3;
+
     private void Start()
     {
         foldedTentInteractable = foldedTent.GetComponent<XRGrabInteractable>();
         foldedTentRigidbody = foldedTent.GetComponent<Rigidbody>();
+    }
+
+    private void Update()
+    {
+
     }
 
     public void StartTentPitching()
@@ -38,7 +51,19 @@ public class TentScript : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
         smokePoof.SetActive(true);
         yield return new WaitForSeconds(0.5f);
-        tentGroup.SetActive(true);
+        if (snappedSocket1)
+        {
+            tentGroup1.SetActive(true);
+        }
+        else if (snappedSocket2)
+        {
+            tentGroup2.SetActive(true);
+        }
+        else if (snappedSocket3)
+        {
+            tentGroup3.SetActive(true);
+        }
+
         foldedTent.SetActive(false);
     }
 }

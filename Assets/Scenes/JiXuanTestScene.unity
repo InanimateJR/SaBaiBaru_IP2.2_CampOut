@@ -11991,11 +11991,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: folded tent (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 8234728641252190719, guid: b63cec4d7af06794ebb4b7ffeda0eb83,
-        type: 3}
-      propertyPath: m_TagString
-      value: Tent
-      objectReference: {fileID: 0}
     - target: {fileID: 8722472735476953925, guid: b63cec4d7af06794ebb4b7ffeda0eb83,
         type: 3}
       propertyPath: m_RootOrder
