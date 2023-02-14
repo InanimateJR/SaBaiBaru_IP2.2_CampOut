@@ -113,4 +113,17 @@ public class AudioManager : MonoBehaviour
     {
         fishingSFX.Play();
     }
+
+    public void TentSFX1Audio()
+    {
+        tentSFX1.Play();
+    }
+    public void TentSFX2Audio()
+    {
+        tentSFX2.Play();
+    }
+    public void TentSFX3Audio()
+    {
+        tentSFX3.Play();
+    }
 }

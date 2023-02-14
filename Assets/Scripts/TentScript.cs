@@ -23,6 +23,8 @@ public class TentScript : MonoBehaviour
     public bool snappedSocket2;
     public bool snappedSocket3;
 
+    public AudioManager audioManager;
+
     private void Start()
     {
         foldedTentInteractable = foldedTent.GetComponent<XRGrabInteractable>();
@@ -41,6 +43,7 @@ public class TentScript : MonoBehaviour
 
     IEnumerator PitchTent()
     {
+        yield return new WaitForSeconds(0.1f);
         foldedTentSocket.allowHover = false;
         foldedTentSocket.allowSelect = false;
         Destroy(orangeFlag1);
@@ -48,22 +51,38 @@ public class TentScript : MonoBehaviour
         Destroy(orangeFlag3);
         Destroy(foldedTentRigidbody);
         Destroy(foldedTentInteractable);
-        yield return new WaitForSeconds(1.5f);
-        smokePoof.SetActive(true);
+
         yield return new WaitForSeconds(0.5f);
-        if (snappedSocket1)
+        if (this.gameObject.name == "Tent Socket 1")
+        {
+            audioManager.TentSFX1Audio();
+        }
+        else if (this.gameObject.name == "Tent Socket 2")
+        {
+            audioManager.TentSFX2Audio();
+        }
+        else if (this.gameObject.name == "Tent Socket 3")
+        {
+            audioManager.TentSFX3Audio();
+        }
+
+        yield return new WaitForSeconds(1f);
+        smokePoof.SetActive(true);
+
+        yield return new WaitForSeconds(0.4f);
+
+        if (this.gameObject.name == "Tent Socket 1")
         {
             tentGroup1.SetActive(true);
         }
-        else if (snappedSocket2)
+        else if (this.gameObject.name == "Tent Socket 2")
         {
             tentGroup2.SetActive(true);
         }
-        else if (snappedSocket3)
+        else if (this.gameObject.name == "Tent Socket 3")
         {
             tentGroup3.SetActive(true);
         }
-
         foldedTent.SetActive(false);
     }
 }
