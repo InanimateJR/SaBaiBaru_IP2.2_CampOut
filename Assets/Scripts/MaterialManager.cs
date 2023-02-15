@@ -41,6 +41,7 @@ public class MaterialManager : MonoBehaviour
         {
             uid = currentUser.UserId;
         }
+        SetMaterials();
     }
         //retrieve material index from firebase, then changes the materials of the object
         public void SetMaterials()
@@ -51,6 +52,13 @@ public class MaterialManager : MonoBehaviour
             if (task.IsCanceled || task.IsFaulted)
             {
                 Debug.LogError("Sorry, there was an error creating your entries, ERROR: " + task.Exception);
+                foldedTentRenderer.material = foldedTentMats[foldedTentSelection];
+                bagRenderer.material = bagMats[bagSelection];
+
+                for (int i = 0; i < tentRenderer.Length; i++)
+                {
+                    tentRenderer[i].material = tentMats[tentSelection];
+                }
             }
             else if (task.IsCompleted)
             {
