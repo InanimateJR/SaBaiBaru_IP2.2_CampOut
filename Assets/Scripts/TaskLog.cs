@@ -114,6 +114,9 @@ public class TaskLog : MonoBehaviour
     // Check if Task 8 is complete
     public bool task8Complete;
 
+    // Check if Task 9 is complete
+    public bool task9Complete;
+
     // Whether Tent Spot has been confirmed
     public bool tentSpotConfirmed = false;
 
@@ -392,7 +395,8 @@ public class TaskLog : MonoBehaviour
 
     public void EatenFood()
     {
-        
+        task9Complete = true;
         task9Text.fontStyle = FontStyles.Strikethrough;
+        Debug.Log("Task 9 has been completed");
     }
 }
