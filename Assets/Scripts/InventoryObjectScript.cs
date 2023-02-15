@@ -141,7 +141,6 @@ public class InventoryObjectScript : MonoBehaviour
     {
         if (other.gameObject.tag == "InventorySlot")
         {
-            Debug.Log("Exit");
             inventorySlotScript.snappedObject = null;
             inventorySlotScript.hoverImage.color = inventorySlotScript.defaultColour;
         }

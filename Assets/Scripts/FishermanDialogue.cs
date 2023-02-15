@@ -22,6 +22,7 @@ public class FishermanDialogue : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("Enter");
         fishermanCanvas.SetActive(true);
         Button btn = talkToFisherman.GetComponent<Button>();
         btn.onClick.AddListener(TaskOnClick);
@@ -29,6 +30,7 @@ public class FishermanDialogue : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
+        Debug.Log("Exit");
         fishermanCanvas.SetActive(false);
     }
 
