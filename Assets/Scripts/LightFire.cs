@@ -16,7 +16,7 @@ public class LightFire : MonoBehaviour
         if (other.tag == "FireVFX")
         {
             fireVFX.SetActive(true);
-
+            notepad.GetComponent<TaskLog>().LightCampfire();
         }
     }
 }
