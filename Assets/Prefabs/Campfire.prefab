@@ -1068,6 +1068,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ca1f02d7515d0a48b76b3b606ff1ff1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tlScript: {fileID: 0}
 --- !u!1 &2875803971274282006
 GameObject:
   m_ObjectHideFlags: 0
@@ -1297,6 +1298,7 @@ MonoBehaviour:
   sticks7Hologram: {fileID: 330830448239715508}
   cookingSticks: {fileID: 8291125135152704225}
   fireLighting: {fileID: 709073514013762903}
+  notepad: {fileID: 0}
 --- !u!1 &4400174920872723807
 GameObject:
   m_ObjectHideFlags: 0
@@ -2036,6 +2038,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ca1f02d7515d0a48b76b3b606ff1ff1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tlScript: {fileID: 0}
 --- !u!95 &929899455
 Animator:
   serializedVersion: 4
@@ -5714,6 +5717,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4014303393957298120, guid: 0334a66609093304aa63467857ad74d3,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 5008320378258002491, guid: 0334a66609093304aa63467857ad74d3,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -5824,6 +5832,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4014303393957298120, guid: 0334a66609093304aa63467857ad74d3,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 5008320378258002491, guid: 0334a66609093304aa63467857ad74d3,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -5933,6 +5946,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4014303393957298120, guid: 0334a66609093304aa63467857ad74d3,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 5008320378258002491, guid: 0334a66609093304aa63467857ad74d3,
         type: 3}
@@ -6908,6 +6926,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4014303393957298120, guid: 0334a66609093304aa63467857ad74d3,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 5008320378258002491, guid: 0334a66609093304aa63467857ad74d3,
         type: 3}
