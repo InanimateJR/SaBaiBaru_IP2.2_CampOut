@@ -57,5 +57,10 @@ MonoBehaviour:
   vanEngineSFX: {fileID: 0}
   collectFoodSFX: {fileID: 8759166060659554913, guid: d53cc6d765c364a45988e7be8c0850f6,
     type: 3}
+  collectFishSFX: {fileID: 3991690399691983705, guid: 53c2859959a288f449b18ffaa1e9959b,
+    type: 3}
   castLineSFX: {fileID: 0}
   fishingSFX: {fileID: 0}
+  tentSFX1: {fileID: 0}
+  tentSFX2: {fileID: 0}
+  tentSFX3: {fileID: 0}

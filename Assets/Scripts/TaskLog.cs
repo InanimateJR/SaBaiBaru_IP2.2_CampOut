@@ -40,13 +40,16 @@ public class TaskLog : MonoBehaviour
     public TextMeshProUGUI stickFishesUI;
 
     // Assign 3 object "RawFish" in sticks to the fireplace socket
-    public TextMeshProUGUI fishOnSticksUI;
+    public TextMeshProUGUI fishOnSticksToGroundUI;
 
     // Assign 6 object "Mushroom" in sticks 
-    public TextMeshProUGUI stickMushroomsUI;
+    public TextMeshProUGUI stickEdibleMushroomsUI;
 
     // Assign 6 object "Mushrooms" in sticks to the fireplace socket
-    public TextMeshProUGUI mushroomsOnSticksUI;
+    public TextMeshProUGUI mushroomsOnSticksToGroundUI;
+
+    // Eaten food
+    public TextMeshProUGUI eatenFoodUI;
 
     //  Assign Inventory UI
     public GameObject listUI;
@@ -111,7 +114,7 @@ public class TaskLog : MonoBehaviour
     public bool allfishOnSticks = false;
 
     // All 6 mushrooms are on a stick 
-    public bool allMushroomshOnSticks = false;
+    public bool allEdibleMushroomOnSticks = false;
 
     //All 3 mushrooms needed for trade
     public bool allMushroomsCollected = false;
@@ -192,7 +195,8 @@ public class TaskLog : MonoBehaviour
         {
             task5Complete = true;
             task5Text.fontStyle = FontStyles.Strikethrough;
-        }
+        } 
+
     }
 
     public void TentSpotConfirmed()
@@ -301,5 +305,30 @@ public class TaskLog : MonoBehaviour
     {
         campfireBuiltUI.fontStyle = FontStyles.Strikethrough;
         campfireAssembled = true;
+    }
+
+    public void FishesOnSticksDone()
+    {
+        stickFishesUI.fontStyle = FontStyles.Strikethrough;
+    }
+
+    public void MushroomsOnSticksDone()
+    {
+        stickEdibleMushroomsUI.fontStyle = FontStyles.Strikethrough;
+    }
+
+    public void FishesOnSticksToGroundDone()
+    {
+        fishOnSticksToGroundUI.fontStyle = FontStyles.Strikethrough;
+    }
+
+    public void MushroomsOnSticksToGroundDone()
+    {
+        mushroomsOnSticksToGroundUI.fontStyle = FontStyles.Strikethrough;
+    }
+
+    public void EatenFood()
+    {
+        eatenFoodUI.fontStyle = FontStyles.Strikethrough;
     }
 }

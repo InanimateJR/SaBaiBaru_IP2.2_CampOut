@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class FoodTrigger : MonoBehaviour
 {
-    
+    public TaskLog taskLog;
 
     public GameObject fishToSpawn;
 
@@ -17,6 +18,14 @@ public class FoodTrigger : MonoBehaviour
     public bool canCookMushroom = false;
 
     public bool canCookPoisonMushroom = false;
+
+    public int fishOnSticks = 0;
+
+    public int edibleMushroomOnSticks = 0;
+
+    public int fishNearFire = 0;
+
+    public int edibleMushroomNearFire = 0;
 
     // Always check if the food can be cooked or not
     void Update()
@@ -41,11 +50,22 @@ public class FoodTrigger : MonoBehaviour
 
             StartCoroutine(CookingPoisonMushroom());
         }
+
+        if (fishOnSticks >= 3)
+        {
+            taskLog.allfishOnSticks = true;
+            taskLog.FishesOnSticksDone();
+        }
+
+        if (edibleMushroomOnSticks >= 3)
+        {
+            taskLog.allEdibleMushroomOnSticks = true;
+            taskLog.MushroomsOnSticksDone();
+        }
     }
     // Switch the prefab of raw to cooked fishs
     public void SpawnCookedFish()
     {
-        Debug.Log("cooking...2");
         GameObject cookedFish = Instantiate(fishToSpawn, gameObject.transform.position, gameObject.transform.rotation);
         Destroy(gameObject);
         Debug.Log("Fish has been cooked!");
@@ -54,7 +74,6 @@ public class FoodTrigger : MonoBehaviour
     // Switch the prefab of raw to cooked Mushrooms
     public void SpawnCookedMushroom()
     {
-        Debug.Log("cooking...2");
         GameObject cookedMuhsroom = Instantiate(mushroomToSpawn, gameObject.transform.position, gameObject.transform.rotation);
         Destroy(gameObject);
         Debug.Log("Mushroom has been cooked!");
@@ -92,5 +111,40 @@ public class FoodTrigger : MonoBehaviour
         yield return new WaitForSeconds(5);
         SpawnCookedPoisonMushroom();
 
+    }
+
+    public void FishSocketCheck()
+    {
+        XRGrabInteractable myGrabbable = GetComponent<XRGrabInteractable>();
+        Rigidbody myRigidbody = GetComponent<Rigidbody>();
+        if (myGrabbable.firstInteractorSelecting is XRSocketInteractor)
+        {
+            if (myGrabbable.firstInteractorSelecting.transform.tag == "CookingStickSocket")
+            {
+                fishOnSticks++;
+            }
+        }
+    }
+
+    public void FishSocketCheckExit()
+    {
+        fishOnSticks--;
+    }
+
+    public void EdibleMushroomSocketCheck()
+    {
+        XRGrabInteractable myGrabbable = GetComponent<XRGrabInteractable>();
+        Rigidbody myRigidbody = GetComponent<Rigidbody>();
+        if (myGrabbable.firstInteractorSelecting is XRSocketInteractor)
+        {
+            if (myGrabbable.firstInteractorSelecting.transform.tag == "CookingStickSocket")
+            {
+                edibleMushroomOnSticks++;
+            }
+        }
+    }
+    public void EdibleMushroomSocketCheckExit()
+    {
+        edibleMushroomOnSticks--;
     }
 }
