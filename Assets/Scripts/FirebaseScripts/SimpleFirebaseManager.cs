@@ -16,12 +16,6 @@ public class SimpleFirebaseManager : MonoBehaviour
     Firebase.Auth.FirebaseAuth auth;
     DatabaseReference dbLeaderboardsReference;
     DatabaseReference mDatabaseRef;
-    int mushroomsCollected = 0;
-    int fishCollected = 0;
-    int foodCooked = 0;
-    int sticksCollected = 0;
-    int leaderboardLastUpdated;
-    int totalScore = 0;
     string username;
     string userID;
 
@@ -38,11 +32,11 @@ public class SimpleFirebaseManager : MonoBehaviour
             userID = currentUser.UserId;
             username = currentUser.DisplayName;
             Debug.Log(username + " + " + userID);
-            //totalScore = tentPoints + foodCooked + fishCollected + mushroomsCollected + sticksCollected + 1;
+            //totalScore = tentPoints + foodCooked + fishScore + mushroomsScore + sticksScore + 1;
             //var epochStart = new System.DateTime(1970, 1, 1, 8, 0, 0, System.DateTimeKind.Utc);
             //var timestamp = (System.DateTime.UtcNow - epochStart).TotalSeconds;
             //leaderboardLastUpdated = (int)timestamp;
-            //WriteNewScore(userID, username, totalScore, leaderboardLastUpdated, foodCooked, fishCollected, mushroomsCollected, sticksCollected);
+            //WriteNewScore(userID, username, totalScore, leaderboardLastUpdated, foodCooked, fishScore, mushroomsScore, sticksScore);
         }
     }
 
@@ -55,9 +49,9 @@ public class SimpleFirebaseManager : MonoBehaviour
         auth = FirebaseAuth.DefaultInstance;
     }
 
-    public void WriteNewScore(string userId, string username, int totalScore, int leaderboardLastUpdated, int foodCooked, int fishCollected, int mushroomsCollected, int sticksCollected)
+    public void WriteNewScore(string userId, string username, int totalScore, int leaderboardLastUpdated, int foodCooked, int fishScore, int mushroomsScore, int sticksScore)
     {
-        SimplePlayerStats sp = new SimplePlayerStats(username, totalScore, leaderboardLastUpdated, foodCooked, fishCollected, mushroomsCollected, sticksCollected);
+        SimplePlayerStats sp = new SimplePlayerStats(username, totalScore, leaderboardLastUpdated, foodCooked, fishScore, mushroomsScore, sticksScore);
         string json = JsonUtility.ToJson(sp);
 
         mDatabaseRef.Child("playerStats").Child(userId).SetRawJsonValueAsync(json);
@@ -87,11 +81,11 @@ public class SimpleFirebaseManager : MonoBehaviour
                 if (playerStats.Exists)
                 {
                     SimplePlayerStats sp = JsonUtility.FromJson<SimplePlayerStats>(playerStats.GetRawJsonValue());
-                    sp.mushroomsCollected += mushroomScore;
+                    sp.mushroomsScore += mushroomScore;
                     var epochStart = new System.DateTime(1970, 1, 1, 8, 0, 0, System.DateTimeKind.Utc);
                     var timestamp = (System.DateTime.UtcNow - epochStart).TotalSeconds;
                     sp.leaderboardLastUpdated = (int)timestamp;
-                    sp.totalScore = sp.foodCooked + sp.fishCollected + sp.mushroomsCollected + sp.sticksCollected;
+                    sp.totalScore = sp.foodCooked + sp.fishScore + sp.mushroomsScore + sp.sticksScore;
                     dbPlayerStatsReference.Child(userID).SetRawJsonValueAsync(sp.SimplePlayerStatsToJson());
                     WriteNewLeaderBoard(userID, username, sp.totalScore, sp.leaderboardLastUpdated);
 
@@ -116,11 +110,11 @@ public class SimpleFirebaseManager : MonoBehaviour
                 if (playerStats.Exists)
                 {
                     SimplePlayerStats sp = JsonUtility.FromJson<SimplePlayerStats>(playerStats.GetRawJsonValue());
-                    sp.fishCollected += fishScore;
+                    sp.fishScore += fishScore;
                     var epochStart = new System.DateTime(1970, 1, 1, 8, 0, 0, System.DateTimeKind.Utc);
                     var timestamp = (System.DateTime.UtcNow - epochStart).TotalSeconds;
                     sp.leaderboardLastUpdated = (int)timestamp;
-                    sp.totalScore = sp.foodCooked + sp.fishCollected + sp.mushroomsCollected + sp.sticksCollected;
+                    sp.totalScore = sp.foodCooked + sp.fishScore + sp.mushroomsScore + sp.sticksScore;
                     dbPlayerStatsReference.Child(userID).SetRawJsonValueAsync(sp.SimplePlayerStatsToJson());
                     WriteNewLeaderBoard(userID, username, sp.totalScore, sp.leaderboardLastUpdated);
                 }
@@ -148,7 +142,7 @@ public class SimpleFirebaseManager : MonoBehaviour
                     var epochStart = new System.DateTime(1970, 1, 1, 8, 0, 0, System.DateTimeKind.Utc);
                     var timestamp = (System.DateTime.UtcNow - epochStart).TotalSeconds;
                     sp.leaderboardLastUpdated = (int)timestamp;
-                    sp.totalScore = sp.foodCooked + sp.fishCollected + sp.mushroomsCollected + sp.sticksCollected;
+                    sp.totalScore = sp.foodCooked + sp.fishScore + sp.mushroomsScore + sp.sticksScore;
                     dbPlayerStatsReference.Child(userID).SetRawJsonValueAsync(sp.SimplePlayerStatsToJson());
                     WriteNewLeaderBoard(userID, username, sp.totalScore, sp.leaderboardLastUpdated);
                 }
@@ -172,11 +166,11 @@ public class SimpleFirebaseManager : MonoBehaviour
                 if (playerStats.Exists)
                 {
                     SimplePlayerStats sp = JsonUtility.FromJson<SimplePlayerStats>(playerStats.GetRawJsonValue());
-                    sp.sticksCollected += sticksScore;
+                    sp.sticksScore += sticksScore;
                     var epochStart = new System.DateTime(1970, 1, 1, 8, 0, 0, System.DateTimeKind.Utc);
                     var timestamp = (System.DateTime.UtcNow - epochStart).TotalSeconds;
                     sp.leaderboardLastUpdated = (int)timestamp;
-                    sp.totalScore = sp.foodCooked + sp.fishCollected + sp.mushroomsCollected + sp.sticksCollected;
+                    sp.totalScore = sp.foodCooked + sp.fishScore + sp.mushroomsScore + sp.sticksScore;
                     dbPlayerStatsReference.Child(userID).SetRawJsonValueAsync(sp.SimplePlayerStatsToJson());
                     WriteNewLeaderBoard(userID, username, sp.totalScore, sp.leaderboardLastUpdated);
                 }

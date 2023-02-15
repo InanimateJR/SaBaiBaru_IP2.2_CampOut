@@ -10,10 +10,6 @@ public class CampfireBuilding : MonoBehaviour
     bool leaves2 = false;
     bool leaves3 = false;
     bool leaves4 = false;
-    bool leaves5 = false;
-    bool leaves6 = false;
-    bool leaves7 = false;
-    bool leaves8 = false;
 
     bool stick1 = false;
     bool stick2 = false;
@@ -69,8 +65,6 @@ public class CampfireBuilding : MonoBehaviour
     public GameObject sticks5Hologram;
     public GameObject sticks6Hologram;
     public GameObject sticks7Hologram;
-
-    bool campfireAssembled = false;
     public GameObject cookingSticks;
     public GameObject fireLighting;
 

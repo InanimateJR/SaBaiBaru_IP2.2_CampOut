@@ -15,20 +15,15 @@ public class PersonalScores : MonoBehaviour
 {
     DatabaseReference dbPlayerStatsReference;
     Firebase.Auth.FirebaseAuth auth;
-    int mushroomsCollected = 0;
-    int fishCollected = 0;
-    int foodCooked = 0;
-    int sticksCollected = 0;
-    int leaderboardLastUpdated;
     string username;
     string userID;
     int lastLogin;
     int accountCreation;
     public TMP_Text playerName;
-    public TMP_Text fishScore;
-    public TMP_Text foodScore;
-    public TMP_Text sticksScore;
-    public TMP_Text mushroomsScore;
+    public TMP_Text fishScores;
+    public TMP_Text foodScores;
+    public TMP_Text sticksScores;
+    public TMP_Text mushroomsScores;
     public TMP_Text totalScore;
     public void Awake()
     {
@@ -58,12 +53,12 @@ public class PersonalScores : MonoBehaviour
             {
                 string json = task.Result.GetRawJsonValue();
                 SimplePlayerStats playerStats = JsonUtility.FromJson<SimplePlayerStats>(json);
-                Debug.Log(playerStats.username + " + " + playerStats.fishCollected + " + " + playerStats.mushroomsCollected);
+                Debug.Log(playerStats.username + " + " + playerStats.fishScore + " + " + playerStats.mushroomsScore);
                 playerName.text = ("Player: " + playerStats.username);
-                fishScore.text = ("Fish Score: " + playerStats.fishCollected);
-                foodScore.text = ("Cooked Food Score: " + playerStats.foodCooked);
-                mushroomsScore.text = ("Mushrooms Score: " + playerStats.mushroomsCollected);
-                sticksScore.text = ("Sticks Score: " + playerStats.sticksCollected);
+                fishScores.text = ("Fish Score: " + playerStats.fishScore);
+                foodScores.text = ("Cooked Food Score: " + playerStats.foodCooked);
+                mushroomsScores.text = ("Mushrooms Score: " + playerStats.mushroomsScore);
+                sticksScores.text = ("Sticks Score: " + playerStats.sticksScore);
                 totalScore.text = ("Total Score: " + playerStats.totalScore);
                 //Debug.Log("I hate unity");
             }

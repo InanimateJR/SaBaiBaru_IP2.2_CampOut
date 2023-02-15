@@ -151,9 +151,10 @@ public class AuthManager : MonoBehaviour
 
         mDatabaseRef.Child("User").Child(userId).SetRawJsonValueAsync(json);
     }
-    private void WriteNewScore(string userId, string username, int totalScore, int leaderboardLastUpdated, int foodCooked, int fishCollected, int mushroomsCollected, int sticksCollected)
+    private void WriteNewScore(string userId, string username, int totalScore, int leaderboardLastUpdated, int foodCooked, int fishScore
+        , int mushroomsScore, int sticksScore)
     {
-        SimplePlayerStats sp = new SimplePlayerStats(username, totalScore, leaderboardLastUpdated, foodCooked, fishCollected, mushroomsCollected, sticksCollected);
+        SimplePlayerStats sp = new SimplePlayerStats(username, totalScore, leaderboardLastUpdated, foodCooked, fishScore, mushroomsScore, sticksScore);
         string json = JsonUtility.ToJson(sp);
 
         mDatabaseRef.Child("playerStats").Child(userId).SetRawJsonValueAsync(json);
