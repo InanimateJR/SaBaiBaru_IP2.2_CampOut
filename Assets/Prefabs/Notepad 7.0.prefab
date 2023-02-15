@@ -59738,6 +59738,7 @@ MonoBehaviour:
   mushroomTradeUI: {fileID: 7406766951664501094}
   task3Text: {fileID: 4440178369169002215}
   task5Text: {fileID: 4440178368919267118}
+  task6Text: {fileID: 4440178370319363483}
   task7Text: {fileID: 4440178368730467773}
   task8Text: {fileID: 4440178369697580149}
   task9Text: {fileID: 4440178368891581539}
@@ -59750,8 +59751,10 @@ MonoBehaviour:
   task3Complete: 0
   task4Complete: 0
   task5Complete: 0
+  task6Complete: 0
   task7Complete: 0
   task8Complete: 0
+  task9Complete: 0
   tentSpotConfirmed: 0
   firstPegHammered: 0
   secondPegHammered: 0

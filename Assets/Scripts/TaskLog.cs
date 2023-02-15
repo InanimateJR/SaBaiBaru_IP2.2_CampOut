@@ -69,6 +69,9 @@ public class TaskLog : MonoBehaviour
     // Assign object "Task 5" in Notepad
     public TextMeshProUGUI task5Text;
 
+    // Assign object "Task 6" in Notepad
+    public TextMeshProUGUI task6Text;
+
     // Assign object "Task 7" in Notepad
     public TextMeshProUGUI task7Text;
 
@@ -107,6 +110,9 @@ public class TaskLog : MonoBehaviour
 
     // Check if Task 5 is complete
     public bool task5Complete;
+
+    // Check if Task 6 is complete
+    public bool task6Complete;
 
     // Check if Task 7 is complete
     public bool task7Complete;
@@ -398,5 +404,15 @@ public class TaskLog : MonoBehaviour
         task9Complete = true;
         task9Text.fontStyle = FontStyles.Strikethrough;
         Debug.Log("Task 9 has been completed");
+    }
+
+    public void LightCampfire()
+    {
+        if (!task6Complete)
+        {
+            task6Complete = true;
+            task6Text.fontStyle = FontStyles.Strikethrough;
+        }
+
     }
 }
