@@ -5,6 +5,8 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class FoodTrigger : MonoBehaviour
 {
+    private GameObject notepad;
+
     public TaskLog taskLog;
 
     public GameObject fishToSpawn;
@@ -32,6 +34,22 @@ public class FoodTrigger : MonoBehaviour
     public int edibleMushroomNearFire = 0;
 
     // Always check if the food can be cooked or not
+
+    private void Awake()
+    {
+        if (this.gameObject.tag == "Fish")
+        {
+            notepad = GameObject.Find("Notepad 7.0");
+        }
+    }
+
+    private void Start()
+    {
+        if (this.gameObject.tag == "Fish")
+        {
+            taskLog = notepad.GetComponent<TaskLog>();
+        }
+    }
 
     void Update()
     {
