@@ -14,7 +14,14 @@ public class PegScript : MonoBehaviour
     public GameObject pegSocket3;
     public GameObject pegSocket4;
 
+    private AudioSource pegHitSFX;
+
     public TaskLog taskLog;
+
+    private void Start()
+    {
+        pegHitSFX = this.gameObject.GetComponent<AudioSource>();
+    }
 
     private void Update()
     {
@@ -49,6 +56,7 @@ public class PegScript : MonoBehaviour
             {
                 this.gameObject.transform.position += new Vector3(0, -0.03f, 0);
                 timesHit++;
+                pegHitSFX.Play();
             }
         }
     }
