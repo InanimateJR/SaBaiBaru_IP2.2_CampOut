@@ -51,7 +51,7 @@ public class MaterialManager : MonoBehaviour
         {
             if (task.IsCanceled || task.IsFaulted)
             {
-                Debug.LogError("Sorry, there was an error creating your entries, ERROR: " + task.Exception);
+
             }
             else if (task.IsCompleted)
             {
@@ -142,7 +142,6 @@ public class MaterialManager : MonoBehaviour
     {
         if (args.DatabaseError != null)
         {
-            Debug.LogError(args.DatabaseError.Message);
             return;
         }
         else

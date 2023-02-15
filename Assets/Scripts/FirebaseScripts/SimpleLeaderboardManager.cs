@@ -24,7 +24,6 @@ public class SimpleLeaderboardManager : MonoBehaviour
     {
         if (args.DatabaseError != null)
         {
-            Debug.LogError(args.DatabaseError.Message);
             return;
         }
         else
