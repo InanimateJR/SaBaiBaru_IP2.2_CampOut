@@ -10,7 +10,11 @@ public class TaskLog : MonoBehaviour
     // Store number of pegs hammered
     public int pegsHammered;
 
+
     /// Creating TMP text objects
+
+    // Assign object "Task 1" in Notepad
+    public TextMeshProUGUI task1Text;
 
     // Assign object "Task 2" in Notepad
     public TextMeshProUGUI task2Text;
@@ -84,7 +88,11 @@ public class TaskLog : MonoBehaviour
     //Assign to function when campfire is finished
     public TextMeshProUGUI campfireBuiltUI;
 
+
     /// Boolean values
+
+    // Check if Task 1 is Complete
+    public bool task1Complete;
 
     // Check if Task 2 is complete
     public bool task2Complete;
@@ -160,6 +168,7 @@ public class TaskLog : MonoBehaviour
     //to count logs collected
     public int logsCollected;
 
+
     /// SCRIPT REFERENCES
 
     public FishingScript fishingScript;
@@ -194,35 +203,46 @@ public class TaskLog : MonoBehaviour
             task2Complete = true;
             task2Text.fontStyle = FontStyles.Strikethrough;
         }
+
         //strikeout task 4 on notepad
         if (!task4Complete && fishingScript.fishesCaught >= 3)
         {
             task4Complete = true;
             task4Text.fontStyle = FontStyles.Strikethrough;
         }
+
         //strikeout task 3 on notepad
         if (mushroomsTraded && allMushroomsCollected && !task3Complete)
         {
             task3Complete = true;
             task3Text.fontStyle = FontStyles.Strikethrough;
         }
+
         //strikeout task 5 on notepad
         if (allLeavesCollected && allLogsCollected && !task5Complete)
         {
             task5Complete = true;
             task5Text.fontStyle = FontStyles.Strikethrough;
         } 
-        if(allfishOnSticks && fishToCook)
+
+        if(allfishOnSticks && fishToCook && !task7Complete)
         {
             task7Complete = true;
             Task7Done();
         }
-        if(allEdibleMushroomOnSticks && edibleMushroomToCook)
+
+        if(allEdibleMushroomOnSticks && edibleMushroomToCook && !task8Complete)
         {
             task8Complete = true;
             Task8Done();
         }
 
+    }
+
+    public void VisitedCabin()
+    {
+        task1Complete = true;
+        task1Text.fontStyle = FontStyles.Strikethrough;
     }
 
     public void TentSpotConfirmed()
