@@ -159,7 +159,7 @@ public class SimpleFirebaseManager : MonoBehaviour
     public void UpdateSticks(int sticksScore)
     {
         Query playerQuery = dbPlayerStatsReference.Child(userID);
-        Debug.Log("FoodUpdate");
+        Debug.Log("SticksUpdate");
         playerQuery.GetValueAsync().ContinueWithOnMainThread(task =>
         {
             if (task.IsCanceled || task.IsFaulted)
