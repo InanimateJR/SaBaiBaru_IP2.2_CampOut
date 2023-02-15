@@ -72,13 +72,4 @@ public class BucketManager : MonoBehaviour
             fishSocketArray[i].SetActive(false);
         }
     }
-
-    public void FishSnapped()
-    {
-        if (!collected)
-        {
-            //firebaseManager.GetComponent<SimpleFirebaseManager>().UpdateFish(fishesScore);
-        }
-        fishingScript.StartDisplaySuccess();
-    }
 }

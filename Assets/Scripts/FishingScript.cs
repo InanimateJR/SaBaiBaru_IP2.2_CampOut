@@ -774,6 +774,7 @@ public class FishingScript: MonoBehaviour
     {
         Debug.Log("StartCollectedFish");
         canFish = true;
+        StartCoroutine("DisplaySuccess");
         if (fishCollectible != null)
         {
             fishCollectible.CollectedFish();
