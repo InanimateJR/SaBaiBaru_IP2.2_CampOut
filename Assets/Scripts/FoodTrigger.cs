@@ -62,7 +62,7 @@ public class FoodTrigger : MonoBehaviour
             taskLog.FishesOnSticksDone();
         }
 
-        if (edibleMushroomOnSticks >= 6)
+        if (edibleMushroomOnSticks >= 3)
         {
             taskLog.allEdibleMushroomOnSticks = true;
             taskLog.MushroomsOnSticksDone();
