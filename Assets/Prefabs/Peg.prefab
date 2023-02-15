@@ -104,7 +104,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 1
+  m_CollisionDetection: 0
 --- !u!114 &6750311989936552332
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -289,10 +289,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pegSnapped: 0
+  taskLogUpdated: 0
   pegSocket1: {fileID: 0}
   pegSocket2: {fileID: 0}
   pegSocket3: {fileID: 0}
   pegSocket4: {fileID: 0}
+  taskLog: {fileID: 0}
 --- !u!65 &1163196651630131874
 BoxCollider:
   m_ObjectHideFlags: 0

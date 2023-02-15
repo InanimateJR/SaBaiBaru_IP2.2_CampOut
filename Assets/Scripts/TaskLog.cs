@@ -11,34 +11,51 @@ public class TaskLog : MonoBehaviour
     public int pegsHammered;
 
     /// Creating TMP text objects
-    // Assign object "firstPeg" in inventory
-    public TMP_Text firstPegUI;
 
-    // Assign object "secondPeg" in inventory
-    public TMP_Text secondPegUI;
+    // Assign object "Task 2" in Notepad
+    public TextMeshProUGUI task2Text;
 
-    // Assign object "thirdPeg" in inventory
-    public TMP_Text thirdPegUI;
+    // Assign object "Tent Instruction Text" in Notepad
+    public TextMeshProUGUI completedPegsText;
 
-    // Assign object "fourthPeg" in inventory 
-    public TMP_Text fourthPegUI;
+    // Assign object "TentPlaced" in Notepad
+    public TextMeshProUGUI tentPlaced;
+
+    // Assign object "firstPeg" in Notepad
+    public TextMeshProUGUI firstPegUI;
+
+    // Assign object "secondPeg" in Notepad
+    public TextMeshProUGUI secondPegUI;
+
+    // Assign object "thirdPeg" in Notepad
+    public TextMeshProUGUI thirdPegUI;
+
+    // Assign object "fourthPeg" in Notepad
+    public TextMeshProUGUI fourthPegUI;
 
     // Assign 3 object "RawFish" in sticks 
-    public TMP_Text stickFishesUI;
+    public TextMeshProUGUI stickFishesUI;
 
     // Assign 3 object "RawFish" in sticks to the fireplace socket
-    public TMP_Text fishOnSticksUI;
+    public TextMeshProUGUI fishOnSticksUI;
 
     // Assign 6 object "Mushroom" in sticks 
-    public TMP_Text stickMushroomsUI;
+    public TextMeshProUGUI stickMushroomsUI;
 
     // Assign 6 object "Mushrooms" in sticks to the fireplace socket
-    public TMP_Text mushroomsOnSticksUI;
+    public TextMeshProUGUI mushroomsOnSticksUI;
 
     //  Assign Inventory UI
     public GameObject listUI;
 
     /// Boolean values
+
+    // Check if Task 2 is complete
+    public bool task2Complete;
+
+    // Whether Tent Spot has been confirmed
+    public bool tentSpotConfirmed = false;
+
     // Whether firstPeg is collected or not
     public bool firstPegHammered = false;
 
@@ -78,11 +95,26 @@ public class TaskLog : MonoBehaviour
             {
                 //set hammering of pegs as complete
                 completedPegs = true;
-                
+
+                completedPegsText.fontStyle = FontStyles.Strikethrough;
+
                 // Hide list UI
                 listUI.SetActive(true);
             }
         }
+
+        if (completedPegs && tentSpotConfirmed && !task2Complete)
+        {
+            task2Complete = true;
+            task2Text.fontStyle = FontStyles.Strikethrough;
+        }
+    }
+
+    public void TentSpotConfirmed()
+    {
+        tentSpotConfirmed = true;
+
+        tentPlaced.fontStyle = FontStyles.Strikethrough;
     }
 
     public void FirstPegHammered()
