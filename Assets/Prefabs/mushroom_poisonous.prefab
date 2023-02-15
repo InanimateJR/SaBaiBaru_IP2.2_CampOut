@@ -173,9 +173,33 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 5399050797536832259}
+        m_TargetAssemblyTypeName: FoodTrigger, Assembly-CSharp
+        m_MethodName: EdibleMushroomSocketCheck
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5399050797536832259}
+        m_TargetAssemblyTypeName: FoodTrigger, Assembly-CSharp
+        m_MethodName: EdibleMushroomSocketCheckExit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_Activated:
     m_PersistentCalls:
       m_Calls: []
@@ -272,6 +296,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42f8165c1632834458bce97b136861eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskLog: {fileID: 0}
   fishToSpawn: {fileID: 1999493015768116033, guid: 5d84c86474e575d4cb8a9d3d6b5fe39b,
     type: 3}
   mushroomToSpawn: {fileID: 7295659841374176714, guid: 1fb0f4216b641a44f834f2cd3569c2f4,
@@ -280,7 +305,13 @@ MonoBehaviour:
     type: 3}
   canCookFish: 0
   canCookMushroom: 0
+  fishSnappedToStick: 0
+  edibleMushroomSnappedToStick: 0
   canCookPoisonMushroom: 0
+  fishOnSticks: 0
+  edibleMushroomOnSticks: 0
+  fishNearFire: 0
+  edibleMushroomNearFire: 0
 --- !u!135 &7611841981921447212
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -328,3 +359,4 @@ MonoBehaviour:
   collected: 0
   score: 0
   poisonous: 1
+  notepad: {fileID: 0}
