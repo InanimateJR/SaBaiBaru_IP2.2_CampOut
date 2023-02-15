@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6104842571997316253
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6104842571997316255}
+  - component: {fileID: 6104842571997316254}
+  m_Layer: 0
+  m_Name: MaterialManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6104842571997316255
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6104842571997316253}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.6143378, y: 1.0287585, z: 7.863444}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6104842571997316254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6104842571997316253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31740c3251e220d489203d3b904d66f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  foldedTentMats:
+  - {fileID: 2100000, guid: 0f2bf2f4f87d26144bcd5859cf39165e, type: 2}
+  - {fileID: 2100000, guid: eb0377c1de7fe214dabe69902536a24a, type: 2}
+  tentMats:
+  - {fileID: 2100000, guid: 06ed9e0966c67c24e9d8589870891113, type: 2}
+  - {fileID: 2100000, guid: 09609d135a08b1a48809471f8214f8bb, type: 2}
+  - {fileID: 2100000, guid: e7bd0c4c03a72a14eb06a97ecd9e4f1b, type: 2}
+  bagMats:
+  - {fileID: 2100000, guid: 1f0b06bb77d1fe4478cf627e3d705834, type: 2}
+  - {fileID: 2100000, guid: 9fc19976b0485f84ea29f683282085ff, type: 2}
+  foldedTentRenderer: {fileID: 0}
+  tentRenderer:
+  - {fileID: 0}
+  bagRenderer: {fileID: 0}
+  foldedTentSelection: 0
+  tentSelection: 0
+  bagSelection: 0
