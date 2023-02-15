@@ -19,6 +19,7 @@ public class AudioManager : MonoBehaviour
     public AudioSource tentSFX1;
     public AudioSource tentSFX2;
     public AudioSource tentSFX3;
+    public AudioSource[] matchstickSFX;
 
     private bool vanStarted;
 

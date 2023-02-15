@@ -64,3 +64,14 @@ MonoBehaviour:
   tentSFX1: {fileID: 0}
   tentSFX2: {fileID: 0}
   tentSFX3: {fileID: 0}
+  matchstickSFX:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
