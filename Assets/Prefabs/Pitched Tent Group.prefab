@@ -579,7 +579,6 @@ GameObject:
   - component: {fileID: 8442000817383665767}
   - component: {fileID: 4794038446978695106}
   - component: {fileID: 7305735628063902472}
-  - component: {fileID: 3430033078545170093}
   - component: {fileID: 4794038446978695105}
   m_Layer: 0
   m_Name: Pitched Tent
@@ -658,18 +657,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &3430033078545170093
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9107355592447863517}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff186af257bdda64894ce730adc9c459, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &4794038446978695105
 BoxCollider:
   m_ObjectHideFlags: 0

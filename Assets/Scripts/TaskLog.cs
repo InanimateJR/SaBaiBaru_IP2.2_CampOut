@@ -40,16 +40,16 @@ public class TaskLog : MonoBehaviour
 
     /// Boolean values
     // Whether firstPeg is collected or not
-    public bool firstPegCollected = false;
+    public bool firstPegHammered = false;
 
     // Whether secondPeg is collected or not
-    public bool secondPegCollected = false;
+    public bool secondPegHammered = false;
 
     // Whether thirdPeg is collected or not
-    public bool thirdPegCollected = false;
+    public bool thirdPegHammered = false;
 
     // Whether fourthPeg is collected or not
-    public bool fourthPegCollected = false;
+    public bool fourthPegHammered = false;
 
     // All 4 pegs are not hammered in 
     private bool completedPegs = false;
@@ -74,7 +74,7 @@ public class TaskLog : MonoBehaviour
         if (!completedPegs)
         {
             //check if all 4 pegs are hammered in to be completed
-            if (firstPegCollected && secondPegCollected && thirdPegCollected && fourthPegCollected)
+            if (firstPegHammered && secondPegHammered && thirdPegHammered && fourthPegHammered)
             {
                 //set hammering of pegs as complete
                 completedPegs = true;
@@ -85,38 +85,38 @@ public class TaskLog : MonoBehaviour
         }
     }
 
-    public void firstPegCollect()
+    public void FirstPegHammered()
     {
-        // Set that firstPeg is collected
-        firstPegCollected = true;
+        // Set that firstPeg is hammered
+        firstPegHammered = true;
 
         // Strikethrough firstPeg UI
         firstPegUI.fontStyle = FontStyles.Strikethrough;
     }
 
-    public void secondPegCollect()
+    public void SecondPegHammered()
     {
-        // Set that secondPeg is collected
-        secondPegCollected = true;
+        // Set that secondPeg is hammered
+        secondPegHammered = true;
 
         // Strikethrough secondPegUI
         secondPegUI.fontStyle = FontStyles.Strikethrough;
 
     }
 
-    public void thirdPegCollect()
+    public void ThirdPegHammered()
     {
-        // Set that thirdPeg is collected
-        thirdPegCollected = true;
+        // Set that thirdPeg is hammered
+        thirdPegHammered = true;
 
         //Strikethrough thirdPeg UI
         thirdPegUI.fontStyle = FontStyles.Strikethrough;
     }
 
-    public void fourthPegCollect()
+    public void FourthPegHammered()
     {
-        // Set that egg is collected
-        fourthPegCollected = true;
+        // Set that fourthPeg is hammered
+        fourthPegHammered = true;
 
         // Strikethrough fourthPeg UI
         fourthPegUI.fontStyle = FontStyles.Strikethrough;
