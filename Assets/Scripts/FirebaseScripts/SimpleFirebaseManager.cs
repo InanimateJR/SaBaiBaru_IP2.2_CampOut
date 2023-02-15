@@ -79,7 +79,7 @@ public class SimpleFirebaseManager : MonoBehaviour
         {
             if (task.IsCanceled || task.IsFaulted)
             {
-                Debug.LogError("Sorry, there was an error creating your entries, ERROR: " + task.Exception);
+
             }
             else if (task.IsCompleted)
             {
@@ -108,7 +108,7 @@ public class SimpleFirebaseManager : MonoBehaviour
         {
             if (task.IsCanceled || task.IsFaulted)
             {
-                Debug.LogError("Sorry, there was an error creating your entries, ERROR: " + task.Exception);
+
             }
             else if (task.IsCompleted)
             {
@@ -136,7 +136,7 @@ public class SimpleFirebaseManager : MonoBehaviour
         {
             if (task.IsCanceled || task.IsFaulted)
             {
-                Debug.LogError("Sorry, there was an error creating your entries, ERROR: " + task.Exception);
+
             }
             else if (task.IsCompleted)
             {
@@ -164,7 +164,7 @@ public class SimpleFirebaseManager : MonoBehaviour
         {
             if (task.IsCanceled || task.IsFaulted)
             {
-                Debug.LogError("Sorry, there was an error creating your entries, ERROR: " + task.Exception);
+
             }
             else if (task.IsCompleted)
             {
@@ -197,7 +197,7 @@ public class SimpleFirebaseManager : MonoBehaviour
         {
             if (task.IsCanceled || task.IsFaulted)
             {
-                Debug.LogError("Error: ");
+
             }
             else if (task.IsCompleted)
             {
@@ -218,7 +218,7 @@ public class SimpleFirebaseManager : MonoBehaviour
 
                     foreach (SimpleLeaderBoard lb in leaderBoardList)
                     {
-                        Debug.LogFormat("Leaderboard: Rank {0} Playername {1} High Score {2}", rankCounter, lb.username, lb.totalScore);
+                        //Debug.LogFormat("Leaderboard: Rank {0} Playername {1} High Score {2}", rankCounter, lb.username, lb.totalScore);
                         rankCounter++;
                     }
                 }
