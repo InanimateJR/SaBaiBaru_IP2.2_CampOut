@@ -73,12 +73,12 @@ public class CampfireBuilding : MonoBehaviour
     bool campfireAssembled = false;
     public GameObject cookingSticks;
     public GameObject fireLighting;
-    private void Update()
-    {
-        if (campfireAssembled)
-        {
 
-        }
+    public GameObject notepad;
+
+    private void Start()
+    {
+        notepad = GameObject.Find("Notepad 7.0");
     }
     public void Leaves1Placed()
     {
@@ -366,7 +366,7 @@ public class CampfireBuilding : MonoBehaviour
             yield return new WaitForSeconds(1);
             stick7 = true;
             sticks7.SetActive(false);
-            campfireAssembled = true;
+            notepad.GetComponent<TaskLog>().CampFireAssembled();
             cookingSticks.SetActive(true);
             fireLighting.SetActive(true);
         }

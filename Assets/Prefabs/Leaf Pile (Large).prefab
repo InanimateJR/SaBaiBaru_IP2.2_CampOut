@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 5083555791410913250}
   - component: {fileID: 6624387402630426808}
   - component: {fileID: 2061683728427238834}
+  - component: {fileID: 7142228838963316930}
   m_Layer: 13
   m_Name: Leaf Pile (Large)
   m_TagString: Leafpile
@@ -192,6 +193,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 7142228838963316930}
+        m_TargetAssemblyTypeName: LeafCollect, Assembly-CSharp
+        m_MethodName: CollectLeaf
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
       m_Calls: []
@@ -304,3 +317,18 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 6644813474704430601, guid: e61ab4c0fa157384c9a92d809d0d7368, type: 3}
+--- !u!114 &7142228838963316930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4014303393957298120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63573c5bd4e111143af7e68c99356d77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collected: 0
+  score: 0
+  notepad: {fileID: 0}

@@ -56065,7 +56065,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &4440178370066845974
 RectTransform:
   m_ObjectHideFlags: 0
@@ -57507,7 +57507,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '- Collect 6 Sticks.'
+  m_text: '- Collect 8 or more Sticks.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5a07bc1d9de833c4f8dd84c93198da8d, type: 2}
   m_sharedMaterial: {fileID: -6237548691277355724, guid: 5a07bc1d9de833c4f8dd84c93198da8d,
@@ -59720,6 +59720,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pegsHammered: 0
+  task2Text: {fileID: 0}
+  task4Text: {fileID: 0}
+  completedPegsText: {fileID: 0}
+  tentPlaced: {fileID: 0}
   firstPegUI: {fileID: 0}
   secondPegUI: {fileID: 0}
   thirdPegUI: {fileID: 0}
@@ -59729,12 +59733,28 @@ MonoBehaviour:
   stickMushroomsUI: {fileID: 0}
   mushroomsOnSticksUI: {fileID: 0}
   listUI: {fileID: 0}
+  mushroomCollectUI: {fileID: 3885374583152066389}
+  mushroomTradeUI: {fileID: 7406766951664501094}
+  task3Text: {fileID: 4440178369169002215}
+  task5Text: {fileID: 4440178368919267118}
+  leavesPilesUI: {fileID: 4440178370575920889}
+  sticksCollectedUI: {fileID: 4440178370545693509}
+  fishTradeUI: {fileID: 4440178369458501690}
+  campfireBuiltUI: {fileID: 4839926533845879073}
+  task2Complete: 0
+  task3Complete: 0
+  task4Complete: 0
+  tentSpotConfirmed: 0
   firstPegHammered: 0
   secondPegHammered: 0
   thirdPegHammered: 0
   fourthPegHammered: 0
   allfishOnSticks: 0
   allMushroomshOnSticks: 0
+  allMushroomsCollected: 0
+  mushroomsTraded: 0
+  mushroomsCollected: 0
+  fishingScript: {fileID: 0}
 --- !u!1 &8945546731383507375
 GameObject:
   m_ObjectHideFlags: 0

@@ -51,13 +51,43 @@ public class TaskLog : MonoBehaviour
     //  Assign Inventory UI
     public GameObject listUI;
 
+    //Assign 3 object "Mushroom"
+    public TextMeshProUGUI mushroomCollectUI;
+
+    //Assign to trading function for fishing rod
+    public TextMeshProUGUI mushroomTradeUI;
+
+    // Assign object "Task 3" in Notepad
+    public TextMeshProUGUI task3Text;
+
+    // Assign object "Task 5" in Notepad
+    public TextMeshProUGUI task5Text;
+
+    //Assign 4 objects "Leaves" 
+    public TextMeshProUGUI leavesPilesUI;
+
+    //Assign 7 objects "Sticks"
+    public TextMeshProUGUI sticksCollectedUI;
+
+    //Assign to trading function for firewood
+    public TextMeshProUGUI fishTradeUI;
+
+    //Assign to function when campfire is finished
+    public TextMeshProUGUI campfireBuiltUI;
+
     /// Boolean values
 
     // Check if Task 2 is complete
     public bool task2Complete;
 
+    // Check if Task 3 is complete
+    public bool task3Complete;
+
     // Check if Task 4 is complete
     public bool task4Complete;
+
+    // Check if Task 5 is complete
+    public bool task5Complete;
 
     // Whether Tent Spot has been confirmed
     public bool tentSpotConfirmed = false;
@@ -83,6 +113,33 @@ public class TaskLog : MonoBehaviour
     // All 6 mushrooms are on a stick 
     public bool allMushroomshOnSticks = false;
 
+    //All 3 mushrooms needed for trade
+    public bool allMushroomsCollected = false;
+
+    //check for mushroom trade
+    public bool mushroomsTraded = false;
+
+    //check for 8 sticks
+    public bool allSticksCollected = false;
+    //check for 4 leaf piles
+    public bool allLeavesCollected = false;
+    //check for 6 logs
+    public bool allLogsCollected = false;
+    //check for campfire built
+    public bool campfireAssembled = false;
+    // integer values to count
+
+    //to count mushrooms collected
+    public int mushroomsCollected;
+
+    //to count sticks collected
+    public int sticksCollected;
+
+    //to count leaves collected
+    public int leavesCollected;
+
+    //to count logs collected
+    public int logsCollected;
 
     /// SCRIPT REFERENCES
 
@@ -112,17 +169,29 @@ public class TaskLog : MonoBehaviour
                 listUI.SetActive(true);
             }
         }
-
+        //strikeout task 2 on notepad
         if (completedPegs && tentSpotConfirmed && !task2Complete)
         {
             task2Complete = true;
             task2Text.fontStyle = FontStyles.Strikethrough;
         }
-
+        //strikeout task 4 on notepad
         if (!task4Complete && fishingScript.fishesCaught >= 3)
         {
             task4Complete = true;
             task4Text.fontStyle = FontStyles.Strikethrough;
+        }
+        //strikeout task 3 on notepad
+        if (mushroomsTraded && allMushroomsCollected && !task3Complete)
+        {
+            task3Complete = true;
+            task3Text.fontStyle = FontStyles.Strikethrough;
+        }
+        //strikeout task 5 on notepad
+        if (allLeavesCollected && allLogsCollected && !task5Complete)
+        {
+            task5Complete = true;
+            task5Text.fontStyle = FontStyles.Strikethrough;
         }
     }
 
@@ -175,5 +244,62 @@ public class TaskLog : MonoBehaviour
         fourthPegUI.fontStyle = FontStyles.Strikethrough;
 
         pegsHammered++;
+    }
+
+    public void MushroomCollected()
+    {
+        //add 1 to mushroom counter, if its 3, strike out subtask 3.1
+        mushroomsCollected++;
+        if (mushroomsCollected == 3 && !allMushroomsCollected)
+        {
+            mushroomCollectUI.fontStyle = FontStyles.Strikethrough;
+            allMushroomsCollected = true;
+        }
+    }
+
+    public void FishermanTradeCompleted()
+    {
+        //upon picking up fishing rod, strike out subtask 3.2
+        if (!mushroomsTraded)
+        {
+            mushroomsTraded = true;
+            mushroomTradeUI.fontStyle = FontStyles.Strikethrough;
+        }
+    }
+
+    public void SticksCollection()
+    {
+        sticksCollected++;
+        if (sticksCollected == 8)
+        {
+            sticksCollectedUI.fontStyle = FontStyles.Strikethrough;
+            allSticksCollected = true;
+        }
+    }
+
+    public void LeafCollection()
+    {
+        leavesCollected++;
+        if (leavesCollected == 4)
+        {
+            allLeavesCollected = true;
+            leavesPilesUI.fontStyle = FontStyles.Strikethrough;
+        }
+    }
+
+    public void LogsCollection()
+    {
+        logsCollected++;
+        if (logsCollected == 4)
+        {
+            allLogsCollected = true;
+            leavesPilesUI.fontStyle = FontStyles.Strikethrough;
+        }
+    }
+
+    public void CampFireAssembled()
+    {
+        campfireBuiltUI.fontStyle = FontStyles.Strikethrough;
+        campfireAssembled = true;
     }
 }

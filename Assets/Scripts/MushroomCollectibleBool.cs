@@ -19,14 +19,15 @@ public class MushroomCollectibleBool : MonoBehaviour
     public bool collected = false;
     public int score;
     public bool poisonous;
+    public GameObject notepad;
 
     Vector3 startPosition;
     Rigidbody mushroomRigidbody;
     bool objectMoved;
-
     // Start is called before the first frame update
     void Start()
     {
+          
         if (poisonous)
         {
             score = -1;
@@ -36,6 +37,7 @@ public class MushroomCollectibleBool : MonoBehaviour
             score = 1;
         }
         firebaseManager = GameObject.Find("FirebaseManager");
+        notepad = GameObject.Find("Notepad 7.0");
         startPosition = transform.position;
         mushroomRigidbody = this.gameObject.GetComponent<Rigidbody>();
     }
@@ -57,6 +59,10 @@ public class MushroomCollectibleBool : MonoBehaviour
         {
             firebaseManager.GetComponent<SimpleFirebaseManager>().UpdateMushrooms(score);
             collected = true;
+            if (!poisonous)
+            {
+                notepad.GetComponent<TaskLog>().MushroomCollected();
+            }
         }
     }
 }
