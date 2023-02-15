@@ -40,13 +40,13 @@ public class TaskLog : MonoBehaviour
     public TextMeshProUGUI stickFishesUI;
 
     // Assign 3 object "RawFish" in sticks to the fireplace socket
-    public TextMeshProUGUI fishOnSticksToGroundUI;
+    public TextMeshProUGUI fishOnSticksToCookUI;
 
     // Assign 6 object "Mushroom" in sticks 
     public TextMeshProUGUI stickEdibleMushroomsUI;
 
     // Assign 6 object "Mushrooms" in sticks to the fireplace socket
-    public TextMeshProUGUI mushroomsOnSticksToGroundUI;
+    public TextMeshProUGUI mushroomsOnSticksToCookUI;
 
     // Eaten food
     public TextMeshProUGUI eatenFoodUI;
@@ -65,6 +65,12 @@ public class TaskLog : MonoBehaviour
 
     // Assign object "Task 5" in Notepad
     public TextMeshProUGUI task5Text;
+
+    // Assign object "Task 7" in Notepad
+    public TextMeshProUGUI task7Text;
+
+    // Assign object "Task 8" in Notepad
+    public TextMeshProUGUI task8Text;
 
     //Assign 4 objects "Leaves" 
     public TextMeshProUGUI leavesPilesUI;
@@ -92,6 +98,12 @@ public class TaskLog : MonoBehaviour
     // Check if Task 5 is complete
     public bool task5Complete;
 
+    // Check if Task 7 is complete
+    public bool task7Complete;
+
+    // Check if Task 8 is complete
+    public bool task8Complete;
+
     // Whether Tent Spot has been confirmed
     public bool tentSpotConfirmed = false;
 
@@ -115,6 +127,10 @@ public class TaskLog : MonoBehaviour
 
     // All 6 mushrooms are on a stick 
     public bool allEdibleMushroomOnSticks = false;
+
+    public bool edibleMushroomToCook = false;
+
+    public bool fishToCook = false;
 
     //All 3 mushrooms needed for trade
     public bool allMushroomsCollected = false;
@@ -196,6 +212,16 @@ public class TaskLog : MonoBehaviour
             task5Complete = true;
             task5Text.fontStyle = FontStyles.Strikethrough;
         } 
+        if(allfishOnSticks && fishToCook)
+        {
+            task7Complete = true;
+            Task7Done();
+        }
+        if(allEdibleMushroomOnSticks && edibleMushroomToCook)
+        {
+            task8Complete = true;
+            Task8Done();
+        }
 
     }
 
@@ -307,28 +333,46 @@ public class TaskLog : MonoBehaviour
         campfireAssembled = true;
     }
 
+
+
+    public void Task7Done()
+    {
+
+        task7Text.fontStyle = FontStyles.Strikethrough;
+}
+
+    public void Task8Done()
+    {
+        task8Text.fontStyle = FontStyles.Strikethrough;
+    }
+
     public void FishesOnSticksDone()
     {
+        allfishOnSticks = true;
         stickFishesUI.fontStyle = FontStyles.Strikethrough;
     }
 
     public void MushroomsOnSticksDone()
     {
+        allEdibleMushroomOnSticks = true;
         stickEdibleMushroomsUI.fontStyle = FontStyles.Strikethrough;
     }
 
     public void FishesOnSticksToGroundDone()
     {
-        fishOnSticksToGroundUI.fontStyle = FontStyles.Strikethrough;
+        fishToCook = true;
+        fishOnSticksToCookUI.fontStyle = FontStyles.Strikethrough;
     }
 
     public void MushroomsOnSticksToGroundDone()
     {
-        mushroomsOnSticksToGroundUI.fontStyle = FontStyles.Strikethrough;
+        edibleMushroomToCook = true;
+        mushroomsOnSticksToCookUI.fontStyle = FontStyles.Strikethrough;
     }
 
     public void EatenFood()
     {
+        
         eatenFoodUI.fontStyle = FontStyles.Strikethrough;
     }
 }

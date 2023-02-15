@@ -11,6 +11,8 @@ public class EatingScript : MonoBehaviour
     public GameObject poisonEffect4;
 
     public bool eatenFood = false;
+    public TaskLog taskLogScript;
+    
 
     private void OnTriggerEnter(Collider other)
     {
@@ -18,6 +20,7 @@ public class EatingScript : MonoBehaviour
         if (other.gameObject.tag == "Cooked Edible Mushroom")
         {
             eatenFood = true;
+            taskLogScript.EatenFood();
             Destroy(other.gameObject);
             Debug.Log("Edible Mushroom has been eaten");
         }
@@ -25,6 +28,7 @@ public class EatingScript : MonoBehaviour
         else if (other.gameObject.tag == "Cooked Fish")
         {
             eatenFood = true;
+            taskLogScript.EatenFood();
             Destroy(other.gameObject);
             Debug.Log("Fish has been eaten");
         }
@@ -32,6 +36,7 @@ public class EatingScript : MonoBehaviour
         else if (other.gameObject.tag == "Cooked Poison Mushroom")
         {
             eatenFood = true;
+            taskLogScript.EatenFood();
             Destroy(other.gameObject);
             int effect = Random.Range(1, 5);
             if (effect == 1)

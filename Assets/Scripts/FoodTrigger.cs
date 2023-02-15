@@ -17,6 +17,10 @@ public class FoodTrigger : MonoBehaviour
 
     public bool canCookMushroom = false;
 
+    public bool fishSnappedToStick = false;
+
+    public bool edibleMushroomSnappedToStick = false;
+
     public bool canCookPoisonMushroom = false;
 
     public int fishOnSticks = 0;
@@ -28,6 +32,7 @@ public class FoodTrigger : MonoBehaviour
     public int edibleMushroomNearFire = 0;
 
     // Always check if the food can be cooked or not
+
     void Update()
     {
         if (canCookFish == true)
@@ -57,7 +62,7 @@ public class FoodTrigger : MonoBehaviour
             taskLog.FishesOnSticksDone();
         }
 
-        if (edibleMushroomOnSticks >= 3)
+        if (edibleMushroomOnSticks >= 6)
         {
             taskLog.allEdibleMushroomOnSticks = true;
             taskLog.MushroomsOnSticksDone();
@@ -128,7 +133,11 @@ public class FoodTrigger : MonoBehaviour
 
     public void FishSocketCheckExit()
     {
-        fishOnSticks--;
+        if(fishSnappedToStick)
+        {
+            fishOnSticks--;
+        }
+        
     }
 
     public void EdibleMushroomSocketCheck()
@@ -140,11 +149,16 @@ public class FoodTrigger : MonoBehaviour
             if (myGrabbable.firstInteractorSelecting.transform.tag == "CookingStickSocket")
             {
                 edibleMushroomOnSticks++;
+                
             }
         }
     }
     public void EdibleMushroomSocketCheckExit()
     {
-        edibleMushroomOnSticks--;
+        if(edibleMushroomSnappedToStick)
+        {
+            edibleMushroomOnSticks--;
+        }
+        
     }
 }
