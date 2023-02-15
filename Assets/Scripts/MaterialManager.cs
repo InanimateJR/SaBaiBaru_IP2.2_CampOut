@@ -52,13 +52,6 @@ public class MaterialManager : MonoBehaviour
             if (task.IsCanceled || task.IsFaulted)
             {
                 Debug.LogError("Sorry, there was an error creating your entries, ERROR: " + task.Exception);
-                foldedTentRenderer.material = foldedTentMats[foldedTentSelection];
-                bagRenderer.material = bagMats[bagSelection];
-
-                for (int i = 0; i < tentRenderer.Length; i++)
-                {
-                    tentRenderer[i].material = tentMats[tentSelection];
-                }
             }
             else if (task.IsCompleted)
             {
@@ -66,20 +59,21 @@ public class MaterialManager : MonoBehaviour
                 if (playerStats.Exists)
                 {
                     CustomizationIndex ci = JsonUtility.FromJson<CustomizationIndex>(playerStats.GetRawJsonValue());
-                    foldedTentSelection = (int)ci.foldedTentMaterial;
-                    tentSelection = (int)ci.tentMaterial;
-                    bagSelection = (int)ci.bagMaterial;
-                    foldedTentRenderer.material = foldedTentMats[foldedTentSelection];
-                    bagRenderer.material = bagMats[bagSelection];
-
-
-                    for (int i = 0; i < tentRenderer.Length; i++)
-                    {
-                        tentRenderer[i].material = tentMats[tentSelection];
-                    }
+                    foldedTentSelection = ci.foldedTentMaterial;
+                    tentSelection = ci.tentMaterial;
+                    bagSelection = ci.bagMaterial;
                 }
             }
         });
+
+        foldedTentRenderer.material = foldedTentMats[foldedTentSelection];
+        bagRenderer.material = bagMats[bagSelection];
+
+
+        for (int i = 0; i < tentRenderer.Length; i++)
+        {
+            tentRenderer[i].material = tentMats[tentSelection];
+        }
     }
 
     //change folded tent to colour 1
@@ -153,7 +147,7 @@ public class MaterialManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("Value Changed");
+            //Debug.Log("Value Changed");
 
             SetMaterials();
         }
