@@ -7,8 +7,8 @@ public class TaskLog : MonoBehaviour
 {
     /// Defining Values
     
-    // Store number of pegs collected
-    public int pegsCollected;
+    // Store number of pegs hammered
+    public int pegsHammered;
 
     /// Creating TMP text objects
     // Assign object "firstPeg" in inventory
@@ -65,7 +65,7 @@ public class TaskLog : MonoBehaviour
     void Start()
     {
         // Number of items collected starts at 0
-        pegsCollected = 0;
+        pegsHammered = 0;
     }
 
     void Update()
@@ -92,6 +92,8 @@ public class TaskLog : MonoBehaviour
 
         // Strikethrough firstPeg UI
         firstPegUI.fontStyle = FontStyles.Strikethrough;
+
+        pegsHammered++;
     }
 
     public void SecondPegHammered()
@@ -102,6 +104,7 @@ public class TaskLog : MonoBehaviour
         // Strikethrough secondPegUI
         secondPegUI.fontStyle = FontStyles.Strikethrough;
 
+        pegsHammered++;
     }
 
     public void ThirdPegHammered()
@@ -111,6 +114,8 @@ public class TaskLog : MonoBehaviour
 
         //Strikethrough thirdPeg UI
         thirdPegUI.fontStyle = FontStyles.Strikethrough;
+
+        pegsHammered++;
     }
 
     public void FourthPegHammered()
@@ -120,7 +125,7 @@ public class TaskLog : MonoBehaviour
 
         // Strikethrough fourthPeg UI
         fourthPegUI.fontStyle = FontStyles.Strikethrough;
+
+        pegsHammered++;
     }
-
-
 }

@@ -172,7 +172,7 @@ MonoBehaviour:
   taskBtn: {fileID: 75011374368067733}
   guideBtn: {fileID: 75011375678157488}
   settingsSection: {fileID: 8297033013078726071}
-  guideSection: {fileID: 0}
+  guideSection: {fileID: 2517926717410663974}
   taskSection: {fileID: 8235179992245171629}
 --- !u!1 &75011374374313813
 GameObject:
@@ -346,7 +346,7 @@ MonoBehaviour:
   taskBtn: {fileID: 75011374368067733}
   guideBtn: {fileID: 75011375678157488}
   settingsSection: {fileID: 8297033013078726071}
-  guideSection: {fileID: 0}
+  guideSection: {fileID: 2517926717410663974}
   taskSection: {fileID: 8235179992245171629}
 --- !u!1 &75011375412305011
 GameObject:
@@ -782,7 +782,7 @@ MonoBehaviour:
   taskBtn: {fileID: 75011374368067733}
   guideBtn: {fileID: 75011375678157488}
   settingsSection: {fileID: 8297033013078726071}
-  guideSection: {fileID: 0}
+  guideSection: {fileID: 2517926717410663974}
   taskSection: {fileID: 8235179992245171629}
 --- !u!1 &75011375721511407
 GameObject:
@@ -59719,18 +59719,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86900a68119cfc349840fe5e43617a37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pegsCollected: 0
+  pegsHammered: 0
   firstPegUI: {fileID: 0}
   secondPegUI: {fileID: 0}
   thirdPegUI: {fileID: 0}
   fourthPegUI: {fileID: 0}
   stickFishesUI: {fileID: 0}
+  fishOnSticksUI: {fileID: 0}
   stickMushroomsUI: {fileID: 0}
+  mushroomsOnSticksUI: {fileID: 0}
   listUI: {fileID: 0}
-  firstPegCollected: 0
-  secondPegCollected: 0
-  thirdPegCollected: 0
-  fourthPegCollected: 0
+  firstPegHammered: 0
+  secondPegHammered: 0
+  thirdPegHammered: 0
+  fourthPegHammered: 0
+  allfishOnSticks: 0
+  allMushroomshOnSticks: 0
 --- !u!1 &8945546731383507375
 GameObject:
   m_ObjectHideFlags: 0

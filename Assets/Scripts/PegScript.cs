@@ -14,29 +14,7 @@ public class PegScript : MonoBehaviour
     public GameObject pegSocket3;
     public GameObject pegSocket4;
 
-    bool tentObjectFound;
-    public GameObject tentObject1;
-    public GameObject tentObject2;
-    public GameObject tentObject3;
-    private TentScript tentScript1;
-    private TentScript tentScript2;
-    private TentScript tentScript3;
-
     public TaskLog taskLog;
-
-    private void Awake()
-    {
-        tentObject1 = GameObject.Find("Pitched Tent Group 1");
-        tentObject2 = GameObject.Find("Pitched Tent Group 2");
-        tentObject3 = GameObject.Find("Pitched Tent Group 3");
-    }
-
-    private void Start()
-    {
-        tentScript1 = tentObject1.GetComponent<TentScript>();
-        tentScript2 = tentObject2.GetComponent<TentScript>();
-        tentScript3 = tentObject3.GetComponent<TentScript>();
-    }
 
     private void Update()
     {
@@ -58,6 +36,7 @@ public class PegScript : MonoBehaviour
             {
                 taskLog.FourthPegHammered();
             }
+            taskLogUpdated = true;
         }
     }
 
@@ -70,8 +49,6 @@ public class PegScript : MonoBehaviour
             {
                 this.gameObject.transform.position += new Vector3(0, -0.03f, 0);
                 timesHit++;
-
-                
             }
         }
     }
