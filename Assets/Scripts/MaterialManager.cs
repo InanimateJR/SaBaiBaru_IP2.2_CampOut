@@ -43,9 +43,9 @@ public class MaterialManager : MonoBehaviour
         }
         SetMaterials();
     }
-        //retrieve material index from firebase, then changes the materials of the object
-        public void SetMaterials()
-        {
+    //retrieve material index from firebase, then changes the materials of the object
+    public void SetMaterials()
+    {
         Query playerQuery = customizationDatabase.Child(uid);
         playerQuery.GetValueAsync().ContinueWithOnMainThread(task =>
         {
@@ -66,11 +66,12 @@ public class MaterialManager : MonoBehaviour
                 if (playerStats.Exists)
                 {
                     CustomizationIndex ci = JsonUtility.FromJson<CustomizationIndex>(playerStats.GetRawJsonValue());
-                    foldedTentSelection = ci.foldedTentMaterial;
-                    tentSelection = ci.tentMaterial;
-                    bagSelection = ci.bagMaterial;
+                    foldedTentSelection = (int)ci.foldedTentMaterial;
+                    tentSelection = (int)ci.tentMaterial;
+                    bagSelection = (int)ci.bagMaterial;
                     foldedTentRenderer.material = foldedTentMats[foldedTentSelection];
                     bagRenderer.material = bagMats[bagSelection];
+
 
                     for (int i = 0; i < tentRenderer.Length; i++)
                     {
@@ -82,76 +83,65 @@ public class MaterialManager : MonoBehaviour
     }
 
     //change folded tent to colour 1
-    public void TentFolded0()
-    {
-        foldedTentSelection = 0;
-        SaveFoldedTentToFirebase(foldedTentSelection);
-    }
-    //change folded tent to colour 2
     public void TentFolded1()
     {
-        foldedTentSelection = 1;
-        SaveFoldedTentToFirebase(foldedTentSelection);
+        foldedTentSelection = 0;
+        SaveMaterialsToFirebase(foldedTentSelection, tentSelection, bagSelection);
     }
-    //change folded tent to colour 3
+    //change folded tent to colour 2
     public void TentFolded2()
     {
+        foldedTentSelection = 1;
+        SaveMaterialsToFirebase(foldedTentSelection, tentSelection, bagSelection);
+    }
+    //change folded tent to colour 3
+    public void TentFolded3()
+    {
         foldedTentSelection = 2;
-        SaveFoldedTentToFirebase(foldedTentSelection);
+        SaveMaterialsToFirebase(foldedTentSelection, tentSelection, bagSelection);
     }
     //change tent to colour 1
     public void Tent1()
     {
         tentSelection = 0;
-        SaveTentToFirebase(tentSelection);
+        SaveMaterialsToFirebase(foldedTentSelection, tentSelection, bagSelection);
     }
     //change tent to colour 2
     public void Tent2()
     {
         tentSelection = 1;
-        SaveTentToFirebase(tentSelection);
+        SaveMaterialsToFirebase(foldedTentSelection, tentSelection, bagSelection);
     }
     //change tent to colour 3
     public void Tent3()
     {
         tentSelection = 2;
-        SaveTentToFirebase(tentSelection);
+        SaveMaterialsToFirebase(foldedTentSelection, tentSelection, bagSelection);
     }
     //change bag to colour 1
     public void Bag1()
     {
         bagSelection = 0;
-        SaveBagToFirebase(bagSelection);
+        SaveMaterialsToFirebase(foldedTentSelection, tentSelection, bagSelection);
     }
     //change bag to colour 2
     public void Bag2()
     {
         bagSelection = 1;
-        SaveBagToFirebase(bagSelection);
+        SaveMaterialsToFirebase(foldedTentSelection, tentSelection, bagSelection);
     }
     //change bag to colour 3
     public void Bag3()
     {
         bagSelection = 2;
-        SaveBagToFirebase(bagSelection);
+        SaveMaterialsToFirebase(foldedTentSelection, tentSelection, bagSelection);
     }
     //savedata for folded tent in firebase
-    public void SaveFoldedTentToFirebase(int materialIndex)
+    public void SaveMaterialsToFirebase(int foldedTentMaterial, int tentMaterial, int bagMaterial)
     {
-        string foldedTent = materialIndex.ToString();
-        mDatabaseRef.Child("userCustomization").Child(uid).Child("foldedTentMaterial").SetRawJsonValueAsync(foldedTent);
-    }
-    //savedata for tent in firebase
-    public void SaveTentToFirebase(int materialIndex)
-    {
-        string tent = materialIndex.ToString();
-        mDatabaseRef.Child("userCustomization").Child(uid).Child("tentMaterial").SetRawJsonValueAsync(tent);
-    }
-    //savedata for bag in firebase
-    public void SaveBagToFirebase(int materialIndex)
-    {
-        string bag = materialIndex.ToString();
-        mDatabaseRef.Child("userCustomization").Child(uid).Child("bagMaterial").SetRawJsonValueAsync(bag);
+        CustomizationIndex ci = new CustomizationIndex(foldedTentMaterial, tentMaterial, bagMaterial);
+        string json = JsonUtility.ToJson(ci);
+        mDatabaseRef.Child("userCustomization").Child(uid).SetRawJsonValueAsync(json);
     }
     //listens for firebase change, then executes material changes
     void HandlePlayerValueChanged(object send, ValueChangedEventArgs args)
@@ -163,6 +153,8 @@ public class MaterialManager : MonoBehaviour
         }
         else
         {
+            Debug.Log("Value Changed");
+
             SetMaterials();
         }
     }
