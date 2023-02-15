@@ -5,45 +5,27 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class CookingScript : MonoBehaviour
 {
-    /*
-    public GameObject fishToSpawn;
+    private int fishNearFire = 0;
+    private int edibleMushroomNearFire = 0;
+    public TaskLog tlScript;
 
-    public GameObject rawFish;
-
-
-    public void SpawnCookedFish()
+    private void Update()
     {
-        GameObject cookedFish = Instantiate(fishToSpawn, rawFish.transform.position, rawFish.transform.rotation);
-        rawFish.SetActive(false);
-        Debug.Log("Fish has been cooked!");
-
-    }
-
-    private void OnTriggerEnter(Collider objectNearFire)
-    {
-        if (objectNearFire.tag == "Fish")
+        if (fishNearFire > 3)
         {
-            Debug.Log("Fish is near fire");
-            rawFish = objectNearFire.gameObject;
-            StartCoroutine(CookingFish());
+            tlScript.FishesOnSticksToGroundDone();
         }
-
+        if(edibleMushroomNearFire > 6)
+        {
+            tlScript.MushroomsOnSticksToGroundDone();
+        }
     }
-
-    IEnumerator CookingFish()
-    {
-        yield return new WaitForSeconds(5);
-        SpawnCookedFish();
-        
-    }
-    */
-    //If the collider sense that a raw food is near the fire, it will make bool to cook food true
     public void OnTriggerEnter(Collider objectNearFire)
     {
         if (objectNearFire.gameObject.tag == "Fish")
         {
             Debug.Log("Fish is near fire");
-
+            fishNearFire++;
             FoodTrigger foodTrigger = objectNearFire.gameObject.GetComponent<FoodTrigger>();
             if (foodTrigger.canCookFish == false)
             {
@@ -55,7 +37,7 @@ public class CookingScript : MonoBehaviour
         else if (objectNearFire.gameObject.tag == "Mushroom")
         {
             Debug.Log("Mushroom is near fire");
-
+            edibleMushroomNearFire++;
             FoodTrigger foodTrigger = objectNearFire.gameObject.GetComponent<FoodTrigger>();
             if (foodTrigger.canCookMushroom == false)
             {

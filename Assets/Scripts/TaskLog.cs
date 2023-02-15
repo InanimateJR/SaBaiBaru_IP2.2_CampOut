@@ -52,8 +52,7 @@ public class TaskLog : MonoBehaviour
     // Assign 6 object "Mushrooms" in sticks to the fireplace socket
     public TextMeshProUGUI mushroomsOnSticksToCookUI;
 
-    // Eaten food
-    public TextMeshProUGUI eatenFoodUI;
+    
 
     //  Assign Inventory UI
     public GameObject listUI;
@@ -75,6 +74,9 @@ public class TaskLog : MonoBehaviour
 
     // Assign object "Task 8" in Notepad
     public TextMeshProUGUI task8Text;
+
+    // Assign object "Task 9" in Notepad
+    public TextMeshProUGUI task9Text;
 
     //Assign 4 objects "Leaves" 
     public TextMeshProUGUI leavesPilesUI;
@@ -353,8 +355,6 @@ public class TaskLog : MonoBehaviour
         campfireAssembled = true;
     }
 
-
-
     public void Task7Done()
     {
 
@@ -393,6 +393,6 @@ public class TaskLog : MonoBehaviour
     public void EatenFood()
     {
         
-        eatenFoodUI.fontStyle = FontStyles.Strikethrough;
+        task9Text.fontStyle = FontStyles.Strikethrough;
     }
 }

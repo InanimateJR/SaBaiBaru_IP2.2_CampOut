@@ -52791,7 +52791,7 @@ GameObject:
   - component: {fileID: 4440178368730467772}
   - component: {fileID: 4440178368730467773}
   m_Layer: 5
-  m_Name: Text (TMP) (1)
+  m_Name: Task7Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -52927,7 +52927,7 @@ GameObject:
   - component: {fileID: 4440178368795964349}
   - component: {fileID: 4440178368795964350}
   m_Layer: 5
-  m_Name: Text (TMP) (2)
+  m_Name: Task8.2Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -53471,7 +53471,7 @@ GameObject:
   - component: {fileID: 4440178368891581538}
   - component: {fileID: 4440178368891581539}
   m_Layer: 5
-  m_Name: Text (TMP) (3)
+  m_Name: Task9Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -55022,7 +55022,7 @@ GameObject:
   - component: {fileID: 4440178369697580148}
   - component: {fileID: 4440178369697580149}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Task8Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -55294,7 +55294,7 @@ GameObject:
   - component: {fileID: 4440178369724156505}
   - component: {fileID: 4440178369724156506}
   m_Layer: 5
-  m_Name: Text (TMP) (3)
+  m_Name: Task7.2Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -56422,7 +56422,7 @@ GameObject:
   - component: {fileID: 4440178370122483035}
   - component: {fileID: 4440178370122483036}
   m_Layer: 5
-  m_Name: Text (TMP) (2)
+  m_Name: Task7.1Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -57725,7 +57725,7 @@ GameObject:
   - component: {fileID: 4440178370572158811}
   - component: {fileID: 4440178370572158812}
   m_Layer: 5
-  m_Name: Text (TMP) (1)
+  m_Name: Task8.1Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -59720,40 +59720,57 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pegsHammered: 0
-  task2Text: {fileID: 0}
-  task4Text: {fileID: 0}
+  task1Text: {fileID: 4440178370633430873}
+  task2Text: {fileID: 4440178370662370992}
+  task4Text: {fileID: 4440178370468984169}
   completedPegsText: {fileID: 0}
   tentPlaced: {fileID: 0}
-  firstPegUI: {fileID: 0}
-  secondPegUI: {fileID: 0}
-  thirdPegUI: {fileID: 0}
-  fourthPegUI: {fileID: 0}
-  stickFishesUI: {fileID: 0}
-  fishOnSticksUI: {fileID: 0}
-  stickMushroomsUI: {fileID: 0}
-  mushroomsOnSticksUI: {fileID: 0}
+  firstPegUI: {fileID: 4440178369491748474}
+  secondPegUI: {fileID: 4440178370569661591}
+  thirdPegUI: {fileID: 4440178368864617063}
+  fourthPegUI: {fileID: 4440178369038954082}
+  stickFishesUI: {fileID: 4440178370122483036}
+  fishOnSticksToCookUI: {fileID: 4440178369724156506}
+  stickEdibleMushroomsUI: {fileID: 4440178370572158812}
+  mushroomsOnSticksToCookUI: {fileID: 4440178368795964350}
   listUI: {fileID: 0}
   mushroomCollectUI: {fileID: 3885374583152066389}
   mushroomTradeUI: {fileID: 7406766951664501094}
   task3Text: {fileID: 4440178369169002215}
   task5Text: {fileID: 4440178368919267118}
+  task7Text: {fileID: 4440178368730467773}
+  task8Text: {fileID: 4440178369697580149}
+  task9Text: {fileID: 4440178368891581539}
   leavesPilesUI: {fileID: 4440178370575920889}
   sticksCollectedUI: {fileID: 4440178370545693509}
   fishTradeUI: {fileID: 4440178369458501690}
   campfireBuiltUI: {fileID: 4839926533845879073}
+  task1Complete: 0
   task2Complete: 0
   task3Complete: 0
   task4Complete: 0
+  task5Complete: 0
+  task7Complete: 0
+  task8Complete: 0
   tentSpotConfirmed: 0
   firstPegHammered: 0
   secondPegHammered: 0
   thirdPegHammered: 0
   fourthPegHammered: 0
   allfishOnSticks: 0
-  allMushroomshOnSticks: 0
+  allEdibleMushroomOnSticks: 0
+  edibleMushroomToCook: 0
+  fishToCook: 0
   allMushroomsCollected: 0
   mushroomsTraded: 0
+  allSticksCollected: 0
+  allLeavesCollected: 0
+  allLogsCollected: 0
+  campfireAssembled: 0
   mushroomsCollected: 0
+  sticksCollected: 0
+  leavesCollected: 0
+  logsCollected: 0
   fishingScript: {fileID: 0}
 --- !u!1 &8945546731383507375
 GameObject:
