@@ -29,7 +29,7 @@ public class MaterialManager : MonoBehaviour
     Firebase.Auth.FirebaseAuth auth;
     DatabaseReference mDatabaseRef;
     DatabaseReference customizationDatabase;
-
+    //sets up firebase and user ID, sets listener
     private void Awake()
     {
         auth = FirebaseAuth.DefaultInstance;
@@ -42,8 +42,9 @@ public class MaterialManager : MonoBehaviour
             uid = currentUser.UserId;
         }
     }
+        //retrieve material index from firebase, then changes the materials of the object
         public void SetMaterials()
-    {
+        {
         Query playerQuery = customizationDatabase.Child(uid);
         playerQuery.GetValueAsync().ContinueWithOnMainThread(task =>
         {
@@ -132,19 +133,19 @@ public class MaterialManager : MonoBehaviour
         string foldedTent = materialIndex.ToString();
         mDatabaseRef.Child("userCustomization").Child(uid).Child("foldedTentMaterial").SetRawJsonValueAsync(foldedTent);
     }
-
+    //savedata for tent in firebase
     public void SaveTentToFirebase(int materialIndex)
     {
         string tent = materialIndex.ToString();
         mDatabaseRef.Child("userCustomization").Child(uid).Child("tentMaterial").SetRawJsonValueAsync(tent);
     }
-
+    //savedata for bag in firebase
     public void SaveBagToFirebase(int materialIndex)
     {
         string bag = materialIndex.ToString();
         mDatabaseRef.Child("userCustomization").Child(uid).Child("bagMaterial").SetRawJsonValueAsync(bag);
     }
-
+    //listens for firebase change, then executes material changes
     void HandlePlayerValueChanged(object send, ValueChangedEventArgs args)
     {
         if (args.DatabaseError != null)
