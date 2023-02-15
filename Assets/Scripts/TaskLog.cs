@@ -15,6 +15,9 @@ public class TaskLog : MonoBehaviour
     // Assign object "Task 2" in Notepad
     public TextMeshProUGUI task2Text;
 
+    // Assign object "Task 4" in Notepad
+    public TextMeshProUGUI task4Text;
+
     // Assign object "Tent Instruction Text" in Notepad
     public TextMeshProUGUI completedPegsText;
 
@@ -53,6 +56,9 @@ public class TaskLog : MonoBehaviour
     // Check if Task 2 is complete
     public bool task2Complete;
 
+    // Check if Task 4 is complete
+    public bool task4Complete;
+
     // Whether Tent Spot has been confirmed
     public bool tentSpotConfirmed = false;
 
@@ -77,6 +83,10 @@ public class TaskLog : MonoBehaviour
     // All 6 mushrooms are on a stick 
     public bool allMushroomshOnSticks = false;
 
+
+    /// SCRIPT REFERENCES
+
+    public FishingScript fishingScript;
 
 
     void Start()
@@ -107,6 +117,12 @@ public class TaskLog : MonoBehaviour
         {
             task2Complete = true;
             task2Text.fontStyle = FontStyles.Strikethrough;
+        }
+
+        if (!task4Complete && fishingScript.fishesCaught >= 3)
+        {
+            task4Complete = true;
+            task4Text.fontStyle = FontStyles.Strikethrough;
         }
     }
 

@@ -773,6 +773,7 @@ public class FishingScript: MonoBehaviour
     public void StartCollectedFish()
     {
         Debug.Log("StartCollectedFish");
+        canFish = true;
         if (fishCollectible != null)
         {
             fishCollectible.CollectedFish();
