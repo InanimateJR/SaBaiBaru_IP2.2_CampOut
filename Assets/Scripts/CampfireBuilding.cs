@@ -156,7 +156,7 @@ public class CampfireBuilding : MonoBehaviour
         if (!leaves1)
         {
             leaf1Hologram.SetActive(false);
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(0.5f);
             leaves1 = true;
             leaf1.SetActive(false);
             leaf2.SetActive(true);
@@ -170,7 +170,7 @@ public class CampfireBuilding : MonoBehaviour
         if (!leaves2)
         {
             leaf2Hologram.SetActive(false);
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(0.5f);
             leaves2 = true;
             leaf2.SetActive(false);
             leaf3.SetActive(true);
@@ -183,7 +183,7 @@ public class CampfireBuilding : MonoBehaviour
         if (!leaves3)
         {
             leaf3Hologram.SetActive(false);
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(0.5f);
             leaves3 = true;
             leaf3.SetActive(false);
             leaf4.SetActive(true);
@@ -196,7 +196,7 @@ public class CampfireBuilding : MonoBehaviour
         if (!leaves4)
         {
             leaf4Hologram.SetActive(false);
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(0.5f);
             leaves4 = true;
             leaf4.SetActive(false);
             sticks1.SetActive(true);
@@ -208,7 +208,7 @@ public class CampfireBuilding : MonoBehaviour
         if (!stick1)
         {
             sticks1Hologram.SetActive(false);
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(0.5f);
             stick1 = true;
             sticks1.SetActive(false);
             sticks2.SetActive(true);
@@ -221,7 +221,7 @@ public class CampfireBuilding : MonoBehaviour
         if (!stick2)
         {
             sticks2Hologram.SetActive(false);
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(0.5f);
             stick2 = true;
             sticks2.SetActive(false);
             sticks3.SetActive(true);
@@ -234,7 +234,7 @@ public class CampfireBuilding : MonoBehaviour
         if (!stick3)
         {
             sticks3Hologram.SetActive(false);
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(0.5f);
             stick3 = true;
             sticks3.SetActive(false);
             sticks4.SetActive(true);
@@ -247,7 +247,7 @@ public class CampfireBuilding : MonoBehaviour
         if (!stick4)
         {
             sticks4Hologram.SetActive(false);
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(0.5f);
             stick4 = true;
             sticks4.SetActive(false);
             logs1.SetActive(true);
@@ -260,7 +260,7 @@ public class CampfireBuilding : MonoBehaviour
         if (!log1)
         {
             logs1Hologram.SetActive(false);
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(0.5f);
             log1 = true;
             logs1.SetActive(false);
             logs2.SetActive(true);
@@ -273,7 +273,7 @@ public class CampfireBuilding : MonoBehaviour
         if (!log2)
         {
             logs2Hologram.SetActive(false);
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(0.5f);
             log2 = true;
             logs2.SetActive(false);
             logs3.SetActive(true);
@@ -285,7 +285,7 @@ public class CampfireBuilding : MonoBehaviour
         if (!log3)
         {
             logs3Hologram.SetActive(false);
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(0.5f);
             log1 = true;
             logs3.SetActive(false);
             logs4.SetActive(true);
@@ -297,7 +297,7 @@ public class CampfireBuilding : MonoBehaviour
         if (!log4)
         {
             logs4Hologram.SetActive(false);
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(0.5f);
             log4 = true;
             logs4.SetActive(false);
             logs5.SetActive(true);
@@ -309,7 +309,7 @@ public class CampfireBuilding : MonoBehaviour
         if (!log5)
         {
             logs5Hologram.SetActive(false);
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(0.5f);
             log5 = true;
             logs5.SetActive(false);
             logs6.SetActive(true);
@@ -321,7 +321,7 @@ public class CampfireBuilding : MonoBehaviour
         if (!log6)
         {
             logs6Hologram.SetActive(false);
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(0.5f);
             log6 = true;
             logs6.SetActive(false);
             sticks5.SetActive(true);
@@ -333,7 +333,7 @@ public class CampfireBuilding : MonoBehaviour
         if (!stick5)
         {
             sticks5Hologram.SetActive(false);
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(0.5f);
             stick5 = true;
             sticks5.SetActive(false);
             sticks6.SetActive(true);
@@ -345,7 +345,7 @@ public class CampfireBuilding : MonoBehaviour
         if (!stick6)
         {
             sticks6Hologram.SetActive(false);
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(0.5f);
             stick6 = true;
             sticks6.SetActive(false);
             sticks7.SetActive(true);
@@ -357,7 +357,7 @@ public class CampfireBuilding : MonoBehaviour
         if (!stick7)
         {
             sticks7Hologram.SetActive(false);
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(0.5f);
             stick7 = true;
             sticks7.SetActive(false);
             notepad.GetComponent<TaskLog>().CampFireAssembled();

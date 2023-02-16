@@ -12,7 +12,7 @@ public class Sockets : MonoBehaviour
         {
             if (myGrabbable.firstInteractorSelecting.transform.tag == "CampfireSocket")
             {
-                Invoke("DisableSocket", 1);
+                Invoke("DisableSocket", 0.5f);
 
             }
         }
