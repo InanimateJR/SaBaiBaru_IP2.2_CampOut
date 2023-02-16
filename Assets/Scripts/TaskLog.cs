@@ -165,6 +165,7 @@ public class TaskLog : MonoBehaviour
     public bool allLogsCollected = false;
     //check for campfire built
     public bool campfireAssembled = false;
+
     // integer values to count
 
     //to count mushrooms collected
@@ -178,6 +179,12 @@ public class TaskLog : MonoBehaviour
 
     //to count logs collected
     public int logsCollected;
+
+    //to count fish on sticks
+    public int fishOnSticks = 0;
+
+    //to count mushroom on sticks
+    public int edibleMushroomOnSticks = 0;
 
 
     /// SCRIPT REFERENCES

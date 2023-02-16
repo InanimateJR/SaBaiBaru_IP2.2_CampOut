@@ -7,6 +7,7 @@ public class FoodTrigger : MonoBehaviour
 {
     private GameObject notepad;
 
+    //referencing to task log script
     public TaskLog taskLog;
 
     public GameObject fishToSpawn;
@@ -25,13 +26,7 @@ public class FoodTrigger : MonoBehaviour
 
     public bool canCookPoisonMushroom = false;
 
-    public int fishOnSticks = 0;
 
-    public int edibleMushroomOnSticks = 0;
-
-    public int fishNearFire = 0;
-
-    public int edibleMushroomNearFire = 0;
 
     // Always check if the food can be cooked or not
 
@@ -135,11 +130,11 @@ public class FoodTrigger : MonoBehaviour
             if (myGrabbable.firstInteractorSelecting.transform.tag == "CookingStickSocket")
             {
                 fishSnappedToStick = true;
-                fishOnSticks++;
+                taskLog.fishOnSticks++;
                 Debug.Log("Fish added on stick");
 
                 //if 3 fish are on sticks, strikethrough task
-                if (fishOnSticks >= 3)
+                if (taskLog.fishOnSticks >= 3)
                 {
                     taskLog.allfishOnSticks = true;
                     taskLog.FishesOnSticksDone();
@@ -153,7 +148,7 @@ public class FoodTrigger : MonoBehaviour
     {
         if(fishSnappedToStick)
         {
-            fishOnSticks--;
+            taskLog.fishOnSticks--;
             fishSnappedToStick = false;
         }
         
@@ -168,11 +163,11 @@ public class FoodTrigger : MonoBehaviour
             if (myGrabbable.firstInteractorSelecting.transform.tag == "CookingStickSocket")
             {
                 edibleMushroomSnappedToStick = true;
-                edibleMushroomOnSticks++;
+                taskLog.edibleMushroomOnSticks++;
                 Debug.Log("Mushroom added on stick");
 
                 //if 3 mushrooms are on sticks, strikethrough task
-                if (edibleMushroomOnSticks >= 3)
+                if (taskLog.edibleMushroomOnSticks >= 3)
                 {
                     taskLog.allEdibleMushroomOnSticks = true;
                     taskLog.MushroomsOnSticksDone();
@@ -186,7 +181,7 @@ public class FoodTrigger : MonoBehaviour
     {
         if(edibleMushroomSnappedToStick)
         {
-            edibleMushroomOnSticks--;
+            taskLog.edibleMushroomOnSticks--;
             edibleMushroomSnappedToStick = false;
         }
         
