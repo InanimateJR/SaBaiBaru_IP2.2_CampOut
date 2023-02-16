@@ -38,4 +38,9 @@ public class LoadScene : MonoBehaviour
             yield return null;
         }
     }
+
+    public void OnActivate()
+    {
+        MoveToCube();
+    }
 }
