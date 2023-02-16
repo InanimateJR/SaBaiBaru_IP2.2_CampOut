@@ -392,7 +392,7 @@ public class TaskLog : MonoBehaviour
     public void LogsCollection()
     {
         logsCollected++;
-        if (logsCollected == 4)
+        if (logsCollected == 6)
         {
             allLogsCollected = true;
             leavesPilesUI.fontStyle = FontStyles.Strikethrough;
