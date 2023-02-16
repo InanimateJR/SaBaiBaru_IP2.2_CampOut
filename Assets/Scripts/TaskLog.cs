@@ -54,9 +54,6 @@ public class TaskLog : MonoBehaviour
 
     
 
-    //  Assign Inventory UI
-    public GameObject listUI;
-
     //Assign 3 object "Mushroom"
     public TextMeshProUGUI mushroomCollectUI;
 
@@ -218,9 +215,6 @@ public class TaskLog : MonoBehaviour
                 completedPegs = true;
 
                 completedPegsText.fontStyle = FontStyles.Strikethrough;
-
-                // Hide list UI
-                listUI.SetActive(true);
             }
         }
         //strikeout task 2 on notepad

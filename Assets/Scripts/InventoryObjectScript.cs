@@ -30,7 +30,6 @@ public class InventoryObjectScript : MonoBehaviour
             {
                 snapped = true;
                 inventorySlotScript.slotOccupied = true;
-                Debug.Log("Renderer off");
                 objectRenderer.enabled = false;
                 objectRigidbody.useGravity = false;
                 if (this.gameObject.name == "Matchbox Final")
@@ -46,7 +45,6 @@ public class InventoryObjectScript : MonoBehaviour
 
             if (!inventorySlotScript.objectSnapped && inventorySlotScript.slotOccupied && objectRigidbody != null)
             {
-                Debug.Log("Renderer On");
                 snapped = false;
                 inventorySlotScript.slotOccupied = false;
                 objectRenderer.enabled = true;
@@ -148,7 +146,6 @@ public class InventoryObjectScript : MonoBehaviour
         {
             if (other.gameObject.tag == "InventorySlot" && !inventorySlotScript.objectSnapped && inventorySlot != null)
             {
-                Debug.Log("Exit Slot");
                 inventorySlotScript.snappedObject = null;
                 inventorySlotScript = null;
                 inventorySlot = null;

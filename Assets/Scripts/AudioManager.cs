@@ -126,8 +126,11 @@ public class AudioManager : MonoBehaviour
     }
 
     public void CollectFishAudio()
-    {
-        audioMgr.collectFishSFX.Play();
+    { 
+        if (audioMgr != null)
+        {
+            audioMgr.collectFishSFX.Play();
+        }
     }
     public void CastLineAudio()
     {
