@@ -14,6 +14,9 @@ public class AuthManager : MonoBehaviour
     DatabaseReference mDatabaseRef;
     public GameObject loginScreen;
     public GameObject signedInScreen;
+    public GameObject tableTutorialScreen;
+    public GameObject fishingTutorialScreen;
+    public GameObject campfireTutorialScreen;
     public TMP_InputField emailRegister;
     public TMP_InputField passwordRegister;
     public TMP_InputField emailLogin;
@@ -72,6 +75,9 @@ public class AuthManager : MonoBehaviour
                 WriteNewScore(uid, usernameRegister.text, 0, lastLogin, 0, 0, 0, 0);
                 loginScreen.SetActive(false);
                 signedInScreen.SetActive(true);
+                campfireTutorialScreen.SetActive(true);
+                tableTutorialScreen.SetActive(true);
+                fishingTutorialScreen.SetActive(true);
             }
         });
         Firebase.Auth.FirebaseUser currentUser = auth.CurrentUser;
@@ -129,6 +135,9 @@ public class AuthManager : MonoBehaviour
                 LoadUsername(username);
                 loginScreen.SetActive(false);
                 signedInScreen.SetActive(true);
+                campfireTutorialScreen.SetActive(true);
+                tableTutorialScreen.SetActive(true);
+                fishingTutorialScreen.SetActive(true);
             }
         });
     }
