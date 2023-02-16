@@ -32,6 +32,7 @@ public class AudioManager : MonoBehaviour
     public AudioSource tent3Peg2HitSFX;
     public AudioSource tent3Peg3HitSFX;
     public AudioSource tent3Peg4HitSFX;
+    public AudioSource tutorialBGM;
 
     private bool vanStarted;
 
