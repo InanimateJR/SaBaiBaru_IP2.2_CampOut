@@ -142,7 +142,7 @@ public class TaskLog : MonoBehaviour
     private bool completedPegs = false;
 
     // All 3 fishes are on a stick 
-    public bool allfishOnSticks = false;
+    public bool allFishOnSticks = false;
 
     // All 6 mushrooms are on a stick 
     public bool allEdibleMushroomOnSticks = false;
@@ -185,6 +185,12 @@ public class TaskLog : MonoBehaviour
 
     //to count mushroom on sticks
     public int edibleMushroomOnSticks = 0;
+
+    //to count fish near fire
+    public int fishNearFire = 0;
+
+    //to count mushroom near fire
+    public int edibleMushroomNearFire = 0;
 
 
     /// SCRIPT REFERENCES
@@ -243,7 +249,7 @@ public class TaskLog : MonoBehaviour
             task5Text.fontStyle = FontStyles.Strikethrough;
         } 
 
-        if(allfishOnSticks && fishToCook && !task7Complete)
+        if(allFishOnSticks && fishToCook && !task7Complete)
         {
             task7Complete = true;
             Task7Done();
@@ -256,18 +262,29 @@ public class TaskLog : MonoBehaviour
         }
 
 
-        if (fishOnSticks >= 3 && !allfishOnSticks)
+        if (fishOnSticks >= 3 && !allFishOnSticks)
         {
-            allfishOnSticks = true;
+            allFishOnSticks = true;
             FishesOnSticksDone();
 
         }
 
         //if 3 mushrooms are on sticks, strikethrough task
-        if (edibleMushroomOnSticks >= 3 && !allEdibleMushroomOnSticks)
+        if (edibleMushroomOnSticks >= 6 && !allEdibleMushroomOnSticks)
         {
             allEdibleMushroomOnSticks = true;
             MushroomsOnSticksDone();
+        }
+
+        //if 3 fishes on sticks are on fire, strikethrough task
+        if (fishNearFire > 3)
+        {
+            FishesOnSticksToGroundDone();
+        }
+        //if 6 muushrooms on sticks are on fire, strikethrough task
+        if (edibleMushroomNearFire > 6)
+        {
+            MushroomsOnSticksToGroundDone();
         }
 
     }
@@ -399,7 +416,7 @@ public class TaskLog : MonoBehaviour
 
     public void FishesOnSticksDone()
     {
-        allfishOnSticks = true;
+        allFishOnSticks = true;
         stickFishesUI.fontStyle = FontStyles.Strikethrough;
     }
 

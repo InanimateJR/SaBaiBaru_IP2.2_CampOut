@@ -5,8 +5,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class CookingScript : MonoBehaviour
 {
-    private int fishNearFire = 0;
-    private int edibleMushroomNearFire = 0;
+    
     public TaskLog tlScript;
 
     //When food is near the fire, the collided raw food will cook
@@ -15,31 +14,25 @@ public class CookingScript : MonoBehaviour
         if (objectNearFire.gameObject.tag == "Fish")
         {
             Debug.Log("Fish is near fire");
-            fishNearFire++;
+            tlScript.fishNearFire++;
             FoodTrigger foodTrigger = objectNearFire.gameObject.GetComponent<FoodTrigger>();
             if (foodTrigger.canCookFish == false)
             {
                 foodTrigger.canCookFish = true;
             }
-            if (fishNearFire > 3)
-            {
-                tlScript.FishesOnSticksToGroundDone();
-            }
+            
         }
 
         else if (objectNearFire.gameObject.tag == "Mushroom")
         {
             Debug.Log("Mushroom is near fire");
-            edibleMushroomNearFire++;
+            tlScript.edibleMushroomNearFire++;
             FoodTrigger foodTrigger = objectNearFire.gameObject.GetComponent<FoodTrigger>();
             if (foodTrigger.canCookMushroom == false)
             {
                 foodTrigger.canCookMushroom = true;
             }
-            if (edibleMushroomNearFire > 6)
-            {
-                tlScript.MushroomsOnSticksToGroundDone();
-            }
+           
         }
 
         else if (objectNearFire.gameObject.tag == "Poison Mushroom")
