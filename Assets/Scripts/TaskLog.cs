@@ -141,14 +141,16 @@ public class TaskLog : MonoBehaviour
     // All 4 pegs are not hammered in 
     private bool completedPegs = false;
 
-    // All 3 fishes are on a stick 
+    // All 3 fishes are not on a stick 
     public bool allFishOnSticks = false;
 
-    // All 6 mushrooms are on a stick 
+    // All 6 mushrooms are not on a stick 
     public bool allEdibleMushroomOnSticks = false;
 
+    // All 6 mushrooms on a stick not near fire 
     public bool edibleMushroomToCook = false;
 
+    // All 3 fishes on a stick not near fire 
     public bool fishToCook = false;
 
     //All 3 mushrooms needed for trade
