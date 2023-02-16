@@ -9,18 +9,6 @@ public class CookingScript : MonoBehaviour
     private int edibleMushroomNearFire = 0;
     public TaskLog tlScript;
 
-    //if there are 3 and 6 fishes and mushroom near the fire respectively, strikethrough task
-    private void Update()
-    {
-        if (fishNearFire > 3)
-        {
-            tlScript.FishesOnSticksToGroundDone();
-        }
-        if(edibleMushroomNearFire > 6)
-        {
-            tlScript.MushroomsOnSticksToGroundDone();
-        }
-    }
     //When food is near the fire, the collided raw food will cook
     public void OnTriggerEnter(Collider objectNearFire)
     {
@@ -33,7 +21,10 @@ public class CookingScript : MonoBehaviour
             {
                 foodTrigger.canCookFish = true;
             }
-
+            if (fishNearFire > 3)
+            {
+                tlScript.FishesOnSticksToGroundDone();
+            }
         }
 
         else if (objectNearFire.gameObject.tag == "Mushroom")
@@ -45,7 +36,10 @@ public class CookingScript : MonoBehaviour
             {
                 foodTrigger.canCookMushroom = true;
             }
-
+            if (edibleMushroomNearFire > 6)
+            {
+                tlScript.MushroomsOnSticksToGroundDone();
+            }
         }
 
         else if (objectNearFire.gameObject.tag == "Poison Mushroom")
