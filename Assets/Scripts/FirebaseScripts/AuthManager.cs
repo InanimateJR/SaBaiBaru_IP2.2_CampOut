@@ -102,7 +102,6 @@ public class AuthManager : MonoBehaviour
 
                 Debug.Log("User profile updated successfully.");
             });
-            username = currentUser.DisplayName;
         }
     }
 
@@ -127,7 +126,6 @@ public class AuthManager : MonoBehaviour
             if (currentPlayer != null)
             {
                 string uid = currentPlayer.UserId;
-                username = currentPlayer.DisplayName;
                 var epochStart = new System.DateTime(1970, 1, 1, 8, 0, 0, System.DateTimeKind.Utc);
                 var timestamp = (System.DateTime.UtcNow - epochStart).TotalSeconds;
                 int lastLogin = (int)timestamp;

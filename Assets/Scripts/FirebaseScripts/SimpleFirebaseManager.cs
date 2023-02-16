@@ -30,8 +30,19 @@ public class SimpleFirebaseManager : MonoBehaviour
         if (currentUser != null)
         {
             userID = currentUser.UserId;
-            username = currentUser.DisplayName;
-            Debug.Log(username + " + " + userID);
+            Query userData = mDatabaseRef.Child("User").Child(userID);
+            userData.GetValueAsync().ContinueWithOnMainThread(task =>
+            {
+                if (task.IsCompleted)
+                {
+                    DataSnapshot userInfo = task.Result;
+                    if (userInfo.Exists)
+                    {
+                        User user = JsonUtility.FromJson<User>(userInfo.GetRawJsonValue());
+                        username = user.username;
+                    }
+                }
+            });
         }
     }
 
@@ -85,7 +96,7 @@ public class SimpleFirebaseManager : MonoBehaviour
                         sp.leaderboardLastUpdated = (int)timestamp;
                         sp.totalScore = sp.foodCooked + sp.fishScore + sp.mushroomsScore + sp.sticksScore;
                         dbPlayerStatsReference.Child(userID).SetRawJsonValueAsync(sp.SimplePlayerStatsToJson());
-                        WriteNewLeaderBoard(userID, username, sp.totalScore, sp.leaderboardLastUpdated);
+                        WriteNewLeaderBoard(userID, sp.username, sp.totalScore, sp.leaderboardLastUpdated);
 
                     }
                 }
@@ -117,7 +128,7 @@ public class SimpleFirebaseManager : MonoBehaviour
                         sp.leaderboardLastUpdated = (int)timestamp;
                         sp.totalScore = sp.foodCooked + sp.fishScore + sp.mushroomsScore + sp.sticksScore;
                         dbPlayerStatsReference.Child(userID).SetRawJsonValueAsync(sp.SimplePlayerStatsToJson());
-                        WriteNewLeaderBoard(userID, username, sp.totalScore, sp.leaderboardLastUpdated);
+                        WriteNewLeaderBoard(userID, sp.username, sp.totalScore, sp.leaderboardLastUpdated);
                     }
                 }
             });
@@ -148,7 +159,7 @@ public class SimpleFirebaseManager : MonoBehaviour
                         sp.leaderboardLastUpdated = (int)timestamp;
                         sp.totalScore = sp.foodCooked + sp.fishScore + sp.mushroomsScore + sp.sticksScore;
                         dbPlayerStatsReference.Child(userID).SetRawJsonValueAsync(sp.SimplePlayerStatsToJson());
-                        WriteNewLeaderBoard(userID, username, sp.totalScore, sp.leaderboardLastUpdated);
+                        WriteNewLeaderBoard(userID, sp.username, sp.totalScore, sp.leaderboardLastUpdated);
                     }
                 }
             });
@@ -179,7 +190,7 @@ public class SimpleFirebaseManager : MonoBehaviour
                         sp.leaderboardLastUpdated = (int)timestamp;
                         sp.totalScore = sp.foodCooked + sp.fishScore + sp.mushroomsScore + sp.sticksScore;
                         dbPlayerStatsReference.Child(userID).SetRawJsonValueAsync(sp.SimplePlayerStatsToJson());
-                        WriteNewLeaderBoard(userID, username, sp.totalScore, sp.leaderboardLastUpdated);
+                        WriteNewLeaderBoard(userID, sp.username, sp.totalScore, sp.leaderboardLastUpdated);
                     }
                 }
             });
@@ -188,9 +199,9 @@ public class SimpleFirebaseManager : MonoBehaviour
     }
 
 
-    public async Task<List<SimpleLeaderBoard>> GetLeaderboard(int limit = 5)
+    public async Task<List<SimpleLeaderBoard>> GetLeaderboard()
     {
-        Query q = dbLeaderboardsReference.OrderByChild("totalScore").LimitToLast(limit);
+        Query q = dbLeaderboardsReference.OrderByChild("totalScore").LimitToLast(5);
 
         List<SimpleLeaderBoard> leaderBoardList = new List<SimpleLeaderBoard>();
         q.KeepSynced(true);

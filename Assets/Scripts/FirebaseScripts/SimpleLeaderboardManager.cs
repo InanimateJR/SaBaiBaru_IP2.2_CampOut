@@ -18,7 +18,7 @@ public class SimpleLeaderboardManager : MonoBehaviour
     void Awake()
     {
         FirebaseDatabase.DefaultInstance.GetReference("leaderBoard").OrderByChild("totalScore").ValueChanged += HandlePlayerValueChanged;
-        GetLeaderboard();
+        StartLeaderboard();
     }
     void HandlePlayerValueChanged(object send, ValueChangedEventArgs args)
     {
@@ -28,16 +28,16 @@ public class SimpleLeaderboardManager : MonoBehaviour
         }
         else
         {
-            GetLeaderboard();
+            StartLeaderboard();
         }
     }
-    public void GetLeaderboard()
+    public void StartLeaderboard()
     {
         UpdateLeaderBoardUI();
     }
     public async void UpdateLeaderBoardUI()
     {
-        var leaderBoardList = await fbManager.GetLeaderboard(5);
+        var leaderBoardList = await fbManager.GetLeaderboard();
         int rankCounter = 1;
 
         foreach (Transform item in tableContent)
