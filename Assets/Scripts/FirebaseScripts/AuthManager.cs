@@ -148,6 +148,8 @@ public class AuthManager : MonoBehaviour
         if (auth.CurrentUser != null)
         {
             auth.SignOut();
+            loginScreen.SetActive(true);
+            signedInScreen.SetActive(false);
         }
 
     }
