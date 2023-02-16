@@ -102,7 +102,6 @@ public class AuthManager : MonoBehaviour
                 Debug.Log("User profile updated successfully.");
             });
             username = currentUser.DisplayName;
-            LoadUsername(username);
         }
     }
 
@@ -132,7 +131,6 @@ public class AuthManager : MonoBehaviour
                 var timestamp = (System.DateTime.UtcNow - epochStart).TotalSeconds;
                 int lastLogin = (int)timestamp;
                 UpdatePlayerLogin(uid, lastLogin);
-                LoadUsername(username);
                 loginScreen.SetActive(false);
                 signedInScreen.SetActive(true);
                 campfireTutorialScreen.SetActive(true);
@@ -211,11 +209,12 @@ public class AuthManager : MonoBehaviour
         SceneManager.LoadScene(sceneToLoad);
     }
 
-    public void LoadUsername(string username)
+    public void LoadUsername()
     {
         Firebase.Auth.FirebaseUser currentUser = auth.CurrentUser;
         if (currentUser != null)
         {
+            username = currentUser.DisplayName;
             usernameDisplay.text = ("Current Player: " + username);
         }
     }
