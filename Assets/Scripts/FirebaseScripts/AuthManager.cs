@@ -78,6 +78,7 @@ public class AuthManager : MonoBehaviour
                 campfireTutorialScreen.SetActive(true);
                 tableTutorialScreen.SetActive(true);
                 fishingTutorialScreen.SetActive(true);
+                LoadUsername();
             }
         });
         Firebase.Auth.FirebaseUser currentUser = auth.CurrentUser;
@@ -136,6 +137,7 @@ public class AuthManager : MonoBehaviour
                 campfireTutorialScreen.SetActive(true);
                 tableTutorialScreen.SetActive(true);
                 fishingTutorialScreen.SetActive(true);
+                LoadUsername();
             }
         });
     }
@@ -214,8 +216,21 @@ public class AuthManager : MonoBehaviour
         Firebase.Auth.FirebaseUser currentUser = auth.CurrentUser;
         if (currentUser != null)
         {
-            username = currentUser.DisplayName;
-            usernameDisplay.text = ("Current Player: " + username);
+            string uid = currentUser.UserId;
+            Query userData = mDatabaseRef.Child("User").Child(uid);
+            userData.GetValueAsync().ContinueWithOnMainThread(task =>
+            {
+                if (task.IsCompleted)
+                {
+                    DataSnapshot userInfo = task.Result;
+                    if (userInfo.Exists)
+                    {
+                        User user = JsonUtility.FromJson<User>(userInfo.GetRawJsonValue());
+                        username = user.username;
+                        usernameDisplay.text = ("Current Player: " + username);
+                    }
+                }
+            });
         }
     }
 }

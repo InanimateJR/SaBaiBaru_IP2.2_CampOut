@@ -13,7 +13,6 @@ public class GetUserLogins : MonoBehaviour
     Firebase.Auth.FirebaseAuth auth;
     long lastLogin;
     long accountCreation;
-    string username;
     string userID;
 
     public TMP_Text loginDisplay;
@@ -29,7 +28,6 @@ public class GetUserLogins : MonoBehaviour
         if (currentUser != null)
         {
             userID = currentUser.UserId;
-            username = currentUser.DisplayName;
             Debug.Log(userID);
         }
     }
