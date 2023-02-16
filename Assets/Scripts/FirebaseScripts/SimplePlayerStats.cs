@@ -5,6 +5,7 @@ using System;
 
 public class SimplePlayerStats
 {
+    //class script for firebase data input
     public string username;
     public int totalScore;
     public int leaderboardLastUpdated;

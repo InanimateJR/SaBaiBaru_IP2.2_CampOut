@@ -12,7 +12,8 @@ public class AuthManager : MonoBehaviour
 {
     Firebase.Auth.FirebaseAuth auth;
     DatabaseReference mDatabaseRef;
-
+    public GameObject loginScreen;
+    public GameObject signedInScreen;
     public TMP_InputField emailRegister;
     public TMP_InputField passwordRegister;
     public TMP_InputField emailLogin;
@@ -29,6 +30,8 @@ public class AuthManager : MonoBehaviour
     public string emailAddress;
     private void Awake()
     {
+        loginScreen.SetActive(true);
+        signedInScreen.SetActive(false);
         //sets up firebase
         auth = FirebaseAuth.DefaultInstance;
         mDatabaseRef = FirebaseDatabase.DefaultInstance.RootReference;
@@ -67,6 +70,8 @@ public class AuthManager : MonoBehaviour
                 int lastLogin = (int)timestamp;
                 WriteNewUser(uid, emailRegister.text, usernameRegister.text, creationTime, lastLogin);
                 WriteNewScore(uid, usernameRegister.text, 0, lastLogin, 0, 0, 0, 0);
+                loginScreen.SetActive(false);
+                signedInScreen.SetActive(true);
             }
         });
         Firebase.Auth.FirebaseUser currentUser = auth.CurrentUser;
@@ -122,6 +127,8 @@ public class AuthManager : MonoBehaviour
                 int lastLogin = (int)timestamp;
                 UpdatePlayerLogin(uid, lastLogin);
                 LoadUsername(username);
+                loginScreen.SetActive(false);
+                signedInScreen.SetActive(true);
             }
         });
     }
@@ -131,7 +138,6 @@ public class AuthManager : MonoBehaviour
         //signs current user out
         if (auth.CurrentUser != null)
         {
-            SceneManager.LoadScene(0);
             auth.SignOut();
         }
 

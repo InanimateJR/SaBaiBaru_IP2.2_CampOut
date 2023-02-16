@@ -13,12 +13,15 @@ using Firebase.Extensions;
 
 public class PersonalScores : MonoBehaviour
 {
+    //set firebase reference and auth
     DatabaseReference dbPlayerStatsReference;
     Firebase.Auth.FirebaseAuth auth;
+    //set variables
     string username;
     string userID;
     int lastLogin;
     int accountCreation;
+    //set TMP texts that have to be changed
     public TMP_Text playerName;
     public TMP_Text fishScores;
     public TMP_Text foodScores;
@@ -27,10 +30,12 @@ public class PersonalScores : MonoBehaviour
     public TMP_Text totalScore;
     public void Awake()
     {
+        //start initializing firebase
         InitializeFirebase();
     }
     public void Start()
     {
+        //record current user and get UID and Username
         Firebase.Auth.FirebaseUser currentUser = auth.CurrentUser;
         Debug.Log("User Recorded");
         if (currentUser != null)
@@ -47,6 +52,7 @@ public class PersonalScores : MonoBehaviour
 
     public void GetPlayerScores()
     {
+        //retrieve playername, fishScore, foodScore, mushroomScore, sticksScore and total score to display
         dbPlayerStatsReference.Child(userID).GetValueAsync().ContinueWithOnMainThread(task =>
         {
             if (task.IsCompleted)
