@@ -15,6 +15,7 @@ public class PersonalScores : MonoBehaviour
 {
     //set firebase reference and auth
     DatabaseReference dbPlayerStatsReference;
+    DatabaseReference mDatabaseRef;
     Firebase.Auth.FirebaseAuth auth;
     //set variables
     string username;
@@ -41,12 +42,25 @@ public class PersonalScores : MonoBehaviour
         if (currentUser != null)
         {
             userID = currentUser.UserId;
-            username = currentUser.DisplayName;
+            Query userData = mDatabaseRef.Child("User").Child(userID);
+            userData.GetValueAsync().ContinueWithOnMainThread(task =>
+            {
+                if (task.IsCompleted)
+                {
+                    DataSnapshot userInfo = task.Result;
+                    if (userInfo.Exists)
+                    {
+                        User user = JsonUtility.FromJson<User>(userInfo.GetRawJsonValue());
+                        username = user.username;
+                    }
+                }
+            });
         }
     }
     public void InitializeFirebase()
     {
         dbPlayerStatsReference = FirebaseDatabase.DefaultInstance.GetReference("playerStats");
+        mDatabaseRef = FirebaseDatabase.DefaultInstance.RootReference;
         auth = FirebaseAuth.DefaultInstance;
     }
 
