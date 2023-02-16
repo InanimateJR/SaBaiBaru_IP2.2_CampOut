@@ -312,6 +312,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5994530251350565765, guid: 423f07143c7c539438c7070e51681dc8,
+        type: 3}
+      propertyPath: journalFlippingSFX
+      value: 
+      objectReference: {fileID: 5717146261182714503}
     - target: {fileID: 7878519272377431971, guid: 423f07143c7c539438c7070e51681dc8,
         type: 3}
       propertyPath: m_Name
