@@ -55076,7 +55076,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 8. Cook 6 Mushrooms by the campfire.
+  m_text: 8. Cook 3 Mushrooms by the campfire.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5a07bc1d9de833c4f8dd84c93198da8d, type: 2}
   m_sharedMaterial: {fileID: -6237548691277355724, guid: 5a07bc1d9de833c4f8dd84c93198da8d,
@@ -57779,7 +57779,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '- Prepare 6 mushrooms by placing them on a stick.'
+  m_text: '- Prepare 3 mushrooms by placing them on a stick.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5a07bc1d9de833c4f8dd84c93198da8d, type: 2}
   m_sharedMaterial: {fileID: -6237548691277355724, guid: 5a07bc1d9de833c4f8dd84c93198da8d,
@@ -59760,7 +59760,7 @@ MonoBehaviour:
   secondPegHammered: 0
   thirdPegHammered: 0
   fourthPegHammered: 0
-  allfishOnSticks: 0
+  allFishOnSticks: 0
   allEdibleMushroomOnSticks: 0
   edibleMushroomToCook: 0
   fishToCook: 0
@@ -59774,6 +59774,10 @@ MonoBehaviour:
   sticksCollected: 0
   leavesCollected: 0
   logsCollected: 0
+  fishOnSticks: 0
+  edibleMushroomOnSticks: 0
+  fishNearFire: 0
+  edibleMushroomNearFire: 0
   fishingScript: {fileID: 0}
 --- !u!1 &8945546731383507375
 GameObject:

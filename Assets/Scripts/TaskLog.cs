@@ -272,7 +272,7 @@ public class TaskLog : MonoBehaviour
         }
 
         //if 3 mushrooms are on sticks, strikethrough task
-        if (edibleMushroomOnSticks >= 6 && !allEdibleMushroomOnSticks)
+        if (edibleMushroomOnSticks >= 3 && !allEdibleMushroomOnSticks)
         {
             allEdibleMushroomOnSticks = true;
             MushroomsOnSticksDone();
@@ -284,7 +284,7 @@ public class TaskLog : MonoBehaviour
             FishesOnSticksToGroundDone();
         }
         //if 6 muushrooms on sticks are on fire, strikethrough task
-        if (edibleMushroomNearFire > 6)
+        if (edibleMushroomNearFire > 3)
         {
             MushroomsOnSticksToGroundDone();
         }
