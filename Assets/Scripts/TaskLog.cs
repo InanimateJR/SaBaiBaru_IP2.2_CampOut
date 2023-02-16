@@ -255,6 +255,21 @@ public class TaskLog : MonoBehaviour
             Task8Done();
         }
 
+
+        if (fishOnSticks >= 3 && !allfishOnSticks)
+        {
+            allfishOnSticks = true;
+            FishesOnSticksDone();
+
+        }
+
+        //if 3 mushrooms are on sticks, strikethrough task
+        if (edibleMushroomOnSticks >= 3 && !allEdibleMushroomOnSticks)
+        {
+            allEdibleMushroomOnSticks = true;
+            MushroomsOnSticksDone();
+        }
+
     }
 
     public void VisitedCabin()

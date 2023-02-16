@@ -133,13 +133,7 @@ public class FoodTrigger : MonoBehaviour
                 taskLog.fishOnSticks++;
                 Debug.Log("Fish added on stick");
 
-                //if 3 fish are on sticks, strikethrough task
-                if (taskLog.fishOnSticks >= 3)
-                {
-                    taskLog.allfishOnSticks = true;
-                    taskLog.FishesOnSticksDone();
-
-                }
+                
             }
         }
     }
@@ -165,13 +159,6 @@ public class FoodTrigger : MonoBehaviour
                 edibleMushroomSnappedToStick = true;
                 taskLog.edibleMushroomOnSticks++;
                 Debug.Log("Mushroom added on stick");
-
-                //if 3 mushrooms are on sticks, strikethrough task
-                if (taskLog.edibleMushroomOnSticks >= 3)
-                {
-                    taskLog.allEdibleMushroomOnSticks = true;
-                    taskLog.MushroomsOnSticksDone();
-                }
 
             }
         }
