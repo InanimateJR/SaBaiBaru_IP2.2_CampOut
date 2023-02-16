@@ -122,7 +122,10 @@ public class AudioManager : MonoBehaviour
 
     public void CollectFoodAudio()
     {
-        audioMgr.collectFoodSFX.Play();
+        if (audioMgr != null)
+        {
+            audioMgr.collectFoodSFX.Play();
+        }
     }
 
     public void CollectFishAudio()
