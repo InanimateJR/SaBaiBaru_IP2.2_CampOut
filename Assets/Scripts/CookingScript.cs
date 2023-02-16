@@ -14,25 +14,33 @@ public class CookingScript : MonoBehaviour
         if (objectNearFire.gameObject.tag == "Fish")
         {
             Debug.Log("Fish is near fire");
-            tlScript.fishNearFire++;
             FoodTrigger foodTrigger = objectNearFire.gameObject.GetComponent<FoodTrigger>();
             if (foodTrigger.canCookFish == false)
             {
                 foodTrigger.canCookFish = true;
             }
-            
+            if (tlScript != null)
+            {
+                tlScript.fishNearFire++;
+            }
+
+
         }
 
         else if (objectNearFire.gameObject.tag == "Mushroom")
         {
             Debug.Log("Mushroom is near fire");
-            tlScript.edibleMushroomNearFire++;
             FoodTrigger foodTrigger = objectNearFire.gameObject.GetComponent<FoodTrigger>();
             if (foodTrigger.canCookMushroom == false)
             {
                 foodTrigger.canCookMushroom = true;
             }
-           
+            if (tlScript != null)
+            {
+                tlScript.edibleMushroomNearFire++;
+            }
+            
+
         }
 
         else if (objectNearFire.gameObject.tag == "Poison Mushroom")
