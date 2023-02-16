@@ -498,7 +498,6 @@ public class FishingScript: MonoBehaviour
             // If newBobber does not exist and newFish exists
             if (newBobber == null && newFish != null)
             {
-                Debug.Log("SetPosition2");
                 // Set newFish position to newBobber position
                 v2 = newFish.transform.position;
             }

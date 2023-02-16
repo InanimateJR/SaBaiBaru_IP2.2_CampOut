@@ -117,9 +117,14 @@ public class InventoryObjectScript : MonoBehaviour
     {
         if (other.gameObject.tag == "InventorySlot")
         {
-            if (inventorySlotScript == null)
+            if (inventorySlotScript == null && inventorySlot != null)
             {
                 inventorySlotScript = inventorySlot.GetComponent<InventorySlotScript>();
+
+                if (inventorySlot.gameObject != inventorySlotScript.gameObject)
+                {
+                    inventorySlotScript = null;
+                }
             }
 
             if (inventorySlotScript != null)
@@ -129,20 +134,26 @@ public class InventoryObjectScript : MonoBehaviour
                     inventorySlotScript.snappedObject = this.gameObject;
                 }
 
-                if (inventorySlotScript.hoverImage.color == inventorySlotScript.defaultColour)
+/*                if (inventorySlotScript.hoverImage.color == inventorySlotScript.defaultColour)
                 {
                     inventorySlotScript.hoverImage.color = inventorySlotScript.hoverColour;
-                }
+                }*/
             }
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.tag == "InventorySlot")
+        if (inventorySlotScript != null)
         {
-            inventorySlotScript.snappedObject = null;
-            inventorySlotScript.hoverImage.color = inventorySlotScript.defaultColour;
+            if (other.gameObject.tag == "InventorySlot" && !inventorySlotScript.objectSnapped && inventorySlot != null)
+            {
+                Debug.Log("Exit Slot");
+                inventorySlotScript.snappedObject = null;
+                inventorySlotScript = null;
+                inventorySlot = null;
+                //inventorySlotScript.hoverImage.color = inventorySlotScript.defaultColour;
+            }
         }
     }
 }

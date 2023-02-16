@@ -29,6 +29,7 @@ public class InventorySlotScript : MonoBehaviour
 
     public void ObjectRemoved()
     {
+        hoverImage.color = defaultColour;
         objectSnapped = false;
         cookedFishGroup.SetActive(true);
         tentGroup.SetActive(true);
@@ -44,6 +45,7 @@ public class InventorySlotScript : MonoBehaviour
 
     public void SnappedCookedFish()
     {
+        hoverImage.color = hoverColour;
         objectSnapped = true;
         tentGroup.SetActive(false);
         matchboxGroup.SetActive(false);
@@ -58,6 +60,7 @@ public class InventorySlotScript : MonoBehaviour
 
     public void SnappedTent()
     {
+        hoverImage.color = hoverColour;
         objectSnapped = true;
         cookedFishGroup.SetActive(false);
         matchboxGroup.SetActive(false);
@@ -72,6 +75,7 @@ public class InventorySlotScript : MonoBehaviour
 
     public void SnappedMatchbox()
     {
+        hoverImage.color = hoverColour;
         objectSnapped = true;
         tentGroup.SetActive(false);
         cookedFishGroup.SetActive(false);
@@ -86,6 +90,7 @@ public class InventorySlotScript : MonoBehaviour
 
     public void SnappedStick()
     {
+        hoverImage.color = hoverColour;
         objectSnapped = true;
         tentGroup.SetActive(false);
         cookedFishGroup.SetActive(false);
@@ -100,6 +105,7 @@ public class InventorySlotScript : MonoBehaviour
 
     public void SnappedFirewood()
     {
+        hoverImage.color = hoverColour;
         objectSnapped = true;
         tentGroup.SetActive(false);
         cookedFishGroup.SetActive(false);
@@ -114,6 +120,7 @@ public class InventorySlotScript : MonoBehaviour
 
     public void SnappedLeaves()
     {
+        hoverImage.color = hoverColour;
         objectSnapped = true;
         tentGroup.SetActive(false);
         cookedFishGroup.SetActive(false);
@@ -128,6 +135,7 @@ public class InventorySlotScript : MonoBehaviour
 
     public void SnappedMushroomEdibleCooked()
     {
+        hoverImage.color = hoverColour;
         objectSnapped = true;
         tentGroup.SetActive(false);
         cookedFishGroup.SetActive(false);
@@ -141,6 +149,7 @@ public class InventorySlotScript : MonoBehaviour
 
     public void SnappedMushroomEdible()
     {
+        hoverImage.color = hoverColour;
         objectSnapped = true;
         tentGroup.SetActive(false);
         cookedFishGroup.SetActive(false);
@@ -154,6 +163,7 @@ public class InventorySlotScript : MonoBehaviour
 
     public void SnappedMushroomPoisonousCooked()
     {
+        hoverImage.color = hoverColour;
         objectSnapped = true;
         tentGroup.SetActive(false);
         cookedFishGroup.SetActive(false);
@@ -167,6 +177,7 @@ public class InventorySlotScript : MonoBehaviour
 
     public void SnappedMushroomPoisonous()
     {
+        hoverImage.color = hoverColour;
         objectSnapped = true;
         tentGroup.SetActive(false);
         cookedFishGroup.SetActive(false);
