@@ -49,6 +49,10 @@ public class FoodTrigger : MonoBehaviour
         {
             taskLog = notepad.GetComponent<TaskLog>();
         }
+
+        edibleMushroomSnappedToStick = false;
+
+        fishSnappedToStick = false;
     }
 
     void Update()
@@ -73,18 +77,8 @@ public class FoodTrigger : MonoBehaviour
 
             StartCoroutine(CookingPoisonMushroom());
         }
-        //if 3 fish are on sticks, strikethrough task
-        if (fishOnSticks >= 3)
-        {
-            taskLog.allfishOnSticks = true;
-            taskLog.FishesOnSticksDone();
-        }
-        //if 3 mushrooms are on sticks, strikethrough task
-        if (edibleMushroomOnSticks >= 3)
-        {
-            taskLog.allEdibleMushroomOnSticks = true;
-            taskLog.MushroomsOnSticksDone();
-        }
+        
+        
     }
     // Switch the prefab of raw to cooked fishs
     public void SpawnCookedFish()
@@ -105,7 +99,6 @@ public class FoodTrigger : MonoBehaviour
     // Switch the prefab of raw to cooked Poison Mushrooms
     public void SpawnCookedPoisonMushroom()
     {
-        Debug.Log("cooking...2");
         GameObject cookedPoisonMushroom = Instantiate(poisonMushroomToSpawn, gameObject.transform.position, gameObject.transform.rotation);
         Destroy(gameObject);
         Debug.Log("Poison Mushroom has been cooked!");
@@ -114,7 +107,6 @@ public class FoodTrigger : MonoBehaviour
     // Wait for 5 seconds before the Fish prefab is switched
     public IEnumerator CookingFish()
     {
-        Debug.Log("cooking...");
         yield return new WaitForSeconds(5);
         SpawnCookedFish();
 
@@ -122,7 +114,6 @@ public class FoodTrigger : MonoBehaviour
     // Wait for 5 seconds before the Mushroom prefab is switched
     public IEnumerator CookingMushroom()
     {
-        Debug.Log("cooking...");
         yield return new WaitForSeconds(5);
         SpawnCookedMushroom();
 
@@ -130,7 +121,6 @@ public class FoodTrigger : MonoBehaviour
     // Wait for 5 seconds before the Poison Mushroom prefab is switched
     public IEnumerator CookingPoisonMushroom()
     {
-        Debug.Log("cooking...");
         yield return new WaitForSeconds(5);
         SpawnCookedPoisonMushroom();
 
@@ -146,6 +136,15 @@ public class FoodTrigger : MonoBehaviour
             {
                 fishSnappedToStick = true;
                 fishOnSticks++;
+                Debug.Log("Fish added on stick");
+
+                //if 3 fish are on sticks, strikethrough task
+                if (fishOnSticks >= 3)
+                {
+                    taskLog.allfishOnSticks = true;
+                    taskLog.FishesOnSticksDone();
+
+                }
             }
         }
     }
@@ -170,7 +169,15 @@ public class FoodTrigger : MonoBehaviour
             {
                 edibleMushroomSnappedToStick = true;
                 edibleMushroomOnSticks++;
-                
+                Debug.Log("Mushroom added on stick");
+
+                //if 3 mushrooms are on sticks, strikethrough task
+                if (edibleMushroomOnSticks >= 3)
+                {
+                    taskLog.allEdibleMushroomOnSticks = true;
+                    taskLog.MushroomsOnSticksDone();
+                }
+
             }
         }
     }
