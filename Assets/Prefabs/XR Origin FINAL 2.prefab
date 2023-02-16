@@ -8645,6 +8645,7 @@ MonoBehaviour:
   poisonEffect3: {fileID: 0}
   poisonEffect4: {fileID: 0}
   eatenFood: 0
+  taskLogScript: {fileID: 0}
 --- !u!1 &819876692310458365
 GameObject:
   m_ObjectHideFlags: 0

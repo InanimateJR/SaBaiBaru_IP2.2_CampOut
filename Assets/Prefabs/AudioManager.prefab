@@ -47,18 +47,13 @@ MonoBehaviour:
   audioMixer: {fileID: 24100000, guid: 3e7c0306de121674faf6d455b3816322, type: 2}
   rangerSFX: {fileID: 0}
   fishermanSFX: {fileID: 0}
-  journalFlippingSFX: {fileID: 330927585855150636, guid: 47057c7f231b5b543aabdab9bb0717df,
-    type: 3}
-  collectStickSFX: {fileID: 4187039809497754126, guid: 3726d9dc15ffeb44ebba6d7fbbbb9224,
-    type: 3}
-  collectLeavesSFX: {fileID: 732926027385585717, guid: 8c62c63fa7db25043ba9c63c199aad03,
-    type: 3}
+  journalFlippingSFX: {fileID: 0}
+  collectStickSFX: {fileID: 0}
+  collectLeavesSFX: {fileID: 0}
   vanStartEngineSFX: {fileID: 0}
   vanEngineSFX: {fileID: 0}
-  collectFoodSFX: {fileID: 8759166060659554913, guid: d53cc6d765c364a45988e7be8c0850f6,
-    type: 3}
-  collectFishSFX: {fileID: 3991690399691983705, guid: 53c2859959a288f449b18ffaa1e9959b,
-    type: 3}
+  collectFoodSFX: {fileID: 0}
+  collectFishSFX: {fileID: 0}
   castLineSFX: {fileID: 0}
   fishingSFX: {fileID: 0}
   tentSFX1: {fileID: 0}
@@ -75,5 +70,16 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  pegHitSFX: {fileID: 7285938844515713860, guid: ff5139dd08c8af348819b646478d876b,
-    type: 3}
+  tent1Peg1HitSFX: {fileID: 0}
+  tent1Peg2HitSFX: {fileID: 0}
+  tent1Peg3HitSFX: {fileID: 0}
+  tent1Peg4HitSFX: {fileID: 0}
+  tent2Peg1HitSFX: {fileID: 0}
+  tent2Peg2HitSFX: {fileID: 0}
+  tent2Peg3HitSFX: {fileID: 0}
+  tent2Peg4HitSFX: {fileID: 0}
+  tent3Peg1HitSFX: {fileID: 0}
+  tent3Peg2HitSFX: {fileID: 0}
+  tent3Peg3HitSFX: {fileID: 0}
+  tent3Peg4HitSFX: {fileID: 0}
+  tutorialBGM: {fileID: 0}
