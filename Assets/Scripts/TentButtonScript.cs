@@ -45,12 +45,12 @@ public class TentButtonScript : MonoBehaviour
             tentScript1.StartTentPitching();
         }
 
-        if (tentScript2.snappedSocket1 == true)
+        if (tentScript2.snappedSocket2 == true)
         {
             tentScript2.StartTentPitching();
         }
 
-        if (tentScript3.snappedSocket1 == true)
+        if (tentScript3.snappedSocket3 == true)
         {
             tentScript3.StartTentPitching();
         }

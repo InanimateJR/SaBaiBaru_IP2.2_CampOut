@@ -57,7 +57,7 @@ TagManager:
   - InventorySlot
   - Player
   - MatchTrigger
-  - FishingRental
+  - TradingArea
   - RightHand
   - 
   - 

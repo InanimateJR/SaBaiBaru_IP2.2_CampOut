@@ -8,9 +8,6 @@ public class CabinTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "RightHand")
-        {
-            taskLogScript.VisitedCabin();
-        }
+        taskLogScript.VisitedCabin();
     }
 }
