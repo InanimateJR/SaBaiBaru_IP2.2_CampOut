@@ -26,7 +26,7 @@ public class InventoryObjectScript : MonoBehaviour
     {
         if (inventorySlotScript != null)
         {
-            if (inventorySlotScript.objectSnapped && !inventorySlotScript.slotOccupied)
+            if (inventorySlotScript.objectSnapped && !inventorySlotScript.slotOccupied && objectRigidbody != null)
             {
                 snapped = true;
                 inventorySlotScript.slotOccupied = true;
@@ -44,7 +44,7 @@ public class InventoryObjectScript : MonoBehaviour
                 }
             }
 
-            if (!inventorySlotScript.objectSnapped && inventorySlotScript.slotOccupied)
+            if (!inventorySlotScript.objectSnapped && inventorySlotScript.slotOccupied && objectRigidbody != null)
             {
                 Debug.Log("Renderer On");
                 snapped = false;
@@ -58,7 +58,7 @@ public class InventoryObjectScript : MonoBehaviour
             }
         }
 
-        if (inventorySlotScript == null)
+        if (inventorySlotScript == null && objectRigidbody != null)
         {
             objectRenderer.enabled = true;
             objectRigidbody.useGravity = true;
