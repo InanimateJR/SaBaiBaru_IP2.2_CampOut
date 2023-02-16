@@ -13,8 +13,11 @@ public class MatchstickScript : MonoBehaviour
 
     public void IgniteMatch()
     {
-        fireVFX.SetActive(true);
-        StartCoroutine("DestroyMatch");
+        if (fireVFX != null)
+        {
+            fireVFX.SetActive(true);
+            StartCoroutine("DestroyMatch");
+        }
     }
 
     IEnumerator DestroyMatch()
