@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Audio;
 public class AudioManager : MonoBehaviour
 {
+    public AudioManager audioMgr;
     public AudioMixer audioMixer;
     public AudioSource rangerSFX;
     public AudioSource fishermanSFX;
@@ -36,8 +37,17 @@ public class AudioManager : MonoBehaviour
 
     private bool vanStarted;
 
+    private GameObject currentAudioManager;
+    private void Awake()
+    {
+        currentAudioManager = GameObject.Find("AudioManager");    
+    }
+
     void Start()
     {
+
+        audioMgr = currentAudioManager.GetComponent<AudioManager>();
+
         if (PlayerPrefs.HasKey("MasterVolume"))
         {
             audioMixer.SetFloat("MasterVolume", PlayerPrefs.GetFloat("MasterVolume"));
@@ -70,74 +80,74 @@ public class AudioManager : MonoBehaviour
 
     public void RangerAudioOn()
     {
-        rangerSFX.Play();
+        audioMgr.rangerSFX.Play();
     }
     public void RangerAudioOff()
     {
-        rangerSFX.Stop();
+        audioMgr.rangerSFX.Stop();
     }
 
     public void FishermanAudioOn()
     {
-        fishermanSFX.Play();
+        audioMgr.fishermanSFX.Play();
     }
 
     public void FishermanAudioOff()
     {
-        fishermanSFX.Stop();
+        audioMgr.fishermanSFX.Stop();
     }
 
     public void JournalFlippingAudio()
     {
-        journalFlippingSFX.Play();
+        audioMgr.journalFlippingSFX.Play();
     }
     public void CollectStickAudio()
     {
-        collectStickSFX.Play();
+        audioMgr.collectStickSFX.Play();
     }
     public void CollectLeavesAudio()
     {
-        collectLeavesSFX.Play();
+        audioMgr.collectLeavesSFX.Play();
     }
     public void VanStartEngineAudio()
     {
-        vanStartEngineSFX.Play();
-        vanStarted = true;
+        audioMgr.vanStartEngineSFX.Play();
+        audioMgr.vanStarted = true;
     }
     public void VanEngineAudio()
     {
         Debug.Log("Van Engine SFX Playing");
-        vanEngineSFX.Play();
+        audioMgr.vanEngineSFX.Play();
     }
 
     public void CollectFoodAudio()
     {
-        collectFoodSFX.Play();
+        audioMgr.collectFoodSFX.Play();
     }
 
     public void CollectFishAudio()
     {
-        collectFishSFX.Play();
+        audioMgr.collectFishSFX.Play();
     }
     public void CastLineAudio()
     {
-        castLineSFX.Play();
+        audioMgr.castLineSFX.Play();
     }
     public void FishingAudio()
     {
-        fishingSFX.Play();
+        audioMgr.fishingSFX.Play();
     }
 
     public void TentSFX1Audio()
     {
-        tentSFX1.Play();
+        audioMgr.tentSFX1.Play();
     }
     public void TentSFX2Audio()
     {
-        tentSFX2.Play();
+        audioMgr.tentSFX2.Play();
     }
     public void TentSFX3Audio()
     {
-        tentSFX3.Play();
+        audioMgr.tentSFX3.Play();
     }
 }
