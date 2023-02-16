@@ -67,115 +67,128 @@ public class SimpleFirebaseManager : MonoBehaviour
 
     public void UpdateMushrooms(int mushroomScore)
     {
-        Query playerQuery = dbPlayerStatsReference.Child(userID);
-        Debug.Log("MushroomUpdate");
-        playerQuery.GetValueAsync().ContinueWithOnMainThread(task =>
+        Firebase.Auth.FirebaseUser currentUser = auth.CurrentUser;
+        if (currentUser != null)
         {
-            if (task.IsCanceled || task.IsFaulted)
+            Query playerQuery = dbPlayerStatsReference.Child(userID);
+            Debug.Log("MushroomUpdate");
+            playerQuery.GetValueAsync().ContinueWithOnMainThread(task =>
             {
-
-            }
-            else if (task.IsCompleted)
-            {
-                DataSnapshot playerStats = task.Result;
-                if (playerStats.Exists)
+                if (task.IsCanceled || task.IsFaulted)
                 {
-                    SimplePlayerStats sp = JsonUtility.FromJson<SimplePlayerStats>(playerStats.GetRawJsonValue());
-                    sp.mushroomsScore += mushroomScore;
-                    var epochStart = new System.DateTime(1970, 1, 1, 8, 0, 0, System.DateTimeKind.Utc);
-                    var timestamp = (System.DateTime.UtcNow - epochStart).TotalSeconds;
-                    sp.leaderboardLastUpdated = (int)timestamp;
-                    sp.totalScore = sp.foodCooked + sp.fishScore + sp.mushroomsScore + sp.sticksScore;
-                    dbPlayerStatsReference.Child(userID).SetRawJsonValueAsync(sp.SimplePlayerStatsToJson());
-                    WriteNewLeaderBoard(userID, username, sp.totalScore, sp.leaderboardLastUpdated);
 
                 }
-            }
-        });
+                else if (task.IsCompleted)
+                {
+                    DataSnapshot playerStats = task.Result;
+                    if (playerStats.Exists)
+                    {
+                        SimplePlayerStats sp = JsonUtility.FromJson<SimplePlayerStats>(playerStats.GetRawJsonValue());
+                        sp.mushroomsScore += mushroomScore;
+                        var epochStart = new System.DateTime(1970, 1, 1, 8, 0, 0, System.DateTimeKind.Utc);
+                        var timestamp = (System.DateTime.UtcNow - epochStart).TotalSeconds;
+                        sp.leaderboardLastUpdated = (int)timestamp;
+                        sp.totalScore = sp.foodCooked + sp.fishScore + sp.mushroomsScore + sp.sticksScore;
+                        dbPlayerStatsReference.Child(userID).SetRawJsonValueAsync(sp.SimplePlayerStatsToJson());
+                        WriteNewLeaderBoard(userID, username, sp.totalScore, sp.leaderboardLastUpdated);
 
+                    }
+                }
+            });
+        }
     }
     public void UpdateFish(int fishScore)
     {
-        Query playerQuery = dbPlayerStatsReference.Child(userID);
-        Debug.Log("FishUpdate");
-        playerQuery.GetValueAsync().ContinueWithOnMainThread(task =>
+        Firebase.Auth.FirebaseUser currentUser = auth.CurrentUser;
+        if (currentUser != null)
         {
-            if (task.IsCanceled || task.IsFaulted)
+            Query playerQuery = dbPlayerStatsReference.Child(userID);
+            Debug.Log("FishUpdate");
+            playerQuery.GetValueAsync().ContinueWithOnMainThread(task =>
             {
-
-            }
-            else if (task.IsCompleted)
-            {
-                DataSnapshot playerStats = task.Result;
-                if (playerStats.Exists)
+                if (task.IsCanceled || task.IsFaulted)
                 {
-                    SimplePlayerStats sp = JsonUtility.FromJson<SimplePlayerStats>(playerStats.GetRawJsonValue());
-                    sp.fishScore += fishScore;
-                    var epochStart = new System.DateTime(1970, 1, 1, 8, 0, 0, System.DateTimeKind.Utc);
-                    var timestamp = (System.DateTime.UtcNow - epochStart).TotalSeconds;
-                    sp.leaderboardLastUpdated = (int)timestamp;
-                    sp.totalScore = sp.foodCooked + sp.fishScore + sp.mushroomsScore + sp.sticksScore;
-                    dbPlayerStatsReference.Child(userID).SetRawJsonValueAsync(sp.SimplePlayerStatsToJson());
-                    WriteNewLeaderBoard(userID, username, sp.totalScore, sp.leaderboardLastUpdated);
-                }
-            }
-        });
 
+                }
+                else if (task.IsCompleted)
+                {
+                    DataSnapshot playerStats = task.Result;
+                    if (playerStats.Exists)
+                    {
+                        SimplePlayerStats sp = JsonUtility.FromJson<SimplePlayerStats>(playerStats.GetRawJsonValue());
+                        sp.fishScore += fishScore;
+                        var epochStart = new System.DateTime(1970, 1, 1, 8, 0, 0, System.DateTimeKind.Utc);
+                        var timestamp = (System.DateTime.UtcNow - epochStart).TotalSeconds;
+                        sp.leaderboardLastUpdated = (int)timestamp;
+                        sp.totalScore = sp.foodCooked + sp.fishScore + sp.mushroomsScore + sp.sticksScore;
+                        dbPlayerStatsReference.Child(userID).SetRawJsonValueAsync(sp.SimplePlayerStatsToJson());
+                        WriteNewLeaderBoard(userID, username, sp.totalScore, sp.leaderboardLastUpdated);
+                    }
+                }
+            });
+        }
     }
     public void UpdateFood(int foodScore)
     {
-        Query playerQuery = dbPlayerStatsReference.Child(userID);
-        Debug.Log("FoodUpdate");
-        playerQuery.GetValueAsync().ContinueWithOnMainThread(task =>
+        Firebase.Auth.FirebaseUser currentUser = auth.CurrentUser;
+        if (currentUser != null)
         {
-            if (task.IsCanceled || task.IsFaulted)
+            Query playerQuery = dbPlayerStatsReference.Child(userID);
+            Debug.Log("FoodUpdate");
+            playerQuery.GetValueAsync().ContinueWithOnMainThread(task =>
             {
-
-            }
-            else if (task.IsCompleted)
-            {
-                DataSnapshot playerStats = task.Result;
-                if (playerStats.Exists)
+                if (task.IsCanceled || task.IsFaulted)
                 {
-                    SimplePlayerStats sp = JsonUtility.FromJson<SimplePlayerStats>(playerStats.GetRawJsonValue());
-                    sp.foodCooked += foodScore;
-                    var epochStart = new System.DateTime(1970, 1, 1, 8, 0, 0, System.DateTimeKind.Utc);
-                    var timestamp = (System.DateTime.UtcNow - epochStart).TotalSeconds;
-                    sp.leaderboardLastUpdated = (int)timestamp;
-                    sp.totalScore = sp.foodCooked + sp.fishScore + sp.mushroomsScore + sp.sticksScore;
-                    dbPlayerStatsReference.Child(userID).SetRawJsonValueAsync(sp.SimplePlayerStatsToJson());
-                    WriteNewLeaderBoard(userID, username, sp.totalScore, sp.leaderboardLastUpdated);
-                }
-            }
-        });
 
+                }
+                else if (task.IsCompleted)
+                {
+                    DataSnapshot playerStats = task.Result;
+                    if (playerStats.Exists)
+                    {
+                        SimplePlayerStats sp = JsonUtility.FromJson<SimplePlayerStats>(playerStats.GetRawJsonValue());
+                        sp.foodCooked += foodScore;
+                        var epochStart = new System.DateTime(1970, 1, 1, 8, 0, 0, System.DateTimeKind.Utc);
+                        var timestamp = (System.DateTime.UtcNow - epochStart).TotalSeconds;
+                        sp.leaderboardLastUpdated = (int)timestamp;
+                        sp.totalScore = sp.foodCooked + sp.fishScore + sp.mushroomsScore + sp.sticksScore;
+                        dbPlayerStatsReference.Child(userID).SetRawJsonValueAsync(sp.SimplePlayerStatsToJson());
+                        WriteNewLeaderBoard(userID, username, sp.totalScore, sp.leaderboardLastUpdated);
+                    }
+                }
+            });
+        }
     }
     public void UpdateSticks(int sticksScore)
     {
-        Query playerQuery = dbPlayerStatsReference.Child(userID);
-        Debug.Log("SticksUpdate");
-        playerQuery.GetValueAsync().ContinueWithOnMainThread(task =>
+        Firebase.Auth.FirebaseUser currentUser = auth.CurrentUser;
+        if (currentUser != null)
         {
-            if (task.IsCanceled || task.IsFaulted)
+            Query playerQuery = dbPlayerStatsReference.Child(userID);
+            Debug.Log("SticksUpdate");
+            playerQuery.GetValueAsync().ContinueWithOnMainThread(task =>
             {
-
-            }
-            else if (task.IsCompleted)
-            {
-                DataSnapshot playerStats = task.Result;
-                if (playerStats.Exists)
+                if (task.IsCanceled || task.IsFaulted)
                 {
-                    SimplePlayerStats sp = JsonUtility.FromJson<SimplePlayerStats>(playerStats.GetRawJsonValue());
-                    sp.sticksScore += sticksScore;
-                    var epochStart = new System.DateTime(1970, 1, 1, 8, 0, 0, System.DateTimeKind.Utc);
-                    var timestamp = (System.DateTime.UtcNow - epochStart).TotalSeconds;
-                    sp.leaderboardLastUpdated = (int)timestamp;
-                    sp.totalScore = sp.foodCooked + sp.fishScore + sp.mushroomsScore + sp.sticksScore;
-                    dbPlayerStatsReference.Child(userID).SetRawJsonValueAsync(sp.SimplePlayerStatsToJson());
-                    WriteNewLeaderBoard(userID, username, sp.totalScore, sp.leaderboardLastUpdated);
+
                 }
-            }
-        });
+                else if (task.IsCompleted)
+                {
+                    DataSnapshot playerStats = task.Result;
+                    if (playerStats.Exists)
+                    {
+                        SimplePlayerStats sp = JsonUtility.FromJson<SimplePlayerStats>(playerStats.GetRawJsonValue());
+                        sp.sticksScore += sticksScore;
+                        var epochStart = new System.DateTime(1970, 1, 1, 8, 0, 0, System.DateTimeKind.Utc);
+                        var timestamp = (System.DateTime.UtcNow - epochStart).TotalSeconds;
+                        sp.leaderboardLastUpdated = (int)timestamp;
+                        sp.totalScore = sp.foodCooked + sp.fishScore + sp.mushroomsScore + sp.sticksScore;
+                        dbPlayerStatsReference.Child(userID).SetRawJsonValueAsync(sp.SimplePlayerStatsToJson());
+                        WriteNewLeaderBoard(userID, username, sp.totalScore, sp.leaderboardLastUpdated);
+                    }
+                }
+            });
+        }
 
     }
 
