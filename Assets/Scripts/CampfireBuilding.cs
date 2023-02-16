@@ -349,7 +349,7 @@ public class CampfireBuilding : MonoBehaviour
             stick6 = true;
             sticks6.SetActive(false);
             sticks7.SetActive(true);
-            sticks6Hologram.SetActive(true);
+            sticks7Hologram.SetActive(true);
         }
     }
     IEnumerator ChangeStick7()
