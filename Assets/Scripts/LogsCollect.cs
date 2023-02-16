@@ -7,10 +7,17 @@ public class LogsCollect : MonoBehaviour
     public bool collected = false;
     public int score;
     public GameObject notepad;
+    public TaskLog taskLogScript;
+
+    private void Awake()
+    {
+        notepad = GameObject.Find("Notepad 7.0");
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        notepad = GameObject.Find("Notepad 7.0");
+        taskLogScript = notepad.GetComponent<TaskLog>();
     }
 
     // Update is called once per frame
@@ -19,7 +26,7 @@ public class LogsCollect : MonoBehaviour
         if (!collected)
         {
             collected = true;
-            notepad.GetComponent<TaskLog>().LogsCollection();
+            taskLogScript.LogsCollection();
         }
     }
 }
