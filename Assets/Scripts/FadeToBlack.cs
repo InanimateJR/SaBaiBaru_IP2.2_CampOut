@@ -8,6 +8,7 @@ public class FadeToBlack : MonoBehaviour
     public GameObject blackOutSquare;
     public AudioManager audioManager;
     public GameObject camperVan;
+    public GameObject cosmetics;
 
     public IEnumerator FadeBlackOutSquare(bool fadetoBlack = true, int fadeSpeed = 3)
     {
@@ -41,6 +42,7 @@ public class FadeToBlack : MonoBehaviour
         StartCoroutine(FadeBlackOutSquare());
         audioManager.VanStartEngineAudio();
         camperVan.SetActive(true);
+        cosmetics.SetActive(true);
         yield return new WaitForSeconds(4);
         StartCoroutine(FadeBlackOutSquare(false));
     }
