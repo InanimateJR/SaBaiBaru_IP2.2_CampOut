@@ -5,13 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class ExitGame : MonoBehaviour
 {
-    public PersonalScores personalScores;
-    public Transform TeleportArea;
-    private Transform PlayerTransform;
+    public GameObject xrOrigin;
+    private PersonalScores personalScores;
+    public Transform teleportArea;
+    private Transform playerTransform;
     // Start is called before the first frame update
     void Start()
     {
-        
+        playerTransform = xrOrigin.transform;
     }
 
     // Update is called once per frame
@@ -22,8 +23,12 @@ public class ExitGame : MonoBehaviour
 
     public void Teleport()
     {
-        SceneManager.LoadScene(0);
-        PlayerTransform.position = TeleportArea.position;
+        playerTransform.position = teleportArea.position;
         personalScores.GetPlayerScores();
+    }
+
+    public void Replay()
+    {
+        SceneManager.LoadScene(0);
     }
 }
