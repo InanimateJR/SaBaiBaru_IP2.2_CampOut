@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.XR.Interaction.Toolkit;
+using TMPro;
 
 // Demo a bit of Fishing. Includes lw demo of
 // creating guiText, LineRenderer, Coroutine, PingPong, Mini-game
@@ -77,6 +78,9 @@ public class FishingScript: MonoBehaviour
     public bool canFish = true;       // Check if player can fish again
 
     public int fishesCaught;
+
+    public TextMeshProUGUI successFishesCaughtText;
+    public TextMeshProUGUI failureFishesCaughtText;
 
     // Audio Sources
     public GameObject fishingSFXObject;
@@ -711,6 +715,8 @@ public class FishingScript: MonoBehaviour
     public IEnumerator DisplaySuccess()
     {
         fishesCaught++;
+        successFishesCaughtText.text = "FISHES CAUGHT: " + fishesCaught;
+        failureFishesCaughtText.text = "FISHES CAUGHT: " + fishesCaught;
         fishingSuccessPanel.SetActive(true);
         yield return new WaitForSeconds(waitTime);
         fishingSuccessPanel.SetActive(false);

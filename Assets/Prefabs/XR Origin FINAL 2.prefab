@@ -2202,6 +2202,8 @@ MonoBehaviour:
   reachedTarget: 0
   canFish: 1
   fishesCaught: 0
+  successFishesCaughtText: {fileID: 4256785356306465857}
+  failureFishesCaughtText: {fileID: 4256785354990862077}
   fishingSFXObject: {fileID: 0}
   castLineSFXObject: {fileID: 0}
   fishCollectible: {fileID: 0}
@@ -15321,7 +15323,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'FISHES CAUGHT: 5'
+  m_text: 'FISHES CAUGHT: 0'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fbe84ecdbf69f124da7973229ebaa5c4, type: 2}
   m_sharedMaterial: {fileID: -8655359898861287942, guid: fbe84ecdbf69f124da7973229ebaa5c4,
@@ -17277,7 +17279,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'FISHES CAUGHT: 5'
+  m_text: 'FISHES CAUGHT: 0'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fbe84ecdbf69f124da7973229ebaa5c4, type: 2}
   m_sharedMaterial: {fileID: -8655359898861287942, guid: fbe84ecdbf69f124da7973229ebaa5c4,
