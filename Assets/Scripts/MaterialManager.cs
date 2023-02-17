@@ -14,7 +14,7 @@ public class MaterialManager : MonoBehaviour
     public Material[] bagMats;          // Material Array for Bag
 
     // Define MeshRenderers
-    public MeshRenderer foldedTentRenderer;
+    public MeshRenderer[] foldedTentRenderer;
     public MeshRenderer[] tentRenderer;
     public MeshRenderer bagRenderer;
 
@@ -62,18 +62,34 @@ public class MaterialManager : MonoBehaviour
                     foldedTentSelection = ci.foldedTentMaterial;
                     tentSelection = ci.tentMaterial;
                     bagSelection = ci.bagMaterial;
+                    bagRenderer.material = bagMats[bagSelection];
+                    for (int i = 0; i < tentRenderer.Length; i++)
+                    {
+                        tentRenderer[i].material = tentMats[tentSelection];
+                    }
+                    for (int i = 0; i < foldedTentRenderer.Length; i++)
+                    {
+                        foldedTentRenderer[i].material = foldedTentMats[foldedTentSelection];
+                    }
+                }
+                else
+                {
+                    foldedTentSelection = 0;
+                    tentSelection = 0;
+                    bagSelection = 0;
+                    bagRenderer.material = bagMats[bagSelection];
+                    for (int i = 0; i < tentRenderer.Length; i++)
+                    {
+                        tentRenderer[i].material = tentMats[tentSelection];
+                    }
+                    for (int i = 0; i < foldedTentRenderer.Length; i++)
+                    {
+                        foldedTentRenderer[i].material = foldedTentMats[foldedTentSelection];
+                    }
                 }
             }
         });
 
-        foldedTentRenderer.material = foldedTentMats[foldedTentSelection];
-        bagRenderer.material = bagMats[bagSelection];
-
-
-        for (int i = 0; i < tentRenderer.Length; i++)
-        {
-            tentRenderer[i].material = tentMats[tentSelection];
-        }
     }
 
     //change folded tent to colour 1

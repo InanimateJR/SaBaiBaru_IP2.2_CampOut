@@ -17,7 +17,11 @@ public class LogsCollect : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        taskLogScript = notepad.GetComponent<TaskLog>();
+        if (notepad != null)
+        {
+            taskLogScript = notepad.GetComponent<TaskLog>();
+        }
+
     }
 
     // Update is called once per frame
