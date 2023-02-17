@@ -59,7 +59,7 @@ TagManager:
   - MatchTrigger
   - TradingArea
   - RightHand
-  - 
+  - NonUI
   - 
   m_SortingLayers:
   - name: Default
