@@ -15,7 +15,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &4962958306154149966
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1407,7 +1407,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &5923402132150555714
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1446,10 +1446,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerName: {fileID: 1556985276106420363}
-  fishScore: {fileID: 9150806244950876210}
-  foodScore: {fileID: 8762980955811521510}
-  sticksScore: {fileID: 3941625453459995399}
-  mushroomsScore: {fileID: 2303773496259356180}
+  fishScores: {fileID: 0}
+  foodScores: {fileID: 0}
+  sticksScores: {fileID: 0}
+  mushroomsScores: {fileID: 0}
   totalScore: {fileID: 7374942485479929306}
 --- !u!114 &7868956772248949472
 MonoBehaviour:

@@ -80,7 +80,6 @@ public class PersonalScores : MonoBehaviour
                 mushroomsScores.text = ("Mushrooms Score: " + playerStats.mushroomsScore);
                 sticksScores.text = ("Sticks Score: " + playerStats.sticksScore);
                 totalScore.text = ("Total Score: " + playerStats.totalScore);
-                //Debug.Log("I hate unity");
             }
         });
     }
