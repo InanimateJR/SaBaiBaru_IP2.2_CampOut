@@ -5,6 +5,7 @@ using UnityEngine;
 public class FoodCollectible : MonoBehaviour
 {
     public GameObject firebaseManager;
+    public GameObject audioManager;
     public bool collected = false;
     public bool poisonousMushroom = false;
     public int score;
@@ -12,6 +13,7 @@ public class FoodCollectible : MonoBehaviour
     void Start()
     {
         firebaseManager = GameObject.Find("FirebaseManager");
+        audioManager = GameObject.Find("AudioManager");
         if (!poisonousMushroom)
         {
             score = 1;
@@ -36,6 +38,7 @@ public class FoodCollectible : MonoBehaviour
         {
             firebaseManager.GetComponent<SimpleFirebaseManager>().UpdateFood(score);
             collected = true;
+            audioManager.GetComponent<AudioManager>().CollectFoodAudio();
         }
     }
 }

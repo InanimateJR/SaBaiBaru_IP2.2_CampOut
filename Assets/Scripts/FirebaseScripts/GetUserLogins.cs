@@ -55,7 +55,7 @@ public class GetUserLogins : MonoBehaviour
                 dateTime2 = dateTime2.AddSeconds(accountCreation).ToLocalTime();
                 string accountCreationString = dateTime2.ToString("dd/MM/yyyy HH:mm:ss");
                 loginDisplay.text = ("Last Login: " + loginString);
-                accountCreationDisplay.text = ("Accoutn Created: " + accountCreationString);
+                accountCreationDisplay.text = ("Account Created: " + accountCreationString);
 
             }
             if (task.IsFaulted)
