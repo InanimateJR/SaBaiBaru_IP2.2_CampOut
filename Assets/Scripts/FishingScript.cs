@@ -222,7 +222,6 @@ public class FishingScript: MonoBehaviour
                 {
                     Debug.Log("StartSuccess");
                     //StartCoroutine("DisplaySuccess");
-                    StartCoroutine("DisplaySuccess");
                     if (fishBucketPanel.activeSelf)
                     {
                         StopCoroutine("DisplayFishBucket");
@@ -706,13 +705,6 @@ public class FishingScript: MonoBehaviour
         fishjump = false;
 
         return true;
-    }
-
-    // Display and turn off success panel from other script
-    public void StartDisplaySuccess()
-    {
-        StartCoroutine("DisplaySuccess");
-        Debug.Log("DisplaySuccess");
     }
 
     // Display and turn off success panel
