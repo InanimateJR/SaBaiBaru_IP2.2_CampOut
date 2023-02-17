@@ -24,7 +24,6 @@ public class ExitGame : MonoBehaviour
     public void Teleport()
     {
         playerTransform.position = teleportArea.position;
-        personalScores.GetPlayerScores();
     }
 
     public void Replay()
