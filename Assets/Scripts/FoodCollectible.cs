@@ -41,4 +41,8 @@ public class FoodCollectible : MonoBehaviour
             audioManager.GetComponent<AudioManager>().CollectFoodAudio();
         }
     }
+     public void GrabFood()
+    {
+        audioManager.GetComponent<AudioManager>().CollectFoodAudio();
+    }
 }

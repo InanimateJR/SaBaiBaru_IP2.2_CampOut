@@ -147,10 +147,9 @@ MonoBehaviour:
   m_SelectEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5994530251350565765, guid: 423f07143c7c539438c7070e51681dc8,
-          type: 3}
-        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
-        m_MethodName: CollectFishAudio
+      - m_Target: {fileID: 5131184385528647409}
+        m_TargetAssemblyTypeName: FoodCollectible, Assembly-CSharp
+        m_MethodName: GrabFood
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -273,6 +272,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firebaseManager: {fileID: 0}
+  audioManager: {fileID: 0}
   collected: 0
   poisonousMushroom: 0
   score: 0

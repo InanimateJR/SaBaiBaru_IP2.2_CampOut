@@ -124,6 +124,7 @@ public class AudioManager : MonoBehaviour
     {
         if (audioMgr != null)
         {
+            Debug.Log("Play Sound");
             audioMgr.collectFoodSFX.Play();
         }
     }
