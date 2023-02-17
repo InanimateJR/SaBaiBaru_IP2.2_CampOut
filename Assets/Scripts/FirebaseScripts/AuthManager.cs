@@ -17,6 +17,7 @@ public class AuthManager : MonoBehaviour
     public GameObject tableTutorialScreen;
     public GameObject fishingTutorialScreen;
     public GameObject campfireTutorialScreen;
+    public GameObject userCustomization;
     public TMP_InputField emailRegister;
     public TMP_InputField passwordRegister;
     public TMP_InputField emailLogin;
@@ -78,6 +79,7 @@ public class AuthManager : MonoBehaviour
                 campfireTutorialScreen.SetActive(true);
                 tableTutorialScreen.SetActive(true);
                 fishingTutorialScreen.SetActive(true);
+                userCustomization.SetActive(true);
                 LoadUsername();
             }
         });
@@ -135,6 +137,7 @@ public class AuthManager : MonoBehaviour
                 campfireTutorialScreen.SetActive(true);
                 tableTutorialScreen.SetActive(true);
                 fishingTutorialScreen.SetActive(true);
+                userCustomization.SetActive(true);
                 LoadUsername();
             }
         });
