@@ -17,6 +17,16 @@ public class InputFieldManager : MonoBehaviour
     public GameObject capsLetters;
     public GameObject smallLetters;
 
+    private void OnTriggerEnter(Collider other)
+    {
+        keyboard.SetActive(true);
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        keyboard.SetActive(false);
+    }
+
     public void SelectLoginEmail()
     {
         currentInput = loginEmailInput;
