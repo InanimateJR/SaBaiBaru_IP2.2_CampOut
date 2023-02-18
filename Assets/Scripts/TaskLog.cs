@@ -389,7 +389,7 @@ public class TaskLog : MonoBehaviour
         if (logsCollected == 6)
         {
             allLogsCollected = true;
-            leavesPilesUI.fontStyle = FontStyles.Strikethrough;
+            fishTradeUI.fontStyle = FontStyles.Strikethrough;
         }
     }
 
