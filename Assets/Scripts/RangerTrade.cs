@@ -15,18 +15,17 @@ public class RangerTrade : MonoBehaviour
     public GameObject matchstickBox;
     public GameObject[] matchstick;
 
-    // Start is called before the first frame update
     void Start()
     {
         giveFish.interactable = false;
     }
 
-    // Update is called once per frame
     void Update()
     {
         
     }
 
+    //bucket collider detects for fishes, if 3 or more fishes are detected, play TaskOnCLick
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Fish")
@@ -58,7 +57,7 @@ public class RangerTrade : MonoBehaviour
         }
 
     }
-
+    //unlocks the Firewood and Matchbox when called after successful trade
     void TaskOnClick()
     {
         var logs = GameObject.FindGameObjectsWithTag("Log");

@@ -28,7 +28,7 @@ public class FishermanTrade : MonoBehaviour
     {
         
     }
-
+    //bucket collider detects for mushrooms, if 3 or more fishes are detected, play TaskOnCLick
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Mushroom")
@@ -58,7 +58,7 @@ public class FishermanTrade : MonoBehaviour
             }
 
         }
-
+        //unlocks fishing rod
         void TaskOnClick()
         {
          
