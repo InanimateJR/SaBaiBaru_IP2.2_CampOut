@@ -225,6 +225,7 @@ public class FishingScript: MonoBehaviour
                 if (fishCollectible.collected)
                 {
                     Debug.Log("StartSuccess");
+                    StartCollectedFish();
                     if (fishBucketPanel.activeSelf)
                     {
                         StopCoroutine("DisplayFishBucket");

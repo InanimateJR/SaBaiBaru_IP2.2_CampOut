@@ -45,7 +45,7 @@ public class ObjectScaler : MonoBehaviour
         }
     }
 
-    private void OnTriggerStay(Collider other)
+    /*private void OnTriggerStay(Collider other)
     {
         if (inventoryObjectScript != null)
         {
@@ -88,7 +88,7 @@ public class ObjectScaler : MonoBehaviour
                 }
             }
         }
-    }
+    }*/
 
     private void OnTriggerExit(Collider other)
     {  
