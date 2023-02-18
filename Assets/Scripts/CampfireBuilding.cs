@@ -6,6 +6,7 @@ using TMPro;
 
 public class CampfireBuilding : MonoBehaviour
 {
+    //bools for making sure functions dont run twice
     bool leaves1 = false;
     bool leaves2 = false;
     bool leaves3 = false;
@@ -25,7 +26,7 @@ public class CampfireBuilding : MonoBehaviour
     bool log4 = false;
     bool log5 = false;
     bool log6 = false;
-
+    //all gameobject slots for the sockets
     public GameObject leaf1;
     public GameObject leaf2;
     public GameObject leaf3;
@@ -69,7 +70,7 @@ public class CampfireBuilding : MonoBehaviour
     public GameObject fireLighting;
 
     public GameObject notepad;
-
+    //all functions that will call a coroutine
     private void Start()
     {
         notepad = GameObject.Find("Notepad 7.0");
@@ -150,6 +151,7 @@ public class CampfireBuilding : MonoBehaviour
     {
         StartCoroutine(ChangeStick7());
     }
+    //Every Corountine will disable the corresponding hologram and socket, then enable the next one so that the campfire can continue building
     IEnumerator ChangeLeaves1()
     {
         
@@ -352,6 +354,7 @@ public class CampfireBuilding : MonoBehaviour
             sticks7Hologram.SetActive(true);
         }
     }
+    //enables collision detector for matchsticks to light fire and additional sockets to put cooking sticks
     IEnumerator ChangeStick7()
     { 
         if (!stick7)

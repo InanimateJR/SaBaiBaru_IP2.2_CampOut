@@ -9,7 +9,7 @@ public class SticksCollectible : MonoBehaviour
     public int score;
     public GameObject notepad;
 
-    // Start is called before the first frame update
+    // set score to 1
     void Start()
     {
         score = 1;
@@ -26,6 +26,7 @@ public class SticksCollectible : MonoBehaviour
 
     public void CollectedSticks()
     {
+        //update firebase with sticks score
         if (!collected)
         {
             firebaseManager.GetComponent<SimpleFirebaseManager>().UpdateSticks(score);

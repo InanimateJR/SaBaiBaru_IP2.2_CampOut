@@ -20,12 +20,12 @@ public class ExitGame : MonoBehaviour
     {
         
     }
-
+    //teleports player to a set transform
     public void Teleport()
     {
         playerTransform.position = teleportArea.position;
     }
-
+    //reloads scene 0
     public void Replay()
     {
         SceneManager.LoadScene(0);

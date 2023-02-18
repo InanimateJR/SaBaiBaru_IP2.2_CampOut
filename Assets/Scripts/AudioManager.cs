@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Audio;
 public class AudioManager : MonoBehaviour
 {
+    //audiosources
     public AudioManager audioMgr;
     public AudioMixer audioMixer;
     public AudioSource rangerSFX;
@@ -45,7 +46,7 @@ public class AudioManager : MonoBehaviour
 
     void Start()
     {
-
+        //sets volume accordingly to mixer
         audioMgr = currentAudioManager.GetComponent<AudioManager>();
 
         if (PlayerPrefs.HasKey("MasterVolume"))
@@ -77,7 +78,7 @@ public class AudioManager : MonoBehaviour
             
         }
     }
-
+    //all the Play functions
     public void RangerAudioOn()
     {
         audioMgr.rangerSFX.Play();

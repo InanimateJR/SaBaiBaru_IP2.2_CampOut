@@ -19,6 +19,7 @@ public class LoginRecorder : MonoBehaviour
         Firebase.Auth.FirebaseUser currentUser = auth.CurrentUser;
         if (currentUser != null)
         {
+            //obtains user login info and converts to unix timestamp before sending it to firebase
             var epochStart = new System.DateTime(1970, 1, 1, 8, 0, 0, System.DateTimeKind.Utc);
             var timestamp = (System.DateTime.UtcNow - epochStart).TotalSeconds;
             int lastLogin = (int)timestamp;

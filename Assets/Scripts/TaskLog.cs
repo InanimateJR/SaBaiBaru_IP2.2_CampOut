@@ -365,6 +365,7 @@ public class TaskLog : MonoBehaviour
 
     public void SticksCollection()
     {
+        //strike out task if enough sticks collected
         sticksCollected++;
         if (sticksCollected == 8)
         {
@@ -375,6 +376,7 @@ public class TaskLog : MonoBehaviour
 
     public void LeafCollection()
     {
+        //strike out task if enough leaves collected
         leavesCollected++;
         if (leavesCollected == 4)
         {
@@ -385,6 +387,7 @@ public class TaskLog : MonoBehaviour
 
     public void LogsCollection()
     {
+        //strike out task if enough logs collected
         logsCollected++;
         if (logsCollected == 6)
         {
@@ -395,18 +398,20 @@ public class TaskLog : MonoBehaviour
 
     public void CampFireAssembled()
     {
+        //strike out task if campfire is complete
         campfireBuiltUI.fontStyle = FontStyles.Strikethrough;
         campfireAssembled = true;
     }
 
     public void Task7Done()
     {
-
+        //strike out task if task 7 is done
         task7Text.fontStyle = FontStyles.Strikethrough;
 }
 
     public void Task8Done()
     {
+        //strike out task if task 8 is done
         task8Text.fontStyle = FontStyles.Strikethrough;
     }
 
@@ -436,6 +441,7 @@ public class TaskLog : MonoBehaviour
 
     public void EatenFood()
     {
+        //strike out task if task 9 is done
         task9Complete = true;
         task9Text.fontStyle = FontStyles.Strikethrough;
         Debug.Log("Task 9 has been completed");
@@ -443,6 +449,7 @@ public class TaskLog : MonoBehaviour
 
     public void LightCampfire()
     {
+        //strike out task if task 6 is done
         if (!task6Complete)
         {
             task6Complete = true;

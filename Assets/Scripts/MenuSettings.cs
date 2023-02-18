@@ -14,7 +14,7 @@ public class MenuSettings : MonoBehaviour
     public Slider bgmSlider;
     public Slider sfxSlider;
     public GameObject notepad;
-
+    //sliders to control volume
     public void SFXScale(Slider slider)
     {
         sfxVolume.text = ((int)slider.value + 80).ToString();

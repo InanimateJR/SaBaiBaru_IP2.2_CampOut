@@ -12,6 +12,7 @@ public class FoodCollectible : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //assign scoring, all food +1, poisonous mushroom -1
         firebaseManager = GameObject.Find("FirebaseManager");
         audioManager = GameObject.Find("AudioManager");
         if (!poisonousMushroom)
@@ -33,6 +34,7 @@ public class FoodCollectible : MonoBehaviour
     }
 
     public void CollectedFood()
+    //on spawn, alert firebase score
     {
         if (!collected && firebaseManager != null)
         {

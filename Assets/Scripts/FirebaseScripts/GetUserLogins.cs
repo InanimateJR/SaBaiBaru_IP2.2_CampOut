@@ -23,6 +23,7 @@ public class GetUserLogins : MonoBehaviour
     }
     public void Start()
     {
+        //get user ID
         Firebase.Auth.FirebaseUser currentUser = auth.CurrentUser;
         Debug.Log("User Recorded");
         if (currentUser != null)
@@ -39,6 +40,7 @@ public class GetUserLogins : MonoBehaviour
 
     public void GetUserLogin()
     {
+        //access firebase user folder to obtain unix timestamps, convert them to datetime, and then put them into textmeshpro
         dbUserStatsReference.Child(userID).GetValueAsync().ContinueWithOnMainThread(task =>
         {
             if (task.IsCompleted)

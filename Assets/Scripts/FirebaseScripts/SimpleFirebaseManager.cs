@@ -29,6 +29,7 @@ public class SimpleFirebaseManager : MonoBehaviour
         Debug.Log("User Recorded");
         if (currentUser != null)
         {
+            //get user data
             userID = currentUser.UserId;
             Query userData = mDatabaseRef.Child("User").Child(userID);
             userData.GetValueAsync().ContinueWithOnMainThread(task =>
@@ -73,6 +74,7 @@ public class SimpleFirebaseManager : MonoBehaviour
 
     public void UpdateMushrooms(int mushroomScore)
     {
+        //updates mushroom scores
         Firebase.Auth.FirebaseUser currentUser = auth.CurrentUser;
         if (currentUser != null)
         {
@@ -105,6 +107,7 @@ public class SimpleFirebaseManager : MonoBehaviour
     }
     public void UpdateFish(int fishScore)
     {
+        //updates fish scores
         Firebase.Auth.FirebaseUser currentUser = auth.CurrentUser;
         if (currentUser != null)
         {
@@ -136,6 +139,7 @@ public class SimpleFirebaseManager : MonoBehaviour
     }
     public void UpdateFood(int foodScore)
     {
+        //updates cooked food score
         Firebase.Auth.FirebaseUser currentUser = auth.CurrentUser;
         if (currentUser != null)
         {
@@ -167,6 +171,7 @@ public class SimpleFirebaseManager : MonoBehaviour
     }
     public void UpdateSticks(int sticksScore)
     {
+        //updates sticks score
         Firebase.Auth.FirebaseUser currentUser = auth.CurrentUser;
         if (currentUser != null)
         {
@@ -201,6 +206,7 @@ public class SimpleFirebaseManager : MonoBehaviour
 
     public async Task<List<SimpleLeaderBoard>> GetLeaderboard()
     {
+        //gets a List object for leaderboard to display later
         Query q = dbLeaderboardsReference.OrderByChild("totalScore").LimitToLast(5);
 
         List<SimpleLeaderBoard> leaderBoardList = new List<SimpleLeaderBoard>();

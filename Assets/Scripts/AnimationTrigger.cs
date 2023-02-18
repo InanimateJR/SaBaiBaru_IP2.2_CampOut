@@ -9,7 +9,7 @@ public class AnimationTrigger : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         collisionCount++;
-
+        //on collision, play animation
         if (collisionCount <= 3)
         {
             GetComponent<Animation>().Play();

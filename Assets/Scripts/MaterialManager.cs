@@ -74,6 +74,7 @@ public class MaterialManager : MonoBehaviour
                 }
                 else
                 {
+                    //if no user detected, just change according to the index but doesn't save
                     foldedTentSelection = 0;
                     tentSelection = 0;
                     bagSelection = 0;

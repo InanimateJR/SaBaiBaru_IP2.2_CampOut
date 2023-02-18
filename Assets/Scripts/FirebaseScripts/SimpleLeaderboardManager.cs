@@ -22,6 +22,7 @@ public class SimpleLeaderboardManager : MonoBehaviour
     }
     void HandlePlayerValueChanged(object send, ValueChangedEventArgs args)
     {
+        //if leaderboard tab changes, update ingame leaderboard
         if (args.DatabaseError != null)
         {
             return;
@@ -47,6 +48,7 @@ public class SimpleLeaderboardManager : MonoBehaviour
         }
         foreach (SimpleLeaderBoard lb in leaderBoardList)
         {
+            //uses list from simplefirebasemanager and then instantiates them into a prefab textmeshpro and arranges them
             Debug.LogFormat("Leaderboard Mgr: Rank {0} Playername {1} High Score {2}", rankCounter, lb.username, lb.totalScore);
             GameObject entry = Instantiate(rowPrefab, tableContent);
             TextMeshProUGUI[] leaderBoardDetails = entry.GetComponentsInChildren<TextMeshProUGUI>(); 

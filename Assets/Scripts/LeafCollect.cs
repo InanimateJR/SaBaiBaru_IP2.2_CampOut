@@ -24,7 +24,7 @@ public class LeafCollect : MonoBehaviour
 
     }
 
-    // Update is called once per frame
+    // when collected, calls task log function
     public void CollectLeaf()
     {
         if (!collected)

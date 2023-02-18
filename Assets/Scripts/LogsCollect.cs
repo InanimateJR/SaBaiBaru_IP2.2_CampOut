@@ -24,7 +24,7 @@ public class LogsCollect : MonoBehaviour
 
     }
 
-    // Update is called once per frame
+    // calls tasklog function when collected
     public void CollectLogs()
     {
         if (!collected)

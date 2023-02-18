@@ -24,7 +24,7 @@ public class MushroomCollectibleBool : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-          
+          //set score based on poisonous or edible
         if (poisonous)
         {
             score = -1;
@@ -42,6 +42,7 @@ public class MushroomCollectibleBool : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //prevents mushroom from falling over before collected
         if (this.gameObject.transform.root.position != startPosition && !objectMoved)
         {
             mushroomRigidbody.constraints = RigidbodyConstraints.None;
@@ -52,6 +53,7 @@ public class MushroomCollectibleBool : MonoBehaviour
 
     public void CollectedMushroom()
     {
+        //updates firebase score for mushrooms
         if (!collected)
         {
             firebaseManager.GetComponent<SimpleFirebaseManager>().UpdateMushrooms(score);
