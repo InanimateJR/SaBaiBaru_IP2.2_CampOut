@@ -30,6 +30,7 @@ public class RangerDialogue : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         rangerCanvas.SetActive(false);
+        audioManager.RangerAudioOff();
     }
 
     void TaskOnClick()

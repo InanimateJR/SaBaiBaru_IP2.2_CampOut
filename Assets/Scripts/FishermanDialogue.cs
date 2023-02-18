@@ -32,6 +32,7 @@ public class FishermanDialogue : MonoBehaviour
     {
         Debug.Log("Exit");
         fishermanCanvas.SetActive(false);
+        audioManager.FishermanAudioOff();
     }
 
     void TaskOnClick()
