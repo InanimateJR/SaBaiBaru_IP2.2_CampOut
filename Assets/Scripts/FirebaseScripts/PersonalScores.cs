@@ -55,6 +55,7 @@ public class PersonalScores : MonoBehaviour
                     }
                 }
             });
+            GetPlayerScores();
         }
     }
     public void InitializeFirebase()
