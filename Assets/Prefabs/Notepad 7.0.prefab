@@ -1226,7 +1226,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1573,8 +1573,8 @@ RectTransform:
   m_Father: {fileID: 2025625886201219055}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -6414,12 +6414,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '1. Point hand ray towards "Talk to Fisherman" and press Trigger/Select.
+  m_text: '1. Point hand ray towards "Talk to Ranger" and press Trigger/Select.
 
 
     2.
-    Use Trigger/Select button on "I would like some firewood" button to get your
-    logs.'
+    Use Trigger/Select button on "I would like some firewood and matchsticks" button
+    to get your items.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5a07bc1d9de833c4f8dd84c93198da8d, type: 2}
   m_sharedMaterial: {fileID: -6237548691277355724, guid: 5a07bc1d9de833c4f8dd84c93198da8d,
@@ -17865,14 +17865,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Matchbox is in inventory.
+  m_text: 'Matchbox is obtainable from trading with the ranger.
 
+    1. After unlocking
+    it, grab the matchbox with Grab/Teleport button.
 
-    1. Grab matchbox from inventory with Grab/Teleport
-    button.
-
-
-    2. Press Trigger/Select button to open matchbox.'
+    2. Press Trigger/Select
+    button to open matchbox.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5a07bc1d9de833c4f8dd84c93198da8d, type: 2}
   m_sharedMaterial: {fileID: -6237548691277355724, guid: 5a07bc1d9de833c4f8dd84c93198da8d,
@@ -28246,8 +28245,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: You can now collect the firewood on the floor stacked next to the forest
-    ranger.
+  m_text: You can now collect the firewood and matchbox on the floor stacked next
+    to the forest ranger.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5a07bc1d9de833c4f8dd84c93198da8d, type: 2}
   m_sharedMaterial: {fileID: -6237548691277355724, guid: 5a07bc1d9de833c4f8dd84c93198da8d,
@@ -29478,7 +29477,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2517926717410663975
 Transform:
   m_ObjectHideFlags: 0
@@ -52548,7 +52547,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -54502,7 +54501,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '- Trade 3 fishes for 6 firewood with the Ranger at the cabin'
+  m_text: '- Trade 3 fishes for 6 firewood and matchsticks with the Ranger at the
+    cabin'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5a07bc1d9de833c4f8dd84c93198da8d, type: 2}
   m_sharedMaterial: {fileID: -6237548691277355724, guid: 5a07bc1d9de833c4f8dd84c93198da8d,
@@ -56194,7 +56194,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4440178370066845974
 RectTransform:
   m_ObjectHideFlags: 0
@@ -58833,8 +58833,8 @@ RectTransform:
   m_Father: {fileID: 271640294480977546}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -59854,7 +59854,6 @@ MonoBehaviour:
   fishOnSticksToCookUI: {fileID: 4440178369724156506}
   stickEdibleMushroomsUI: {fileID: 4440178370572158812}
   mushroomsOnSticksToCookUI: {fileID: 4440178368795964350}
-  listUI: {fileID: 0}
   mushroomCollectUI: {fileID: 3885374583152066389}
   mushroomTradeUI: {fileID: 7406766951664501094}
   task3Text: {fileID: 4440178369169002215}

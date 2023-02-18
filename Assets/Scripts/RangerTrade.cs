@@ -12,6 +12,8 @@ public class RangerTrade : MonoBehaviour
     public Button rentLog;
     public List<GameObject> fishInBucket;
     public AudioManager audioManager;
+    public GameObject matchstickBox;
+    public GameObject[] matchstick;
 
     // Start is called before the first frame update
     void Start()
@@ -66,6 +68,11 @@ public class RangerTrade : MonoBehaviour
             log.GetComponent<XRGrabInteractable>().enabled = true;
             log.GetComponent<Rigidbody>().isKinematic = false;
         }
+        for (int i = 0; i < matchstick.Length; i++)
+        {
+            matchstick[i].SetActive(true);
+        }
+        matchstickBox.GetComponent<XRGrabInteractable>().enabled = true;
 
         audioManager.RangerAudioOff();
         arrow.SetActive(true);
