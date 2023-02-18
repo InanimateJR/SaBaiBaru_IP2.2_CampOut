@@ -10,12 +10,14 @@ public class FishCollectible : MonoBehaviour
     public int score;
     public GameObject firebaseManager;
     public GameObject audioManager;
+    public GameObject fishingScript;
 
     // Start is called before the first frame update
     void Start()
     {
         firebaseManager = GameObject.Find("FirebaseManager");
         audioManager = GameObject.Find("AudioManager");
+        fishingScript = GameObject.Find("RightHand Controller");
         score = 2;
     }
     public void CollectedFish()
@@ -25,6 +27,12 @@ public class FishCollectible : MonoBehaviour
             firebaseManager.GetComponent<SimpleFirebaseManager>().UpdateFish(score);
             collected = true;
             audioManager.GetComponent<AudioManager>().CollectFishAudio();
+        }
+
+        if (!collected)
+        {
+            fishingScript.GetComponent<FishingScript>().StartCollectedFish();
+            collected = true;
         }
     }
 }

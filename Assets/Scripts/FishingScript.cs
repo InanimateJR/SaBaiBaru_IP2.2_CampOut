@@ -225,7 +225,6 @@ public class FishingScript: MonoBehaviour
                 if (fishCollectible.collected)
                 {
                     Debug.Log("StartSuccess");
-                    //StartCoroutine("DisplaySuccess");
                     if (fishBucketPanel.activeSelf)
                     {
                         StopCoroutine("DisplayFishBucket");
@@ -714,7 +713,6 @@ public class FishingScript: MonoBehaviour
     // Display and turn off success panel
     public IEnumerator DisplaySuccess()
     {
-        fishesCaught++;
         successFishesCaughtText.text = "FISHES CAUGHT: " + fishesCaught;
         failureFishesCaughtText.text = "FISHES CAUGHT: " + fishesCaught;
         fishingSuccessPanel.SetActive(true);
@@ -772,9 +770,6 @@ public class FishingScript: MonoBehaviour
         Debug.Log("StartCollectedFish");
         canFish = true;
         StartCoroutine("DisplaySuccess");
-        if (fishCollectible != null)
-        {
-            fishCollectible.CollectedFish();
-        }
+        fishesCaught++;
     }
 }
