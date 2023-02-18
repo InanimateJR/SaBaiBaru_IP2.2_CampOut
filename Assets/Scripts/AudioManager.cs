@@ -35,7 +35,8 @@ public class AudioManager : MonoBehaviour
     public AudioSource tent3Peg3HitSFX;
     public AudioSource tent3Peg4HitSFX;
     public AudioSource tutorialBGM;
-    public AudioSource WaterfallSFX;
+    public AudioSource waterfallSFX;
+    public AudioSource munchingSFX;
 
     private bool vanStarted;
 
@@ -161,5 +162,10 @@ public class AudioManager : MonoBehaviour
     public void TentSFX3Audio()
     {
         audioMgr.tentSFX3.Play();
+    }
+
+    public void MunchingSFXAudio()
+    {
+        munchingSFX.Play();
     }
 }

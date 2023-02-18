@@ -14,12 +14,15 @@ public class EatingScript : MonoBehaviour
     public TaskLog taskLogScript;
     public GameObject endGame;
 
+    public AudioManager audioManager;
+
     private void OnTriggerEnter(Collider other)
     {
         //If the food is cooked Mushroom
         if (other.gameObject.tag == "Cooked Edible Mushroom")
         {
-           
+            audioManager.MunchingSFXAudio();
+
             if (!eatenFood)
             {
                 if (taskLogScript != null)
@@ -36,6 +39,7 @@ public class EatingScript : MonoBehaviour
         //If the food is cooked Fish
         else if (other.gameObject.tag == "Cooked Fish")
         {
+            audioManager.MunchingSFXAudio();
             if (!eatenFood)
             {
                 if (taskLogScript != null)
@@ -52,7 +56,7 @@ public class EatingScript : MonoBehaviour
         //If the food is cooked Poison Mushroom, it will disappear and also call function to create poison effect for 20-30s.
         else if (other.gameObject.tag == "Cooked Poison Mushroom")
         {
-            
+            audioManager.MunchingSFXAudio();
             Destroy(other.gameObject);
             int effect = Random.Range(1, 5);
             if (effect == 1)
