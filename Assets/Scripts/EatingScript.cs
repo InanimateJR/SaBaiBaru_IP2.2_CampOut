@@ -22,7 +22,10 @@ public class EatingScript : MonoBehaviour
            
             if (!eatenFood)
             {
-                taskLogScript.EatenFood();
+                if (taskLogScript != null)
+                {
+                    taskLogScript.EatenFood();
+                }
                 eatenFood = true;
             }
             
@@ -35,7 +38,10 @@ public class EatingScript : MonoBehaviour
         {
             if (!eatenFood)
             {
-                taskLogScript.EatenFood();
+                if (taskLogScript != null)
+                {
+                    taskLogScript.EatenFood();
+                }
                 eatenFood = true;
             }
 

@@ -64,6 +64,7 @@ public class AuthManager : MonoBehaviour
             }
             else if (task.IsCompleted)
             {
+                //sets all tutorials and customization options active after successful sign-in
                 Firebase.Auth.FirebaseUser newPlayer = task.Result;
                 //SceneManager.LoadScene(1);
                 Debug.LogFormat("User signed in successfully: ({0})", newPlayer.UserId);
@@ -74,6 +75,7 @@ public class AuthManager : MonoBehaviour
                 int lastLogin = (int)timestamp;
                 WriteNewUser(uid, emailRegister.text, usernameRegister.text, creationTime, lastLogin);
                 WriteNewScore(uid, usernameRegister.text, 0, lastLogin, 0, 0, 0, 0);
+                SaveMaterialsToFirebase(0, 0, 0);
                 loginScreen.SetActive(false);
                 signedInScreen.SetActive(true);
                 campfireTutorialScreen.SetActive(true);
@@ -88,6 +90,7 @@ public class AuthManager : MonoBehaviour
         {
             Firebase.Auth.UserProfile profile = new Firebase.Auth.UserProfile
             {
+                //registers username for displayname
                 DisplayName = usernameRegister.text,
             };
             currentUser.UpdateUserProfileAsync(profile).ContinueWith(task => {
@@ -127,6 +130,7 @@ public class AuthManager : MonoBehaviour
             FirebaseUser currentPlayer = authTask.Result;
             if (currentPlayer != null)
             {
+                //sets all tutorials and customization options active after successful sign-in
                 string uid = currentPlayer.UserId;
                 var epochStart = new System.DateTime(1970, 1, 1, 8, 0, 0, System.DateTimeKind.Utc);
                 var timestamp = (System.DateTime.UtcNow - epochStart).TotalSeconds;
@@ -154,9 +158,15 @@ public class AuthManager : MonoBehaviour
         }
 
     }
-
+    public void SaveMaterialsToFirebase(int foldedTentMaterial, int tentMaterial, int bagMaterial)
+    {
+        CustomizationIndex ci = new CustomizationIndex(foldedTentMaterial, tentMaterial, bagMaterial);
+        string json = JsonUtility.ToJson(ci);
+        mDatabaseRef.Child("userCustomization").Child(uid).SetRawJsonValueAsync(json);
+    }
     private void UpdatePlayerLogin(string userId, int lastLogin)
     {
+        //updates player's login unix timestamp
         string myString = lastLogin.ToString();
         mDatabaseRef.Child("User").Child(userId).Child("lastLogin").SetRawJsonValueAsync(myString);
     }

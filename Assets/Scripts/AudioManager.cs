@@ -103,9 +103,12 @@ public class AudioManager : MonoBehaviour
     }
     public void CollectStickAudio()
     {
-        audioMgr.collectStickSFX.Play();
-    }
-    public void CollectLeavesAudio()
+        if (audioMgr != null)
+        {
+            audioMgr.collectStickSFX.Play();
+        }
+        }
+        public void CollectLeavesAudio()
     {
         audioMgr.collectLeavesSFX.Play();
     }
