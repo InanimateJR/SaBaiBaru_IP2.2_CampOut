@@ -82,6 +82,9 @@ public class FishingScript: MonoBehaviour
     public TextMeshProUGUI successFishesCaughtText;
     public TextMeshProUGUI failureFishesCaughtText;
 
+    public MeshRenderer sphereRenderer;
+    public Material sphereMaterial;
+
     // Audio Sources
     public GameObject fishingSFXObject;
     public GameObject castLineSFXObject;
@@ -627,7 +630,7 @@ public class FishingScript: MonoBehaviour
  
         setHook.transform.position = setHookTarget;
  
-        setHook.GetComponent<Renderer>().material.color = Color.green;
+        setHook.GetComponent<Renderer>().material = sphereMaterial;
  
         setHook.transform.localScale = new Vector3(.7f, .7f, .7f);
         setHook.name = "setHook";
