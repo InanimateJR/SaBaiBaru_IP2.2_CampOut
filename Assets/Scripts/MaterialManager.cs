@@ -16,7 +16,7 @@ public class MaterialManager : MonoBehaviour
     // Define MeshRenderers
     public MeshRenderer[] foldedTentRenderer;
     public MeshRenderer[] tentRenderer;
-    public MeshRenderer bagRenderer;
+    public MeshRenderer[] bagRenderer;
 
     // Store Player selection
     public int foldedTentSelection;
@@ -62,7 +62,10 @@ public class MaterialManager : MonoBehaviour
                     foldedTentSelection = ci.foldedTentMaterial;
                     tentSelection = ci.tentMaterial;
                     bagSelection = ci.bagMaterial;
-                    bagRenderer.material = bagMats[bagSelection];
+                    for (int i = 0; i < bagRenderer.Length; i++)
+                    {
+                        bagRenderer[i].material = bagMats[bagSelection];
+                    }
                     for (int i = 0; i < tentRenderer.Length; i++)
                     {
                         tentRenderer[i].material = tentMats[tentSelection];
@@ -78,7 +81,10 @@ public class MaterialManager : MonoBehaviour
                     foldedTentSelection = 0;
                     tentSelection = 0;
                     bagSelection = 0;
-                    bagRenderer.material = bagMats[bagSelection];
+                    for (int i = 0; i < bagRenderer.Length; i++)
+                    {
+                        bagRenderer[i].material = bagMats[bagSelection];
+                    }
                     for (int i = 0; i < tentRenderer.Length; i++)
                     {
                         tentRenderer[i].material = tentMats[tentSelection];

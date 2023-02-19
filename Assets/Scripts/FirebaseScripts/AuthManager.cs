@@ -7,6 +7,7 @@ using Firebase.Auth;
 using TMPro;
 using Firebase.Extensions;
 using UnityEngine.SceneManagement;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class AuthManager : MonoBehaviour
 {
@@ -27,7 +28,8 @@ public class AuthManager : MonoBehaviour
     public TMP_Text usernameDisplay;
     public string uid;
     public TMP_InputField usernameRegister;
-    public TextMeshProUGUI helloText;
+    public GameObject interactablesUI;
+    public GameObject[] interactables;
     public string username;
     public int creationTime;
     public int lastLogin;
@@ -82,6 +84,7 @@ public class AuthManager : MonoBehaviour
                 tableTutorialScreen.SetActive(true);
                 fishingTutorialScreen.SetActive(true);
                 userCustomization.SetActive(true);
+                enableInteractables();
                 LoadUsername();
             }
         });
@@ -142,6 +145,7 @@ public class AuthManager : MonoBehaviour
                 tableTutorialScreen.SetActive(true);
                 fishingTutorialScreen.SetActive(true);
                 userCustomization.SetActive(true);
+                enableInteractables();
                 LoadUsername();
             }
         });
@@ -243,5 +247,14 @@ public class AuthManager : MonoBehaviour
                 }
             });
         }
+    }
+
+    public void enableInteractables()
+    {
+        for (int i = 0; i < interactables.Length; i++)
+        {
+            interactables[i].GetComponent<XRGrabInteractable>().enabled = true;
+        }
+        interactablesUI.SetActive(true);
     }
 }
